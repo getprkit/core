@@ -1,96 +1,64 @@
-# Contributing to UIkit
+# Contributing to PrKit
 
-You want to contribute to UIkit? Awesome. Please take a few moments to
-review the following guidelines to get you started. Cheers.
+Thanks for your interest in contributing to PrKit! Contributions, bug reports, and improvements are welcome.
 
-* [Communication channels](#communication)
-* [Team members](#team)
-* [Documentation](#documentation)
-* [Issue tracker](#issues)
-* [Bug reports](#bugs)
-* [Pull requests](#pull-requests)
-* [Versioning](#versioning)
-* [License](#license)
+## Getting Started
 
-<a name="communication"></a>
-## Communication channels
+PrKit is a fork of [UIkit](https://github.com/uikit/uikit). Before contributing, please review the existing code and check whether the issue or feature is already being addressed.
 
-Before you get lost in the repository, here are a few starting points
-for you to check out. You might find that others have had similar
-questions or that your question rather belongs in one place than another.
+## Reporting Issues
 
-* Chat: https://discord.gg/NEt4Pv7
-* Website: https://getuikit.com
-* Twitter: https://twitter.com/getuikit
+If you find a bug or have a feature request, please open an issue in the [PrKit issue tracker](https://github.com/prfardin/uikit/issues).
 
+When reporting a bug, include:
+- Your browser and environment.
+- Steps to reproduce the issue.
+- Expected and actual behavior.
+- The affected PrKit version.
 
-<a name="team"></a>
-## Team members
+## Pull Requests
 
-UIkit is developed as an open source project by [YOOtheme](http://yootheme.com)
-in Hamburg, Germany. The core maintainers you will encounter in this project
-are all part of YOOtheme.
+1. Fork the repository.
+2. Create a feature branch from `prkit`.
+3. Keep changes focused and consistent with the existing codebase.
+4. Test your changes before submitting.
+5. Open a pull request targeting the `prkit` branch.
 
-## Documentation
+For changes that are also applicable to upstream UIkit, consider submitting a separate pull request to the [official UIkit repository](https://github.com/uikit/uikit).
 
-The UIkit documentation is maintained as a collection of Markdown files in its
-[own repository](https://github.com/uikit/uikit-site). Any pull requests are highly appreciated.
-
-<a name="issues"></a>
-## Using the issue tracker
-
-The issue tracker is the preferred channel for [bug reports](#bugs),
-[features requests](#features) and [submitting pull
-requests](#pull-requests), but please respect the following restriction:
-
-Please **do not** use the issue tracker for personal support requests (use [Discord chat](https://discord.gg/NEt4Pv7)).
-
-<a name="bugs"></a>
-## Bug reports
-
-A bug is a _demonstrable problem_ that is caused by the code in the repository.
-Good bug reports are extremely helpful - thank you!
-
-A good bug report shouldn't leave others needing to chase you up for more
-information. Please try to be as detailed as possible in your report. What is
-your environment? What steps will reproduce the issue? What would you expect to
-be the outcome? All these details will help people to fix any potential bugs.
-
-<a name="pull-requests"></a>
-## Pull requests
-
-Good pull requests - patches, improvements, new features - are a fantastic
-help. Thanks for taking the time to contribute.
-
-**Please ask first** before embarking on any significant pull request,
-otherwise you risk spending a lot of time working on something that the
-project's developers might not want to merge into the project.
-
-UIkit follows the [GitFlow branching model](http://nvie.com/posts/a-successful-git-branching-model). The ```main``` branch always reflects a production-ready state while the latest development is taking place in the ```develop``` branch.
-
-Each time you want to work on a fix or a new feature, create a new branch based on the ```develop``` branch: ```git checkout -b BRANCH_NAME develop```. Only pull requests to the ```develop``` branch will be merged.
-
-<a name="commit-message-convention"></a>
 ## Commit Message Convention
 
-UIkit adapts the [Vue's commit convention](https://github.com/vuejs/vue/blob/dev/.github/COMMIT_CONVENTION.md). Commit messages can have the following types:
+PrKit follows the Vue-style commit message convention.
 
-- `build:` Changes that affect the build system or external dependencies
-- `chore:` Changes to readme, etc
-- `ci:` Changes to our CI configuration files and scripts
-- `docs:` Documentation only changes
-- `feat:` A new feature
-- `fix:` A bug fix
-- `perf:` A code change that improves performance
-- `refactor:` A code change that neither fixes a bug nor adds a feature
-- `style:` Changes that do not affect the meaning of the code (white-space, formatting, etc.)
-- `test:` Adding missing tests or correcting existing tests
+Commit messages should follow this format:
+
+`type(scope): subject`
+
+Examples:
+- `feat(accordion): add multiple selection support`
+- `fix(theme): correct inverse background colors`
+- `refactor(css): migrate Less functions to native CSS`
+
+Supported types:
+
+- `build:` Changes that affect the build system or external dependencies.
+- `chore:` Maintenance tasks and other changes that don't fit other categories.
+- `ci:` Changes to CI configuration files and scripts.
+- `docs:` Documentation-only changes.
+- `feat:` A new feature.
+- `fix:` A bug fix.
+- `perf:` A code change that improves performance.
+- `refactor:` A code change that neither fixes a bug nor adds a feature.
+- `revert:` Reverts a previous commit.
+- `style:` Changes that do not affect the meaning of the code (whitespace, formatting, etc.).
+- `test:` Adding missing tests or correcting existing tests.
 
 ## Versioning
 
-UIkit is maintained by using the [Semantic Versioning Specification (SemVer)](http://semver.org).
+PrKit follows [Semantic Versioning (SemVer)](https://semver.org/), independently of UIkit.
 
-<a name="license"></a>
+Each release documents the corresponding upstream UIkit version.
+
 ## License
 
-By contributing your code, you agree to license your contribution under the [MIT license](LICENSE)
+By submitting a contribution, you agree that your contribution will be distributed under the project's MIT License.
