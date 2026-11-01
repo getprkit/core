@@ -18,7 +18,7 @@ See the [Changelog](CHANGELOG.md) for details and [breaking changes](CHANGELOG.m
 ## Installation
 
 ```bash
-npm install github:prfardin/uikit#prkit-v1.0.0-beta.1
+npm install github:getprkit/core#prkit-v1.0.0-beta.1
 ```
 
 ### Using Prebuilt Files

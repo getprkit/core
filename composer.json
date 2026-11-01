@@ -1,17 +1,17 @@
 {
-    "name": "prfardin/prkit",
+    "name": "getprkit/core",
     "type": "library",
     "description": "PRKit, a fork of UIkit with native CSS variables, color palettes and improved inverse mode",
     "keywords": [],
-    "homepage": "https://github.com/prfardin/uikit",
+    "homepage": "https://github.com/getprkit/core",
     "authors": [],
     "support": {
-        "issues": "https://github.com/prfardin/uikit/issues"
+        "issues": "https://github.com/getprkit/core/issues"
     },
     "license": "MIT",
     "extra": {
         "branch-alias": {
-            "dev-prkit": "1.0.x-dev"
+            "dev-develop": "1.0.x-dev"
         }
     }
 }

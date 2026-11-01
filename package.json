@@ -1,6 +1,6 @@
 {
-    "name": "prkit",
-    "title": "PrKit",
+    "name": "@prkit/core",
+    "title": "PrKit Core",
     "description": "A fork of UIkit with native CSS variables, color palettes and improved inverse mode",
     "version": "1.0.0-beta.1",
     "main": "dist/js/uikit.js",
@@ -23,13 +23,13 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/prfardin/uikit.git"
+        "url": "git+https://github.com/getprkit/core.git"
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/prfardin/uikit/issues"
+        "url": "https://github.com/getprkit/core/issues"
     },
-    "homepage": "https://github.com/prfardin/uikit",
+    "homepage": "https://github.com/getprkit/core",
     "packageManager": "pnpm@12.9.1",
     "devDependencies": {
         "@eslint/js": "^10.0.1",
