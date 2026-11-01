@@ -31,6 +31,7 @@
     },
     "homepage": "https://github.com/getprkit/core",
     "packageManager": "pnpm@12.9.1",
+    "types": "./index.d.ts",
     "devDependencies": {
         "@eslint/js": "^10.0.1",
         "@rollup/plugin-alias": "^6.0.0",
