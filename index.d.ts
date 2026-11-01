@@ -1,3 +1,3 @@
-import UIkit from "./dist/js/types/uikit";
+import UIkit from "./types/uikit";
 
 export = UIkit;
