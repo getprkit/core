@@ -10,6 +10,8 @@
 !/dist/js/components/
 /dist/js/components/*
 !/dist/js/components/.gitkeep
+!/dist/types/
+!/dist/types/!
 !/dist/js/uikit.js
 !/dist/js/uikit.min.js
 !/dist/js/uikit-icons.js
