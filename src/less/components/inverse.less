@@ -22,7 +22,7 @@
 
     --inverse-global-default-color:                  var(--global-muted-color-900);
 
-    --inverse-global-muted-color-default:            var(--global-muted-color-800);
+    --inverse-global-muted-color:                    var(--global-muted-color-800);
     --inverse-global-muted-color-soft:               var(--global-muted-color-750); // inverse hover
     --inverse-global-muted-color-softer:             var(--global-muted-color-700); // inverse active
     
@@ -38,16 +38,16 @@
      * Colors
      */
 
-    --inverse-global-color:                          rgb(from var(--global-inverse-color) r g b / 0.7);
-    --inverse-global-emphasis-color:                 var(--global-inverse-color);
-    --inverse-global-muted-color:                    rgb(from var(--global-inverse-color) r g b / 0.5);
-    --inverse-global-inverse-color:                  var(--global-color);
+    --inverse-global-color:                          rgb(from var(--global-color-inverse) r g b / 0.7);
+    --inverse-global-color-emphasis:                 var(--global-color-inverse);
+    --inverse-global-color-muted:                    rgb(from var(--global-color-inverse) r g b / 0.5);
+    --inverse-global-color-inverse:                  var(--global-color);
 
     /*
      * Borders
      */
 
-    --inverse-global-border:                         rgb(from var(--global-inverse-color) r g b / 0.2);
+    --inverse-global-border:                         rgb(from var(--global-color-inverse) r g b / 0.2);
     
     /*
      * Box-Shadows

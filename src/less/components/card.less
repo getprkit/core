@@ -59,32 +59,32 @@
     --card-badge-height:                            22px;
     --card-badge-padding-horizontal:                10px;
     --card-badge-background:                        var(--global-primary-color);
-    --card-badge-color:                             var(--global-inverse-color);
+    --card-badge-color:                             var(--global-color-inverse);
     --card-badge-font-size:                         var(--global-small-font-size);
 
-    --card-hover-background:                        var(--global-muted-color-default);
+    --card-hover-background:                        var(--global-muted-color);
 
-    --card-default-background:                      var(--global-muted-color-default);
+    --card-default-background:                      var(--global-muted-color);
     --card-default-color:                           var(--global-color);
-    --card-default-title-color:                     var(--global-emphasis-color);
+    --card-default-title-color:                     var(--global-color-emphasis);
     --card-default-hover-background:                var(--global-muted-color-soft);
     --card-default-color-mode:                      @card-default-color-mode;
 
     --card-primary-background:                      var(--global-primary-color);
-    --card-primary-color:                           var(--global-inverse-color);
+    --card-primary-color:                           var(--global-color-inverse);
     --card-primary-title-color:                     var(--card-primary-color);
     --card-primary-hover-background:                var(--global-primary-color-soft);
     --card-primary-color-mode:                      @card-primary-color-mode;
 
     --card-secondary-background:                    var(--global-secondary-color);
-    --card-secondary-color:                         var(--global-inverse-color);
+    --card-secondary-color:                         var(--global-color-inverse);
     --card-secondary-title-color:                   var(--card-secondary-color);
     --card-secondary-hover-background:              var(--global-secondary-color-soft);
     --card-secondary-color-mode:                    @card-secondary-color-mode;
 
     --card-overlay-background:                      rgb(from var(--global-default-color) r g b / 0.9);
     --card-overlay-color:                           var(--global-color);
-    --card-overlay-title-color:                     var(--global-emphasis-color);
+    --card-overlay-title-color:                     var(--global-color-emphasis);
     --card-overlay-hover-background:                rgb(from var(--card-overlay-background) r g b / ~'calc(alpha + 0.1)');
     --card-overlay-color-mode:                      @card-overlay-color-mode;
 
@@ -449,22 +449,22 @@
 
 .hook-card-variables() {
 
-    --inverse-card-hover-background:                     var(--inverse-global-muted-color);
+    --inverse-card-hover-background:                     var(--inverse-global-color-muted);
 
-    --inverse-card-default-background:                   var(--inverse-global-muted-color-default);
+    --inverse-card-default-background:                   var(--inverse-global-muted-color);
     --inverse-card-default-color:                        var(--inverse-global-color);
-    --inverse-card-default-title-color:                  var(--inverse-global-emphasis-color);
+    --inverse-card-default-title-color:                  var(--inverse-global-color-emphasis);
     --inverse-card-default-hover-background:             var(--inverse-global-muted-color-soft);
 
     --inverse-card-secondary-hover-background:           var(--inverse-global-secondary-color-soft);
 
     --inverse-card-overlay-background:                   rgb(from var(--inverse-global-default-color) r g b / 0.9);
     --inverse-card-overlay-color:                        var(--inverse-global-color);
-    --inverse-card-overlay-title-color:                  var(--inverse-global-emphasis-color);
+    --inverse-card-overlay-title-color:                  var(--inverse-global-color-emphasis);
     --inverse-card-overlay-hover-background:             rgb(from var(--inverse-card-overlay-background) r g b / ~'calc(alpha + 0.1)');
     
     --inverse-card-badge-background:                     var(--inverse-global-primary-color);
-    --inverse-card-badge-color:                          var(--inverse-global-emphasis-color);
+    --inverse-card-badge-color:                          var(--inverse-global-color-emphasis);
 
 }
 

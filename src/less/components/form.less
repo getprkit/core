@@ -43,16 +43,16 @@
     --form-multi-line-padding-horizontal:            var(--form-padding-horizontal);
     --form-multi-line-padding-vertical:              ~'round(up, calc(var(--form-multi-line-padding-horizontal) * 0.6), 1px)';
 
-    --form-background:                               var(--global-muted-color-default);
+    --form-background:                               var(--global-muted-color);
     --form-color:                                    var(--global-color);
 
     --form-focus-background:                         var(--global-muted-color-soft);
     --form-focus-color:                              var(--global-color);
 
-    --form-disabled-background:                      var(--global-muted-color-default);
-    --form-disabled-color:                           var(--global-muted-color);
+    --form-disabled-background:                      var(--global-muted-color);
+    --form-disabled-color:                           var(--global-color-muted);
 
-    --form-placeholder-color:                        var(--global-muted-color);
+    --form-placeholder-color:                        var(--global-color-muted);
 
     --form-danger-color:                             var(--global-danger-color);
     --form-success-color:                            var(--global-success-color);
@@ -65,24 +65,24 @@
     --form-select-padding-inline-end:                20px;
     --form-select-icon-color:                        var(--global-color);
     --form-select-option-color:                      var(--global-color);
-    --form-select-disabled-icon-color:               var(--global-muted-color);
+    --form-select-disabled-icon-color:               var(--global-color-muted);
 
     --form-datalist-padding-inline-end:              20px;
     --form-datalist-icon-color:                      var(--global-color);      
 
     --form-radio-size:                               16px;
     --form-radio-margin-top:                         -4px;
-    --form-radio-background:                         var(--global-muted-color-default);
+    --form-radio-background:                         var(--global-muted-color);
 
     --form-radio-focus-background:                   var(--global-muted-color-soft);
 
     --form-radio-checked-background:                 var(--global-primary-color);
-    --form-radio-checked-icon-color:                 var(--global-inverse-color);
+    --form-radio-checked-icon-color:                 var(--global-color-inverse);
 
     --form-radio-checked-focus-background:           var(--global-primary-color-softer);
 
-    --form-radio-disabled-background:                var(--global-muted-color-default);
-    --form-radio-disabled-icon-color:                var(--global-muted-color);
+    --form-radio-disabled-background:                var(--global-muted-color);
+    --form-radio-disabled-icon-color:                var(--global-color-muted);
 
     --form-small-font-size:                          var(--global-small-font-size);
     --form-small-height:                             var(--global-control-small-height);
@@ -111,7 +111,7 @@
     --form-horizontal-controls-text-padding-top:     7px;
 
     --form-icon-width:                               var(--form-height);
-    --form-icon-color:                               var(--global-muted-color);
+    --form-icon-color:                               var(--global-color-muted);
     --form-icon-hover-color:                         var(--global-color);
 
     --internal-form-select-image:                     url("../../images/backgrounds/form-select.svg");
@@ -836,14 +836,14 @@ select.uk-form-width-xsmall { width: calc(var(--form-width-xsmall) + 25px); }
 
 .hook-form-variables() {
 
-    --inverse-form-background:                      var(--inverse-global-muted-color-default);
+    --inverse-form-background:                      var(--inverse-global-muted-color);
     --inverse-form-color:                           var(--inverse-global-color);
     --inverse-form-focus-background:                var(--inverse-global-muted-color-soft);
     --inverse-form-focus-color:                     var(--inverse-global-color);
-    --inverse-form-placeholder-color:               var(--inverse-global-muted-color);
+    --inverse-form-placeholder-color:               var(--inverse-global-color-muted);
 
-    --inverse-form-disabled-background:             var(--inverse-global-muted-color-default);
-    --inverse-form-disabled-color:                  var(--inverse-global-muted-color);
+    --inverse-form-disabled-background:             var(--inverse-global-muted-color);
+    --inverse-form-disabled-color:                  var(--inverse-global-color-muted);
 
     --inverse-form-danger-color:                    var(--global-danger-color);
     --inverse-form-success-color:                   var(--global-success-color);
@@ -852,19 +852,19 @@ select.uk-form-width-xsmall { width: calc(var(--form-width-xsmall) + 25px); }
 
     --inverse-form-datalist-icon-color:             var(--inverse-global-color);
 
-    --inverse-form-radio-background:                var(--inverse-global-muted-color-default);
+    --inverse-form-radio-background:                var(--inverse-global-muted-color);
 
     --inverse-form-radio-focus-background:          var(--inverse-global-muted-color-soft);
 
     --inverse-form-radio-checked-background:        var(--inverse-global-primary-color);
-    --inverse-form-radio-checked-icon-color:        var(--inverse-global-emphasis-color);
+    --inverse-form-radio-checked-icon-color:        var(--inverse-global-color-emphasis);
 
     --inverse-form-radio-checked-focus-background:  var(--inverse-global-primary-softer);
     
-    --inverse-form-radio-disabled-background:       var(--inverse-global-muted-color-default);
-    --inverse-form-radio-disabled-icon-color:       var(--inverse-global-muted-color);
+    --inverse-form-radio-disabled-background:       var(--inverse-global-muted-color);
+    --inverse-form-radio-disabled-icon-color:       var(--inverse-global-color-muted);
 
-    --inverse-form-icon-color:                      var(--inverse-global-muted-color);
+    --inverse-form-icon-color:                      var(--inverse-global-color-muted);
     --inverse-form-icon-hover-color:                var(--inverse-global-color);
     
 }

@@ -15,9 +15,9 @@
 
     --base-code-padding-horizontal:                  6px;
     --base-code-padding-vertical:                    2px;
-    --base-code-background:                          var(--global-muted-color-default);
+    --base-code-background:                          var(--global-muted-color);
 
-    --base-blockquote-color:                         var(--global-emphasis-color);
+    --base-blockquote-color:                         var(--global-color-emphasis);
 
     --base-blockquote-footer-color:                  var(--global-color);
 
@@ -115,7 +115,7 @@
 
 .hook-base-variables() {
 
-    --inverse-base-blockquote-color:                var(--inverse-global-emphasis-color);
+    --inverse-base-blockquote-color:                var(--inverse-global-color-emphasis);
     --inverse-base-blockquote-footer-color:         var(--inverse-global-color);
     --inverse-base-pre-background:                  var(--inverse-global-default-color);
     --inverse-base-pre-border:                      var(--inverse-global-border);
@@ -127,7 +127,7 @@
 .hook-inverse-base-link-hover() {}
 
 .hook-inverse-base-code() {
-    background-color: var(--inverse-global-muted-color-default);
+    background-color: var(--inverse-global-muted-color);
 }
 
 .hook-inverse-base-heading() {}

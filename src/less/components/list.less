@@ -32,8 +32,8 @@
 
     --list-marker-height:                            calc(var(--global-line-height) * 1em);
 
-    --list-muted-color:                              var(--global-muted-color);
-    --list-emphasis-color:                           var(--global-emphasis-color);
+    --list-muted-color:                              var(--global-color-muted);
+    --list-emphasis-color:                           var(--global-color-emphasis);
     --list-primary-color:                            var(--global-primary-color);
     --list-secondary-color:                          var(--global-secondary-color);
 
@@ -45,7 +45,7 @@
 
     --list-striped-padding-vertical:                 var(--global-small-margin);
     --list-striped-padding-horizontal:               var(--global-small-margin);
-    --list-striped-background:                       var(--global-muted-color-default);
+    --list-striped-background:                       var(--global-muted-color);
 
     --list-large-margin-top:                         var(--global-margin);
     --list-large-divider-margin-top:                 var(--global-margin);
@@ -217,13 +217,13 @@
 
 .hook-list-variables() {
 
-    --inverse-list-muted-color:                        var(--inverse-global-muted-color);
-    --inverse-list-emphasis-color:                     var(--inverse-global-emphasis-color);
+    --inverse-list-muted-color:                        var(--inverse-global-color-muted);
+    --inverse-list-emphasis-color:                     var(--inverse-global-color-emphasis);
     --inverse-list-primary-color:                      var(--inverse-global-primary-color);
     --inverse-list-secondary-color:                    var(--inverse-global-primary-color);
 
     --inverse-list-divider-border:                     var(--inverse-global-border);
-    --inverse-list-striped-background:                 var(--inverse-global-muted-color-default);
+    --inverse-list-striped-background:                 var(--inverse-global-muted-color);
 
     --inverse-list-bullet-icon-color:                  var(--inverse-global-color);
     
