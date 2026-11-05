@@ -542,7 +542,7 @@
  * Base
  */
 
-:is(.uk-alert-close-default, .uk-alert-close-pill, .uk-alert-close-pill-solid) .uk-alert-close::before {
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid) .uk-alert-close::before {
     content: "";
     position: absolute;
     display: block;
@@ -555,13 +555,13 @@
 
 .uk-alert-close-circle .uk-alert-close::before { border-radius: var(--global-border-radius-circle); }
 
-:is(.uk-alert-close-default, .uk-alert-close-pill-solid) { --alert-close-background-opacity: 0; }
+:is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover) { --alert-close-background-opacity: 0; }
 
-:is(.uk-alert-close-default, .uk-alert-close-pill, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover) { --alert-close-background-opacity: var(--alert-close-background-hover-opacity); }
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover) { --alert-close-background-opacity: var(--alert-close-background-hover-opacity); }
 
-:is(.uk-alert-close-default, .uk-alert-close-pill, .uk-alert-close-pill-solid):has(> .uk-alert-close:is(:focus-visible, :active)) { --alert-close-background-opacity: var(--alert-close-background-active-opacity); }
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:is(:focus-visible, :active)) { --alert-close-background-opacity: var(--alert-close-background-active-opacity); }
 
-:is(.uk-alert-close-default, .uk-alert-close-pill, .uk-alert-close-pill-solid) .uk-alert-close::before {
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid) .uk-alert-close::before {
     background-color: var(--alert-close-pill-background);
 }
 
@@ -849,11 +849,11 @@
      * Close base Style:
      */
 
-    :is(.uk-alert-close-default, .uk-alert-close-pill-solid) { --inverse-alert-close-background-opacity: 0; }
+    :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover) { --inverse-alert-close-background-opacity: 0; }
 
-    :is(.uk-alert-close-default, .uk-alert-close-pill, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover) { --inverse-alert-close-background-opacity: var(--inverse-alert-close-background-hover-opacity); }
+    :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover) { --inverse-alert-close-background-opacity: var(--inverse-alert-close-background-hover-opacity); }
 
-    :is(.uk-alert-close-default, .uk-alert-close-pill, .uk-alert-close-pill-solid):has(> .uk-alert-close:is(:focus-visible, :active)) { --inverse-alert-close-background-opacity: var(--inverse-alert-close-background-active-opacity); }
+    :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:is(:focus-visible, :active)) { --inverse-alert-close-background-opacity: var(--inverse-alert-close-background-active-opacity); }
 
     .hook-inverse-alert-default() { --alert-close-pill-background: var(--inverse-alert-close-pill-background-default); }
 
