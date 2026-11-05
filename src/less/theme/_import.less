@@ -11,7 +11,7 @@
 @import "table.less";
 @import "icon.less";
 @import "form-range.less";
-@import "form.less";
+@import "form.less";             // After: Icon, Form Range
 @import "button.less";
 @import "progress.less";
 
@@ -22,25 +22,25 @@
 @import "card.less";
 
 // Common
-@import "close.less";
-@import "spinner.less";
-@import "totop.less";
-@import "marker.less";
-@import "alert.less";
+@import "close.less";            // After: Icon
+@import "spinner.less";          // After: Icon
+@import "totop.less";            // After: Icon
+@import "marker.less";           // After: Icon
+@import "alert.less";            // After: Close
 @import "placeholder.less";
 @import "badge.less";
 @import "label.less";
-@import "overlay.less";
+@import "overlay.less";          // After: Icon
 @import "article.less";
 @import "comment.less";
-@import "search.less";
+@import "search.less";           // After: Icon
 
 // JavaScript
 @import "accordion.less";
-@import "drop.less";
+@import "drop.less";             // After: Card
 @import "dropbar.less";
-@import "dropnav.less";
-@import "modal.less";
+@import "dropnav.less";          // After: Dropbar
+@import "modal.less";            // After: Close
 @import "slideshow.less";
 @import "slider.less";
 @import "sticky.less";
@@ -51,23 +51,26 @@
 @import "tooltip.less";
 @import "sortable.less";
 @import "countdown.less";
+// Scrollspy
+// Toggle
+// Scroll
 
-@import "grid.less";
+@import "thumbnav.less";
+@import "iconnav.less";
+
+@import "grid.less";             // After: Thumbnav, Iconnav
 
 // Navs
 @import "nav.less";
-@import "navbar.less";
+@import "navbar.less";           // After: Card, Grid, Nav, Icon, Search
 @import "subnav.less";
 @import "breadcrumb.less";
 @import "pagination.less";
 @import "tab.less";
-@import "slidenav.less";
+@import "slidenav.less";         // After: Icon
 @import "dotnav.less";
-@import "thumbnav.less";
-@import "iconnav.less";
-
-@import "dropdown.less";
-@import "lightbox.less";
+@import "dropdown.less";         // After: Card, Nav
+@import "lightbox.less";         // After: Close, Slidenav
 
 // Utilities
 @import "animation.less";
@@ -80,6 +83,7 @@
 @import "align.less";
 @import "svg.less";
 @import "utility.less";
+@import "flex.less";             // After: Utility
 @import "margin.less";
 @import "padding.less";
 @import "position.less";
@@ -87,4 +91,5 @@
 @import "visibility.less";
 @import "inverse.less";
 
+// Need to be loaded last
 @import "print.less";
