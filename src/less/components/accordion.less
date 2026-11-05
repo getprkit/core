@@ -7,6 +7,8 @@
 //                  `uk-accordion-content`
 //
 // Modifiers:       `uk-accordion-default`
+//                  `uk-accordion-pill`
+//                  `uk-accordion-line`
 //
 // States:          `uk-open`
 //
@@ -18,16 +20,41 @@
 
 .hook-accordion-variables() {
 
+    --accordion-title-gap:                           15px;
+    --accordion-title-font-size:                     var(--global-medium-font-size);
+    --accordion-title-line-height:                   1.4;
+    --accordion-title-color:                         var(--global-color-emphasis);
+
+    --accordion-icon-color:                          var(--global-color);
+
+    --accordion-disabled-title-color:                var(--global-color-muted);
+    --accordion-disabled-icon-color:                 var(--global-color-muted);
+
     --accordion-default-item-margin-top:             var(--global-margin);
-
-    --accordion-default-title-gap:                   15px;
-    --accordion-default-title-font-size:             var(--global-medium-font-size);
-    --accordion-default-title-line-height:           1.4;
-    --accordion-default-title-color:                 var(--global-color-emphasis);
     --accordion-default-title-hover-color:           var(--global-color);
-
     --accordion-default-content-margin-top:          var(--global-margin);
-    
+
+    --accordion-pill-title-line-height:              1;
+    --accordion-pill-title-background:               var(--global-default-color);
+    --accordion-pill-title-hover-background:         var(--global-muted-color);
+
+    --accordion-pill-title-border-radius:            var(--global-border-radius-default);
+    --accordion-pill-title-padding-vertical:         var(--global-xsmall-gutter);
+    --accordion-pill-title-padding-horizontal:       var(--global-small-gutter);
+    --accordion-pill-content-margin-top:             var(--global-xsmall-gutter);
+    --accordion-pill-content-padding:                var(--global-small-gutter);
+
+    --accordion-line-title-line-height:              var(--accordion-title-line-height);
+    --accordion-line-border-color:                   var(--global-border);
+    --accordion-line-border-width:                   var(--global-border-width);
+
+    --accordion-line-title-padding-vertical:         var(--global-small-gutter);
+    --accordion-line-content-padding:                var(--global-small-gutter);
+
+    --accordion-icon-circle-active-color:            var(--global-primary-color);
+    --accordion-icon-circle-opacity:                 var(--global-icon-tertiary-color-opacity);
+    --accordion-icon-circle-active-opacity:          1;
+
 }
 
 
@@ -51,9 +78,60 @@
 
 .uk-accordion-content > :last-child { margin-bottom: 0; }
 
+/*
+ * Disabled
+ */
 
-/* Default modifier
+.uk-accordion-item-disabled .uk-accordion-title {
+    pointer-events: none;
+    color: var(--accordion-disabled-title-color);
+    .hook-accordion-item-disabled-title();
+}
+
+.uk-accordion-item-disabled .uk-accordion-icon {
+    color: var(--accordion-disabled-icon-color);
+    .hook-accordion-item-disabled-icon();
+}
+
+
+/* Style modifier base
  ========================================================================== */
+
+/*
+ * Title
+ */
+
+/*
+ * 1. Center content vertically, e.g. an icon
+ * 2. Imitate white space gap when using flexbox
+ * 3. Reset link
+ */
+
+:is(.uk-accordion-default, .uk-accordion-pill, .uk-accordion-line) .uk-accordion-title {
+    /* 1 */
+    display: flex;
+    align-items: center;
+    /* 2 */
+    column-gap: var(--accordion-title-gap);
+    /* 3 */
+    font-size: var(--accordion-title-font-size);
+    line-height: var(--accordion-title-line-height);
+    color: var(--accordion-title-color);
+}
+
+/*
+ * Icon
+ */
+
+:is(.uk-accordion-default, .uk-accordion-pill, .uk-accordion-line) .uk-accordion-icon {
+    flex: 0 0 auto;
+    margin-inline-start: auto;
+    color: var(--accordion-icon-color);
+}
+
+
+/* Style: default
+ ======================================================================== */
 
 /*
  * Item
@@ -74,22 +152,7 @@
  * Title
  */
 
-/*
-* 1. Center content vertically, e.g. an icon
-* 2. Imitate white space gap when using flexbox
-* 3. Reset link
- */
-
 .uk-accordion-default .uk-accordion-title {
-    /* 1 */
-    display: flex;
-    align-items: center;
-    /* 2 */
-    column-gap: var(--accordion-default-title-gap);
-    /* 3 */
-    font-size: var(--accordion-default-title-font-size);
-    line-height: var(--accordion-default-title-line-height);
-    color: var(--accordion-default-title-color);
     .hook-accordion-default-title();
 }
 
@@ -110,8 +173,6 @@
  */
 
 .uk-accordion-default .uk-accordion-icon {
-    flex: none;
-    margin-inline-start: auto;
     .hook-accordion-default-icon();
 }
 
@@ -125,6 +186,170 @@
 }
 
 
+/* Style: pill
+ ======================================================================== */
+
+/*
+ * Item
+ */
+
+.uk-accordion-pill > * {
+    .hook-accordion-pill-item();
+}
+
+/* Active */
+.uk-accordion-pill > .uk-open {
+    .hook-accordion-pill-item-active();
+}
+
+/*
+ * Title
+ */
+
+.uk-accordion-pill .uk-accordion-title {
+    line-height: var(--accordion-pill-title-line-height);
+    padding: var(--accordion-pill-title-padding-vertical) var(--accordion-pill-title-padding-horizontal);
+    background: var(--accordion-pill-title-background);
+    border-radius: var(--accordion-pill-title-border-radius);
+    .hook-accordion-pill-title();
+}
+
+/* Hover */
+.uk-accordion-pill .uk-accordion-title:hover {
+    background: var(--accordion-pill-title-hover-background);
+    text-decoration: none;
+    .hook-accordion-pill-title-hover();
+}
+
+/* Active */
+.uk-accordion-pill > .uk-open .uk-accordion-title {
+    .hook-accordion-pill-title-active();
+}
+
+/*
+ * Icon
+ */
+
+.uk-accordion-pill .uk-accordion-icon {
+    .hook-accordion-pill-icon();
+}
+
+/*
+ * Content
+ */
+
+.uk-accordion-pill .uk-accordion-content {
+    margin-top: var(--accordion-pill-content-margin-top);
+    padding: 0 var(--accordion-pill-content-padding) var(--accordion-pill-content-padding);
+    .hook-accordion-pill-content();
+}
+
+/* Style: line
+ ======================================================================== */
+
+/*
+ * Item
+ */
+
+.uk-accordion-line > * {
+    border-bottom: var(--accordion-line-border-width) solid transparent;
+    .hook-accordion-line-item();
+}
+
+.uk-accordion-line > *:not(:last-child) { border-bottom-color: var(--accordion-line-border-color); }
+
+/* Active */
+.uk-accordion-line > .uk-open {
+    .hook-accordion-line-item-active();
+}
+
+/*
+ * Title
+ */
+
+.uk-accordion-line .uk-accordion-title {
+    line-height: var(--accordion-line-title-line-height);
+    padding: var(--accordion-line-title-padding-vertical) 0;
+    .hook-accordion-line-title();
+}
+
+/* Hover */
+.uk-accordion-line .uk-accordion-title:hover {
+    .hook-accordion-line-title-hover();
+}
+
+/* Active */
+.uk-accordion-line > .uk-open .uk-accordion-title {
+    .hook-accordion-line-title-active();
+}
+
+/*
+ * Icon
+ */
+
+.uk-accordion-line .uk-accordion-icon {
+    .hook-accordion-line-icon();
+}
+
+/*
+ * Content
+ */
+
+.uk-accordion-line .uk-accordion-content {
+    padding-bottom: var(--accordion-line-content-padding);
+    .hook-accordion-line-content();
+}
+
+
+/* Icon Style modifiers
+ ======================================================================== */
+
+/*
+ * Base
+ */
+
+.uk-accordion-icon svg > [class] {
+    transition: 0.2s ease-out;
+    transition-property: color, fill, stroke, transform, opacity;
+    transform-origin: center;
+}
+
+/*
+ * Default
+ */
+
+[aria-expanded="true"] .uk-accordion-icon svg > .line-1 {
+    transform: rotate(calc(-45deg * var(--uk-dir-sign)));
+    opacity: 0;
+}
+
+[aria-expanded="true"] .uk-accordion-icon svg > .line-2 { transform: rotate(calc(90deg * var(--uk-dir-sign))); }
+
+/*
+ * Plus
+ */
+
+[aria-expanded="true"] .uk-accordion-icon svg > .plus { transform: rotate(calc(45deg * var(--uk-dir-sign))); }
+
+/*
+ * Chevron
+ */
+
+[aria-expanded="true"] .uk-accordion-icon svg > .chevron { transform: rotate(calc(180deg * var(--uk-dir-sign))); }
+
+/*
+ * Circle
+ */
+
+.uk-accordion-icon :is(svg[fill="currentColor"] > .circle, svg > .circle[fill="currentColor"]) { opacity: var(--accordion-icon-circle-opacity); }
+
+[aria-expanded="true"] .uk-accordion-icon svg > .circle { color: var(--accordion-icon-circle-active-color); }
+
+[aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]) { stroke: var(--accordion-icon-circle-active-color); }
+
+[aria-expanded="true"] .uk-accordion-icon :is(svg[fill="currentColor"] > .circle, svg > .circle[fill="currentColor"]) { opacity: var(--accordion-icon-circle-active-opacity); }
+
+
 // Hooks
 // ========================================================================
 
@@ -132,6 +357,9 @@
 
 .hook-accordion-variables() {}
 .hook-accordion() {}
+.hook-accordion-item-disabled-title() {}
+.hook-accordion-item-disabled-icon() {}
+
 .hook-accordion-default-item() {}
 .hook-accordion-default-item-active() {}
 .hook-accordion-default-title() {}
@@ -139,6 +367,23 @@
 .hook-accordion-default-title-active() {}
 .hook-accordion-default-icon() {}
 .hook-accordion-default-content() {}
+
+.hook-accordion-pill-item() {}
+.hook-accordion-pill-item-active() {}
+.hook-accordion-pill-title() {}
+.hook-accordion-pill-title-hover() {}
+.hook-accordion-pill-title-active() {}
+.hook-accordion-pill-icon() {}
+.hook-accordion-pill-content() {}
+
+.hook-accordion-line-item() {}
+.hook-accordion-line-item-active() {}
+.hook-accordion-line-title() {}
+.hook-accordion-line-title-hover() {}
+.hook-accordion-line-title-active() {}
+.hook-accordion-line-icon() {}
+.hook-accordion-line-content() {}
+
 .hook-accordion-misc() {}
 
 
@@ -147,12 +392,54 @@
 
 .hook-accordion-variables() {
 
-    --inverse-accordion-default-title-color:             var(--inverse-global-color-emphasis);
+    --inverse-accordion-title-color:                     var(--inverse-global-color-emphasis);
+    --inverse-accordion-icon-color:                      var(--inverse-global-color);
+
+    --inverse-accordion-disabled-title-color:            var(--inverse-global-color-muted);
+    --inverse-accordion-disabled-icon-color:             var(--inverse-global-color-muted);
+
     --inverse-accordion-default-title-hover-color:       var(--inverse-global-color);
-    
+
+    --inverse-accordion-pill-title-background:           var(--inverse-global-default-color);
+    --inverse-accordion-pill-title-hover-background:     var(--inverse-global-muted-color);
+    --inverse-accordion-pill-icon-color:                 var(--inverse-accordion-icon-color);
+
+    --inverse-accordion-line-icon-color:                 var(--inverse-accordion-icon-color);
+    --inverse-accordion-line-border-color:               var(--inverse-global-border);
+
+    --inverse-accordion-icon-circle-active-color:        var(--inverse-global-primary-color);
+
 }
 
 .hook-inverse() {
+
+    //
+    // Style modifier base
+    //
+
+    :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-title { color: var(--inverse-accordion-title-color); }
+
+    :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-icon { color: var(--inverse-accordion-icon-color); }
+
+    //
+    // Disabled
+    //
+
+    .uk-accordion-item-disabled .uk-accordion-title { color: var(--inverse-accordion-disabled-title-color); }
+
+    .uk-accordion-item-disabled .uk-accordion-icon { color: var(--inverse-accordion-disabled-icon-color); }
+
+    //
+    // Style: default
+    //
 
     .uk-accordion-default > * {
         .hook-inverse-accordion-default-item();
@@ -163,7 +450,6 @@
     }
 
     .uk-accordion-default .uk-accordion-title {
-        color: var(--inverse-accordion-default-title-color);
         .hook-inverse-accordion-default-title();
     }
 
@@ -184,6 +470,84 @@
         .hook-inverse-accordion-default-content();
     }
 
+    //
+    // Style: pill
+    //
+
+    .uk-accordion-pill > * {
+        .hook-inverse-accordion-pill-item();
+    }
+
+    .uk-accordion-pill > .uk-open {
+        .hook-inverse-accordion-pill-item-active();
+    }
+
+    .uk-accordion-pill .uk-accordion-title {
+        background-color: var(--inverse-accordion-pill-title-background);
+        .hook-inverse-accordion-pill-title();
+    }
+
+    .uk-accordion-pill .uk-accordion-title:hover {
+        background-color: var(--inverse-accordion-pill-title-hover-background);
+        .hook-inverse-accordion-pill-title-hover();
+    }
+
+    .uk-accordion-pill .uk-accordion-title:active {
+        .hook-inverse-accordion-pill-title-active();
+    }
+
+    .uk-accordion-pill .uk-accordion-icon {
+        color: var(--inverse-accordion-pill-icon-color);
+        .hook-inverse-accordion-pill-icon();
+    }
+
+    .uk-accordion-pill .uk-accordion-content {
+        .hook-inverse-accordion-pill-content();
+    }
+
+    //
+    // Style: line
+    //
+
+    .uk-accordion-line > * {
+        .hook-inverse-accordion-line-item();
+    }
+
+    .uk-accordion-line > *:not(:last-child) { border-bottom-color: var(--inverse-accordion-line-border-color); }
+
+    .uk-accordion-line > .uk-open {
+        .hook-inverse-accordion-line-item-active();
+    }
+
+    .uk-accordion-line .uk-accordion-title {
+        .hook-inverse-accordion-line-title();
+    }
+
+    .uk-accordion-line .uk-accordion-title:hover {
+        .hook-inverse-accordion-line-title-hover();
+    }
+
+    .uk-accordion-line .uk-accordion-title:active {
+        .hook-inverse-accordion-line-title-active();
+    }
+
+    .uk-accordion-line .uk-accordion-icon {
+        color: var(--inverse-accordion-line-icon-color);
+        .hook-inverse-accordion-line-icon();
+    }
+
+    .uk-accordion-line .uk-accordion-content {
+        .hook-inverse-accordion-line-content();
+    }
+
+    //
+    // Icon
+    //
+
+    [aria-expanded="true"] .uk-accordion-icon svg > .circle { color: var(--inverse-accordion-icon-circle-active-color); }
+
+    [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]) { stroke: var(--inverse-accordion-icon-circle-active-color); }
+
 }
 
 .hook-inverse-accordion-default-item() {}
@@ -193,3 +557,17 @@
 .hook-inverse-accordion-default-title-active() {}
 .hook-inverse-accordion-default-icon() {}
 .hook-inverse-accordion-default-content() {}
+.hook-inverse-accordion-pill-item() {}
+.hook-inverse-accordion-pill-item-active() {}
+.hook-inverse-accordion-pill-title() {}
+.hook-inverse-accordion-pill-title-hover() {}
+.hook-inverse-accordion-pill-title-active() {}
+.hook-inverse-accordion-pill-icon() {}
+.hook-inverse-accordion-pill-content() {}
+.hook-inverse-accordion-line-item() {}
+.hook-inverse-accordion-line-item-active() {}
+.hook-inverse-accordion-line-title() {}
+.hook-inverse-accordion-line-title-hover() {}
+.hook-inverse-accordion-line-title-active() {}
+.hook-inverse-accordion-line-icon() {}
+.hook-inverse-accordion-line-content() {}

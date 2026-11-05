@@ -9,12 +9,41 @@
 
 .hook-accordion-variables() {
 
-    //
-    // New
-    //
+    // --accordion-title-gap:                           15px;
+    // --accordion-title-font-size:                     var(--global-medium-font-size);
+    // --accordion-title-line-height:                   1.4;
+    // --accordion-title-color:                         var(--global-color-emphasis);
 
-    --accordion-default-icon-color:                 var(--global-color);
-  
+    // --accordion-icon-color:                          var(--global-color);
+
+    // --accordion-disabled-title-color:                var(--global-color-muted);
+    // --accordion-disabled-icon-color:                 var(--global-color-muted);
+
+    // --accordion-default-item-margin-top:             var(--global-margin);
+    // --accordion-default-title-hover-color:           var(--global-color);
+    // --accordion-default-content-margin-top:          var(--global-margin);
+
+    // --accordion-pill-title-line-height:              1;
+    // --accordion-pill-title-background:               var(--global-default-color);
+    // --accordion-pill-title-hover-background:         var(--global-muted-color);
+
+    // --accordion-pill-title-border-radius:            var(--global-border-radius-default);
+    // --accordion-pill-title-padding-vertical:         var(--global-xsmall-gutter);
+    // --accordion-pill-title-padding-horizontal:       var(--global-small-gutter);
+    // --accordion-pill-content-margin-top:             var(--global-xsmall-gutter);
+    // --accordion-pill-content-padding:                var(--global-small-gutter);
+
+    // --accordion-line-title-line-height:              var(--accordion-title-line-height);
+    // --accordion-line-border-color:                   var(--global-border);
+    // --accordion-line-border-width:                   var(--global-border-width);
+
+    // --accordion-line-title-padding-vertical:         var(--global-small-gutter);
+    // --accordion-line-content-padding:                var(--global-small-gutter);
+
+    // --accordion-icon-circle-active-color:            var(--global-primary-color);
+    // --accordion-icon-circle-opacity:                 var(--global-icon-tertiary-color-opacity);
+    // --accordion-icon-circle-active-opacity:          1;
+
 }
 
 
@@ -24,7 +53,7 @@
 .hook-accordion() {}
 
 
-/* Default modifier
+/* Style: default
  ========================================================================== */
 
 /*
@@ -49,13 +78,81 @@
  * Icon
  */
 
-.hook-accordion-default-icon() { color: var(--accordion-default-icon-color); }
+.hook-accordion-default-icon() {}
 
 /*
  * Content
  */
 
 .hook-accordion-default-content() {}
+
+
+/* Style: pill
+ ========================================================================== */
+
+/*
+ * Item
+ */
+
+.hook-accordion-pill-item() {}
+
+.hook-accordion-pill-item-active() {}
+
+/*
+ * Title
+ */
+
+.hook-accordion-pill-title() {}
+
+.hook-accordion-pill-title-hover() {}
+
+.hook-accordion-pill-title-active() {}
+
+/*
+ * Icon
+ */
+
+.hook-accordion-pill-icon() {}
+
+/*
+ * Content
+ */
+
+.hook-accordion-pill-content() {}
+
+
+/* Style: line
+ ========================================================================== */
+
+/*
+ * Item
+ */
+
+.hook-accordion-line-item() {}
+
+.hook-accordion-line-item-active() {}
+
+/*
+ * Title
+ */
+
+.hook-accordion-line-title() {}
+
+.hook-accordion-line-title-hover() {}
+
+.hook-accordion-line-title-active() {}
+
+/*
+ * Icon
+ */
+
+.hook-accordion-line-icon() {}
+
+/*
+ * Content
+ */
+
+.hook-accordion-line-content() {}
 
 
 // Miscellaneous
@@ -69,15 +166,45 @@
 
 .hook-accordion-variables() {
 
-    --inverse-accordion-default-icon-color:         var(--inverse-global-color);
-    
+    // --inverse-accordion-title-color:                     var(--inverse-global-color-emphasis);
+    // --inverse-accordion-icon-color:                      var(--inverse-global-color);
+
+    // --inverse-accordion-disabled-title-color:            var(--inverse-global-color-muted);
+    // --inverse-accordion-disabled-icon-color:             var(--inverse-global-color-muted);
+
+    // --inverse-accordion-default-title-hover-color:       var(--inverse-global-color);
+
+    // --inverse-accordion-pill-title-background:           var(--inverse-global-default-color);
+    // --inverse-accordion-pill-title-hover-background:     var(--inverse-global-muted-color);
+    // --inverse-accordion-pill-icon-color:                 var(--inverse-accordion-icon-color);
+
+    // --inverse-accordion-line-icon-color:                 var(--inverse-accordion-icon-color);
+    // --inverse-accordion-line-border-color:               var(--inverse-global-border);
+
+    // --inverse-accordion-icon-circle-active-color:        var(--inverse-global-primary-color);
+
 }
 
 .hook-inverse-accordion-default-item() {}
 .hook-inverse-accordion-default-item-active() {}
-
 .hook-inverse-accordion-default-title() {}
 .hook-inverse-accordion-default-title-hover() {}
 .hook-inverse-accordion-default-title-active() {}
-.hook-inverse-accordion-default-icon() { color: var(--inverse-accordion-default-icon-color); }
+.hook-inverse-accordion-default-icon() {}
 .hook-inverse-accordion-default-content() {}
+
+.hook-inverse-accordion-pill-item() {}
+.hook-inverse-accordion-pill-item-active() {}
+.hook-inverse-accordion-pill-title() {}
+.hook-inverse-accordion-pill-title-hover() {}
+.hook-inverse-accordion-pill-title-active() {}
+.hook-inverse-accordion-pill-icon() {}
+.hook-inverse-accordion-pill-content() {}
+
+.hook-inverse-accordion-line-item() {}
+.hook-inverse-accordion-line-item-active() {}
+.hook-inverse-accordion-line-title() {}
+.hook-inverse-accordion-line-title-hover() {}
+.hook-inverse-accordion-line-title-active() {}
+.hook-inverse-accordion-line-icon() {}
+.hook-inverse-accordion-line-content() {}
