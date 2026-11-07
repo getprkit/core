@@ -1,4 +1,4 @@
-/*! UIkit 3.25.28 | https://www.getuikit.com | (c) 2014 - 2026 YOOtheme | MIT License */
+/*! UIkit 1.0.0-beta.1 | https://www.getuikit.com | (c) 2014 - 2026 YOOtheme | MIT License */
 @layer variables;
 @layer variables {
   :root {
@@ -17,15 +17,15 @@
     /* Desktop */
     --breakpoint-xlarge: 1600px;
     /* Large Screens */
-    --breakpoint-xsmall-max: calc(var(--breakpoint-small) - 1);
-    --breakpoint-small-max: calc(var(--breakpoint-medium) - 1);
-    --breakpoint-medium-max: calc(var(--breakpoint-large) - 1);
-    --breakpoint-large-max: calc(var(--breakpoint-xlarge) - 1);
+    --breakpoint-xsmall-max: calc(var(--breakpoint-small) - 1px);
+    --breakpoint-small-max: calc(var(--breakpoint-medium) - 1px);
+    --breakpoint-medium-max: calc(var(--breakpoint-large) - 1px);
+    --breakpoint-large-max: calc(var(--breakpoint-xlarge) - 1px);
     /* Global variables
         ========================================================================== */
     /*
-        * Typography
-        */
+         * Typography
+         */
     --global-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --global-font-size: 16px;
     --global-line-height: 1.5;
@@ -35,32 +35,31 @@
     --global-medium-font-size: 1.25rem;
     --global-small-font-size: 0.875rem;
     /*
-        * Palettes
-        */
+         * Palettes
+         */
     --global-default-color: #fff;
     --global-muted-color-50: oklch(97.9% 0 0);
-    --global-muted-color-100: oklch(94% 0 0);
-    --global-muted-color-150: oklch(92.2% 0 0);
-    --global-muted-color-200: oklch(80.2% 0 0);
-    --global-muted-color-300: oklch(68.3% 0 0);
-    --global-muted-color-400: oklch(59.7% 0 0);
+    --global-muted-color-100: oklch(93.8% 0 0);
+    --global-muted-color-150: oklch(91% 0 0);
+    --global-muted-color-200: oklch(88% 0 0);
+    --global-muted-color-300: oklch(83.5% 0 0);
+    --global-muted-color-400: oklch(68.3% 0 0);
     --global-muted-color-500: oklch(51% 0 0);
     --global-muted-color-600: oklch(41.5% 0 0);
     --global-muted-color-700: oklch(32.1% 0 0);
-    --global-muted-color-750: oklch(29.9% 0 0);
     --global-muted-color-800: oklch(27.6% 0 0);
     --global-muted-color-850: oklch(25% 0 0);
-    --global-muted-color-900: oklch(22.4% 0 0);
+    --global-muted-color-900: oklch(20.4% 0 0);
     --global-muted-color-950: oklch(16.5% 0 0);
-    --global-muted-color-default: var(--global-muted-color-50);
+    --global-muted-color: var(--global-muted-color-50);
     --global-muted-color-soft: var(--global-muted-color-100);
     --global-muted-color-softer: var(--global-muted-color-150);
-    --global-primary-color-50: oklch(97.8% 0.0104 248.2);
-    --global-primary-color-100: oklch(92.9% 0.031 248.2);
-    --global-primary-color-200: oklch(85.3% 0.069 249.5);
-    --global-primary-color-300: oklch(77.6% 0.106 250.8);
-    --global-primary-color-400: oklch(69.9% 0.144 252.1);
-    --global-primary-color-450: oklch(66.1% 0.163 252.8);
+    --global-primary-color-50: oklch(98.4% 0.008 248.2);
+    --global-primary-color-100: oklch(95.6% 0.022 248.5);
+    --global-primary-color-200: oklch(88.8% 0.06 249.3);
+    --global-primary-color-300: oklch(83% 0.095 250.5);
+    --global-primary-color-400: oklch(76% 0.138 252);
+    --global-primary-color-450: oklch(69.1% 0.16 252.8);
     --global-primary-color-500: oklch(62.27% 0.1814 253.48);
     --global-primary-color-550: oklch(58.4% 0.177 254.1);
     --global-primary-color-600: oklch(54.6% 0.172 254.8);
@@ -104,97 +103,104 @@
     --global-info-color-soft: var(--global-info-color-550);
     --global-info-color-softer: var(--global-info-color-600);
     --global-success-color-50: oklch(98.4% 0.01 174);
-    --global-success-color-100: oklch(97.6% 0.0161 172.7);
-    --global-success-color-200: oklch(90.7% 0.062 169.3);
-    --global-success-color-300: oklch(83.8% 0.109 165.8);
-    --global-success-color-350: oklch(80.4% 0.132 164.1);
-    --global-success-color-400: oklch(76.94% 0.1553 162.44);
-    --global-success-color-450: oklch(72.8% 0.15 161.4);
-    --global-success-color-500: oklch(68.6% 0.144 160.4);
-    --global-success-color-600: oklch(60.3% 0.133 158.4);
-    --global-success-color-700: oklch(52% 0.119 156.4);
-    --global-success-color-800: oklch(43.7% 0.105 154.4);
-    --global-success-color-900: oklch(35.4% 0.089 152.4);
-    --global-success-color-950: oklch(31.3% 0.083 150.4);
-    --global-success-color: var(--global-success-color-400);
-    --global-success-color-soft: var(--global-success-color-450);
-    --global-success-color-softer: var(--global-success-color-500);
-    --global-warning-color-50: oklch(98.4% 0.01 66);
-    --global-warning-color-100: oklch(97.8% 0.0144 64.35);
-    --global-warning-color-200: oklch(91.3% 0.055 61.8);
-    --global-warning-color-300: oklch(84.8% 0.096 59.3);
-    --global-warning-color-350: oklch(81.6% 0.117 58.1);
-    --global-warning-color-400: oklch(78.32% 0.1372 56.83);
-    --global-warning-color-450: oklch(74.5% 0.135 55.9);
-    --global-warning-color-500: oklch(70.7% 0.132 55);
-    --global-warning-color-600: oklch(63.1% 0.126 53.2);
-    --global-warning-color-700: oklch(55.5% 0.121 51.4);
-    --global-warning-color-800: oklch(47.9% 0.115 49.6);
-    --global-warning-color-900: oklch(40.3% 0.106 47.8);
-    --global-warning-color-950: oklch(36.5% 0.098 46.9);
-    --global-warning-color: var(--global-warning-color-400);
-    --global-warning-color-soft: var(--global-warning-color-450);
-    --global-warning-color-softer: var(--global-warning-color-500);
+    --global-success-color-100: oklch(95.3% 0.028 172.7);
+    --global-success-color-200: oklch(89.2% 0.068 170.2);
+    --global-success-color-300: oklch(85% 0.093 168.3);
+    --global-success-color-400: oklch(81.3% 0.117 166.3);
+    --global-success-color-450: oklch(76.9% 0.134 164.4);
+    --global-success-color-500: oklch(72.5% 0.15 162.4);
+    --global-success-color-550: oklch(67.5% 0.128 163);
+    --global-success-color-600: oklch(62.5% 0.118 163.7);
+    --global-success-color-700: oklch(52.7% 0.098 165);
+    --global-success-color-800: oklch(42.7% 0.078 166.4);
+    --global-success-color-900: oklch(32.7% 0.059 167.7);
+    --global-success-color-950: oklch(27.8% 0.049 169);
+    --global-success-color: var(--global-success-color-500);
+    --global-success-color-soft: var(--global-success-color-550);
+    --global-success-color-softer: var(--global-success-color-600);
+    --global-warning-color-50: oklch(98.5% 0.022 89);
+    --global-warning-color-100: oklch(95.5% 0.031 85);
+    --global-warning-color-200: oklch(91.4% 0.074 79.4);
+    --global-warning-color-300: oklch(88.1% 0.1 74.8);
+    --global-warning-color-400: oklch(84.8% 0.118 69.8);
+    --global-warning-color-450: oklch(81.6% 0.135 64.3);
+    --global-warning-color-500: oklch(78.3% 0.137 56.8);
+    --global-warning-color-550: oklch(72.6% 0.142 58.4);
+    --global-warning-color-600: oklch(67.1% 0.144 59.9);
+    --global-warning-color-700: oklch(55.9% 0.128 63);
+    --global-warning-color-800: oklch(44.7% 0.099 66.2);
+    --global-warning-color-900: oklch(33.4% 0.073 69.3);
+    --global-warning-color-950: oklch(27.8% 0.06 70.8);
+    --global-warning-color: var(--global-warning-color-500);
+    --global-warning-color-soft: var(--global-warning-color-550);
+    --global-warning-color-softer: var(--global-warning-color-600);
     --global-danger-color-50: oklch(98.4% 0.007 5);
-    --global-danger-color-100: oklch(97.5% 0.011 3.5);
-    --global-danger-color-200: oklch(89.6% 0.055 6);
-    --global-danger-color-300: oklch(81.7% 0.103 8.4);
-    --global-danger-color-400: oklch(73.7% 0.149 10.9);
-    --global-danger-color-450: oklch(69.7% 0.172 12.1);
+    --global-danger-color-100: oklch(95.5% 0.027 3.5);
+    --global-danger-color-200: oklch(88.4% 0.064 5.8);
+    --global-danger-color-300: oklch(82.8% 0.099 7.7);
+    --global-danger-color-400: oklch(77.1% 0.139 9.6);
+    --global-danger-color-450: oklch(71.4% 0.174 11.5);
     --global-danger-color-500: oklch(65.79% 0.1955 13.34);
-    --global-danger-color-550: oklch(63.3% 0.212 16.3);
-    --global-danger-color-600: oklch(60.74% 0.2292 19.23);
-    --global-danger-color-700: oklch(54.1% 0.207 20);
-    --global-danger-color-800: oklch(47% 0.18 19);
-    --global-danger-color-900: oklch(39.5% 0.151 17.5);
-    --global-danger-color-950: oklch(35.6% 0.137 16.5);
+    --global-danger-color-550: oklch(58.4% 0.187 14.5);
+    --global-danger-color-600: oklch(54.6% 0.18 15.1);
+    --global-danger-color-700: oklch(47% 0.164 16.3);
+    --global-danger-color-800: oklch(39.3% 0.146 17.5);
+    --global-danger-color-900: oklch(31.6% 0.127 18.8);
+    --global-danger-color-950: oklch(27.8% 0.112 20);
     --global-danger-color: var(--global-danger-color-500);
     --global-danger-color-soft: var(--global-danger-color-550);
     --global-danger-color-softer: var(--global-danger-color-600);
     /*
-        * Colors
-        */
+         * Colors
+         */
     --global-color: var(--global-muted-color-500);
-    --global-emphasis-color: var(--global-muted-color-700);
-    --global-muted-color: var(--global-muted-color-300);
+    --global-color-emphasis: var(--global-muted-color-700);
+    --global-color-muted: var(--global-muted-color-400);
     --global-link-color: var(--global-primary-color);
     --global-link-hover-color: var(--global-primary-color-600);
-    --global-inverse-color: #fff;
+    --global-color-inverse: var(--global-muted-color-50);
     /*
-        * Borders
-        */
+         * Borders
+         */
     --global-border-width: 1px;
     --global-border: var(--global-muted-color-150);
+    --global-border-radius: 8px;
+    --global-border-radius-pill: 500px;
+    --global-border-radius-circle: 50%;
+    --global-border-radius-default: 8px;
     /*
-        * Box-Shadows
-        */
+         * Box-Shadows
+         */
     --global-small-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     --global-medium-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     --global-large-box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
     --global-xlarge-box-shadow: 0 28px 50px rgba(0, 0, 0, 0.16);
     /*
-        * Spacings
-        */
+         * Spacings
+         */
     /* Used in margin, section, list */
     --global-margin: 20px;
+    --global-xsmall-margin: 5px;
     --global-small-margin: 10px;
     --global-medium-margin: 40px;
     --global-large-margin: 70px;
     --global-xlarge-margin: 140px;
     /* Used in grid, column, container, align, card, padding */
     --global-gutter: 30px;
+    --global-xxsmall-gutter: 5px;
+    --global-xsmall-gutter: 12px;
     --global-small-gutter: 15px;
     --global-medium-gutter: 40px;
     --global-large-gutter: 70px;
     /*
-        * Controls
-        */
+         * Controls
+         */
     --global-control-height: 40px;
     --global-control-small-height: 30px;
     --global-control-large-height: 55px;
     /*
-        * Z-index
-        */
+         * Z-index
+         */
     --global-z-index: 1000;
     /* Base variables
         ========================================================================== */
@@ -222,7 +228,7 @@
     --base-margin-vertical: var(--global-margin);
     --base-heading-font-family: var(--global-font-family);
     --base-heading-font-weight: normal;
-    --base-heading-color: var(--global-emphasis-color);
+    --base-heading-color: var(--global-color-emphasis);
     --base-heading-text-transform: none;
     --base-heading-margin-top: var(--global-medium-margin);
     --base-h1-font-size-m: var(--global-2xlarge-font-size);
@@ -256,29 +262,29 @@
     --base-pre-color: var(--global-color);
     --base-focus-outline-width: 2px;
     --base-focus-outline-style: dotted;
-    --base-focus-outline: var(--global-emphasis-color);
+    --base-focus-outline: var(--global-color-emphasis);
     --base-focus-outline-offset: 1px;
     --base-selection-background: #39f;
-    --base-selection-color: var(--global-inverse-color);
+    --base-selection-color: var(--global-color-inverse);
     --inverse-base-color: var(--inverse-global-color);
-    --inverse-base-link-color: var(--inverse-global-emphasis-color);
-    --inverse-base-link-hover-color: var(--inverse-global-emphasis-color);
+    --inverse-base-link-color: var(--inverse-global-color-emphasis);
+    --inverse-base-link-hover-color: var(--inverse-global-color-emphasis);
     --inverse-base-code-color: var(--inverse-global-color);
-    --inverse-base-em-color: var(--inverse-global-emphasis-color);
-    --inverse-base-heading-color: var(--inverse-global-emphasis-color);
+    --inverse-base-em-color: var(--inverse-global-color-emphasis);
+    --inverse-base-heading-color: var(--inverse-global-color-emphasis);
     --inverse-base-hr-border: var(--inverse-global-border);
-    --inverse-base-focus-outline: var(--inverse-global-emphasis-color);
+    --inverse-base-focus-outline: var(--inverse-global-color-emphasis);
     --base-code-padding-horizontal: 6px;
     --base-code-padding-vertical: 2px;
-    --base-code-background: var(--global-muted-color-default);
-    --base-blockquote-color: var(--global-emphasis-color);
+    --base-code-background: var(--global-muted-color);
+    --base-blockquote-color: var(--global-color-emphasis);
     --base-blockquote-footer-color: var(--global-color);
     --base-pre-padding: 10px;
     --base-pre-background: var(--global-default-color);
     --base-pre-border-width: var(--global-border-width);
     --base-pre-border: var(--global-border);
     --base-pre-border-radius: 3px;
-    --inverse-base-blockquote-color: var(--inverse-global-emphasis-color);
+    --inverse-base-blockquote-color: var(--inverse-global-color-emphasis);
     --inverse-base-blockquote-footer-color: var(--inverse-global-color);
     --inverse-base-pre-background: var(--inverse-global-default-color);
     --inverse-base-pre-border: var(--inverse-global-border);
@@ -286,20 +292,20 @@
     /* Global Component variables
         ========================================================================== */
     /*
-        * Link
-        */
-    --link-muted-color: var(--global-muted-color);
+         * Link
+         */
+    --link-muted-color: var(--global-color-muted);
     --link-muted-hover-color: var(--global-color);
-    --link-text-hover-color: var(--global-muted-color);
+    --link-text-hover-color: var(--global-color-muted);
     --link-heading-hover-color: var(--global-primary-color);
     --link-heading-hover-text-decoration: none;
-    --inverse-link-muted-color: var(--inverse-global-muted-color);
+    --inverse-link-muted-color: var(--inverse-global-color-muted);
     --inverse-link-muted-hover-color: var(--inverse-global-color);
-    --inverse-link-text-hover-color: var(--inverse-global-muted-color);
+    --inverse-link-text-hover-color: var(--inverse-global-color-muted);
     --inverse-link-heading-hover-color: var(--inverse-global-emphasis-background);
     /*
-        * Heading
-        */
+         * Heading
+         */
     --heading-small-font-size: calc(var(--heading-small-font-size-m) * 0.8);
     --heading-medium-font-size: calc(var(--heading-medium-font-size-m) * 0.825);
     --heading-large-font-size: calc(var(--heading-large-font-size-m) * 0.85);
@@ -341,8 +347,8 @@
     --inverse-heading-bullet-border: var(--inverse-global-border);
     --inverse-heading-line-border: var(--inverse-global-border);
     /*
-        * Form range
-        */
+         * Form range
+         */
     --form-range-track-height: 3px;
     --form-range-track-background: var(--global-muted-color-soft);
     --form-range-track-focus-background: var(--global-muted-color-softer);
@@ -360,20 +366,20 @@
     --inverse-form-range-thumb-background: var(--inverse-global-default-color);
     --inverse-form-range-thumb-border: var(--global-muted-color-800);
     /*
-        * Form
-        */
+         * Form
+         */
     --form-height: var(--global-control-height);
     --form-line-height: var(--form-height);
     --form-padding-horizontal: 10px;
     --form-multi-line-padding-horizontal: var(--form-padding-horizontal);
     --form-multi-line-padding-vertical: round(up, calc(var(--form-multi-line-padding-horizontal) * 0.6), 1px);
-    --form-background: var(--global-muted-color-default);
+    --form-background: var(--global-muted-color);
     --form-color: var(--global-color);
     --form-focus-background: var(--global-muted-color-soft);
     --form-focus-color: var(--global-color);
-    --form-disabled-background: var(--global-muted-color-default);
-    --form-disabled-color: var(--global-muted-color);
-    --form-placeholder-color: var(--global-muted-color);
+    --form-disabled-background: var(--global-muted-color);
+    --form-disabled-color: var(--global-color-muted);
+    --form-placeholder-color: var(--global-color-muted);
     --form-danger-color: var(--global-danger-color);
     --form-success-color: var(--global-success-color);
     --form-width-xsmall: 50px;
@@ -383,18 +389,18 @@
     --form-select-padding-inline-end: 20px;
     --form-select-icon-color: var(--global-color);
     --form-select-option-color: var(--global-color);
-    --form-select-disabled-icon-color: var(--global-muted-color);
+    --form-select-disabled-icon-color: var(--global-color-muted);
     --form-datalist-padding-inline-end: 20px;
     --form-datalist-icon-color: var(--global-color);
     --form-radio-size: 16px;
     --form-radio-margin-top: -4px;
-    --form-radio-background: var(--global-muted-color-default);
+    --form-radio-background: var(--global-muted-color);
     --form-radio-focus-background: var(--global-muted-color-soft);
     --form-radio-checked-background: var(--global-primary-color);
-    --form-radio-checked-icon-color: var(--global-inverse-color);
+    --form-radio-checked-icon-color: var(--global-color-inverse);
     --form-radio-checked-focus-background: var(--global-primary-color-softer);
-    --form-radio-disabled-background: var(--global-muted-color-default);
-    --form-radio-disabled-icon-color: var(--global-muted-color);
+    --form-radio-disabled-background: var(--global-muted-color);
+    --form-radio-disabled-icon-color: var(--global-color-muted);
     --form-small-font-size: var(--global-small-font-size);
     --form-small-height: var(--global-control-small-height);
     --form-small-padding-horizontal: 8px;
@@ -417,32 +423,32 @@
     --form-horizontal-controls-margin-inline-start: 215px;
     --form-horizontal-controls-text-padding-top: 7px;
     --form-icon-width: var(--form-height);
-    --form-icon-color: var(--global-muted-color);
+    --form-icon-color: var(--global-color-muted);
     --form-icon-hover-color: var(--global-color);
     --internal-form-select-image: url("../../src/images/backgrounds/form-select.svg");
     --internal-form-datalist-image: url("../../src/images/backgrounds/form-datalist.svg");
     --internal-form-radio-image: url("../../src/images/backgrounds/form-radio.svg");
     --internal-form-checkbox-image: url("../../src/images/backgrounds/form-checkbox.svg");
     --internal-form-checkbox-indeterminate-image: url("../../src/images/backgrounds/form-checkbox-indeterminate.svg");
-    --inverse-form-background: var(--inverse-global-muted-color-default);
+    --inverse-form-background: var(--inverse-global-muted-color);
     --inverse-form-color: var(--inverse-global-color);
     --inverse-form-focus-background: var(--inverse-global-muted-color-soft);
     --inverse-form-focus-color: var(--inverse-global-color);
-    --inverse-form-placeholder-color: var(--inverse-global-muted-color);
-    --inverse-form-disabled-background: var(--inverse-global-muted-color-default);
-    --inverse-form-disabled-color: var(--inverse-global-muted-color);
+    --inverse-form-placeholder-color: var(--inverse-global-color-muted);
+    --inverse-form-disabled-background: var(--inverse-global-muted-color);
+    --inverse-form-disabled-color: var(--inverse-global-color-muted);
     --inverse-form-danger-color: var(--global-danger-color);
     --inverse-form-success-color: var(--global-success-color);
     --inverse-form-select-icon-color: var(--inverse-global-color);
     --inverse-form-datalist-icon-color: var(--inverse-global-color);
-    --inverse-form-radio-background: var(--inverse-global-muted-color-default);
+    --inverse-form-radio-background: var(--inverse-global-muted-color);
     --inverse-form-radio-focus-background: var(--inverse-global-muted-color-soft);
     --inverse-form-radio-checked-background: var(--inverse-global-primary-color);
-    --inverse-form-radio-checked-icon-color: var(--inverse-global-emphasis-color);
+    --inverse-form-radio-checked-icon-color: var(--inverse-global-color-emphasis);
     --inverse-form-radio-checked-focus-background: var(--inverse-global-primary-softer);
-    --inverse-form-radio-disabled-background: var(--inverse-global-muted-color-default);
-    --inverse-form-radio-disabled-icon-color: var(--inverse-global-muted-color);
-    --inverse-form-icon-color: var(--inverse-global-muted-color);
+    --inverse-form-radio-disabled-background: var(--inverse-global-muted-color);
+    --inverse-form-radio-disabled-icon-color: var(--inverse-global-color-muted);
+    --inverse-form-icon-color: var(--inverse-global-color-muted);
     --inverse-form-icon-hover-color: var(--inverse-global-color);
     --form-line-height: calc(var(--form-height) - (2*var(--form-border-width)));
     --form-background: var(--global-default-color);
@@ -460,11 +466,11 @@
     --form-blank-focus-border: var(--global-border);
     --form-blank-focus-border-style: solid;
     --form-radio-border-width: var(--global-border-width);
-    --form-radio-border: var(--global-muted-color-default);
+    --form-radio-border: var(--global-muted-color);
     --form-radio-focus-border: var(--global-primary-color);
     --form-radio-checked-border: transparent;
     --form-radio-disabled-border: var(--global-border);
-    --form-label-color: var(--global-emphasis-color);
+    --form-label-color: var(--global-color-emphasis);
     --form-label-font-size: var(--global-small-font-size);
     --inverse-form-background: var(--inverse-global-default-color);
     --inverse-form-focus-background: var(--inverse-global-default-color);
@@ -477,10 +483,28 @@
     --inverse-form-radio-focus-border: var(--global-primary-color);
     --inverse-form-radio-checked-border: transparent;
     --inverse-form-radio-disabled-border: var(--inverse-global-border);
-    --inverse-form-label-color: var(--inverse-global-emphasis-color);
+    --inverse-form-label-color: var(--inverse-global-color-emphasis);
     /*
-        * Animation
-        */
+         * Grid
+         */
+    --grid-gutter-horizontal: var(--global-gutter);
+    --grid-gutter-vertical: var(--grid-gutter-horizontal);
+    --grid-gutter-horizontal-l: var(--global-medium-gutter);
+    --grid-gutter-vertical-l: var(--grid-gutter-horizontal-l);
+    --grid-small-gutter-horizontal: var(--global-small-gutter);
+    --grid-small-gutter-vertical: var(--grid-small-gutter-horizontal);
+    --grid-medium-gutter-horizontal: var(--global-gutter);
+    --grid-medium-gutter-vertical: var(--grid-medium-gutter-horizontal);
+    --grid-large-gutter-horizontal: var(--global-medium-gutter);
+    --grid-large-gutter-vertical: var(--grid-large-gutter-horizontal);
+    --grid-large-gutter-horizontal-l: var(--global-large-gutter);
+    --grid-large-gutter-vertical-l: var(--grid-large-gutter-horizontal-l);
+    --grid-divider-border-width: var(--global-border-width);
+    --grid-divider-border: var(--global-border);
+    --inverse-grid-divider-border: var(--inverse-global-border);
+    /*
+         * Animation
+         */
     --animation-duration: 0.5s;
     --animation-fade-duration: 0.8s;
     --animation-stroke-duration: 2s;
@@ -489,34 +513,34 @@
     --animation-slide-small-translate: 10px;
     --animation-slide-medium-translate: 50px;
     /*
-        * Width
-        */
+         * Width
+         */
     --width-small-width: 150px;
     --width-medium-width: 300px;
     --width-large-width: 450px;
     --width-xlarge-width: 600px;
     --width-2xlarge-width: 750px;
     /*
-        * Height
-        */
+         * Height
+         */
     --height-small-height: 150px;
     --height-medium-height: 300px;
     --height-large-height: 450px;
     /*
-        * Text
-        */
+         * Text
+         */
     --text-lead-font-size: var(--global-large-font-size);
     --text-lead-line-height: 1.5;
-    --text-lead-color: var(--global-emphasis-color);
+    --text-lead-color: var(--global-color-emphasis);
     --text-meta-font-size: var(--global-small-font-size);
     --text-meta-line-height: 1.4;
-    --text-meta-color: var(--global-muted-color);
+    --text-meta-color: var(--global-color-muted);
     --text-small-font-size: var(--global-small-font-size);
     --text-small-line-height: 1.5;
     --text-large-font-size: var(--global-large-font-size);
     --text-large-line-height: 1.5;
-    --text-muted-color: var(--global-muted-color);
-    --text-emphasis-color: var(--global-emphasis-color);
+    --text-muted-color: var(--global-color-muted);
+    --text-emphasis-color: var(--global-color-emphasis);
     --text-primary-color: var(--global-primary-color);
     --text-secondary-color: var(--global-secondary-color);
     --text-success-color: var(--global-success-color);
@@ -524,29 +548,29 @@
     --text-danger-color: var(--global-danger-color);
     --text-background-color: var(--global-primary-color);
     --text-stroke-text-stroke: calc(1.4px + 0.002em);
-    --inverse-text-lead-color: var(--inverse-global-emphasis-color);
-    --inverse-text-meta-color: var(--inverse-global-muted-color);
-    --inverse-text-muted-color: var(--inverse-global-muted-color);
-    --inverse-text-emphasis-color: var(--inverse-global-emphasis-color);
+    --inverse-text-lead-color: var(--inverse-global-color-emphasis);
+    --inverse-text-meta-color: var(--inverse-global-color-muted);
+    --inverse-text-muted-color: var(--inverse-global-color-muted);
+    --inverse-text-emphasis-color: var(--inverse-global-color-emphasis);
     --inverse-text-primary-color: var(--inverse-global-primary-color);
-    --inverse-text-secondary-color: var(--inverse-global-emphasis-color);
+    --inverse-text-secondary-color: var(--inverse-global-color-emphasis);
     --text-meta-link-color: var(--text-meta-color);
     --text-meta-link-hover-color: var(--global-color);
     --internal-text-background-color-gradient: linear-gradient(calc(90deg * var(--uk-dir-sign)), var(--text-background-color) 0%, hsl(from var(--text-background-color) calc(h + 40) s l) 100%);
     --inverse-text-meta-link-color: var(--inverse-text-meta-color);
     --inverse-text-meta-link-hover-color: var(--inverse-global-color);
     /*
-        * Background
-        */
+         * Background
+         */
     --background-default-background: var(--global-default-color);
-    --background-muted-background: var(--global-muted-color-default);
+    --background-muted-background: var(--global-muted-color);
     --background-primary-background: var(--global-primary-color);
     --background-secondary-background: var(--global-secondary-color);
     --inverse-background-default-background: var(--inverse-global-default-color);
-    --inverse-background-muted-background: var(--inverse-global-muted-color-default);
+    --inverse-background-muted-background: var(--inverse-global-muted-color);
     /*
-        * Utility
-        */
+         * Utility
+         */
     --panel-scrollable-height: 170px;
     --panel-scrollable-padding: 10px;
     --panel-scrollable-border-width: var(--global-border-width);
@@ -564,16 +588,16 @@
     --dropcap-line-height: 1;
     --logo-font-size: var(--global-large-font-size);
     --logo-font-family: var(--global-font-family);
-    --logo-color: var(--global-emphasis-color);
-    --logo-hover-color: var(--global-emphasis-color);
+    --logo-color: var(--global-color-emphasis);
+    --logo-hover-color: var(--global-color-emphasis);
     --dragover-box-shadow: 0 0 20px rgba(100, 100, 100, 0.3);
     --box-shadow-bottom-background: #000;
-    --inverse-logo-color: var(--inverse-global-emphasis-color);
-    --inverse-logo-hover-color: var(--inverse-global-emphasis-color);
+    --inverse-logo-color: var(--inverse-global-color-emphasis);
+    --inverse-logo-hover-color: var(--inverse-global-color-emphasis);
     --inverse-dragover-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     /*
-        * Margin
-        */
+         * Margin
+         */
     --margin-margin: var(--global-margin);
     --margin-xsmall-margin: 5px;
     --margin-small-margin: var(--global-small-margin);
@@ -583,62 +607,56 @@
     --margin-xlarge-margin: var(--global-large-margin);
     --margin-xlarge-margin-l: var(--global-xlarge-margin);
     /*
-        * Padding
-        */
+         * Padding
+         */
     --padding-padding: var(--global-gutter);
     --padding-padding-l: var(--global-medium-gutter);
     --padding-small-padding: var(--global-small-gutter);
     --padding-large-padding: var(--global-medium-gutter);
     --padding-large-padding-l: var(--global-large-gutter);
     /*
-        * Position
-        */
+         * Position
+         */
     --position-small-margin: var(--global-small-gutter);
     --position-medium-margin: var(--global-gutter);
     --position-large-margin: var(--global-gutter);
     --position-large-margin-l: 50px;
     /*
-        * Transition
-        */
+         * Transition
+         */
     --transition-duration: 0.3s;
     --transition-scale: 1.03;
     --transition-slide-small-translate: 10px;
     --transition-slide-medium-translate: 50px;
     --transition-slow-duration: 0.7s;
     /*
-        * Inverse
-        */
-    --inverse-modal-background: rgba(0, 0, 0, 0.7);
-    --inverse-modal-dialog-background: var(--inverse-global-default-color);
-    --inverse-modal-header-background: var(--inverse-global-muted-color-default);
-    --inverse-modal-footer-background: var(--inverse-global-muted-color-default);
-    --inverse-modal-close-outside-color: var(--global-muted-color);
-    --inverse-modal-close-outside-hover-color: var(--inverse-global-inverse-color);
+         * Inverse
+         */
     --inverse-global-color-mode: light;
     /*
      * Palettes
      */
-    --inverse-global-default-color: var(--global-muted-color-900);
-    --inverse-global-muted-color-default: var(--global-muted-color-800);
-    --inverse-global-muted-color-soft: var(--global-muted-color-750);
-    --inverse-global-muted-color-softer: var(--global-muted-color-700);
+    --inverse-global-default-color: var(--global-muted-color-950);
+    --inverse-global-muted-color: var(--global-muted-color-900);
+    --inverse-global-muted-color-soft: var(--global-muted-color-850);
+    --inverse-global-muted-color-softer: var(--global-muted-color-800);
     --inverse-global-primary-color: var(--global-primary-color);
-    --inverse-global-primary-color-soft: var(--global-primary-color-550);
-    --inverse-global-primary-color-softer: var(--global-primary-color-600);
+    --inverse-global-primary-color-soft: var(--global-primary-color-450);
+    --inverse-global-primary-color-softer: var(--global-primary-color-400);
     --inverse-global-secondary-color: var(--global-secondary-color);
     --inverse-global-secondary-color-soft: var(--global-secondary-color-750);
     --inverse-global-secondary-color-softer: var(--global-secondary-color-700);
     /*
      * Colors
      */
-    --inverse-global-color: rgb(from var(--global-inverse-color) r g b / 0.7);
-    --inverse-global-emphasis-color: var(--global-inverse-color);
-    --inverse-global-muted-color: rgb(from var(--global-inverse-color) r g b / 0.5);
-    --inverse-global-inverse-color: var(--global-color);
+    --inverse-global-color: rgb(from var(--global-color-inverse) r g b / 0.7);
+    --inverse-global-color-emphasis: var(--global-color-inverse);
+    --inverse-global-color-muted: rgb(from var(--global-color-inverse) r g b / 0.5);
+    --inverse-global-color-inverse: var(--global-color);
     /*
      * Borders
      */
-    --inverse-global-border: rgb(from var(--global-inverse-color) r g b / 0.2);
+    --inverse-global-border: rgb(from var(--global-color-inverse) r g b / 0.2);
     /*
      * Box-Shadows
      */
@@ -646,12 +664,9 @@
     --inverse-global-medium-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.28);
     --inverse-global-large-box-shadow: 0 14px 25px rgba(0, 0, 0, 0.36);
     --inverse-global-xlarge-box-shadow: 0 28px 50px rgba(0, 0, 0, 0.36);
-    --inverse-global-default-color: var(--global-muted-color-950);
-    --inverse-global-default-color-soft: var(--global-muted-color-900);
-    --inverse-global-default-color-softer: var(--global-muted-color-850);
     /*
-        * Override and new variables
-        */
+         * Override and new variables
+         */
   }
   /* Component variables
     ========================================================================== */
@@ -686,8 +701,8 @@
     --list-margin-top: var(--global-small-margin);
     --list-padding-inline-start: 30px;
     --list-marker-height: calc(var(--global-line-height) * 1em);
-    --list-muted-color: var(--global-muted-color);
-    --list-emphasis-color: var(--global-emphasis-color);
+    --list-muted-color: var(--global-color-muted);
+    --list-emphasis-color: var(--global-color-emphasis);
     --list-primary-color: var(--global-primary-color);
     --list-secondary-color: var(--global-secondary-color);
     --list-bullet-icon-color: var(--global-color);
@@ -696,18 +711,18 @@
     --list-divider-border: var(--global-border);
     --list-striped-padding-vertical: var(--global-small-margin);
     --list-striped-padding-horizontal: var(--global-small-margin);
-    --list-striped-background: var(--global-muted-color-default);
+    --list-striped-background: var(--global-muted-color);
     --list-large-margin-top: var(--global-margin);
     --list-large-divider-margin-top: var(--global-margin);
     --list-large-striped-padding-vertical: var(--global-margin);
     --list-large-striped-padding-horizontal: var(--global-small-margin);
     --internal-list-bullet-image: url("../../src/images/backgrounds/list-bullet.svg");
-    --inverse-list-muted-color: var(--inverse-global-muted-color);
-    --inverse-list-emphasis-color: var(--inverse-global-emphasis-color);
+    --inverse-list-muted-color: var(--inverse-global-color-muted);
+    --inverse-list-emphasis-color: var(--inverse-global-color-emphasis);
     --inverse-list-primary-color: var(--inverse-global-primary-color);
     --inverse-list-secondary-color: var(--inverse-global-primary-color);
     --inverse-list-divider-border: var(--inverse-global-border);
-    --inverse-list-striped-background: var(--inverse-global-muted-color-default);
+    --inverse-list-striped-background: var(--inverse-global-muted-color);
     --inverse-list-bullet-icon-color: var(--inverse-global-color);
     --list-striped-border-width: var(--global-border-width);
     --list-striped-border: var(--global-border);
@@ -716,12 +731,12 @@
      * Description List
      */
   .uk-description-list {
-    --description-list-term-color: var(--global-emphasis-color);
+    --description-list-term-color: var(--global-color-emphasis);
     --description-list-term-margin-top: var(--global-margin);
     --description-list-divider-term-margin-top: var(--global-margin);
     --description-list-divider-term-border-width: var(--global-border-width);
     --description-list-divider-term-border: var(--global-border);
-    --inverse-description-list-term-color: var(--inverse-global-emphasis-color);
+    --inverse-description-list-term-color: var(--inverse-global-color-emphasis);
     --inverse-description-list-divider-term-border: var(--inverse-global-border);
     --description-list-term-font-size: var(--global-small-font-size);
     --description-list-term-font-weight: normal;
@@ -739,11 +754,11 @@
     --table-header-cell-color: var(--global-color);
     --table-footer-font-size: var(--global-small-font-size);
     --table-caption-font-size: var(--global-small-font-size);
-    --table-caption-color: var(--global-muted-color);
+    --table-caption-color: var(--global-color-muted);
     --table-row-active-background: #ffd;
     --table-divider-border-width: var(--global-border-width);
     --table-divider-border: var(--global-border);
-    --table-striped-row-background: var(--global-muted-color-default);
+    --table-striped-row-background: var(--global-muted-color);
     --table-hover-row-background: var(--table-row-active-background);
     --table-small-cell-padding-vertical: 10px;
     --table-small-cell-padding-horizontal: 12px;
@@ -751,48 +766,48 @@
     --table-large-cell-padding-horizontal: 12px;
     --table-expand-min-width: 150px;
     --inverse-table-header-cell-color: var(--inverse-global-color);
-    --inverse-table-caption-color: var(--inverse-global-muted-color);
+    --inverse-table-caption-color: var(--inverse-global-color-muted);
     --inverse-table-row-active-background: var(--inverse-global-muted-color-soft);
     --inverse-table-divider-border: var(--inverse-global-border);
-    --inverse-table-striped-row-background: var(--inverse-global-muted-color-default);
+    --inverse-table-striped-row-background: var(--inverse-global-muted-color);
     --inverse-table-hover-row-background: var(--inverse-table-row-active-background);
     --table-header-cell-font-size: var(--global-small-font-size);
     --table-header-cell-font-weight: normal;
-    --table-header-cell-color: var(--global-muted-color);
+    --table-header-cell-color: var(--global-color-muted);
     --table-striped-border-width: var(--global-border-width);
     --table-striped-border: var(--global-border);
-    --inverse-table-header-cell-color: var(--inverse-global-muted-color);
+    --inverse-table-header-cell-color: var(--inverse-global-color-muted);
   }
   /*
      * Icon
      */
   .uk-icon {
     --icon-image-size: 20px;
-    --icon-link-color: var(--global-muted-color);
+    --icon-link-color: var(--global-color-muted);
     --icon-link-hover-color: var(--global-color);
     --icon-link-active-color: var(--global-muted-color-600);
     --icon-button-size: 36px;
     --icon-button-border-radius: 500px;
-    --icon-button-background: var(--global-muted-color-default);
-    --icon-button-color: var(--global-muted-color);
+    --icon-button-background: var(--global-muted-color);
+    --icon-button-color: var(--global-color-muted);
     --icon-button-hover-background: var(--global-muted-color-soft);
     --icon-button-hover-color: var(--global-color);
     --icon-button-active-background: var(--global-muted-color-softer);
     --icon-button-active-color: var(--global-color);
     --icon-primary-color: currentColor;
-    --icon-overlay-color: rgb(from var(--global-emphasis-color) r g b / 0.6);
-    --icon-overlay-hover-color: var(--global-emphasis-color);
-    --inverse-icon-link-color: var(--inverse-global-muted-color);
+    --icon-overlay-color: rgb(from var(--global-color-emphasis) r g b / 0.6);
+    --icon-overlay-hover-color: var(--global-color-emphasis);
+    --inverse-icon-link-color: var(--inverse-global-color-muted);
     --inverse-icon-link-hover-color: var(--inverse-global-color);
     --inverse-icon-link-active-color: rgb(from var(--inverse-global-color) r g b / calc(alpha + 0.2));
-    --inverse-icon-button-background: var(--inverse-global-muted-color-default);
-    --inverse-icon-button-color: var(--inverse-global-muted-color);
+    --inverse-icon-button-background: var(--inverse-global-muted-color);
+    --inverse-icon-button-color: var(--inverse-global-color-muted);
     --inverse-icon-button-hover-background: var(--inverse-global-muted-color-soft);
     --inverse-icon-button-hover-color: var(--inverse-global-color);
     --inverse-icon-button-active-background: var(--inverse-global-muted-color-softer);
     --inverse-icon-button-active-color: var(--inverse-global-color);
-    --inverse-icon-overlay-color: rgb(from var(--inverse-global-emphasis-color) r g b / 0.6);
-    --inverse-icon-overlay-hover-color: var(--inverse-global-emphasis-color);
+    --inverse-icon-overlay-color: rgb(from var(--inverse-global-color-emphasis) r g b / 0.6);
+    --inverse-icon-overlay-hover-color: var(--inverse-global-color-emphasis);
   }
   /*
      * Button
@@ -807,64 +822,64 @@
     --button-padding-horizontal: var(--global-gutter);
     --button-small-padding-horizontal: var(--global-small-gutter);
     --button-large-padding-horizontal: var(--global-medium-gutter);
-    --button-default-background: var(--global-muted-color-default);
-    --button-default-color: var(--global-emphasis-color);
+    --button-default-background: var(--global-muted-color);
+    --button-default-color: var(--global-color-emphasis);
     --button-default-hover-background: var(--global-muted-color-soft);
-    --button-default-hover-color: var(--global-emphasis-color);
+    --button-default-hover-color: var(--global-color-emphasis);
     --button-default-active-background: var(--global-muted-color-softer);
-    --button-default-active-color: var(--global-emphasis-color);
+    --button-default-active-color: var(--global-color-emphasis);
     --button-primary-background: var(--global-primary-color);
-    --button-primary-color: var(--global-inverse-color);
+    --button-primary-color: var(--global-color-inverse);
     --button-primary-hover-background: var(--global-primary-color-soft);
-    --button-primary-hover-color: var(--global-inverse-color);
+    --button-primary-hover-color: var(--global-color-inverse);
     --button-primary-active-background: var(--global-primary-color-softer);
-    --button-primary-active-color: var(--global-inverse-color);
+    --button-primary-active-color: var(--global-color-inverse);
     --button-secondary-background: var(--global-secondary-color);
-    --button-secondary-color: var(--global-inverse-color);
+    --button-secondary-color: var(--global-color-inverse);
     --button-secondary-hover-background: var(--global-secondary-color-soft);
-    --button-secondary-hover-color: var(--global-inverse-color);
+    --button-secondary-hover-color: var(--global-color-inverse);
     --button-secondary-active-background: var(--global-secondary-color-softer);
-    --button-secondary-active-color: var(--global-inverse-color);
+    --button-secondary-active-color: var(--global-color-inverse);
     --button-danger-background: var(--global-danger-color);
-    --button-danger-color: var(--global-inverse-color);
+    --button-danger-color: var(--global-color-inverse);
     --button-danger-hover-background: var(--global-danger-color-soft);
-    --button-danger-hover-color: var(--global-inverse-color);
+    --button-danger-hover-color: var(--global-color-inverse);
     --button-danger-active-background: var(--global-danger-color-softer);
-    --button-danger-active-color: var(--global-inverse-color);
-    --button-disabled-background: var(--global-muted-color-default);
-    --button-disabled-color: var(--global-muted-color);
+    --button-danger-active-color: var(--global-color-inverse);
+    --button-disabled-background: var(--global-muted-color);
+    --button-disabled-color: var(--global-color-muted);
     --button-text-line-height: var(--global-line-height);
-    --button-text-color: var(--global-emphasis-color);
-    --button-text-hover-color: var(--global-muted-color);
-    --button-text-disabled-color: var(--global-muted-color);
+    --button-text-color: var(--global-color-emphasis);
+    --button-text-hover-color: var(--global-color-muted);
+    --button-text-disabled-color: var(--global-color-muted);
     --button-link-line-height: var(--global-line-height);
-    --button-link-color: var(--global-emphasis-color);
-    --button-link-hover-color: var(--global-muted-color);
+    --button-link-color: var(--global-color-emphasis);
+    --button-link-hover-color: var(--global-color-muted);
     --button-link-hover-text-decoration: none;
-    --button-link-disabled-color: var(--global-muted-color);
+    --button-link-disabled-color: var(--global-color-muted);
     --inverse-button-default-background: var(--inverse-global-default-color);
     --inverse-button-default-hover-background: var(--inverse-global-muted-color-soft);
     --inverse-button-default-active-background: var(--inverse-global-muted-color-softer);
     --inverse-button-primary-background: var(--inverse-global-primary-color);
-    --inverse-button-primary-color: var(--inverse-global-emphasis-color);
+    --inverse-button-primary-color: var(--inverse-global-color-emphasis);
     --inverse-button-primary-hover-background: var(--inverse-global-primary-color-soft);
-    --inverse-button-primary-hover-color: var(--inverse-global-emphasis-color);
+    --inverse-button-primary-hover-color: var(--inverse-global-color-emphasis);
     --inverse-button-primary-active-background: var(--inverse-global-primary-color-softer);
-    --inverse-button-primary-active-color: var(--inverse-global-emphasis-color);
+    --inverse-button-primary-active-color: var(--inverse-global-color-emphasis);
     --inverse-button-secondary-background: var(--inverse-global-secondary-color);
-    --inverse-button-secondary-color: var(--inverse-global-emphasis-color);
+    --inverse-button-secondary-color: var(--inverse-global-color-emphasis);
     --inverse-button-secondary-hover-background: var(--inverse-global-secondary-color-soft);
-    --inverse-button-secondary-hover-color: var(--inverse-global-emphasis-color);
+    --inverse-button-secondary-hover-color: var(--inverse-global-color-emphasis);
     --inverse-button-secondary-active-background: var(--inverse-global-secondary-color-softer);
-    --inverse-button-secondary-active-color: var(--inverse-global-emphasis-color);
-    --inverse-button-disabled-background: var(--inverse-global-muted-color-default);
-    --inverse-button-disabled-color: var(--inverse-global-muted-color);
-    --inverse-button-text-color: var(--inverse-global-emphasis-color);
-    --inverse-button-text-hover-color: var(--inverse-global-muted-color);
-    --inverse-button-text-disabled-color: var(--inverse-global-muted-color);
-    --inverse-button-link-color: var(--inverse-global-emphasis-color);
-    --inverse-button-link-hover-color: var(--inverse-global-muted-color);
-    --inverse-button-link-disabled-color: var(--inverse-global-muted-color);
+    --inverse-button-secondary-active-color: var(--inverse-global-color-emphasis);
+    --inverse-button-disabled-background: var(--inverse-global-muted-color);
+    --inverse-button-disabled-color: var(--inverse-global-color-muted);
+    --inverse-button-text-color: var(--inverse-global-color-emphasis);
+    --inverse-button-text-hover-color: var(--inverse-global-color-muted);
+    --inverse-button-text-disabled-color: var(--inverse-global-color-muted);
+    --inverse-button-link-color: var(--inverse-global-color-emphasis);
+    --inverse-button-link-hover-color: var(--inverse-global-color-muted);
+    --inverse-button-link-disabled-color: var(--inverse-global-color-muted);
     --button-line-height: calc(var(--global-control-height) - (var(--button-border-width) * 2));
     --button-small-line-height: calc(var(--global-control-small-height) - (var(--button-border-width) * 2));
     --button-large-line-height: calc(var(--global-control-large-height) - (var(--button-border-width) * 2));
@@ -874,7 +889,7 @@
     --button-default-hover-background: transparent;
     --button-default-active-background: transparent;
     --button-disabled-background: transparent;
-    --button-text-hover-color: var(--global-emphasis-color);
+    --button-text-hover-color: var(--global-color-emphasis);
     --button-text-transform: uppercase;
     --button-border-width: var(--global-border-width);
     --button-default-border: var(--global-border);
@@ -884,12 +899,12 @@
     --button-text-border-width: var(--global-border-width);
     --button-text-border: currentColor;
     --inverse-button-default-background: transparent;
-    --inverse-button-default-color: var(--inverse-global-emphasis-color);
+    --inverse-button-default-color: var(--inverse-global-color-emphasis);
     --inverse-button-default-hover-background: transparent;
-    --inverse-button-default-hover-color: var(--inverse-global-emphasis-color);
+    --inverse-button-default-hover-color: var(--inverse-global-color-emphasis);
     --inverse-button-default-active-background: transparent;
-    --inverse-button-default-active-color: var(--inverse-global-emphasis-color);
-    --inverse-button-text-hover-color: var(--inverse-global-emphasis-color);
+    --inverse-button-default-active-color: var(--inverse-global-color-emphasis);
+    --inverse-button-text-hover-color: var(--inverse-global-color-emphasis);
   }
   /*
      * Progress
@@ -897,9 +912,9 @@
   .uk-progress {
     --progress-height: 15px;
     --progress-margin-vertical: var(--global-margin);
-    --progress-background: var(--global-muted-color-default);
+    --progress-background: var(--global-muted-color);
     --progress-bar-background: var(--global-primary-color);
-    --inverse-progress-background: var(--inverse-global-muted-color-default);
+    --inverse-progress-background: var(--inverse-global-muted-color);
     --progress-border-radius: 500px;
   }
   /*
@@ -916,14 +931,14 @@
     --section-xlarge-padding-vertical-m: calc(var(--global-large-margin) + var(--global-xlarge-margin));
     --section-default-background: var(--global-default-color);
     --section-default-color-mode: dark;
-    --section-muted-background: var(--global-muted-color-default);
+    --section-muted-background: var(--global-muted-color);
     --section-muted-color-mode: dark;
     --section-primary-background: var(--global-primary-color);
     --section-primary-color-mode: light;
     --section-secondary-background: var(--global-secondary-color);
     --section-secondary-color-mode: light;
     --inverse-section-default-background: var(--inverse-global-default-color);
-    --inverse-section-muted-background: var(--inverse-global-muted-color-default);
+    --inverse-section-muted-background: var(--inverse-global-muted-color);
   }
   /*
      * Container
@@ -955,7 +970,7 @@
     --tile-xlarge-padding-vertical-m: calc(var(--global-large-margin) + var(--global-xlarge-margin));
     --tile-default-background: var(--global-default-color);
     --tile-default-color-mode: dark;
-    --tile-muted-background: var(--global-muted-color);
+    --tile-muted-background: var(--global-color-muted);
     --tile-muted-color-mode: dark;
     --tile-primary-background: var(--global-primary-color);
     --tile-primary-color-mode: light;
@@ -985,27 +1000,27 @@
     --card-badge-height: 22px;
     --card-badge-padding-horizontal: 10px;
     --card-badge-background: var(--global-primary-color);
-    --card-badge-color: var(--global-inverse-color);
+    --card-badge-color: var(--global-color-inverse);
     --card-badge-font-size: var(--global-small-font-size);
-    --card-hover-background: var(--global-muted-color-default);
-    --card-default-background: var(--global-muted-color-default);
+    --card-hover-background: var(--global-muted-color);
+    --card-default-background: var(--global-muted-color);
     --card-default-color: var(--global-color);
-    --card-default-title-color: var(--global-emphasis-color);
+    --card-default-title-color: var(--global-color-emphasis);
     --card-default-hover-background: var(--global-muted-color-soft);
     --card-default-color-mode: dark;
     --card-primary-background: var(--global-primary-color);
-    --card-primary-color: var(--global-inverse-color);
+    --card-primary-color: var(--global-color-inverse);
     --card-primary-title-color: var(--card-primary-color);
     --card-primary-hover-background: var(--global-primary-color-soft);
     --card-primary-color-mode: light;
     --card-secondary-background: var(--global-secondary-color);
-    --card-secondary-color: var(--global-inverse-color);
+    --card-secondary-color: var(--global-color-inverse);
     --card-secondary-title-color: var(--card-secondary-color);
     --card-secondary-hover-background: var(--global-secondary-color-soft);
     --card-secondary-color-mode: light;
     --card-overlay-background: rgb(from var(--global-default-color) r g b / 0.9);
     --card-overlay-color: var(--global-color);
-    --card-overlay-title-color: var(--global-emphasis-color);
+    --card-overlay-title-color: var(--global-color-emphasis);
     --card-overlay-hover-background: rgb(from var(--card-overlay-background) r g b / calc(alpha + 0.1));
     --card-overlay-color-mode: dark;
     --card-small-body-padding-horizontal: var(--global-margin);
@@ -1020,18 +1035,18 @@
     --card-large-header-padding-vertical-l: round(up, calc(var(--global-large-gutter) / 2), 1px);
     --card-large-footer-padding-horizontal-l: var(--global-large-gutter);
     --card-large-footer-padding-vertical-l: round(up, calc(var(--global-large-gutter) / 2), 1px);
-    --inverse-card-hover-background: var(--inverse-global-muted-color);
-    --inverse-card-default-background: var(--inverse-global-muted-color-default);
+    --inverse-card-hover-background: var(--inverse-global-color-muted);
+    --inverse-card-default-background: var(--inverse-global-muted-color);
     --inverse-card-default-color: var(--inverse-global-color);
-    --inverse-card-default-title-color: var(--inverse-global-emphasis-color);
+    --inverse-card-default-title-color: var(--inverse-global-color-emphasis);
     --inverse-card-default-hover-background: var(--inverse-global-muted-color-soft);
     --inverse-card-secondary-hover-background: var(--inverse-global-secondary-color-soft);
     --inverse-card-overlay-background: rgb(from var(--inverse-global-default-color) r g b / 0.9);
     --inverse-card-overlay-color: var(--inverse-global-color);
-    --inverse-card-overlay-title-color: var(--inverse-global-emphasis-color);
+    --inverse-card-overlay-title-color: var(--inverse-global-color-emphasis);
     --inverse-card-overlay-hover-background: rgb(from var(--inverse-card-overlay-background) r g b / calc(alpha + 0.1));
     --inverse-card-badge-background: var(--inverse-global-primary-color);
-    --inverse-card-badge-color: var(--inverse-global-emphasis-color);
+    --inverse-card-badge-color: var(--inverse-global-color-emphasis);
     --card-hover-background: var(--global-default-color);
     --card-default-background: var(--global-default-color);
     --card-default-hover-background: var(--card-default-background);
@@ -1071,9 +1086,9 @@
      * Close
      */
   .uk-close {
-    --close-color: var(--global-muted-color);
+    --close-color: var(--global-color-muted);
     --close-hover-color: var(--global-color);
-    --inverse-close-color: var(--inverse-global-muted-color);
+    --inverse-close-color: var(--inverse-global-color-muted);
     --inverse-close-hover-color: var(--inverse-global-color);
   }
   /*
@@ -1091,12 +1106,12 @@
      */
   .uk-totop {
     --totop-padding: 5px;
-    --totop-color: var(--global-muted-color);
+    --totop-color: var(--global-color-muted);
     --totop-hover-color: var(--global-color);
-    --totop-active-color: var(--global-emphasis-color);
-    --inverse-totop-color: var(--inverse-global-muted-color);
+    --totop-active-color: var(--global-color-emphasis);
+    --inverse-totop-color: var(--inverse-global-color-muted);
     --inverse-totop-hover-color: var(--inverse-global-color);
-    --inverse-totop-active-color: var(--inverse-global-emphasis-color);
+    --inverse-totop-active-color: var(--inverse-global-color-emphasis);
   }
   /*
      * Marker
@@ -1104,9 +1119,9 @@
   .uk-marker {
     --marker-padding: 5px;
     --marker-background: var(--global-secondary-color);
-    --marker-color: var(--global-inverse-color);
-    --marker-hover-color: var(--global-inverse-color);
-    --inverse-marker-background: var(--global-muted-color-default);
+    --marker-color: var(--global-color-inverse);
+    --marker-hover-color: var(--global-color-inverse);
+    --inverse-marker-background: var(--global-muted-color);
     --inverse-marker-color: var(--global-color);
     --inverse-marker-hover-color: var(--global-color);
   }
@@ -1115,32 +1130,122 @@
      */
   .uk-alert {
     --alert-margin-vertical: var(--global-margin);
-    --alert-padding: 15px;
-    --alert-padding-inline-end: calc(var(--alert-padding) + 14px);
-    --alert-background: var(--global-muted-color-default);
-    --alert-color: var(--global-color);
-    --alert-close-top: calc(var(--alert-padding) + 5px);
-    --alert-close-inline-end: var(--alert-padding);
+    --alert-padding: var(--global-small-gutter);
+    --alert-border-width: var(--global-border-width);
+    --alert-border-color: transparent;
+    --alert-border-radius: var(--global-border-radius-default);
+    --alert-icon-gap: var(--global-small-gutter);
+    --alert-close-border-radius: var(--global-border-radius-default);
+    --alert-close-opacity: 0.2;
+    --alert-close-hover-opacity: 0.5;
+    --alert-close-active-opacity: 0.8;
+    --alert-close-background-opacity: 0.2;
+    --alert-close-background-hover-opacity: 0.4;
+    --alert-close-background-active-opacity: 0.6;
+    --alert-close-min-height: 32px;
+    --alert-close-min-width: var(--alert-close-min-height);
+    --alert-close-padding: var(--global-xxsmall-gutter);
+    --alert-close-top: min(((var(--alert-padding) / 2) - (var(--alert-close-margin-base-top) / 2)), 7px);
+    --alert-close-inline-end: 0;
+    --alert-close-margin-base-top: 5px;
+    --alert-close-margin-base-inline-end: 10px;
+    --alert-close-margin-top: calc(var(--alert-close-margin-base-top) - var(--alert-padding));
+    --alert-close-margin-inline-end: calc(var(--alert-close-margin-base-inline-end) - var(--alert-padding));
+    --alert-close-end-margin-inline-end: calc((var(--alert-padding) + var(--alert-close-min-width)) * -1);
+    --alert-close-end-x: translateX(calc((50% - var(--alert-close-min-height)) * var(--uk-dir-sign)));
+    --alert-close-top-y: translateY(-50%);
+    --alert-close-top-margin-top: calc(var(--alert-padding) * -1);
+    --alert-close-corner-top: 6px;
+    --alert-close-corner-inline-end: var(--alert-close-corner-top);
+    --alert-icon-box-padding: 5px;
+    --alert-icon-box-icon-padding: 8px;
+    --alert-icon-box-close-margin-base-top: 5px;
+    --alert-icon-box-close-margin-base-inline-end: 5px;
+    --alert-icon-box-close-margin-top: calc(var(--alert-icon-box-close-margin-base-top) - var(--alert-icon-box-padding));
+    --alert-icon-box-close-margin-inline-end: calc(var(--alert-icon-box-close-margin-base-inline-end) - var(--alert-icon-box-padding));
+    --alert-icon-box-close-margin-bottom: var(--alert-icon-box-close-margin-base-inline-end);
+    --alert-icon-box-close-top: min(var(--alert-icon-box-padding), 6px);
+    --alert-icon-box-border-radius: var(--global-border-radius-default);
+    --alert-icon-box-close-end-margin-inline-end: calc((var(--alert-icon-box-padding) + var(--alert-close-min-width)) * -1);
+    --alert-icon-box-close-end-x: translateX(calc((50% - var(--alert-close-min-height)) * var(--uk-dir-sign)));
+    --alert-icon-box-close-top-margin-top: calc(var(--alert-icon-box-padding) * -1);
+    --alert-icon-box-close-corner-top: 6px;
+    --alert-icon-box-close-corner-inline-end: var(--alert-icon-box-close-corner-top);
+    --alert-default-background: var(--global-default-color);
+    --alert-default-color: var(--global-muted-color-700);
+    --alert-muted-background: var(--global-muted-color);
+    --alert-muted-color: var(--global-muted-color-700);
     --alert-primary-background: var(--global-primary-color-100);
-    --alert-primary-color: var(--global-primary-color);
+    --alert-primary-color: var(--global-primary-color-700);
     --alert-success-background: var(--global-success-color-100);
-    --alert-success-color: var(--global-success-color);
+    --alert-success-color: var(--global-success-color-700);
     --alert-warning-background: var(--global-warning-color-100);
-    --alert-warning-color: var(--global-warning-color);
+    --alert-warning-color: var(--global-warning-color-700);
     --alert-danger-background: var(--global-danger-color-100);
-    --alert-danger-color: var(--global-danger-color);
-    --inverse-alert-background: var(--inverse-global-muted-color-default);
-    --inverse-alert-color: var(--inverse-global-color);
-    --alert-close-opacity: 0.4;
-    --alert-close-hover-opacity: 0.8;
-    --inverse-alert-primary-background: rgb(from var(--global-primary-color) r g b / 0.1);
-    --inverse-alert-primary-color: var(--global-primary-color-400);
-    --inverse-alert-success-background: rgb(from var(--global-success-color) r g b / 0.1);
-    --inverse-alert-success-color: var(--global-success-color);
-    --inverse-alert-warning-background: rgb(from var(--global-warning-color) r g b / 0.1);
-    --inverse-alert-warning-color: var(--global-warning-color);
-    --inverse-alert-danger-background: rgb(from var(--global-danger-color) r g b / 0.1);
-    --inverse-alert-danger-color: var(--global-danger-color);
+    --alert-danger-color: var(--global-danger-color-700);
+    --alert-bordered-border-color-default: var(--global-border);
+    --alert-bordered-border-color-muted: var(--global-border);
+    --alert-bordered-border-color-primary: var(--global-primary-color-200);
+    --alert-bordered-border-color-danger: var(--global-danger-color-200);
+    --alert-bordered-border-color-success: var(--global-success-color-200);
+    --alert-bordered-border-color-warning: var(--global-warning-color-200);
+    --alert-icon-box-color: var(--global-default-color);
+    --alert-icon-box-background-default: var(--global-muted-color-500);
+    --alert-icon-box-background-muted: var(--global-muted-color-500);
+    --alert-icon-box-background-primary: var(--global-primary-color);
+    --alert-icon-box-background-danger: var(--global-danger-color);
+    --alert-icon-box-background-success: var(--global-success-color);
+    --alert-icon-box-background-warning: var(--global-warning-color);
+    --alert-close-pill-background-default: rgb(from var(--global-muted-color-300) r g b / var(--alert-close-background-opacity));
+    --alert-close-pill-background-muted: rgb(from var(--global-muted-color-300) r g b / var(--alert-close-background-opacity));
+    --alert-close-pill-background-primary: rgb(from var(--global-primary-color-300) r g b / var(--alert-close-background-opacity));
+    --alert-close-pill-background-danger: rgb(from var(--global-danger-color-300) r g b / var(--alert-close-background-opacity));
+    --alert-close-pill-background-success: rgb(from var(--global-success-color-300) r g b / var(--alert-close-background-opacity));
+    --alert-close-pill-background-warning: rgb(from var(--global-warning-color-300) r g b / var(--alert-close-background-opacity));
+    --alert-close-pill-solid-background: var(--global-default-color);
+    --alert-close-pill-solid-outline-width: var(--global-border-width);
+    --alert-close-pill-solid-border-width: 3px;
+    --alert-close-pill-solid-border-color: var(--global-border);
+    --alert-close-pill-solid-hover-border-color: var(--global-default-color);
+    --inverse-alert-close-opacity: 0.4;
+    --inverse-alert-close-hover-opacity: 0.7;
+    --inverse-alert-close-active-opacity: 1;
+    --inverse-alert-close-background-opacity: 0.1;
+    --inverse-alert-close-background-hover-opacity: 0.3;
+    --inverse-alert-close-background-active-opacity: 0.5;
+    --inverse-alert-default-background: var(--inverse-global-default-color);
+    --inverse-alert-default-color: var(--global-muted-color-300);
+    --inverse-alert-muted-background: var(--inverse-global-muted-color);
+    --inverse-alert-muted-color: var(--global-muted-color-300);
+    --inverse-alert-primary-background: rgb(from var(--global-primary-color-900) r g b / 0.2);
+    --inverse-alert-primary-color: var(--global-primary-color-300);
+    --inverse-alert-success-background: rgb(from var(--global-success-color-900) r g b / 0.2);
+    --inverse-alert-success-color: var(--global-success-color-300);
+    --inverse-alert-warning-background: rgb(from var(--global-warning-color-900) r g b / 0.2);
+    --inverse-alert-warning-color: var(--global-warning-color-300);
+    --inverse-alert-danger-background: rgb(from var(--global-danger-color-900) r g b / 0.2);
+    --inverse-alert-danger-color: var(--global-danger-color-300);
+    --inverse-alert-bordered-border-color-default: var(--inverse-global-border);
+    --inverse-alert-bordered-border-color-muted: var(--inverse-global-border);
+    --inverse-alert-bordered-border-color-primary: var(--global-primary-color-900);
+    --inverse-alert-bordered-border-color-danger: var(--global-danger-color-900);
+    --inverse-alert-bordered-border-color-success: var(--global-success-color-900);
+    --inverse-alert-bordered-border-color-warning: var(--global-warning-color-900);
+    --inverse-alert-close-pill-background-default: rgb(from var(--global-muted-color-500) r g b / var(--inverse-alert-close-background-opacity));
+    --inverse-alert-close-pill-background-muted: rgb(from var(--global-muted-color-500) r g b / var(--inverse-alert-close-background-opacity));
+    --inverse-alert-close-pill-background-primary: rgb(from var(--global-primary-color-700) r g b / var(--inverse-alert-close-background-opacity));
+    --inverse-alert-close-pill-background-danger: rgb(from var(--global-danger-color-700) r g b / var(--inverse-alert-close-background-opacity));
+    --inverse-alert-close-pill-background-success: rgb(from var(--global-success-color-700) r g b / var(--inverse-alert-close-background-opacity));
+    --inverse-alert-close-pill-background-warning: rgb(from var(--global-warning-color-700) r g b / var(--inverse-alert-close-background-opacity));
+    --inverse-alert-close-pill-solid-background: var(--inverse-global-default-color);
+    --inverse-alert-close-pill-solid-border-color: var(--inverse-global-border);
+    --inverse-alert-close-pill-solid-hover-border-color: var(--inverse-global-default-color);
+    --inverse-alert-icon-box-background-default: var(--global-muted-color-600);
+    --inverse-alert-icon-box-background-muted: var(--global-muted-color-600);
+    --inverse-alert-icon-box-background-primary: var(--global-primary-color-600);
+    --inverse-alert-icon-box-background-danger: var(--global-danger-color-600);
+    --inverse-alert-icon-box-background-success: var(--global-success-color-600);
+    --inverse-alert-icon-box-background-warning: var(--global-warning-color-600);
   }
   /*
      * Placeholder
@@ -1149,8 +1254,8 @@
     --placeholder-margin-vertical: var(--global-margin);
     --placeholder-padding-vertical: var(--global-gutter);
     --placeholder-padding-horizontal: var(--global-gutter);
-    --placeholder-background: var(--global-muted-color-default);
-    --inverse-placeholder-background: var(--inverse-global-muted-color-default);
+    --placeholder-background: var(--global-muted-color);
+    --inverse-placeholder-background: var(--inverse-global-muted-color);
     --placeholder-background: transparent;
     --placeholder-border-width: var(--global-border-width);
     --placeholder-border: var(--global-border);
@@ -1164,10 +1269,10 @@
     --badge-padding-horizontal: 5px;
     --badge-border-radius: 500px;
     --badge-background: var(--global-primary-color);
-    --badge-color: var(--global-inverse-color);
+    --badge-color: var(--global-color-inverse);
     --badge-font-size: 11px;
     --inverse-badge-background: var(--inverse-global-primary-color);
-    --inverse-badge-color: var(--inverse-global-emphasis-color);
+    --inverse-badge-color: var(--inverse-global-color-emphasis);
   }
   /*
      * Label
@@ -1178,23 +1283,23 @@
     --label-background: var(--global-primary-color);
     --label-line-height: var(--global-line-height);
     --label-font-size: var(--global-small-font-size);
-    --label-color: var(--global-inverse-color);
+    --label-color: var(--global-color-inverse);
     --label-success-background: var(--global-success-color);
-    --label-success-color: var(--global-inverse-color);
+    --label-success-color: var(--global-color-inverse);
     --label-warning-background: var(--global-warning-color);
-    --label-warning-color: var(--global-inverse-color);
+    --label-warning-color: var(--global-color-inverse);
     --label-danger-background: var(--global-danger-color);
-    --label-danger-color: var(--global-inverse-color);
+    --label-danger-color: var(--global-color-inverse);
     --inverse-label-background: var(--inverse-global-primary-color);
-    --inverse-label-color: var(--inverse-global-emphasis-color);
+    --inverse-label-color: var(--inverse-global-color-emphasis);
     --label-border-radius: 2px;
     --label-text-transform: uppercase;
     --inverse-label-success-background: var(--global-success-color);
-    --inverse-label-success-color: var(--inverse-global-emphasis-color);
+    --inverse-label-success-color: var(--inverse-global-color-emphasis);
     --inverse-label-warning-background: var(--global-warning-color);
-    --inverse-label-warning-color: var(--inverse-global-emphasis-color);
+    --inverse-label-warning-color: var(--inverse-global-color-emphasis);
     --inverse-label-danger-background: var(--global-danger-color);
-    --inverse-label-danger-color: var(--inverse-global-emphasis-color);
+    --inverse-label-danger-color: var(--inverse-global-color-emphasis);
   }
   /*
      * Overlay
@@ -1218,8 +1323,8 @@
     --article-title-line-height: 1.2;
     --article-meta-font-size: var(--global-small-font-size);
     --article-meta-line-height: 1.4;
-    --article-meta-color: var(--global-muted-color);
-    --inverse-article-meta-color: var(--inverse-global-muted-color);
+    --article-meta-color: var(--global-color-muted);
+    --inverse-article-meta-color: var(--inverse-global-color-muted);
     --article-meta-link-color: var(--article-meta-color);
     --article-meta-link-hover-color: var(--global-color);
     --inverse-article-meta-link-color: var(--inverse-article-meta-color);
@@ -1234,25 +1339,25 @@
     --comment-title-line-height: 1.4;
     --comment-meta-font-size: var(--global-small-font-size);
     --comment-meta-line-height: 1.4;
-    --comment-meta-color: var(--global-muted-color);
+    --comment-meta-color: var(--global-color-muted);
     --comment-list-margin-top: var(--global-large-margin);
     --comment-list-padding-inline-start: 30px;
     --comment-list-padding-inline-start-m: 100px;
     --comment-primary-padding: var(--global-gutter);
-    --comment-primary-background: var(--global-muted-color-default);
-    --inverse-comment-primary-background: var(--inverse-global-muted-color-default);
+    --comment-primary-background: var(--global-muted-color);
+    --inverse-comment-primary-background: var(--inverse-global-muted-color);
   }
   /*
      * Search
      */
   .uk-search {
     --search-color: var(--global-color);
-    --search-placeholder-color: var(--global-muted-color);
-    --search-icon-color: var(--global-muted-color);
+    --search-placeholder-color: var(--global-color-muted);
+    --search-icon-color: var(--global-color-muted);
     --search-default-width: 240px;
     --search-default-height: var(--global-control-height);
     --search-default-padding-horizontal: 10px;
-    --search-default-background: var(--global-muted-color-default);
+    --search-default-background: var(--global-muted-color);
     --search-default-focus-background: var(--global-muted-color-soft);
     --search-default-icon-width: 20px;
     --search-default-icon-padding: 10px;
@@ -1276,20 +1381,20 @@
     --search-large-font-size: var(--global-2xlarge-font-size);
     --search-large-focus-background: var(--global-muted-color-soft) --search-large-icon-width:                           40px;
     --search-large-icon-padding: 20px;
-    --search-toggle-color: var(--global-muted-color);
+    --search-toggle-color: var(--global-color-muted);
     --search-toggle-hover-color: var(--global-color);
     --inverse-search-color: var(--inverse-global-color);
-    --inverse-search-placeholder-color: var(--inverse-global-muted-color);
-    --inverse-search-icon-color: var(--inverse-global-muted-color);
-    --inverse-search-default-background: var(--inverse-global-muted-color-default);
+    --inverse-search-placeholder-color: var(--inverse-global-color-muted);
+    --inverse-search-icon-color: var(--inverse-global-color-muted);
+    --inverse-search-default-background: var(--inverse-global-muted-color);
     --inverse-search-default-focus-background: var(--inverse-global-muted-color-soft);
-    --inverse-search-navbar-background: var(--inverse-global-muted-color-default);
+    --inverse-search-navbar-background: var(--inverse-global-muted-color);
     --inverse-search-navbar-focus-background: var(--inverse-global-muted-color-soft);
     --inverse-search-medium-background: var(--inverse-search-default-background);
     --inverse-search-medium-focus-background: var(--inverse-global-muted-color-soft);
     --inverse-search-large-background: var(--inverse-search-default-background);
     --inverse-search-large-focus-background: var(--inverse-global-muted-color-soft);
-    --inverse-search-toggle-color: var(--inverse-global-muted-color);
+    --inverse-search-toggle-color: var(--inverse-global-color-muted);
     --inverse-search-toggle-hover-color: var(--inverse-global-color);
     --search-default-background: transparent;
     --search-navbar-focus-background: var(--search-navbar-background);
@@ -1317,17 +1422,43 @@
      * Accordion
      */
   .uk-accordion {
+    --accordion-title-gap: 15px;
+    --accordion-title-font-size: var(--global-medium-font-size);
+    --accordion-title-line-height: 1.4;
+    --accordion-title-color: var(--global-color-emphasis);
+    --accordion-icon-color: var(--global-color);
+    --accordion-disabled-title-color: var(--global-color-muted);
+    --accordion-disabled-icon-color: var(--global-color-muted);
     --accordion-default-item-margin-top: var(--global-margin);
-    --accordion-default-title-gap: 15px;
-    --accordion-default-title-font-size: var(--global-medium-font-size);
-    --accordion-default-title-line-height: 1.4;
-    --accordion-default-title-color: var(--global-emphasis-color);
     --accordion-default-title-hover-color: var(--global-color);
     --accordion-default-content-margin-top: var(--global-margin);
-    --inverse-accordion-default-title-color: var(--inverse-global-emphasis-color);
+    --accordion-pill-title-line-height: 1;
+    --accordion-pill-title-background: var(--global-default-color);
+    --accordion-pill-title-hover-background: var(--global-muted-color);
+    --accordion-pill-title-border-radius: var(--global-border-radius-default);
+    --accordion-pill-title-padding-vertical: var(--global-xsmall-gutter);
+    --accordion-pill-title-padding-horizontal: var(--global-small-gutter);
+    --accordion-pill-content-margin-top: var(--global-xsmall-gutter);
+    --accordion-pill-content-padding: var(--global-small-gutter);
+    --accordion-line-title-line-height: var(--accordion-title-line-height);
+    --accordion-line-border-color: var(--global-border);
+    --accordion-line-border-width: var(--global-border-width);
+    --accordion-line-title-padding-vertical: var(--global-small-gutter);
+    --accordion-line-content-padding: var(--global-small-gutter);
+    --accordion-icon-circle-active-color: var(--global-primary-color);
+    --accordion-icon-circle-opacity: var(--global-icon-tertiary-color-opacity);
+    --accordion-icon-circle-active-opacity: 1;
+    --inverse-accordion-title-color: var(--inverse-global-color-emphasis);
+    --inverse-accordion-icon-color: var(--inverse-global-color);
+    --inverse-accordion-disabled-title-color: var(--inverse-global-color-muted);
+    --inverse-accordion-disabled-icon-color: var(--inverse-global-color-muted);
     --inverse-accordion-default-title-hover-color: var(--inverse-global-color);
-    --accordion-default-icon-color: var(--global-color);
-    --inverse-accordion-default-icon-color: var(--inverse-global-color);
+    --inverse-accordion-pill-title-background: var(--inverse-global-default-color);
+    --inverse-accordion-pill-title-hover-background: var(--inverse-global-muted-color);
+    --inverse-accordion-pill-icon-color: var(--inverse-accordion-icon-color);
+    --inverse-accordion-line-icon-color: var(--inverse-accordion-icon-color);
+    --inverse-accordion-line-border-color: var(--inverse-global-border);
+    --inverse-accordion-icon-circle-active-color: var(--inverse-global-primary-color);
   }
   /*
      * Drop
@@ -1349,13 +1480,13 @@
     --dropbar-padding-horizontal: 15px;
     --dropbar-padding-horizontal-s: var(--global-gutter);
     --dropbar-padding-horizontal-m: var(--global-medium-gutter);
-    --dropbar-background: var(--global-muted-color-default);
+    --dropbar-background: var(--global-muted-color);
     --dropbar-color: var(--global-color);
     --dropbar-color-mode: dark;
     --dropbar-focus-outline: var(--base-focus-outline);
     --dropbar-large-padding-top: 40px;
     --dropbar-large-padding-bottom: var(--dropbar-large-padding-top);
-    --inverse-dropbar-background: var(--inverse-global-muted-color-default);
+    --inverse-dropbar-background: var(--inverse-global-muted-color);
     --inverse-dropbar-color: var(--inverse-global-color);
     --dropbar-padding-top: 25px;
     --dropbar-background: var(--global-default-color);
@@ -1399,20 +1530,26 @@
     --modal-header-padding-vertical: calc(var(--modal-header-padding-horizontal) / 2);
     --modal-header-padding-horizontal-s: var(--global-gutter);
     --modal-header-padding-vertical-s: calc(var(--modal-header-padding-horizontal-s) / 2);
-    --modal-header-background: var(--global-muted-color-default);
+    --modal-header-background: var(--global-muted-color);
     --modal-footer-padding-horizontal: 20px;
     --modal-footer-padding-vertical: calc(var(--modal-footer-padding-horizontal) / 2);
     --modal-footer-padding-horizontal-s: var(--global-gutter);
     --modal-footer-padding-vertical-s: calc(var(--modal-footer-padding-horizontal-s) / 2);
-    --modal-footer-background: var(--global-muted-color-default);
+    --modal-footer-background: var(--global-muted-color);
     --modal-title-font-size: var(--global-xlarge-font-size);
     --modal-title-line-height: 1.3;
     --modal-close-position: var(--global-small-margin);
     --modal-close-padding: 5px;
     --modal-close-outside-position: 0;
     --modal-close-outside-translate: 100%;
-    --modal-close-outside-color: hsl(from var(--global-inverse-color) h s calc(l + 20));
-    --modal-close-outside-hover-color: var(--global-inverse-color);
+    --modal-close-outside-color: hsl(from var(--global-color-inverse) h s calc(l + 20));
+    --modal-close-outside-hover-color: var(--global-color-inverse);
+    --inverse-modal-background: rgba(0, 0, 0, 0.7);
+    --inverse-modal-dialog-background: var(--inverse-global-default-color);
+    --inverse-modal-header-background: var(--inverse-global-muted-color);
+    --inverse-modal-footer-background: var(--inverse-global-muted-color);
+    --inverse-modal-close-outside-color: var(--global-color-muted);
+    --inverse-modal-close-outside-hover-color: var(--inverse-global-color-inverse);
     --modal-header-background: var(--modal-dialog-background);
     --modal-footer-background: var(--modal-dialog-background);
     --modal-header-border-width: var(--global-border-width);
@@ -1480,7 +1617,7 @@
     --notification-width: 350px;
     --notification-message-margin-top: 10px;
     --notification-message-padding: var(--global-small-gutter);
-    --notification-message-background: var(--global-muted-color-default);
+    --notification-message-background: var(--global-muted-color);
     --notification-message-color: var(--global-color);
     --notification-message-font-size: var(--global-medium-font-size);
     --notification-message-line-height: 1.4;
@@ -1506,7 +1643,7 @@
     --tooltip-padding-horizontal: 6px;
     --tooltip-background: #666;
     --tooltip-border-radius: 2px;
-    --tooltip-color: var(--global-inverse-color);
+    --tooltip-color: var(--global-color-inverse);
     --tooltip-font-size: 12px;
     --inverse-tooltip-background: #333;
   }
@@ -1546,49 +1683,49 @@
     --nav-divider-margin-horizontal: 0;
     --nav-default-font-size: var(--global-font-size);
     --nav-default-line-height: var(--global-line-height);
-    --nav-default-item-color: var(--global-muted-color);
+    --nav-default-item-color: var(--global-color-muted);
     --nav-default-item-hover-color: var(--global-color);
-    --nav-default-item-active-color: var(--global-emphasis-color);
+    --nav-default-item-active-color: var(--global-color-emphasis);
     --nav-default-subtitle-font-size: var(--global-small-font-size);
-    --nav-default-header-color: var(--global-emphasis-color);
+    --nav-default-header-color: var(--global-color-emphasis);
     --nav-default-divider-border-width: var(--global-border-width);
     --nav-default-divider-border: var(--global-border);
     --nav-default-sublist-font-size: var(--nav-default-font-size);
     --nav-default-sublist-line-height: var(--nav-default-line-height);
-    --nav-default-sublist-item-color: var(--global-muted-color);
+    --nav-default-sublist-item-color: var(--global-color-muted);
     --nav-default-sublist-item-hover-color: var(--global-color);
-    --nav-default-sublist-item-active-color: var(--global-emphasis-color);
+    --nav-default-sublist-item-active-color: var(--global-color-emphasis);
     --nav-primary-font-size: var(--global-large-font-size);
     --nav-primary-line-height: var(--global-line-height);
-    --nav-primary-item-color: var(--global-muted-color);
+    --nav-primary-item-color: var(--global-color-muted);
     --nav-primary-item-hover-color: var(--global-color);
-    --nav-primary-item-active-color: var(--global-emphasis-color);
+    --nav-primary-item-active-color: var(--global-color-emphasis);
     --nav-primary-subtitle-font-size: var(--global-medium-font-size);
-    --nav-primary-header-color: var(--global-emphasis-color);
+    --nav-primary-header-color: var(--global-color-emphasis);
     --nav-primary-divider-border-width: var(--global-border-width);
     --nav-primary-divider-border: var(--global-border);
     --nav-primary-sublist-font-size: var(--global-medium-font-size);
     --nav-primary-sublist-line-height: var(--global-line-height);
-    --nav-primary-sublist-item-color: var(--global-muted-color);
+    --nav-primary-sublist-item-color: var(--global-color-muted);
     --nav-primary-sublist-item-hover-color: var(--global-color);
-    --nav-primary-sublist-item-active-color: var(--global-emphasis-color);
+    --nav-primary-sublist-item-active-color: var(--global-color-emphasis);
     --nav-secondary-font-size: var(--global-font-size);
     --nav-secondary-line-height: var(--global-line-height);
-    --nav-secondary-item-color: var(--global-emphasis-color);
-    --nav-secondary-item-hover-color: var(--global-emphasis-color);
-    --nav-secondary-item-active-color: var(--global-emphasis-color);
+    --nav-secondary-item-color: var(--global-color-emphasis);
+    --nav-secondary-item-hover-color: var(--global-color-emphasis);
+    --nav-secondary-item-active-color: var(--global-color-emphasis);
     --nav-secondary-subtitle-font-size: var(--global-small-font-size);
-    --nav-secondary-subtitle-color: var(--global-muted-color);
+    --nav-secondary-subtitle-color: var(--global-color-muted);
     --nav-secondary-subtitle-hover-color: var(--global-color);
-    --nav-secondary-subtitle-active-color: var(--global-emphasis-color);
-    --nav-secondary-header-color: var(--global-emphasis-color);
+    --nav-secondary-subtitle-active-color: var(--global-color-emphasis);
+    --nav-secondary-header-color: var(--global-color-emphasis);
     --nav-secondary-divider-border-width: var(--global-border-width);
     --nav-secondary-divider-border: var(--global-border);
     --nav-secondary-sublist-font-size: var(--global-small-font-size);
     --nav-secondary-sublist-line-height: var(--global-line-height);
-    --nav-secondary-sublist-item-color: var(--global-muted-color);
+    --nav-secondary-sublist-item-color: var(--global-color-muted);
     --nav-secondary-sublist-item-hover-color: var(--global-color);
-    --nav-secondary-sublist-item-active-color: var(--global-emphasis-color);
+    --nav-secondary-sublist-item-active-color: var(--global-color-emphasis);
     --nav-medium-line-height: 1;
     --nav-medium-font-size: calc(var(--nav-medium-font-size-m) * 0.825);
     --nav-medium-font-size-m: calc(var(--nav-medium-font-size-l) * 0.875);
@@ -1604,64 +1741,64 @@
     --nav-dividers-margin-top: 5px;
     --nav-dividers-border-width: var(--global-border-width);
     --nav-dividers-border: var(--global-border);
-    --inverse-nav-default-item-color: var(--inverse-global-muted-color);
+    --inverse-nav-default-item-color: var(--inverse-global-color-muted);
     --inverse-nav-default-item-hover-color: var(--inverse-global-color);
-    --inverse-nav-default-item-active-color: var(--inverse-global-emphasis-color);
-    --inverse-nav-default-header-color: var(--inverse-global-emphasis-color);
+    --inverse-nav-default-item-active-color: var(--inverse-global-color-emphasis);
+    --inverse-nav-default-header-color: var(--inverse-global-color-emphasis);
     --inverse-nav-default-divider-border: var(--inverse-global-border);
-    --inverse-nav-default-sublist-item-color: var(--inverse-global-muted-color);
+    --inverse-nav-default-sublist-item-color: var(--inverse-global-color-muted);
     --inverse-nav-default-sublist-item-hover-color: var(--inverse-global-color);
-    --inverse-nav-default-sublist-item-active-color: var(--inverse-global-emphasis-color);
-    --inverse-nav-primary-item-color: var(--inverse-global-muted-color);
+    --inverse-nav-default-sublist-item-active-color: var(--inverse-global-color-emphasis);
+    --inverse-nav-primary-item-color: var(--inverse-global-color-muted);
     --inverse-nav-primary-item-hover-color: var(--inverse-global-color);
-    --inverse-nav-primary-item-active-color: var(--inverse-global-emphasis-color);
-    --inverse-nav-primary-header-color: var(--inverse-global-emphasis-color);
+    --inverse-nav-primary-item-active-color: var(--inverse-global-color-emphasis);
+    --inverse-nav-primary-header-color: var(--inverse-global-color-emphasis);
     --inverse-nav-primary-divider-border: var(--inverse-global-border);
-    --inverse-nav-primary-sublist-item-color: var(--inverse-global-muted-color);
+    --inverse-nav-primary-sublist-item-color: var(--inverse-global-color-muted);
     --inverse-nav-primary-sublist-item-hover-color: var(--inverse-global-color);
-    --inverse-nav-primary-sublist-item-active-color: var(--inverse-global-emphasis-color);
-    --inverse-nav-secondary-item-color: var(--inverse-global-emphasis-color);
-    --inverse-nav-secondary-item-hover-color: var(--inverse-global-emphasis-color);
-    --inverse-nav-secondary-item-active-color: var(--inverse-global-emphasis-color);
-    --inverse-nav-secondary-subtitle-color: var(--inverse-global-muted-color);
+    --inverse-nav-primary-sublist-item-active-color: var(--inverse-global-color-emphasis);
+    --inverse-nav-secondary-item-color: var(--inverse-global-color-emphasis);
+    --inverse-nav-secondary-item-hover-color: var(--inverse-global-color-emphasis);
+    --inverse-nav-secondary-item-active-color: var(--inverse-global-color-emphasis);
+    --inverse-nav-secondary-subtitle-color: var(--inverse-global-color-muted);
     --inverse-nav-secondary-subtitle-hover-color: var(--inverse-global-color);
-    --inverse-nav-secondary-subtitle-active-color: var(--inverse-global-emphasis-color);
-    --inverse-nav-secondary-header-color: var(--inverse-global-emphasis-color);
+    --inverse-nav-secondary-subtitle-active-color: var(--inverse-global-color-emphasis);
+    --inverse-nav-secondary-header-color: var(--inverse-global-color-emphasis);
     --inverse-nav-secondary-divider-border: var(--inverse-global-border);
-    --inverse-nav-secondary-sublist-item-color: var(--inverse-global-muted-color);
+    --inverse-nav-secondary-sublist-item-color: var(--inverse-global-color-muted);
     --inverse-nav-secondary-sublist-item-hover-color: var(--inverse-global-color);
-    --inverse-nav-secondary-sublist-item-active-color: var(--inverse-global-emphasis-color);
+    --inverse-nav-secondary-sublist-item-active-color: var(--inverse-global-color-emphasis);
     --inverse-nav-dividers-border: var(--inverse-global-border);
     --nav-default-font-size: var(--global-small-font-size);
     --nav-default-subtitle-font-size: 12px;
     --nav-secondary-margin-top: 0;
     --nav-secondary-item-padding-horizontal: 10px;
     --nav-secondary-item-padding-vertical: 10px;
-    --nav-secondary-item-hover-background: var(--global-muted-color-default);
-    --nav-secondary-item-active-background: var(--global-muted-color-default);
-    --inverse-nav-background-item-hover-background: var(--inverse-global-muted-color-default);
-    --inverse-nav-background-item-active-background: var(--inverse-global-muted-color-default);
+    --nav-secondary-item-hover-background: var(--global-muted-color);
+    --nav-secondary-item-active-background: var(--global-muted-color);
+    --inverse-nav-background-item-hover-background: var(--inverse-global-muted-color);
+    --inverse-nav-background-item-active-background: var(--inverse-global-muted-color);
   }
   /*
      * Navbar
      */
   .uk-navbar {
-    --navbar-background: var(--global-muted-color-default);
+    --navbar-background: var(--global-muted-color);
     --navbar-gap: 0px;
     --navbar-color-mode: dark;
     --navbar-nav-gap: 0px;
     --navbar-nav-item-height: 80px;
     --navbar-nav-item-padding-horizontal: 15px;
-    --navbar-nav-item-color: var(--global-muted-color);
+    --navbar-nav-item-color: var(--global-color-muted);
     --navbar-nav-item-font-size: var(--global-font-size);
     --navbar-nav-item-font-family: var(--global-font-family);
     --navbar-nav-item-hover-color: var(--global-color);
-    --navbar-nav-item-onclick-color: var(--global-emphasis-color);
-    --navbar-nav-item-active-color: var(--global-emphasis-color);
+    --navbar-nav-item-onclick-color: var(--global-color-emphasis);
+    --navbar-nav-item-active-color: var(--global-color-emphasis);
     --navbar-parent-icon-margin-inline-start: 4px;
     --navbar-item-padding-horizontal: 15px;
     --navbar-item-color: var(--global-color);
-    --navbar-toggle-color: var(--global-muted-color);
+    --navbar-toggle-color: var(--global-color-muted);
     --navbar-toggle-hover-color: var(--global-color);
     --navbar-subtitle-font-size: var(--global-small-font-size);
     --navbar-dropdown-margin: 0;
@@ -1669,7 +1806,7 @@
     --navbar-dropdown-viewport-margin: 15px;
     --navbar-dropdown-width: 200px;
     --navbar-dropdown-padding: 15px;
-    --navbar-dropdown-background: var(--global-muted-color-default);
+    --navbar-dropdown-background: var(--global-muted-color);
     --navbar-dropdown-color: var(--global-color);
     --navbar-dropdown-color-mode: dark;
     --navbar-dropdown-focus-outline: var(--base-focus-outline);
@@ -1687,34 +1824,34 @@
     --navbar-dropdown-dropbar-large-shift-margin: 0;
     --navbar-dropdown-dropbar-large-padding-top: var(--navbar-dropdown-large-padding);
     --navbar-dropdown-dropbar-large-padding-bottom: var(--navbar-dropdown-dropbar-large-padding-top);
-    --navbar-dropdown-nav-item-color: var(--global-muted-color);
+    --navbar-dropdown-nav-item-color: var(--global-color-muted);
     --navbar-dropdown-nav-item-hover-color: var(--global-color);
-    --navbar-dropdown-nav-item-active-color: var(--global-emphasis-color);
+    --navbar-dropdown-nav-item-active-color: var(--global-color-emphasis);
     --navbar-dropdown-nav-subtitle-font-size: var(--global-small-font-size);
-    --navbar-dropdown-nav-header-color: var(--global-emphasis-color);
+    --navbar-dropdown-nav-header-color: var(--global-color-emphasis);
     --navbar-dropdown-nav-divider-border-width: var(--global-border-width);
     --navbar-dropdown-nav-divider-border: var(--global-border);
-    --navbar-dropdown-nav-sublist-item-color: var(--global-muted-color);
+    --navbar-dropdown-nav-sublist-item-color: var(--global-color-muted);
     --navbar-dropdown-nav-sublist-item-hover-color: var(--global-color);
-    --navbar-dropdown-nav-sublist-item-active-color: var(--global-emphasis-color);
-    --inverse-navbar-background: var(--inverse-global-muted-color-default);
-    --inverse-navbar-nav-item-color: var(--inverse-global-muted-color);
+    --navbar-dropdown-nav-sublist-item-active-color: var(--global-color-emphasis);
+    --inverse-navbar-background: var(--inverse-global-muted-color);
+    --inverse-navbar-nav-item-color: var(--inverse-global-color-muted);
     --inverse-navbar-nav-item-hover-color: var(--inverse-global-color);
-    --inverse-navbar-nav-item-onclick-color: var(--inverse-global-emphasis-color);
-    --inverse-navbar-nav-item-active-color: var(--inverse-global-emphasis-color);
+    --inverse-navbar-nav-item-onclick-color: var(--inverse-global-color-emphasis);
+    --inverse-navbar-nav-item-active-color: var(--inverse-global-color-emphasis);
     --inverse-navbar-item-color: var(--inverse-global-color);
-    --inverse-navbar-toggle-color: var(--inverse-global-muted-color);
+    --inverse-navbar-toggle-color: var(--inverse-global-color-muted);
     --inverse-navbar-toggle-hover-color: var(--inverse-global-color);
-    --inverse-navbar-dropdown-background: var(--inverse-global-muted-color-default);
+    --inverse-navbar-dropdown-background: var(--inverse-global-muted-color);
     --inverse-navbar-dropdown-color: var(--inverse-global-color);
-    --inverse-navbar-dropdown-nav-item-color: var(--inverse-global-muted-color);
+    --inverse-navbar-dropdown-nav-item-color: var(--inverse-global-color-muted);
     --inverse-navbar-dropdown-nav-item-hover-color: var(--inverse-global-color);
-    --inverse-navbar-dropdown-nav-item-active-color: var(--inverse-global-emphasis-color);
-    --inverse-navbar-dropdown-nav-header-color: var(--inverse-global-emphasis-color);
+    --inverse-navbar-dropdown-nav-item-active-color: var(--inverse-global-color-emphasis);
+    --inverse-navbar-dropdown-nav-header-color: var(--inverse-global-color-emphasis);
     --inverse-navbar-dropdown-nav-divider-border: var(--inverse-global-border);
-    --inverse-navbar-dropdown-nav-sublist-item-color: var(--inverse-global-muted-color);
+    --inverse-navbar-dropdown-nav-sublist-item-color: var(--inverse-global-color-muted);
     --inverse-navbar-dropdown-nav-sublist-item-hover-color: var(--inverse-global-color);
-    --inverse-navbar-dropdown-nav-sublist-item-active-color: var(--inverse-global-emphasis-color);
+    --inverse-navbar-dropdown-nav-sublist-item-active-color: var(--inverse-global-color-emphasis);
     --navbar-gap: 15px;
     --navbar-nav-gap: 15px;
     --navbar-nav-item-padding-horizontal: 0;
@@ -1737,10 +1874,10 @@
      */
   .uk-subnav {
     --subnav-margin-horizontal: 20px;
-    --subnav-item-color: var(--global-muted-color);
+    --subnav-item-color: var(--global-color-muted);
     --subnav-item-hover-color: var(--global-color);
     --subnav-item-hover-text-decoration: none;
-    --subnav-item-active-color: var(--global-emphasis-color);
+    --subnav-item-active-color: var(--global-color-emphasis);
     --subnav-divider-margin-horizontal: var(--subnav-margin-horizontal);
     --subnav-divider-border-height: 1.5em;
     --subnav-divider-border-width: var(--global-border-width);
@@ -1750,26 +1887,26 @@
     --subnav-pill-item-padding-horizontal: 10px;
     --subnav-pill-item-background: transparent;
     --subnav-pill-item-color: var(--subnav-item-color);
-    --subnav-pill-item-hover-background: var(--global-muted-color-default);
+    --subnav-pill-item-hover-background: var(--global-muted-color);
     --subnav-pill-item-hover-color: var(--global-color);
     --subnav-pill-item-onclick-background: var(--subnav-pill-item-hover-background);
     --subnav-pill-item-onclick-color: var(--subnav-pill-item-hover-color);
     --subnav-pill-item-active-background: var(--global-primary-color);
-    --subnav-pill-item-active-color: var(--global-inverse-color);
-    --subnav-item-disabled-color: var(--global-muted-color);
-    --inverse-subnav-item-color: var(--inverse-global-muted-color);
+    --subnav-pill-item-active-color: var(--global-color-inverse);
+    --subnav-item-disabled-color: var(--global-color-muted);
+    --inverse-subnav-item-color: var(--inverse-global-color-muted);
     --inverse-subnav-item-hover-color: var(--inverse-global-color);
-    --inverse-subnav-item-active-color: var(--inverse-global-emphasis-color);
+    --inverse-subnav-item-active-color: var(--inverse-global-color-emphasis);
     --inverse-subnav-divider-border: var(--inverse-global-border);
     --inverse-subnav-pill-item-background: transparent;
-    --inverse-subnav-pill-item-color: var(--inverse-global-muted-color);
-    --inverse-subnav-pill-item-hover-background: var(--inverse-global-muted-color-default);
+    --inverse-subnav-pill-item-color: var(--inverse-global-color-muted);
+    --inverse-subnav-pill-item-hover-background: var(--inverse-global-muted-color);
     --inverse-subnav-pill-item-hover-color: var(--inverse-global-color);
     --inverse-subnav-pill-item-onclick-background: var(--inverse-subnav-pill-item-hover-background);
     --inverse-subnav-pill-item-onclick-color: var(--inverse-subnav-pill-item-hover-color);
     --inverse-subnav-pill-item-active-background: var(--inverse-global-primary-color);
-    --inverse-subnav-pill-item-active-color: var(--inverse-global-emphasis-color);
-    --inverse-subnav-item-disabled-color: var(--inverse-global-muted-color);
+    --inverse-subnav-pill-item-active-color: var(--inverse-global-color-emphasis);
+    --inverse-subnav-item-disabled-color: var(--inverse-global-color-muted);
     --subnav-item-font-size: var(--global-small-font-size);
     --subnav-item-text-transform: uppercase;
   }
@@ -1778,18 +1915,18 @@
      */
   .uk-breadcrumb {
     --breadcrumb-item-font-size: var(--global-small-font-size);
-    --breadcrumb-item-color: var(--global-muted-color);
+    --breadcrumb-item-color: var(--global-color-muted);
     --breadcrumb-item-hover-color: var(--global-color);
     --breadcrumb-item-hover-text-decoration: none;
     --breadcrumb-item-active-color: var(--global-color);
     --breadcrumb-divider: "/";
     --breadcrumb-divider-margin-horizontal: 20px;
     --breadcrumb-divider-font-size: var(--breadcrumb-item-font-size);
-    --breadcrumb-divider-color: var(--global-muted-color);
-    --inverse-breadcrumb-item-color: var(--inverse-global-muted-color);
+    --breadcrumb-divider-color: var(--global-color-muted);
+    --inverse-breadcrumb-item-color: var(--inverse-global-color-muted);
     --inverse-breadcrumb-item-hover-color: var(--inverse-global-color);
     --inverse-breadcrumb-item-active-color: var(--inverse-global-color);
-    --inverse-breadcrumb-divider-color: var(--inverse-global-muted-color);
+    --inverse-breadcrumb-divider-color: var(--inverse-global-color-muted);
   }
   /*
      * Pagination
@@ -1798,15 +1935,15 @@
     --pagination-margin-horizontal: 0;
     --pagination-item-padding-vertical: 5px;
     --pagination-item-padding-horizontal: 10px;
-    --pagination-item-color: var(--global-muted-color);
+    --pagination-item-color: var(--global-color-muted);
     --pagination-item-hover-color: var(--global-color);
     --pagination-item-hover-text-decoration: none;
     --pagination-item-active-color: var(--global-color);
-    --pagination-item-disabled-color: var(--global-muted-color);
-    --inverse-pagination-item-color: var(--inverse-global-muted-color);
+    --pagination-item-disabled-color: var(--global-color-muted);
+    --inverse-pagination-item-color: var(--inverse-global-color-muted);
     --inverse-pagination-item-hover-color: var(--inverse-global-color);
     --inverse-pagination-item-active-color: var(--inverse-global-color);
-    --inverse-pagination-item-disabled-color: var(--inverse-global-muted-color);
+    --inverse-pagination-item-disabled-color: var(--inverse-global-color-muted);
   }
   /*
      * Tab
@@ -1815,15 +1952,15 @@
     --tab-margin-horizontal: 20px;
     --tab-item-padding-horizontal: 10px;
     --tab-item-padding-vertical: 5px;
-    --tab-item-color: var(--global-muted-color);
+    --tab-item-color: var(--global-color-muted);
     --tab-item-hover-color: var(--global-color);
     --tab-item-hover-text-decoration: none;
-    --tab-item-active-color: var(--global-emphasis-color);
-    --tab-item-disabled-color: var(--global-muted-color);
-    --inverse-tab-item-color: var(--inverse-global-muted-color);
+    --tab-item-active-color: var(--global-color-emphasis);
+    --tab-item-disabled-color: var(--global-color-muted);
+    --inverse-tab-item-color: var(--inverse-global-color-muted);
     --inverse-tab-item-hover-color: var(--inverse-global-color);
-    --inverse-tab-item-active-color: var(--inverse-global-emphasis-color);
-    --inverse-tab-item-disabled-color: var(--inverse-global-muted-color);
+    --inverse-tab-item-active-color: var(--inverse-global-color-emphasis);
+    --inverse-tab-item-disabled-color: var(--inverse-global-color-muted);
     --tab-border-width: var(--global-border-width);
     --tab-border: var(--global-border);
     --tab-item-border-width: var(--global-border-width);
@@ -1889,10 +2026,10 @@
   .uk-iconnav {
     --iconnav-margin-horizontal: var(--global-small-margin);
     --iconnav-margin-vertical: var(--iconnav-margin-horizontal);
-    --iconnav-item-color: var(--global-muted-color);
+    --iconnav-item-color: var(--global-color-muted);
     --iconnav-item-hover-color: var(--global-color);
     --iconnav-item-active-color: var(--global-color);
-    --inverse-iconnav-item-color: var(--inverse-global-muted-color);
+    --inverse-iconnav-item-color: var(--inverse-global-color-muted);
     --inverse-iconnav-item-hover-color: var(--inverse-global-color);
     --inverse-iconnav-item-active-color: var(--inverse-global-color);
     --subnav-item-font-size: var(--global-small-font-size);
@@ -1905,7 +2042,7 @@
     --dropdown-viewport-margin: 15px;
     --dropdown-min-width: 200px;
     --dropdown-padding: 15px;
-    --dropdown-background: var(--global-muted-color-default);
+    --dropdown-background: var(--global-muted-color);
     --dropdown-color: var(--global-color);
     --dropdown-color-mode: dark;
     --dropdown-focus-outline: var(--base-focus-outline);
@@ -1918,21 +2055,21 @@
     --dropdown-dropbar-viewport-margin-m: var(--global-medium-gutter);
     --dropdown-dropbar-large-padding-top: var(--dropdown-large-padding);
     --dropdown-dropbar-large-padding-bottom: var(--dropdown-large-padding);
-    --dropdown-nav-item-color: var(--global-muted-color);
+    --dropdown-nav-item-color: var(--global-color-muted);
     --dropdown-nav-item-hover-color: var(--global-color);
     --dropdown-nav-subtitle-font-size: var(--global-small-font-size);
-    --dropdown-nav-header-color: var(--global-emphasis-color);
+    --dropdown-nav-header-color: var(--global-color-emphasis);
     --dropdown-nav-divider-border-width: var(--global-border-width);
     --dropdown-nav-divider-border: var(--global-border);
-    --dropdown-nav-sublist-item-color: var(--global-muted-color);
+    --dropdown-nav-sublist-item-color: var(--global-color-muted);
     --dropdown-nav-sublist-item-hover-color: var(--global-color);
-    --inverse-dropdown-background: var(--inverse-global-muted-color-default);
+    --inverse-dropdown-background: var(--inverse-global-muted-color);
     --inverse-dropdown-color: var(--inverse-global-color);
-    --inverse-dropdown-nav-item-color: var(--inverse-global-muted-color);
+    --inverse-dropdown-nav-item-color: var(--inverse-global-color-muted);
     --inverse-dropdown-nav-item-hover-color: var(--inverse-global-color);
-    --inverse-dropdown-nav-header-color: var(--inverse-global-emphasis-color);
+    --inverse-dropdown-nav-header-color: var(--inverse-global-color-emphasis);
     --inverse-dropdown-nav-divider-border: var(--inverse-global-border);
-    --inverse-dropdown-nav-sublist-item-color: var(--inverse-global-muted-color);
+    --inverse-dropdown-nav-sublist-item-color: var(--inverse-global-color-muted);
     --inverse-dropdown-nav-sublist-item-hover-color: var(--inverse-global-color);
     --dropdown-padding: 25px;
     --dropdown-background: var(--global-default-color);
@@ -5015,13 +5152,17 @@ select.uk-form-width-xsmall {
 /* ========================================================================
    Component: Alert
  ========================================================================== */
+/*
+ * Base
+ */
 .uk-alert {
   position: relative;
   margin-bottom: var(--alert-margin-vertical);
   padding: var(--alert-padding);
-  padding-inline-end: var(--alert-padding-inline-end);
-  background: var(--alert-background);
+  border: var(--alert-border-width) solid var(--alert-border-color);
+  border-radius: var(--alert-border-radius);
   color: var(--alert-color);
+  background-color: var(--alert-background);
 }
 /* Add margin if adjacent element */
 * + .uk-alert {
@@ -5033,62 +5174,9 @@ select.uk-form-width-xsmall {
 .uk-alert > :last-child {
   margin-bottom: 0;
 }
-/* Close
- * Adopts `uk-close`
- ========================================================================== */
-.uk-alert-close {
-  position: absolute;
-  top: var(--alert-close-top);
-  inset-inline-end: var(--alert-close-inline-end);
-  color: inherit;
-  opacity: var(--alert-close-opacity);
-}
 /*
- * Remove margin from adjacent element
+ * Content
  */
-.uk-alert-close:first-child + * {
-  margin-top: 0;
-}
-/*
- * Hover
- */
-.uk-alert-close:hover {
-  color: inherit;
-  opacity: var(--alert-close-hover-opacity);
-}
-/* Style modifiers
- ========================================================================== */
-/*
- * Primary
- */
-.uk-alert-primary {
-  background: var(--alert-primary-background);
-  color: var(--alert-primary-color);
-}
-/*
- * Success
- */
-.uk-alert-success {
-  background: var(--alert-success-background);
-  color: var(--alert-success-color);
-}
-/*
- * Warning
- */
-.uk-alert-warning {
-  background: var(--alert-warning-background);
-  color: var(--alert-warning-color);
-}
-/*
- * Danger
- */
-.uk-alert-danger {
-  background: var(--alert-danger-background);
-  color: var(--alert-danger-color);
-}
-/*
-     * Content
-     */
 .uk-alert h1,
 .uk-alert h2,
 .uk-alert h3,
@@ -5104,6 +5192,389 @@ select.uk-form-width-xsmall {
 .uk-alert a:not([class]):hover {
   color: inherit;
   text-decoration: underline;
+}
+/*
+ * Icon and close icon
+ */
+/* Alert Icon gap from content */
+.uk-alert-icon {
+  margin-inline-end: var(--alert-icon-gap);
+}
+/*
+ * 1. If there is an icon or close element show content as grid.
+ * 2. Always middle the content and icon/close elements.
+ * 3. Set the content to expand width and icon/close to auto width.
+ */
+.uk-alert:has(> .uk-alert-close),
+.uk-alert:has(> .uk-alert-icon) {
+  /* 1 */
+  display: grid;
+  /* 2 */
+  align-items: center;
+  /* 3 */
+  grid-template-columns: 1fr auto;
+}
+/* Alert icon always be at row 1 and column 1 */
+.uk-alert-icon {
+  grid-area: 1 / 1;
+}
+/** Close always be at row 1 and column 2. */
+.uk-alert-close {
+  grid-area: 1 / 2;
+}
+/* If icon exists or icon and close element both exists:
+ * 1. Set the content to middle and icon to left/start and close to right/end.
+ * 2. Content column always be 2 and row to auto.
+ * 3. Set Close to always be column 3.
+ */
+/* 1 */
+.uk-alert:has(> .uk-alert-close):has(> .uk-alert-icon) {
+  grid-template-columns: auto 1fr auto;
+}
+/* 2 */
+.uk-alert:has(> .uk-alert-icon) > *:not(.uk-alert-icon):not(.uk-alert-close) {
+  grid-area: auto / 2;
+}
+.uk-alert:has(> .uk-alert-close):has(> .uk-alert-icon) > .uk-alert-close {
+  grid-area: 1 / 3;
+}
+/* If just alert icon exists:
+ * Set the first column width (icon) to auto and content width to expand.
+ */
+.uk-alert:has(> .uk-alert-icon) {
+  grid-template-columns: auto 1fr;
+}
+/* If just Close exists:
+ * Set the first column width (contents) to expand and close width to auto.
+ */
+.uk-alert:has(> .uk-alert-close):not(:has(> .uk-alert-icon)) > *:not(.uk-alert-close) {
+  grid-area: auto / 1;
+}
+/* Fix margin not collapsing at first content item in grid */
+.uk-alert-icon:is(:first-child, :nth-child(2)) + * {
+  margin-block: 0;
+}
+/* Miscellaneous */
+.uk-alert-close-transition-fix.uk-alert.uk-togglable-leave + * {
+  margin-top: 0;
+}
+/* Colors
+ ========================================================================== */
+/*
+ * Default
+ */
+.uk-alert-default {
+  --alert-background: var(--alert-default-background);
+  --alert-color: var(--alert-default-color);
+  --alert-bordered-border-color: var(--alert-bordered-border-color-default);
+  --alert-icon-box-background: var(--alert-icon-box-background-default);
+  --alert-close-pill-background: var(--alert-close-pill-background-default);
+  --alert-close-pill-back: var(--alert-default-background);
+}
+/*
+ * Muted
+ */
+.uk-alert-muted {
+  --alert-background: var(--alert-muted-background);
+  --alert-color: var(--alert-muted-color);
+  --alert-bordered-border-color: var(--alert-bordered-border-color-muted);
+  --alert-icon-box-background: var(--alert-icon-box-background-muted);
+  --alert-close-pill-background: var(--alert-close-pill-background-muted);
+  --alert-close-pill-back: var(--alert-muted-background);
+}
+/*
+ * Primary
+ */
+.uk-alert-primary {
+  --alert-background: var(--alert-primary-background);
+  --alert-color: var(--alert-primary-color);
+  --alert-bordered-border-color: var(--alert-bordered-border-color-primary);
+  --alert-icon-box-background: var(--alert-icon-box-background-primary);
+  --alert-close-pill-background: var(--alert-close-pill-background-primary);
+  --alert-close-pill-back: var(--alert-primary-background);
+}
+/*
+ * Success
+ */
+.uk-alert-success {
+  --alert-background: var(--alert-success-background);
+  --alert-color: var(--alert-success-color);
+  --alert-bordered-border-color: var(--alert-bordered-border-color-success);
+  --alert-icon-box-background: var(--alert-icon-box-background-success);
+  --alert-close-pill-background: var(--alert-close-pill-background-success);
+  --alert-close-pill-back: var(--alert-success-background);
+}
+/*
+ * Warning
+ */
+.uk-alert-warning {
+  --alert-background: var(--alert-warning-background);
+  --alert-color: var(--alert-warning-color);
+  --alert-bordered-border-color: var(--alert-bordered-border-color-warning);
+  --alert-icon-box-background: var(--alert-icon-box-background-warning);
+  --alert-close-pill-background: var(--alert-close-pill-background-warning);
+  --alert-close-pill-back: var(--alert-warning-background);
+}
+/*
+ * Danger
+ */
+.uk-alert-danger {
+  --alert-background: var(--alert-danger-background);
+  --alert-color: var(--alert-danger-color);
+  --alert-bordered-border-color: var(--alert-bordered-border-color-danger);
+  --alert-icon-box-background: var(--alert-icon-box-background-danger);
+  --alert-close-pill-background: var(--alert-close-pill-background-danger);
+  --alert-close-pill-back: var(--alert-danger-background);
+}
+/* Style: Bordered
+ ======================================================================== */
+/*
+ * Base
+ */
+.uk-alert-bordered {
+  border-color: var(--alert-bordered-border-color);
+}
+/*
+ * Default
+ */
+/*
+ * Muted
+ */
+/*
+ * Primary
+ */
+/*
+ * Success
+ */
+/*
+ * Warning
+ */
+/*
+ * Danger
+ */
+/* Icon Box
+ ======================================================================== */
+/*
+ * Base
+ */
+.uk-alert-icon-box:has(> .uk-alert-icon) {
+  padding: var(--alert-icon-box-padding);
+}
+.uk-alert-icon-box .uk-alert-icon {
+  padding: var(--alert-icon-box-icon-padding);
+  color: var(--alert-icon-box-color);
+  border-radius: var(--alert-icon-box-border-radius);
+  background-color: var(--alert-icon-box-background);
+}
+/*
+ * Default
+ */
+/*
+ * Muted
+ */
+/*
+ * Primary
+ */
+/*
+ * success
+ */
+/*
+ * warning
+ */
+/*
+ * Danger
+ */
+/* Close
+ * Adopts `uk-close`
+ ========================================================================== */
+/*
+ * Base
+ */
+/*
+ * 1. Center close icon
+ * 2. Stay at corner if first row grow.
+ * 3. Decrease height with margin to reduce close icon height effect in
+ *    alert and fix the position, also alert padding will effect on it.
+ * 4. Miscellaneous
+ */
+.uk-alert-close {
+  position: relative;
+  box-sizing: border-box;
+  /* 1 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 2 */
+  align-self: baseline;
+  justify-self: end;
+  order: 9999;
+  /* 3 */
+  padding: var(--alert-close-padding);
+  margin-inline-end: var(--alert-close-margin-inline-end);
+  margin-top: var(--alert-close-margin-top);
+  inset-inline-end: var(--alert-close-inline-end);
+  top: var(--alert-close-top);
+  /* 4 */
+  color: rgb(from currentColor r g b / var(--alert-close-opacity));
+  border-radius: var(--alert-close-border-radius);
+  min-height: var(--alert-close-min-height);
+  min-width: var(--alert-close-min-width);
+  transition: 0.2s ease-in-out;
+  transition-property: background-color, color;
+}
+/*
+ * Remove margin from adjacent element
+ */
+.uk-alert-close:first-child + * {
+  margin-top: 0;
+}
+/*
+ * Hover
+ */
+.uk-alert-close:hover {
+  color: rgb(from currentColor r g b / var(--alert-close-hover-opacity));
+}
+/*
+ * Focus/Active
+ */
+.uk-alert-close:is(:focus-visible, :active) {
+  color: rgb(from currentColor r g b / var(--alert-close-active-opacity));
+}
+/* Set close to effect alert icon box padding instead of alert padding */
+.uk-alert-icon-box:has(> .uk-alert-icon) .uk-alert-close {
+  margin-inline-end: var(--alert-icon-box-close-margin-inline-end);
+  margin-top: var(--alert-icon-box-close-margin-top);
+  margin-bottom: var(--alert-icon-box-close-margin-bottom);
+  top: var(--alert-icon-box-close-top);
+}
+/*
+ * Position
+ */
+.uk-alert-close-end .uk-alert-close {
+  transform: var(--alert-close-end-x);
+  margin-inline-end: var(--alert-close-end-margin-inline-end);
+}
+.uk-alert-close-top .uk-alert-close {
+  top: 0;
+  transform: var(--alert-close-top-y);
+  margin-top: var(--alert-close-top-margin-top);
+}
+.uk-alert-close-corner .uk-alert-close {
+  top: var(--alert-close-corner-top);
+  inset-inline-end: var(--alert-close-corner-inline-end);
+  transform: var(--alert-close-end-x) var(--alert-close-top-y);
+  margin-inline-end: var(--alert-close-end-margin-inline-end);
+  margin-top: var(--alert-close-top-margin-top);
+}
+/*
+ * Position: Icon box
+ */
+.uk-alert-close-end.uk-alert-icon-box .uk-alert-close {
+  transform: var(--alert-icon-box-close-end-x);
+  margin-inline-end: var(--alert-icon-box-close-end-margin-inline-end);
+}
+.uk-alert-close-top.uk-alert-icon-box .uk-alert-close {
+  top: 0;
+  transform: var(--alert-close-top-y);
+  margin-top: var(--alert-icon-box-close-top-margin-top);
+}
+.uk-alert-close-corner.uk-alert-icon-box .uk-alert-close {
+  top: var(--alert-icon-box-close-corner-top);
+  inset-inline-end: var(--alert-icon-box-close-corner-inline-end);
+  transform: var(--alert-icon-box-close-end-x) var(--alert-close-top-y);
+  margin-inline-end: var(--alert-icon-box-close-end-margin-inline-end);
+  margin-top: var(--alert-icon-box-close-top-margin-top);
+}
+/*
+ * Circle
+ */
+.uk-alert-close-circle .uk-alert-close {
+  border-radius: var(--global-border-radius-circle);
+}
+/* Close base style
+ ======================================================================== */
+/*
+ * Base
+ */
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid) .uk-alert-close::before {
+  content: "";
+  position: absolute;
+  display: block;
+  inset: 0;
+  transition: 0.2s ease-in-out;
+  transition-property: background-color, color;
+  border-radius: calc(var(--alert-close-border-radius) - 1px);
+}
+.uk-alert-close-circle .uk-alert-close::before {
+  border-radius: var(--global-border-radius-circle);
+}
+:is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover) {
+  --alert-close-background-opacity: 0;
+}
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover) {
+  --alert-close-background-opacity: var(--alert-close-background-hover-opacity);
+}
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)) {
+  --alert-close-background-opacity: var(--alert-close-background-active-opacity);
+}
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid) .uk-alert-close::before {
+  background-color: var(--alert-close-pill-background);
+}
+/*
+ * Default
+ */
+/*
+ * Muted
+ */
+/*
+ * Primary
+ */
+/*
+ * Success
+ */
+/*
+ * Warning
+ */
+/*
+ * Danger
+ */
+/* Close style: pill
+======================================================================== */
+/* Fix background transparent when close is on the box */
+.uk-alert-close-pill .uk-alert-close {
+  background-color: var(--alert-close-pill-back);
+}
+/*
+ * Default
+ */
+/*
+ * Muted
+ */
+/*
+ * Primary
+ */
+/*
+ * Success
+ */
+/*
+ * Warning
+ */
+/*
+ * Danger
+ */
+/* Close style: pill-solid
+======================================================================== */
+/*
+ * Base
+ */
+.uk-alert-close-pill-solid .uk-alert-close {
+  background-color: var(--alert-close-pill-solid-background);
+  outline: var(--alert-close-pill-solid-outline-width) solid var(--alert-close-pill-solid-border-color);
+  border: var(--alert-close-pill-solid-border-width) solid transparent;
+  color: inherit;
+}
+.uk-alert-close-pill-solid .uk-alert-close:hover::before {
+  border-color: var(--alert-close-pill-solid-hover-border-color);
 }
 /* ========================================================================
    Component: Placeholder
@@ -5608,8 +6079,47 @@ select.uk-form-width-xsmall {
 .uk-accordion-content > :last-child {
   margin-bottom: 0;
 }
-/* Default modifier
+/*
+ * Disabled
+ */
+.uk-accordion-item-disabled .uk-accordion-title {
+  pointer-events: none;
+  color: var(--accordion-disabled-title-color);
+}
+.uk-accordion-item-disabled .uk-accordion-icon {
+  color: var(--accordion-disabled-icon-color);
+}
+/* Style modifier base
  ========================================================================== */
+/*
+ * Title
+ */
+/*
+ * 1. Center content vertically, e.g. an icon
+ * 2. Imitate white space gap when using flexbox
+ * 3. Reset link
+ */
+:is(.uk-accordion-default, .uk-accordion-pill, .uk-accordion-line) .uk-accordion-title {
+  /* 1 */
+  display: flex;
+  align-items: center;
+  /* 2 */
+  column-gap: var(--accordion-title-gap);
+  /* 3 */
+  font-size: var(--accordion-title-font-size);
+  line-height: var(--accordion-title-line-height);
+  color: var(--accordion-title-color);
+}
+/*
+ * Icon
+ */
+:is(.uk-accordion-default, .uk-accordion-pill, .uk-accordion-line) .uk-accordion-icon {
+  flex: 0 0 auto;
+  margin-inline-start: auto;
+  color: var(--accordion-icon-color);
+}
+/* Style: default
+ ======================================================================== */
 /*
  * Item
  */
@@ -5620,22 +6130,6 @@ select.uk-form-width-xsmall {
 /*
  * Title
  */
-/*
-* 1. Center content vertically, e.g. an icon
-* 2. Imitate white space gap when using flexbox
-* 3. Reset link
- */
-.uk-accordion-default .uk-accordion-title {
-  /* 1 */
-  display: flex;
-  align-items: center;
-  /* 2 */
-  column-gap: var(--accordion-default-title-gap);
-  /* 3 */
-  font-size: var(--accordion-default-title-font-size);
-  line-height: var(--accordion-default-title-line-height);
-  color: var(--accordion-default-title-color);
-}
 /* Hover */
 .uk-accordion-default .uk-accordion-title:hover {
   color: var(--accordion-default-title-hover-color);
@@ -5645,16 +6139,119 @@ select.uk-form-width-xsmall {
 /*
  * Icon
  */
-.uk-accordion-default .uk-accordion-icon {
-  flex: none;
-  margin-inline-start: auto;
-  color: var(--accordion-default-icon-color);
-}
 /*
  * Content
  */
 .uk-accordion-default .uk-accordion-content {
   margin-top: var(--accordion-default-content-margin-top);
+}
+/* Style: pill
+ ======================================================================== */
+/*
+ * Item
+ */
+/* Active */
+/*
+ * Title
+ */
+.uk-accordion-pill .uk-accordion-title {
+  line-height: var(--accordion-pill-title-line-height);
+  padding: var(--accordion-pill-title-padding-vertical) var(--accordion-pill-title-padding-horizontal);
+  background: var(--accordion-pill-title-background);
+  border-radius: var(--accordion-pill-title-border-radius);
+}
+/* Hover */
+.uk-accordion-pill .uk-accordion-title:hover {
+  background: var(--accordion-pill-title-hover-background);
+  text-decoration: none;
+}
+/* Active */
+/*
+ * Icon
+ */
+/*
+ * Content
+ */
+.uk-accordion-pill .uk-accordion-content {
+  margin-top: var(--accordion-pill-content-margin-top);
+  padding: 0 var(--accordion-pill-content-padding) var(--accordion-pill-content-padding);
+}
+/* Style: line
+ ======================================================================== */
+/*
+ * Item
+ */
+.uk-accordion-line > * {
+  border-bottom: var(--accordion-line-border-width) solid transparent;
+}
+.uk-accordion-line > *:not(:last-child) {
+  border-bottom-color: var(--accordion-line-border-color);
+}
+/* Active */
+/*
+ * Title
+ */
+.uk-accordion-line .uk-accordion-title {
+  line-height: var(--accordion-line-title-line-height);
+  padding: var(--accordion-line-title-padding-vertical) 0;
+}
+/* Hover */
+/* Active */
+/*
+ * Icon
+ */
+/*
+ * Content
+ */
+.uk-accordion-line .uk-accordion-content {
+  padding-bottom: var(--accordion-line-content-padding);
+}
+/* Icon Style modifiers
+ ======================================================================== */
+/*
+ * Base
+ */
+.uk-accordion-icon svg > [class] {
+  transition: 0.2s ease-out;
+  transition-property: color, fill, stroke, transform, opacity;
+  transform-origin: center;
+}
+/*
+ * Default
+ */
+[aria-expanded="true"] .uk-accordion-icon svg > .line-1 {
+  transform: rotate(calc(-45deg * var(--uk-dir-sign)));
+  opacity: 0;
+}
+[aria-expanded="true"] .uk-accordion-icon svg > .line-2 {
+  transform: rotate(calc(90deg * var(--uk-dir-sign)));
+}
+/*
+ * Plus
+ */
+[aria-expanded="true"] .uk-accordion-icon svg > .plus {
+  transform: rotate(calc(45deg * var(--uk-dir-sign)));
+}
+/*
+ * Chevron
+ */
+[aria-expanded="true"] .uk-accordion-icon svg > .chevron {
+  transform: rotate(calc(180deg * var(--uk-dir-sign)));
+}
+/*
+ * Circle
+ */
+.uk-accordion-icon :is(svg[fill="currentColor"] > .circle, svg > .circle[fill="currentColor"]) {
+  opacity: var(--accordion-icon-circle-opacity);
+}
+[aria-expanded="true"] .uk-accordion-icon svg > .circle {
+  color: var(--accordion-icon-circle-active-color);
+}
+[aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]) {
+  stroke: var(--accordion-icon-circle-active-color);
+}
+[aria-expanded="true"] .uk-accordion-icon :is(svg[fill="currentColor"] > .circle, svg > .circle[fill="currentColor"]) {
+  opacity: var(--accordion-icon-circle-active-opacity);
 }
 /* ========================================================================
    Component: Drop
@@ -8124,11 +8721,12 @@ ul.uk-nav-sub {
 /*
  * Divider
  * `nth-child` makes it also work without JS if it's only one row
- * 1. Remove space between inline block elements.
- * 2. Style
+ * 1. Use alternative text to hide divider from screen readers
+ * 2. Remove space between inline block elements.
+ * 3. Style
  */
 .uk-breadcrumb > :nth-child(n+2):not(.uk-first-column)::before {
-  content: var(--breadcrumb-divider);
+  content: var(--breadcrumb-divider, "/") / "";
   display: inline-block;
   /* 1 */
   margin: 0 var(--breadcrumb-divider-margin-horizontal);
@@ -12571,10 +13169,28 @@ iframe[data-uk-cover] {
 .uk-overlay-primary,
 .uk-offcanvas-bar {
   color: var(--inverse-base-color);
-  /* Webkit */
-  /* Firefox */
-  /* Webkit */
-  /* Firefox */
+  /*
+     * Colors
+     */
+  /*
+     * Bordered
+     */
+  /*
+     * Icon box
+     */
+  /*
+     * Close
+     */
+  /* Fix background transparent when close is on the box */
+  /*
+     * Close base Style:
+     */
+  /*
+     * Close Style: Pill
+     */
+  /*
+     * Close Style: Pill solid
+     */
 }
 .uk-light a,
 .uk-light .uk-link,
@@ -12669,7 +13285,7 @@ iframe[data-uk-cover] {
 .uk-offcanvas-bar :not(pre) > kbd,
 .uk-offcanvas-bar :not(pre) > samp {
   color: var(--inverse-base-code-color);
-  background-color: var(--inverse-global-muted-color-default);
+  background-color: var(--inverse-global-muted-color);
 }
 .uk-light em,
 .uk-section-primary:not(.uk-preserve-color) em,
@@ -14290,7 +14906,7 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
 .uk-offcanvas-bar .uk-button-default.uk-active {
   background-color: var(--inverse-button-default-active-background);
   color: var(--inverse-button-default-active-color);
-  border-color: var(--inverse-global-emphasis-color);
+  border-color: var(--inverse-global-color-emphasis);
 }
 .uk-light .uk-button-primary,
 .uk-section-primary:not(.uk-preserve-color) .uk-button-primary,
@@ -14470,7 +15086,7 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
 .uk-card-secondary > :not([class*="uk-card-media"]) .uk-button-text::before,
 .uk-overlay-primary .uk-button-text::before,
 .uk-offcanvas-bar .uk-button-text::before {
-  border-bottom-color: var(--inverse-global-emphasis-color);
+  border-bottom-color: var(--inverse-global-color-emphasis);
 }
 .uk-light .uk-button-text:hover,
 .uk-section-primary:not(.uk-preserve-color) .uk-button-text:hover,
@@ -14885,19 +15501,39 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
 .uk-offcanvas-bar .uk-marker:hover {
   color: var(--inverse-marker-hover-color);
 }
-.uk-light .uk-alert,
-.uk-section-primary:not(.uk-preserve-color) .uk-alert,
-.uk-section-secondary:not(.uk-preserve-color) .uk-alert,
-.uk-tile-primary:not(.uk-preserve-color) .uk-alert,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-alert,
-.uk-card-primary.uk-card-body .uk-alert,
-.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert,
-.uk-card-secondary.uk-card-body .uk-alert,
-.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert,
-.uk-overlay-primary .uk-alert,
-.uk-offcanvas-bar .uk-alert {
-  background: var(--inverse-alert-background);
-  color: var(--inverse-alert-color);
+.uk-light .uk-alert-default,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert-default,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert-default,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert-default,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-default,
+.uk-card-primary.uk-card-body .uk-alert-default,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-default,
+.uk-card-secondary.uk-card-body .uk-alert-default,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-default,
+.uk-overlay-primary .uk-alert-default,
+.uk-offcanvas-bar .uk-alert-default {
+  --alert-background: var(--inverse-alert-default-background);
+  --alert-color: var(--inverse-alert-default-color);
+  --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-default);
+  --alert-icon-box-background: var(--inverse-alert-icon-box-background-default);
+  --alert-close-pill-background: var(--inverse-alert-close-pill-background-default);
+}
+.uk-light .uk-alert-muted,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert-muted,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert-muted,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert-muted,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-muted,
+.uk-card-primary.uk-card-body .uk-alert-muted,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-muted,
+.uk-card-secondary.uk-card-body .uk-alert-muted,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-muted,
+.uk-overlay-primary .uk-alert-muted,
+.uk-offcanvas-bar .uk-alert-muted {
+  --alert-background: var(--inverse-alert-muted-background);
+  --alert-color: var(--inverse-alert-muted-color);
+  --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-muted);
+  --alert-icon-box-background: var(--inverse-alert-icon-box-background-muted);
+  --alert-close-pill-background: var(--inverse-alert-close-pill-background-muted);
 }
 .uk-light .uk-alert-primary,
 .uk-section-primary:not(.uk-preserve-color) .uk-alert-primary,
@@ -14910,8 +15546,11 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
 .uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-primary,
 .uk-overlay-primary .uk-alert-primary,
 .uk-offcanvas-bar .uk-alert-primary {
-  background: var(--inverse-alert-primary-background);
-  color: var(--inverse-alert-primary-color);
+  --alert-background: var(--inverse-alert-primary-background);
+  --alert-color: var(--inverse-alert-primary-color);
+  --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-primary);
+  --alert-icon-box-background: var(--inverse-alert-icon-box-background-primary);
+  --alert-close-pill-background: var(--inverse-alert-close-pill-background-primary);
 }
 .uk-light .uk-alert-success,
 .uk-section-primary:not(.uk-preserve-color) .uk-alert-success,
@@ -14924,8 +15563,11 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
 .uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-success,
 .uk-overlay-primary .uk-alert-success,
 .uk-offcanvas-bar .uk-alert-success {
-  background: var(--inverse-alert-success-background);
-  color: var(--inverse-alert-success-color);
+  --alert-background: var(--inverse-alert-success-background);
+  --alert-color: var(--inverse-alert-success-color);
+  --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-success);
+  --alert-icon-box-background: var(--inverse-alert-icon-box-background-success);
+  --alert-close-pill-background: var(--inverse-alert-close-pill-background-success);
 }
 .uk-light .uk-alert-warning,
 .uk-section-primary:not(.uk-preserve-color) .uk-alert-warning,
@@ -14938,8 +15580,11 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
 .uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-warning,
 .uk-overlay-primary .uk-alert-warning,
 .uk-offcanvas-bar .uk-alert-warning {
-  background: var(--inverse-alert-warning-background);
-  color: var(--inverse-alert-warning-color);
+  --alert-background: var(--inverse-alert-warning-background);
+  --alert-color: var(--inverse-alert-warning-color);
+  --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-warning);
+  --alert-icon-box-background: var(--inverse-alert-icon-box-background-warning);
+  --alert-close-pill-background: var(--inverse-alert-close-pill-background-warning);
 }
 .uk-light .uk-alert-danger,
 .uk-section-primary:not(.uk-preserve-color) .uk-alert-danger,
@@ -14952,8 +15597,142 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
 .uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-danger,
 .uk-overlay-primary .uk-alert-danger,
 .uk-offcanvas-bar .uk-alert-danger {
-  background: var(--inverse-alert-danger-background);
-  color: var(--inverse-alert-danger-color);
+  --alert-background: var(--inverse-alert-danger-background);
+  --alert-color: var(--inverse-alert-danger-color);
+  --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-danger);
+  --alert-icon-box-background: var(--inverse-alert-icon-box-background-danger);
+  --alert-close-pill-background: var(--inverse-alert-close-pill-background-danger);
+}
+.uk-light .uk-alert-close,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert-close,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert-close,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert-close,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-close,
+.uk-card-primary.uk-card-body .uk-alert-close,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-close,
+.uk-card-secondary.uk-card-body .uk-alert-close,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-close,
+.uk-overlay-primary .uk-alert-close,
+.uk-offcanvas-bar .uk-alert-close {
+  color: rgb(from currentColor r g b / var(--inverse-alert-close-opacity));
+}
+.uk-light .uk-alert-close:hover,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert-close:hover,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert-close:hover,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert-close:hover,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-close:hover,
+.uk-card-primary.uk-card-body .uk-alert-close:hover,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-close:hover,
+.uk-card-secondary.uk-card-body .uk-alert-close:hover,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-close:hover,
+.uk-overlay-primary .uk-alert-close:hover,
+.uk-offcanvas-bar .uk-alert-close:hover {
+  color: rgb(from currentColor r g b / var(--inverse-alert-close-hover-opacity));
+}
+.uk-light .uk-alert-close:is(:focus-visible, :active),
+.uk-section-primary:not(.uk-preserve-color) .uk-alert-close:is(:focus-visible, :active),
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert-close:is(:focus-visible, :active),
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert-close:is(:focus-visible, :active),
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-close:is(:focus-visible, :active),
+.uk-card-primary.uk-card-body .uk-alert-close:is(:focus-visible, :active),
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-close:is(:focus-visible, :active),
+.uk-card-secondary.uk-card-body .uk-alert-close:is(:focus-visible, :active),
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-close:is(:focus-visible, :active),
+.uk-overlay-primary .uk-alert-close:is(:focus-visible, :active),
+.uk-offcanvas-bar .uk-alert-close:is(:focus-visible, :active) {
+  color: rgb(from currentColor r g b / var(--inverse-alert-close-active-opacity));
+}
+.uk-light .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
+.uk-card-primary.uk-card-body .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
+.uk-card-secondary.uk-card-body .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
+.uk-overlay-primary .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
+.uk-offcanvas-bar .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before {
+  backdrop-filter: blur(20px);
+}
+.uk-light :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
+.uk-section-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
+.uk-section-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
+.uk-tile-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
+.uk-tile-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
+.uk-card-primary.uk-card-body :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
+.uk-card-primary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
+.uk-card-secondary.uk-card-body :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
+.uk-card-secondary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
+.uk-overlay-primary :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
+.uk-offcanvas-bar :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover) {
+  --inverse-alert-close-background-opacity: 0;
+}
+.uk-light :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
+.uk-section-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
+.uk-section-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
+.uk-tile-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
+.uk-tile-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
+.uk-card-primary.uk-card-body :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
+.uk-card-primary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
+.uk-card-secondary.uk-card-body :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
+.uk-card-secondary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
+.uk-overlay-primary :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
+.uk-offcanvas-bar :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover) {
+  --inverse-alert-close-background-opacity: var(--inverse-alert-close-background-hover-opacity);
+}
+.uk-light :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
+.uk-section-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
+.uk-section-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
+.uk-tile-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
+.uk-tile-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
+.uk-card-primary.uk-card-body :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
+.uk-card-primary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
+.uk-card-secondary.uk-card-body :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
+.uk-card-secondary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
+.uk-overlay-primary :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
+.uk-offcanvas-bar :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)) {
+  --inverse-alert-close-background-opacity: var(--inverse-alert-close-background-active-opacity);
+}
+.uk-light .uk-alert-close-pill .uk-alert-close,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert-close-pill .uk-alert-close,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert-close-pill .uk-alert-close,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert-close-pill .uk-alert-close,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-close-pill .uk-alert-close,
+.uk-card-primary.uk-card-body .uk-alert-close-pill .uk-alert-close,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-close-pill .uk-alert-close,
+.uk-card-secondary.uk-card-body .uk-alert-close-pill .uk-alert-close,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-close-pill .uk-alert-close,
+.uk-overlay-primary .uk-alert-close-pill .uk-alert-close,
+.uk-offcanvas-bar .uk-alert-close-pill .uk-alert-close {
+  background-color: transparent;
+}
+.uk-light .uk-alert-close-pill-solid .uk-alert-close,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert-close-pill-solid .uk-alert-close,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert-close-pill-solid .uk-alert-close,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert-close-pill-solid .uk-alert-close,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-close-pill-solid .uk-alert-close,
+.uk-card-primary.uk-card-body .uk-alert-close-pill-solid .uk-alert-close,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-close-pill-solid .uk-alert-close,
+.uk-card-secondary.uk-card-body .uk-alert-close-pill-solid .uk-alert-close,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-close-pill-solid .uk-alert-close,
+.uk-overlay-primary .uk-alert-close-pill-solid .uk-alert-close,
+.uk-offcanvas-bar .uk-alert-close-pill-solid .uk-alert-close {
+  background-color: var(--inverse-alert-close-pill-solid-background);
+  outline-color: var(--inverse-alert-close-pill-solid-border-color);
+}
+.uk-light .uk-alert-close-pill-solid .uk-alert-close:hover::before,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert-close-pill-solid .uk-alert-close:hover::before,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert-close-pill-solid .uk-alert-close:hover::before,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert-close-pill-solid .uk-alert-close:hover::before,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-close-pill-solid .uk-alert-close:hover::before,
+.uk-card-primary.uk-card-body .uk-alert-close-pill-solid .uk-alert-close:hover::before,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-close-pill-solid .uk-alert-close:hover::before,
+.uk-card-secondary.uk-card-body .uk-alert-close-pill-solid .uk-alert-close:hover::before,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-close-pill-solid .uk-alert-close:hover::before,
+.uk-overlay-primary .uk-alert-close-pill-solid .uk-alert-close:hover::before,
+.uk-offcanvas-bar .uk-alert-close-pill-solid .uk-alert-close:hover::before {
+  border-color: var(--inverse-alert-close-pill-solid-hover-border-color);
 }
 .uk-light .uk-placeholder,
 .uk-section-primary:not(.uk-preserve-color) .uk-placeholder,
@@ -15252,18 +16031,145 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
 .uk-offcanvas-bar .uk-search-toggle:hover {
   color: var(--inverse-search-toggle-hover-color);
 }
-.uk-light .uk-accordion-default .uk-accordion-title,
-.uk-section-primary:not(.uk-preserve-color) .uk-accordion-default .uk-accordion-title,
-.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-default .uk-accordion-title,
-.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-default .uk-accordion-title,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-default .uk-accordion-title,
-.uk-card-primary.uk-card-body .uk-accordion-default .uk-accordion-title,
-.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-default .uk-accordion-title,
-.uk-card-secondary.uk-card-body .uk-accordion-default .uk-accordion-title,
-.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-default .uk-accordion-title,
-.uk-overlay-primary .uk-accordion-default .uk-accordion-title,
-.uk-offcanvas-bar .uk-accordion-default .uk-accordion-title {
-  color: var(--inverse-accordion-default-title-color);
+.uk-light :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-title,
+.uk-section-primary:not(.uk-preserve-color) :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-title,
+.uk-section-secondary:not(.uk-preserve-color) :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-title,
+.uk-tile-primary:not(.uk-preserve-color) :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-title,
+.uk-tile-secondary:not(.uk-preserve-color) :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-title,
+.uk-card-primary.uk-card-body :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-title,
+.uk-card-primary > :not([class*="uk-card-media"]) :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-title,
+.uk-card-secondary.uk-card-body :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-title,
+.uk-card-secondary > :not([class*="uk-card-media"]) :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-title,
+.uk-overlay-primary :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-title,
+.uk-offcanvas-bar :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-title {
+  color: var(--inverse-accordion-title-color);
+}
+.uk-light :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-icon,
+.uk-section-primary:not(.uk-preserve-color) :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-icon,
+.uk-section-secondary:not(.uk-preserve-color) :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-icon,
+.uk-tile-primary:not(.uk-preserve-color) :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-icon,
+.uk-tile-secondary:not(.uk-preserve-color) :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-icon,
+.uk-card-primary.uk-card-body :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-icon,
+.uk-card-primary > :not([class*="uk-card-media"]) :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-icon,
+.uk-card-secondary.uk-card-body :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-icon,
+.uk-card-secondary > :not([class*="uk-card-media"]) :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-icon,
+.uk-overlay-primary :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-icon,
+.uk-offcanvas-bar :is(
+        .uk-accordion-default,
+        .uk-accordion-pill,
+        .uk-accordion-line
+    ) .uk-accordion-icon {
+  color: var(--inverse-accordion-icon-color);
+}
+.uk-light .uk-accordion-item-disabled .uk-accordion-title,
+.uk-section-primary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-title,
+.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-title,
+.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-title,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-title,
+.uk-card-primary.uk-card-body .uk-accordion-item-disabled .uk-accordion-title,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-item-disabled .uk-accordion-title,
+.uk-card-secondary.uk-card-body .uk-accordion-item-disabled .uk-accordion-title,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-item-disabled .uk-accordion-title,
+.uk-overlay-primary .uk-accordion-item-disabled .uk-accordion-title,
+.uk-offcanvas-bar .uk-accordion-item-disabled .uk-accordion-title {
+  color: var(--inverse-accordion-disabled-title-color);
+}
+.uk-light .uk-accordion-item-disabled .uk-accordion-icon,
+.uk-section-primary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-icon,
+.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-icon,
+.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-icon,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-icon,
+.uk-card-primary.uk-card-body .uk-accordion-item-disabled .uk-accordion-icon,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-item-disabled .uk-accordion-icon,
+.uk-card-secondary.uk-card-body .uk-accordion-item-disabled .uk-accordion-icon,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-item-disabled .uk-accordion-icon,
+.uk-overlay-primary .uk-accordion-item-disabled .uk-accordion-icon,
+.uk-offcanvas-bar .uk-accordion-item-disabled .uk-accordion-icon {
+  color: var(--inverse-accordion-disabled-icon-color);
 }
 .uk-light .uk-accordion-default .uk-accordion-title:hover,
 .uk-section-primary:not(.uk-preserve-color) .uk-accordion-default .uk-accordion-title:hover,
@@ -15278,18 +16184,96 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
 .uk-offcanvas-bar .uk-accordion-default .uk-accordion-title:hover {
   color: var(--inverse-accordion-default-title-hover-color);
 }
-.uk-light .uk-accordion-default .uk-accordion-icon,
-.uk-section-primary:not(.uk-preserve-color) .uk-accordion-default .uk-accordion-icon,
-.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-default .uk-accordion-icon,
-.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-default .uk-accordion-icon,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-default .uk-accordion-icon,
-.uk-card-primary.uk-card-body .uk-accordion-default .uk-accordion-icon,
-.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-default .uk-accordion-icon,
-.uk-card-secondary.uk-card-body .uk-accordion-default .uk-accordion-icon,
-.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-default .uk-accordion-icon,
-.uk-overlay-primary .uk-accordion-default .uk-accordion-icon,
-.uk-offcanvas-bar .uk-accordion-default .uk-accordion-icon {
-  color: var(--inverse-accordion-default-icon-color);
+.uk-light .uk-accordion-pill .uk-accordion-title,
+.uk-section-primary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title,
+.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title,
+.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title,
+.uk-card-primary.uk-card-body .uk-accordion-pill .uk-accordion-title,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-pill .uk-accordion-title,
+.uk-card-secondary.uk-card-body .uk-accordion-pill .uk-accordion-title,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-pill .uk-accordion-title,
+.uk-overlay-primary .uk-accordion-pill .uk-accordion-title,
+.uk-offcanvas-bar .uk-accordion-pill .uk-accordion-title {
+  background-color: var(--inverse-accordion-pill-title-background);
+}
+.uk-light .uk-accordion-pill .uk-accordion-title:hover,
+.uk-section-primary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title:hover,
+.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title:hover,
+.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title:hover,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title:hover,
+.uk-card-primary.uk-card-body .uk-accordion-pill .uk-accordion-title:hover,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-pill .uk-accordion-title:hover,
+.uk-card-secondary.uk-card-body .uk-accordion-pill .uk-accordion-title:hover,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-pill .uk-accordion-title:hover,
+.uk-overlay-primary .uk-accordion-pill .uk-accordion-title:hover,
+.uk-offcanvas-bar .uk-accordion-pill .uk-accordion-title:hover {
+  background-color: var(--inverse-accordion-pill-title-hover-background);
+}
+.uk-light .uk-accordion-pill .uk-accordion-icon,
+.uk-section-primary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-icon,
+.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-icon,
+.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-icon,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-icon,
+.uk-card-primary.uk-card-body .uk-accordion-pill .uk-accordion-icon,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-pill .uk-accordion-icon,
+.uk-card-secondary.uk-card-body .uk-accordion-pill .uk-accordion-icon,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-pill .uk-accordion-icon,
+.uk-overlay-primary .uk-accordion-pill .uk-accordion-icon,
+.uk-offcanvas-bar .uk-accordion-pill .uk-accordion-icon {
+  color: var(--inverse-accordion-pill-icon-color);
+}
+.uk-light .uk-accordion-line > *:not(:last-child),
+.uk-section-primary:not(.uk-preserve-color) .uk-accordion-line > *:not(:last-child),
+.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-line > *:not(:last-child),
+.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-line > *:not(:last-child),
+.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-line > *:not(:last-child),
+.uk-card-primary.uk-card-body .uk-accordion-line > *:not(:last-child),
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-line > *:not(:last-child),
+.uk-card-secondary.uk-card-body .uk-accordion-line > *:not(:last-child),
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-line > *:not(:last-child),
+.uk-overlay-primary .uk-accordion-line > *:not(:last-child),
+.uk-offcanvas-bar .uk-accordion-line > *:not(:last-child) {
+  border-bottom-color: var(--inverse-accordion-line-border-color);
+}
+.uk-light .uk-accordion-line .uk-accordion-icon,
+.uk-section-primary:not(.uk-preserve-color) .uk-accordion-line .uk-accordion-icon,
+.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-line .uk-accordion-icon,
+.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-line .uk-accordion-icon,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-line .uk-accordion-icon,
+.uk-card-primary.uk-card-body .uk-accordion-line .uk-accordion-icon,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-line .uk-accordion-icon,
+.uk-card-secondary.uk-card-body .uk-accordion-line .uk-accordion-icon,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-line .uk-accordion-icon,
+.uk-overlay-primary .uk-accordion-line .uk-accordion-icon,
+.uk-offcanvas-bar .uk-accordion-line .uk-accordion-icon {
+  color: var(--inverse-accordion-line-icon-color);
+}
+.uk-light [aria-expanded="true"] .uk-accordion-icon svg > .circle,
+.uk-section-primary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon svg > .circle,
+.uk-section-secondary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon svg > .circle,
+.uk-tile-primary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon svg > .circle,
+.uk-tile-secondary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon svg > .circle,
+.uk-card-primary.uk-card-body [aria-expanded="true"] .uk-accordion-icon svg > .circle,
+.uk-card-primary > :not([class*="uk-card-media"]) [aria-expanded="true"] .uk-accordion-icon svg > .circle,
+.uk-card-secondary.uk-card-body [aria-expanded="true"] .uk-accordion-icon svg > .circle,
+.uk-card-secondary > :not([class*="uk-card-media"]) [aria-expanded="true"] .uk-accordion-icon svg > .circle,
+.uk-overlay-primary [aria-expanded="true"] .uk-accordion-icon svg > .circle,
+.uk-offcanvas-bar [aria-expanded="true"] .uk-accordion-icon svg > .circle {
+  color: var(--inverse-accordion-icon-circle-active-color);
+}
+.uk-light [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
+.uk-section-primary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
+.uk-section-secondary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
+.uk-tile-primary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
+.uk-tile-secondary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
+.uk-card-primary.uk-card-body [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
+.uk-card-primary > :not([class*="uk-card-media"]) [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
+.uk-card-secondary.uk-card-body [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
+.uk-card-secondary > :not([class*="uk-card-media"]) [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
+.uk-overlay-primary [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
+.uk-offcanvas-bar [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]) {
+  stroke: var(--inverse-accordion-icon-circle-active-color);
 }
 .uk-light .uk-dropbar,
 .uk-section-primary:not(.uk-preserve-color) .uk-dropbar,
@@ -17120,7 +18104,35 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
   border-color: var(--inverse-base-pre-border);
   background: var(--inverse-base-pre-background);
 }
-/* Default modifier
+/* Style: default
+ ========================================================================== */
+/*
+ * Item
+ */
+/*
+ * Title
+ */
+/*
+ * Icon
+ */
+/*
+ * Content
+ */
+/* Style: pill
+ ========================================================================== */
+/*
+ * Item
+ */
+/*
+ * Title
+ */
+/*
+ * Icon
+ */
+/*
+ * Content
+ */
+/* Style: line
  ========================================================================== */
 /*
  * Item
