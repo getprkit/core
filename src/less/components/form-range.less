@@ -153,12 +153,12 @@
     --inverse-form-range-track-focus-background:    var(--inverse-global-muted-color-softer);
 
     --inverse-form-range-thumb-background:          var(--inverse-global-color);
-    
+
 }
 
 .hook-inverse() {
 
-    /* Webkit */
+    // Webkit
     .uk-range::-webkit-slider-runnable-track {
         background: var(--inverse-form-range-track-background);
         .hook-inverse-form-range-track();
@@ -170,7 +170,7 @@
         .hook-inverse-form-range-track-focus();
     }
 
-    /* Firefox */
+    // Firefox
     .uk-range::-moz-range-track {
         background: var(--inverse-form-range-track-background);
         .hook-inverse-form-range-track();
@@ -181,13 +181,13 @@
         .hook-inverse-form-range-track-focus();
     }
 
-    /* Webkit */
+    // Webkit
     .uk-range::-webkit-slider-thumb {
         background: var(--inverse-form-range-thumb-background);
         .hook-inverse-form-range-thumb();
     }
 
-    /* Firefox */
+    // Firefox
     .uk-range::-moz-range-thumb {
         background: var(--inverse-form-range-thumb-background);
         .hook-inverse-form-range-thumb();
