@@ -136,7 +136,7 @@ export namespace UIkit {
 
     interface UIkitAlertElement extends UIkitElementBase {
         /** Closes and removes the Alert. */
-        close(): void;
+        close(animated: boolean): void;
     }
 
     type Alert = UIkitFunction<UIkitAlertOptions, UIkitAlertElement, boolean | string>;
