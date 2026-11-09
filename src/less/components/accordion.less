@@ -30,26 +30,28 @@
     --accordion-disabled-title-color:                var(--global-color-muted);
     --accordion-disabled-icon-color:                 var(--global-color-muted);
 
-    --accordion-default-item-margin-top:             var(--global-margin);
-    --accordion-default-title-hover-color:           var(--global-color);
-    --accordion-default-content-margin-top:          var(--global-margin);
+    --accordion-title-padding-vertical:              var(--global-xsmall-gutter);
+    --accordion-title-padding-horizontal:            0;
 
-    --accordion-pill-title-line-height:              1;
+    --accordion-content-padding-vertical:            var(--global-xsmall-gutter);
+
+    --accordion-bordered-border-color:               var(--global-border);
+    --accordion-bordered-border-width:               var(--global-border-width);
+
+    --accordion-bordered-padding-vertical:           var(--accordion-title-padding-vertical);
+    --accordion-bordered-padding-horizontal:         var(--global-small-gutter);
+
+    --accordion-default-title-hover-color:           var(--global-color);
+
     --accordion-pill-title-background:               var(--global-default-color);
     --accordion-pill-title-hover-background:         var(--global-muted-color);
 
     --accordion-pill-title-border-radius:            var(--global-border-radius-default);
-    --accordion-pill-title-padding-vertical:         var(--global-xsmall-gutter);
-    --accordion-pill-title-padding-horizontal:       var(--global-small-gutter);
-    --accordion-pill-content-margin-top:             var(--global-xsmall-gutter);
-    --accordion-pill-content-padding:                var(--global-small-gutter);
+    --accordion-pill-padding-vertical:               var(--accordion-title-padding-vertical);
+    --accordion-pill-padding-horizontal:             var(--global-small-gutter);
 
-    --accordion-line-title-line-height:              var(--accordion-title-line-height);
     --accordion-line-border-color:                   var(--global-border);
     --accordion-line-border-width:                   var(--global-border-width);
-
-    --accordion-line-title-padding-vertical:         var(--global-small-gutter);
-    --accordion-line-content-padding:                var(--global-small-gutter);
 
     --accordion-icon-circle-active-color:            var(--global-primary-color);
     --accordion-icon-circle-opacity:                 var(--global-icon-tertiary-color-opacity);
@@ -105,6 +107,7 @@
  * 1. Center content vertically, e.g. an icon
  * 2. Imitate white space gap when using flexbox
  * 3. Reset link
+ * 4. Style
  */
 
 :is(.uk-accordion-default, .uk-accordion-pill, .uk-accordion-line) .uk-accordion-title {
@@ -117,7 +120,15 @@
     font-size: var(--accordion-title-font-size);
     line-height: var(--accordion-title-line-height);
     color: var(--accordion-title-color);
+    /* 4 */
+    padding: var(--accordion-title-padding-vertical) var(--accordion-title-padding-horizontal);
 }
+
+/*
+ * Content
+ */
+
+:is(.uk-accordion-default, .uk-accordion-pill, .uk-accordion-line) .uk-accordion-content { padding: var(--accordion-content-padding-vertical) 0; }
 
 /*
  * Icon
@@ -130,6 +141,43 @@
 }
 
 
+/* Bordered
+ ========================================================================== */
+
+.uk-accordion-bordered {
+    border: var(--accordion-bordered-border-width) solid var(--accordion-bordered-border-color);
+    border-radius: var(--global-border-radius-default);
+}
+
+/*
+ * Item
+ */
+
+.uk-accordion-bordered > * {
+    border-bottom: var(--accordion-bordered-border-width) solid transparent;
+    .hook-accordion-line-item();
+}
+
+.uk-accordion-bordered > *:not(:last-child) { border-bottom-color: var(--accordion-line-border-color); }
+
+/*
+ * Title
+ */
+
+.uk-accordion-bordered .uk-accordion-title {
+    padding: var(--accordion-bordered-padding-vertical) var(--accordion-bordered-padding-horizontal);
+    .hook-accordion-pill-title();
+}
+
+/*
+ * Content
+ */
+
+.uk-accordion-bordered .uk-accordion-content {
+    padding: var(--accordion-bordered-padding-vertical) var(--accordion-bordered-padding-horizontal);
+    .hook-accordion-pill-content();
+}
+
 /* Style: default
  ======================================================================== */
 
@@ -140,8 +188,6 @@
 .uk-accordion-default > * {
     .hook-accordion-default-item();
 }
-
-.uk-accordion-default > :nth-child(n+2) { margin-top: var(--accordion-default-item-margin-top); }
 
 /* Active */
 .uk-accordion-default > .uk-open {
@@ -181,7 +227,6 @@
  */
 
 .uk-accordion-default .uk-accordion-content {
-    margin-top: var(--accordion-default-content-margin-top);
     .hook-accordion-default-content();
 }
 
@@ -207,11 +252,22 @@
  */
 
 .uk-accordion-pill .uk-accordion-title {
-    line-height: var(--accordion-pill-title-line-height);
-    padding: var(--accordion-pill-title-padding-vertical) var(--accordion-pill-title-padding-horizontal);
+    padding: var(--accordion-pill-padding-vertical) var(--accordion-pill-padding-horizontal);
     background: var(--accordion-pill-title-background);
     border-radius: var(--accordion-pill-title-border-radius);
     .hook-accordion-pill-title();
+}
+
+.uk-accordion-pill.uk-accordion-bordered .uk-accordion-title { border-radius: 0; }
+
+.uk-accordion-pill.uk-accordion-bordered > *:first-child .uk-accordion-title {
+    border-start-start-radius: var(--accordion-pill-title-border-radius);
+    border-start-end-radius: var(--accordion-pill-title-border-radius);
+}
+
+.uk-accordion-pill.uk-accordion-bordered > *:last-child:not(.uk-open) .uk-accordion-title {
+    border-end-start-radius: var(--accordion-pill-title-border-radius);
+    border-end-end-radius: var(--accordion-pill-title-border-radius);
 }
 
 /* Hover */
@@ -239,8 +295,7 @@
  */
 
 .uk-accordion-pill .uk-accordion-content {
-    margin-top: var(--accordion-pill-content-margin-top);
-    padding: 0 var(--accordion-pill-content-padding) var(--accordion-pill-content-padding);
+    padding: var(--accordion-pill-padding-vertical) var(--accordion-pill-padding-horizontal);
     .hook-accordion-pill-content();
 }
 
@@ -268,8 +323,6 @@
  */
 
 .uk-accordion-line .uk-accordion-title {
-    line-height: var(--accordion-line-title-line-height);
-    padding: var(--accordion-line-title-padding-vertical) 0;
     .hook-accordion-line-title();
 }
 
@@ -296,7 +349,6 @@
  */
 
 .uk-accordion-line .uk-accordion-content {
-    padding-bottom: var(--accordion-line-content-padding);
     .hook-accordion-line-content();
 }
 
