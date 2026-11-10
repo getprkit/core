@@ -5,8 +5,10 @@
 //
 // Adopted:         `uk-alert-close`
 //
-// Modifiers:       `uk-alert-muted`
+// Modifiers:       `uk-alert-default`
+//                  `uk-alert-muted`
 //                  `uk-alert-primary`
+//                  `uk-alert-info`
 //                  `uk-alert-success`
 //                  `uk-alert-warning`
 //                  `uk-alert-danger`
@@ -26,7 +28,7 @@
     --alert-border-color:                               transparent;
     --alert-border-radius:                              var(--global-border-radius-default);
 
-    --alert-icon-gap:                                   var(--global-small-gutter);
+    --alert-gap:                                        var(--global-small-gutter);
 
     --alert-close-border-radius:                        var(--global-border-radius-default);
 
@@ -87,6 +89,9 @@
     --alert-primary-background:                         var(--global-primary-color-100);
     --alert-primary-color:                              var(--global-primary-color-700);
 
+    --alert-info-background:                            var(--global-info-color-100);
+    --alert-info-color:                                 var(--global-info-color-700);
+
     --alert-success-background:                         var(--global-success-color-100);
     --alert-success-color:                              var(--global-success-color-700);
 
@@ -99,25 +104,28 @@
     --alert-bordered-border-color-default:              var(--global-border);
     --alert-bordered-border-color-muted:                var(--global-border);
     --alert-bordered-border-color-primary:              var(--global-primary-color-200);
-    --alert-bordered-border-color-danger:               var(--global-danger-color-200);
+    --alert-bordered-border-color-info:                 var(--global-info-color-200);
     --alert-bordered-border-color-success:              var(--global-success-color-200);
     --alert-bordered-border-color-warning:              var(--global-warning-color-200);
+    --alert-bordered-border-color-danger:               var(--global-danger-color-200);
 
     --alert-icon-box-color:                             var(--global-default-color);
 
     --alert-icon-box-background-default:                var(--global-muted-color-500);
     --alert-icon-box-background-muted:                  var(--global-muted-color-500);
     --alert-icon-box-background-primary:                var(--global-primary-color);
-    --alert-icon-box-background-danger:                 var(--global-danger-color);
+    --alert-icon-box-background-info:                   var(--global-info-color);
     --alert-icon-box-background-success:                var(--global-success-color);
     --alert-icon-box-background-warning:                var(--global-warning-color);
+    --alert-icon-box-background-danger:                 var(--global-danger-color);
 
-    --alert-close-pill-background-default:              rgb(from var(--global-muted-color-300) r g b / var(--alert-close-background-opacity));
-    --alert-close-pill-background-muted:                rgb(from var(--global-muted-color-300) r g b / var(--alert-close-background-opacity));
-    --alert-close-pill-background-primary:              rgb(from var(--global-primary-color-300) r g b / var(--alert-close-background-opacity));
-    --alert-close-pill-background-danger:               rgb(from var(--global-danger-color-300) r g b / var(--alert-close-background-opacity));
-    --alert-close-pill-background-success:              rgb(from var(--global-success-color-300) r g b / var(--alert-close-background-opacity));
-    --alert-close-pill-background-warning:              rgb(from var(--global-warning-color-300) r g b / var(--alert-close-background-opacity));
+    --alert-close-pill-background-default:              var(--global-muted-color-300);
+    --alert-close-pill-background-muted:                var(--global-muted-color-300);
+    --alert-close-pill-background-primary:              var(--global-primary-color-300);
+    --alert-close-pill-background-info:                 var(--global-info-color-300);
+    --alert-close-pill-background-success:              var(--global-success-color-300);
+    --alert-close-pill-background-warning:              var(--global-warning-color-300);
+    --alert-close-pill-background-danger:               var(--global-danger-color-300);
 
     --alert-close-pill-solid-background:                var(--global-default-color);
 
@@ -167,9 +175,7 @@
 .uk-alert h3,
 .uk-alert h4,
 .uk-alert h5,
-.uk-alert h6 {
-    color: inherit;
-}
+.uk-alert h6 { color: inherit; }
 
 .uk-alert a:not([class]) {
     color: inherit;
@@ -185,13 +191,11 @@
  * Icon and close icon
  */
 
-/* Alert Icon gap from content */
-.uk-alert-icon { margin-inline-end: var(--alert-icon-gap); }
-
 /*
  * 1. If there is an icon or close element show content as grid.
  * 2. Always middle the content and icon/close elements.
  * 3. Set the content to expand width and icon/close to auto width.
+ * 4. Gap of the icon and close with content.
  */
 .uk-alert:has(> .uk-alert-close),
 .uk-alert:has(> .uk-alert-icon) {
@@ -201,6 +205,8 @@
     align-items: center;
     /* 3 */
     grid-template-columns: 1fr auto;
+    /* 4 */
+    column-gap: var(--alert-gap);
 }
 
 /* Alert icon always be at row 1 and column 1 */
@@ -211,7 +217,7 @@
 
 /* If icon exists or icon and close element both exists:
  * 1. Set the content to middle and icon to left/start and close to right/end.
- * 2. Content column always be 2 and row to auto.
+ * 2. Content column always be 2 and set its width to expand and row to auto.
  * 3. Set Close to always be column 3.
  */
 
@@ -219,7 +225,10 @@
 .uk-alert:has(> .uk-alert-close):has(> .uk-alert-icon) { grid-template-columns: auto 1fr auto; }
 
 /* 2 */
-.uk-alert:has(> .uk-alert-icon) > *:not(.uk-alert-icon):not(.uk-alert-close) { grid-area: auto / 2; }
+.uk-alert:has(> .uk-alert-icon) > :not(.uk-alert-icon):not(.uk-alert-close) ~ :not(.uk-alert-icon):not(.uk-alert-close) {
+    grid-column: 2 / -1;
+    justify-self: start;
+}
 
 .uk-alert:has(> .uk-alert-close):has(> .uk-alert-icon) > .uk-alert-close { grid-area: 1 / 3; }
 
@@ -231,12 +240,13 @@
 /* If just Close exists:
  * Set the first column width (contents) to expand and close width to auto.
  */
-.uk-alert:has(> .uk-alert-close):not(:has(> .uk-alert-icon)) > *:not(.uk-alert-close) { grid-area: auto / 1; }
+.uk-alert:has(> .uk-alert-close):not(:has(> .uk-alert-icon)) > :not(.uk-alert-close) ~ :not(.uk-alert-close) { grid-column: 1 / -1; }
 
-/* Fix margin not collapsing at first content item in grid */
-.uk-alert-icon:is(:first-child, :nth-child(2)) + * { margin-block: 0; }
+/*
+ * Miscellaneous
+ */
 
-/* Miscellaneous */
+/* Fix alert will not flicker when closing with animation if top component has margin with it */
 .uk-alert-close-transition-fix.uk-alert.uk-togglable-leave + * { margin-top: 0; }
 
 
@@ -271,6 +281,16 @@
     --alert-background: var(--alert-primary-background);
     --alert-color: var(--alert-primary-color);
     .hook-alert-primary();
+}
+
+/*
+ * Info
+ */
+
+.uk-alert-info {
+    --alert-background: var(--alert-info-background);
+    --alert-color: var(--alert-info-color);
+    .hook-alert-info();
 }
 
 /*
@@ -332,6 +352,12 @@
 .hook-alert-primary() { --alert-bordered-border-color: var(--alert-bordered-border-color-primary); }
 
 /*
+ * Info
+ */
+
+.hook-alert-info() { --alert-bordered-border-color: var(--alert-bordered-border-color-info); }
+
+/*
  * Success
  */
 
@@ -389,13 +415,19 @@
 .hook-alert-primary() { --alert-icon-box-background: var(--alert-icon-box-background-primary); }
 
 /*
- * success
+ * Info
+ */
+
+.hook-alert-info() { --alert-icon-box-background: var(--alert-icon-box-background-info); }
+
+/*
+ * Success
  */
 
 .hook-alert-success() { --alert-icon-box-background: var(--alert-icon-box-background-success); }
 
 /*
- * warning
+ * Warning
  */
 
 .hook-alert-warning() { --alert-icon-box-background: var(--alert-icon-box-background-warning); }
@@ -424,6 +456,7 @@
  */
 
 .uk-alert-close {
+    isolation: isolate;
     position: relative;
     box-sizing: border-box;
     /* 1 */
@@ -441,6 +474,7 @@
     inset-inline-end: var(--alert-close-inline-end);
     top: var(--alert-close-top);
     /* 4 */
+    font-size: 0.75rem;
     color: rgb(from currentColor r g b / var(--alert-close-opacity));
     border-radius: var(--alert-close-border-radius);
     min-height: var(--alert-close-min-height);
@@ -452,15 +486,19 @@
 
 /*
  * Remove margin from adjacent element
+ * Fix margin not collapsing at first content item in grid
  */
 
-.uk-alert-close:first-child + * { margin-top: 0; }
+.uk-alert-close + *:not(.uk-alert-icon),
+.uk-alert-icon + *:not(.uk-alert-close) { margin-block: 0; }
 
 /*
  * Hover
  */
 
 .uk-alert-close:hover {
+    /* if close icon use text instead if link*/
+    text-decoration: none;
     color: rgb(from currentColor r g b / var(--alert-close-hover-opacity));
     .hook-alert-close-hover();
 }
@@ -486,18 +524,18 @@
  * Position
  */
 
-.uk-alert-close-end .uk-alert-close {
+.uk-alert-close-end {
     transform: var(--alert-close-end-x);
     margin-inline-end: var(--alert-close-end-margin-inline-end);
 }
 
-.uk-alert-close-top .uk-alert-close {
+.uk-alert-close-top {
     top: 0;
     transform: var(--alert-close-top-y);
     margin-top: var(--alert-close-top-margin-top);
 }
 
-.uk-alert-close-corner .uk-alert-close {
+.uk-alert-close-corner {
     top: var(--alert-close-corner-top);
     inset-inline-end: var(--alert-close-corner-inline-end);
     transform: var(--alert-close-end-x) var(--alert-close-top-y);
@@ -509,18 +547,18 @@
  * Position: Icon box
  */
 
-.uk-alert-close-end.uk-alert-icon-box .uk-alert-close {
+.uk-alert-icon-box .uk-alert-close-end {
     transform: var(--alert-icon-box-close-end-x);
     margin-inline-end: var(--alert-icon-box-close-end-margin-inline-end);
 }
 
-.uk-alert-close-top.uk-alert-icon-box .uk-alert-close {
+.uk-alert-icon-box .uk-alert-close-top {
     top: 0;
     transform: var(--alert-close-top-y);
     margin-top: var(--alert-icon-box-close-top-margin-top);
 }
 
-.uk-alert-close-corner.uk-alert-icon-box .uk-alert-close {
+.uk-alert-icon-box .uk-alert-close-corner {
     top: var(--alert-icon-box-close-corner-top);
     inset-inline-end: var(--alert-icon-box-close-corner-inline-end);
     transform: var(--alert-icon-box-close-end-x) var(--alert-close-top-y);
@@ -532,7 +570,23 @@
  * Circle
  */
 
-.uk-alert-close-circle .uk-alert-close { border-radius: var(--global-border-radius-circle); }
+.uk-alert-close-circle { border-radius: var(--global-border-radius-circle); }
+
+/*
+ * Icon animation
+ */
+
+.uk-alert-close-icon-animation > svg { transition: transform 0.2s ease-in-out; }
+
+.uk-alert-close-icon-animation:hover > svg { transform: translate(0, 0) rotate(calc(90deg * var(--uk-dir-sign))); }
+
+.uk-alert-close-icon-animation:is(:focus-visible, :active) > svg { transform: translate(0, 0) rotate(0); }
+
+/* Fix icon svg alignment at the start of any element or text */
+.uk-alert-close > svg {
+    order: -1;
+    z-index: 1;
+}
 
 
 /* Close base style
@@ -542,28 +596,26 @@
  * Base
  */
 
-:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid) .uk-alert-close::before {
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid)::before {
     content: "";
     position: absolute;
     display: block;
+    z-index: -1;
     inset: 0;
     transition: 0.2s ease-in-out;
-    transition-property: background-color, color;
+    transition-property: background-color, color, opacity;
     border-radius: calc(var(--alert-close-border-radius) - 1px);
+    opacity: 0;
     .hook-alert-close-pill();
 }
 
-.uk-alert-close-circle .uk-alert-close::before { border-radius: var(--global-border-radius-circle); }
+.uk-alert-close-circle::before { border-radius: var(--global-border-radius-circle); }
 
-:is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover) { --alert-close-background-opacity: 0; }
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before { opacity: var(--alert-close-background-hover-opacity); }
 
-:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover) { --alert-close-background-opacity: var(--alert-close-background-hover-opacity); }
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before { opacity: var(--alert-close-background-active-opacity); }
 
-:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:is(:focus-visible, :active)) { --alert-close-background-opacity: var(--alert-close-background-active-opacity); }
-
-:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid) .uk-alert-close::before {
-    background-color: var(--alert-close-pill-background);
-}
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid)::before { background-color: var(--alert-close-pill-background); }
 
 /*
  * Default
@@ -582,6 +634,12 @@
  */
 
 .hook-alert-primary() { --alert-close-pill-background: var(--alert-close-pill-background-primary); }
+
+/*
+ * Info
+ */
+
+.hook-alert-info() { --alert-close-pill-background: var(--alert-close-pill-background-info); }
 
 /*
  * Success
@@ -606,7 +664,9 @@
 ======================================================================== */
 
 /* Fix background transparent when close is on the box */
-.uk-alert-close-pill .uk-alert-close { background-color: var(--alert-close-pill-back); }
+.uk-alert-close-pill { background-color: var(--alert-close-pill-back); }
+
+.uk-alert-close-pill::before { opacity: var(--alert-close-background-opacity); }
 
 /*
  * Default
@@ -625,6 +685,12 @@
  */
 
 .hook-alert-primary() { --alert-close-pill-back: var(--alert-primary-background); }
+
+/*
+ * Info
+ */
+
+.hook-alert-info() { --alert-close-pill-back: var(--alert-info-background); }
 
 /*
  * Success
@@ -652,15 +718,26 @@
  * Base
  */
 
-.uk-alert-close-pill-solid .uk-alert-close {
+.uk-alert-close-pill-solid {
     background-color: var(--alert-close-pill-solid-background);
     outline: var(--alert-close-pill-solid-outline-width) solid var(--alert-close-pill-solid-border-color);
     border: var(--alert-close-pill-solid-border-width) solid transparent;
-    color: inherit;
     .hook-alert-close-pill-solid();
 }
 
-.uk-alert-close-pill-solid .uk-alert-close:hover::before { border-color: var(--alert-close-pill-solid-hover-border-color); }
+.uk-alert-close-pill-solid,
+.uk-alert-close-pill-solid:hover,
+.uk-alert-close:is(:focus-visible, :active) { color: currentColor; }
+
+/* Set close to effect alert icon box padding instead of alert padding */
+.uk-alert-icon-box:has(> .uk-alert-icon) .uk-alert-close {
+    margin-inline-end: var(--alert-icon-box-close-margin-inline-end);
+    margin-top: var(--alert-icon-box-close-margin-top);
+    margin-bottom: var(--alert-icon-box-close-margin-bottom);
+    top: var(--alert-icon-box-close-top);
+}
+
+.uk-alert-close-pill-solid:hover::before { border-color: var(--alert-close-pill-solid-hover-border-color); }
 
 
 // Hooks
@@ -673,6 +750,7 @@
 .hook-alert-default() {}
 .hook-alert-muted() {}
 .hook-alert-primary() {}
+.hook-alert-info() {}
 .hook-alert-success() {}
 .hook-alert-warning() {}
 .hook-alert-danger() {}
@@ -707,6 +785,9 @@
     --inverse-alert-primary-background:                         rgb(from var(--global-primary-color-900) r g b / 0.2);
     --inverse-alert-primary-color:                              var(--global-primary-color-300);
 
+    --inverse-alert-info-background:                            rgb(from var(--global-info-color-900) r g b / 0.2);
+    --inverse-alert-info-color:                                 var(--global-info-color-300);
+
     --inverse-alert-success-background:                         rgb(from var(--global-success-color-900) r g b / 0.2);
     --inverse-alert-success-color:                              var(--global-success-color-300);
 
@@ -719,16 +800,18 @@
     --inverse-alert-bordered-border-color-default:              var(--inverse-global-border);
     --inverse-alert-bordered-border-color-muted:                var(--inverse-global-border);
     --inverse-alert-bordered-border-color-primary:              var(--global-primary-color-900);
-    --inverse-alert-bordered-border-color-danger:               var(--global-danger-color-900);
+    --inverse-alert-bordered-border-color-info:                 var(--global-info-color-900);
     --inverse-alert-bordered-border-color-success:              var(--global-success-color-900);
     --inverse-alert-bordered-border-color-warning:              var(--global-warning-color-900);
+    --inverse-alert-bordered-border-color-danger:               var(--global-danger-color-900);
 
-    --inverse-alert-close-pill-background-default:              rgb(from var(--global-muted-color-500) r g b / var(--inverse-alert-close-background-opacity));
-    --inverse-alert-close-pill-background-muted:                rgb(from var(--global-muted-color-500) r g b / var(--inverse-alert-close-background-opacity));
-    --inverse-alert-close-pill-background-primary:              rgb(from var(--global-primary-color-700) r g b / var(--inverse-alert-close-background-opacity));
-    --inverse-alert-close-pill-background-danger:               rgb(from var(--global-danger-color-700) r g b / var(--inverse-alert-close-background-opacity));
-    --inverse-alert-close-pill-background-success:              rgb(from var(--global-success-color-700) r g b / var(--inverse-alert-close-background-opacity));
-    --inverse-alert-close-pill-background-warning:              rgb(from var(--global-warning-color-700) r g b / var(--inverse-alert-close-background-opacity));
+    --inverse-alert-close-pill-background-default:              var(--global-muted-color-500);
+    --inverse-alert-close-pill-background-muted:                var(--global-muted-color-500);
+    --inverse-alert-close-pill-background-primary:              var(--global-primary-color-700);
+    --inverse-alert-close-pill-background-info:                 var(--global-info-color-700);
+    --inverse-alert-close-pill-background-success:              var(--global-success-color-700);
+    --inverse-alert-close-pill-background-warning:              var(--global-warning-color-700);
+    --inverse-alert-close-pill-background-danger:               var(--global-danger-color-700);
 
     --inverse-alert-close-pill-solid-background:                var(--inverse-global-default-color);
 
@@ -739,17 +822,27 @@
     --inverse-alert-icon-box-background-default:                var(--global-muted-color-600);
     --inverse-alert-icon-box-background-muted:                  var(--global-muted-color-600);
     --inverse-alert-icon-box-background-primary:                var(--global-primary-color-600);
-    --inverse-alert-icon-box-background-danger:                 var(--global-danger-color-600);
+    --inverse-alert-icon-box-background-info:                   var(--global-info-color-600);
     --inverse-alert-icon-box-background-success:                var(--global-success-color-600);
     --inverse-alert-icon-box-background-warning:                var(--global-warning-color-600);
+    --inverse-alert-icon-box-background-danger:                 var(--global-danger-color-600);
 
 }
 
 .hook-inverse() {
 
-    /*
-     * Colors
-     */
+    .uk-alert { color: var(--alert-color); }
+
+    .uk-alert h1,
+    .uk-alert h2,
+    .uk-alert h3,
+    .uk-alert h4,
+    .uk-alert h5,
+    .uk-alert h6 { color: inherit; }
+
+    //
+    // Colors
+    //
 
     .uk-alert-default {
         --alert-background: var(--inverse-alert-default-background);
@@ -767,6 +860,12 @@
         --alert-background: var(--inverse-alert-primary-background);
         --alert-color: var(--inverse-alert-primary-color);
         .hook-inverse-alert-primary();
+    }
+
+    .uk-alert-info {
+        --alert-background: var(--inverse-alert-info-background);
+        --alert-color: var(--inverse-alert-info-color);
+        .hook-inverse-alert-info();
     }
 
     .uk-alert-success {
@@ -787,9 +886,9 @@
         .hook-inverse-alert-danger();
     }
 
-    /*
-     * Bordered
-     */
+    //
+    // Bordered
+    //
 
     .hook-inverse-alert-default() { --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-default); }
 
@@ -797,15 +896,17 @@
 
     .hook-inverse-alert-primary() { --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-primary); }
 
-    .hook-inverse-alert-danger() { --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-danger); }
+    .hook-inverse-alert-info() { --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-info); }
 
     .hook-inverse-alert-success() { --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-success); }
 
     .hook-inverse-alert-warning() { --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-warning); }
 
-    /*
-     * Icon box
-     */
+    .hook-inverse-alert-danger() { --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-danger); }
+
+    //
+    // Icon box
+    //
 
     .uk-alert-icon-box .uk-alert-icon {
         .hook-inverse-alert-icon-box-icon();
@@ -817,15 +918,17 @@
 
     .hook-inverse-alert-primary() { --alert-icon-box-background: var(--inverse-alert-icon-box-background-primary); }
 
-    .hook-inverse-alert-danger() { --alert-icon-box-background: var(--inverse-alert-icon-box-background-danger); }
+    .hook-inverse-alert-info() { --alert-icon-box-background: var(--inverse-alert-icon-box-background-info); }
 
     .hook-inverse-alert-success() { --alert-icon-box-background: var(--inverse-alert-icon-box-background-success); }
 
     .hook-inverse-alert-warning() { --alert-icon-box-background: var(--inverse-alert-icon-box-background-warning); }
 
-    /*
-     * Close
-     */
+    .hook-inverse-alert-danger() { --alert-icon-box-background: var(--inverse-alert-icon-box-background-danger); }
+
+    //
+    // Close
+    //
 
     .uk-alert-close {
         color: rgb(from currentColor r g b / var(--inverse-alert-close-opacity));
@@ -842,18 +945,16 @@
         .hook-inverse-alert-close-active();
     }
 
-    /* Fix background transparent when close is on the box */
-    .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before { backdrop-filter: blur(20px); }
+    // Fix background transparent when close is on the box
+    .uk-alert-close-pill:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner) { backdrop-filter: blur(20px); }
 
-    /*
-     * Close base Style:
-     */
+    //
+    // Close base style
+    //
 
-    :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover) { --inverse-alert-close-background-opacity: 0; }
+    :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before { opacity: var(--inverse-alert-close-background-hover-opacity); }
 
-    :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover) { --inverse-alert-close-background-opacity: var(--inverse-alert-close-background-hover-opacity); }
-
-    :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:is(:focus-visible, :active)) { --inverse-alert-close-background-opacity: var(--inverse-alert-close-background-active-opacity); }
+    :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before { opacity: var(--inverse-alert-close-background-active-opacity); }
 
     .hook-inverse-alert-default() { --alert-close-pill-background: var(--inverse-alert-close-pill-background-default); }
 
@@ -861,23 +962,27 @@
 
     .hook-inverse-alert-primary() { --alert-close-pill-background: var(--inverse-alert-close-pill-background-primary); }
 
-    .hook-inverse-alert-danger() { --alert-close-pill-background: var(--inverse-alert-close-pill-background-danger); }
+    .hook-inverse-alert-info() { --alert-close-pill-background: var(--inverse-alert-close-pill-background-info); }
 
     .hook-inverse-alert-success() { --alert-close-pill-background: var(--inverse-alert-close-pill-background-success); }
 
     .hook-inverse-alert-warning() { --alert-close-pill-background: var(--inverse-alert-close-pill-background-warning); }
 
-    /*
-     * Close Style: Pill
-     */
+    .hook-inverse-alert-danger() { --alert-close-pill-background: var(--inverse-alert-close-pill-background-danger); }
 
-    .uk-alert-close-pill .uk-alert-close { background-color: transparent; }
+    //
+    // Close Style: Pill
+    //
 
-    /*
-     * Close Style: Pill solid
-     */
+    .uk-alert-close-pill { background-color: transparent; }
 
-    .uk-alert-close-pill-solid .uk-alert-close {
+    .uk-alert-close-pill::before { opacity: var(--inverse-alert-close-background-opacity); }
+
+    //
+    // Close Style: Pill solid
+    //
+
+    .uk-alert-close-pill-solid {
         background-color: var(--inverse-alert-close-pill-solid-background);
         outline-color: var(--inverse-alert-close-pill-solid-border-color);
     }
@@ -889,6 +994,7 @@
 .hook-inverse-alert-default() {}
 .hook-inverse-alert-muted() {}
 .hook-inverse-alert-primary() {}
+.hook-inverse-alert-info() {}
 .hook-inverse-alert-success() {}
 .hook-inverse-alert-warning() {}
 .hook-inverse-alert-danger() {}
