@@ -6,7 +6,8 @@
 // Sub-objects:     `uk-accordion-title`
 //                  `uk-accordion-content`
 //
-// Modifiers:       `uk-accordion-default`
+// Modifiers:       `uk-accordion-bordered`
+//                  `uk-accordion-default`
 //                  `uk-accordion-pill`
 //                  `uk-accordion-line`
 //
@@ -80,21 +81,6 @@
 
 .uk-accordion-content > :last-child { margin-bottom: 0; }
 
-/*
- * Disabled
- */
-
-.uk-accordion-item-disabled .uk-accordion-title {
-    pointer-events: none;
-    color: var(--accordion-disabled-title-color);
-    .hook-accordion-item-disabled-title();
-}
-
-.uk-accordion-item-disabled .uk-accordion-icon {
-    color: var(--accordion-disabled-icon-color);
-    .hook-accordion-item-disabled-icon();
-}
-
 
 /* Style modifier base
  ========================================================================== */
@@ -140,6 +126,20 @@
     color: var(--accordion-icon-color);
 }
 
+/*
+ * Disabled
+ */
+
+.uk-accordion-item-disabled .uk-accordion-title {
+    pointer-events: none;
+    color: var(--accordion-disabled-title-color);
+    .hook-accordion-item-disabled-title();
+}
+
+.uk-accordion-item-disabled .uk-accordion-icon {
+    color: var(--accordion-disabled-icon-color);
+    .hook-accordion-item-disabled-icon();
+}
 
 /* Bordered
  ========================================================================== */
@@ -147,6 +147,7 @@
 .uk-accordion-bordered {
     border: var(--accordion-bordered-border-width) solid var(--accordion-bordered-border-color);
     border-radius: var(--global-border-radius-default);
+    .hook-accordion-bordered();
 }
 
 /*
@@ -154,11 +155,16 @@
  */
 
 .uk-accordion-bordered > * {
-    border-bottom: var(--accordion-bordered-border-width) solid transparent;
-    .hook-accordion-line-item();
+    border-bottom: var(--accordion-bordered-border-width) solid var(--accordion-bordered-border-color);
+    .hook-accordion-bordered-item();
 }
 
-.uk-accordion-bordered > *:not(:last-child) { border-bottom-color: var(--accordion-line-border-color); }
+.uk-accordion-bordered > :last-child { border-bottom-color: transparent; }
+
+/* Active */
+.uk-accordion-bordered > .uk-open {
+    .hook-accordion-bordered-item-active();
+}
 
 /*
  * Title
@@ -166,7 +172,12 @@
 
 .uk-accordion-bordered .uk-accordion-title {
     padding: var(--accordion-bordered-padding-vertical) var(--accordion-bordered-padding-horizontal);
-    .hook-accordion-pill-title();
+    .hook-accordion-bordered-title();
+}
+
+/* Active */
+.uk-accordion-bordered > .uk-open .uk-accordion-title {
+    .hook-accordion-bordered-title-active();
 }
 
 /*
@@ -175,7 +186,7 @@
 
 .uk-accordion-bordered .uk-accordion-content {
     padding: var(--accordion-bordered-padding-vertical) var(--accordion-bordered-padding-horizontal);
-    .hook-accordion-pill-content();
+    .hook-accordion-bordered-content();
 }
 
 /* Style: default
@@ -307,11 +318,11 @@
  */
 
 .uk-accordion-line > * {
-    border-bottom: var(--accordion-line-border-width) solid transparent;
+    border-bottom: var(--accordion-line-border-width) solid var(--accordion-line-border-color);
     .hook-accordion-line-item();
 }
 
-.uk-accordion-line > *:not(:last-child) { border-bottom-color: var(--accordion-line-border-color); }
+.uk-accordion-line > :last-child { border-bottom-color: transparent; }
 
 /* Active */
 .uk-accordion-line > .uk-open {
@@ -412,6 +423,13 @@
 .hook-accordion-item-disabled-title() {}
 .hook-accordion-item-disabled-icon() {}
 
+.hook-accordion-bordered() {}
+.hook-accordion-bordered-item() {}
+.hook-accordion-bordered-item-active() {}
+.hook-accordion-bordered-title() {}
+.hook-accordion-bordered-title-active() {}
+.hook-accordion-bordered-content() {}
+
 .hook-accordion-default-item() {}
 .hook-accordion-default-item-active() {}
 .hook-accordion-default-title() {}
@@ -450,6 +468,8 @@
     --inverse-accordion-disabled-title-color:            var(--inverse-global-color-muted);
     --inverse-accordion-disabled-icon-color:             var(--inverse-global-color-muted);
 
+    --inverse-accordion-bordered-border-color:           var(--inverse-global-border);
+
     --inverse-accordion-default-title-hover-color:       var(--inverse-global-color);
 
     --inverse-accordion-pill-title-background:           var(--inverse-global-default-color);
@@ -465,29 +485,48 @@
 
 .hook-inverse() {
 
+    .uk-accordion {
+        --accordion-bordered-border-color: var(--inverse-accordion-bordered-border-color);
+        --accordion-title-color: var(--inverse-accordion-title-color);
+        --accordion-icon-color: var(--inverse-accordion-icon-color);
+        --accordion-disabled-title-color: var(--inverse-accordion-disabled-title-color);
+        --accordion-disabled-icon-color: var(--inverse-accordion-disabled-icon-color);
+        --accordion-default-title-hover-color: var(--inverse-accordion-default-title-hover-color);
+        --accordion-pill-title-background: var(--inverse-accordion-pill-title-background);
+        --accordion-pill-title-hover-background: var(--inverse-accordion-pill-title-hover-background);
+        --accordion-line-border-color: var(--inverse-accordion-line-border-color);
+        --accordion-icon-circle-active-color: var(--inverse-accordion-icon-circle-active-color);
+    }
+
+    .uk-accordion-bordered {
+        border: var(--accordion-bordered-border-width) solid var(--accordion-bordered-border-color);
+        border-radius: var(--global-border-radius-default);
+        .hook-accordion-bordered();
+    }
+
     //
-    // Style modifier base
+    // Bordered
     //
 
-    :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-title { color: var(--inverse-accordion-title-color); }
+    .uk-accordion-bordered > * {
+        .hook-inverse-accordion-bordered-item();
+    }
 
-    :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-icon { color: var(--inverse-accordion-icon-color); }
+    .uk-accordion-bordered > .uk-open {
+        .hook-inverse-accordion-bordered-item-active();
+    }
 
-    //
-    // Disabled
-    //
+    .uk-accordion-bordered .uk-accordion-title {
+        .hook-inverse-accordion-bordered-title();
+    }
 
-    .uk-accordion-item-disabled .uk-accordion-title { color: var(--inverse-accordion-disabled-title-color); }
+    .uk-accordion-bordered > .uk-open .uk-accordion-title {
+        .hook-inverse-accordion-bordered-title-active();
+    }
 
-    .uk-accordion-item-disabled .uk-accordion-icon { color: var(--inverse-accordion-disabled-icon-color); }
+    .uk-accordion-bordered .uk-accordion-content {
+        .hook-inverse-accordion-bordered-content();
+    }
 
     //
     // Style: default
@@ -506,7 +545,6 @@
     }
 
     .uk-accordion-default .uk-accordion-title:hover {
-        color: var(--inverse-accordion-default-title-hover-color);
         .hook-inverse-accordion-default-title-hover();
     }
 
@@ -535,12 +573,10 @@
     }
 
     .uk-accordion-pill .uk-accordion-title {
-        background-color: var(--inverse-accordion-pill-title-background);
         .hook-inverse-accordion-pill-title();
     }
 
     .uk-accordion-pill .uk-accordion-title:hover {
-        background-color: var(--inverse-accordion-pill-title-hover-background);
         .hook-inverse-accordion-pill-title-hover();
     }
 
@@ -549,7 +585,6 @@
     }
 
     .uk-accordion-pill .uk-accordion-icon {
-        color: var(--inverse-accordion-pill-icon-color);
         .hook-inverse-accordion-pill-icon();
     }
 
@@ -564,8 +599,6 @@
     .uk-accordion-line > * {
         .hook-inverse-accordion-line-item();
     }
-
-    .uk-accordion-line > *:not(:last-child) { border-bottom-color: var(--inverse-accordion-line-border-color); }
 
     .uk-accordion-line > .uk-open {
         .hook-inverse-accordion-line-item-active();
@@ -584,7 +617,6 @@
     }
 
     .uk-accordion-line .uk-accordion-icon {
-        color: var(--inverse-accordion-line-icon-color);
         .hook-inverse-accordion-line-icon();
     }
 
@@ -592,16 +624,13 @@
         .hook-inverse-accordion-line-content();
     }
 
-    //
-    // Icon
-    //
-
-    [aria-expanded="true"] .uk-accordion-icon svg > .circle { color: var(--inverse-accordion-icon-circle-active-color); }
-
-    [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]) { stroke: var(--inverse-accordion-icon-circle-active-color); }
-
 }
 
+.hook-inverse-accordion-bordered-item() {}
+.hook-inverse-accordion-bordered-item-active() {}
+.hook-inverse-accordion-bordered-title() {}
+.hook-inverse-accordion-bordered-title-active() {}
+.hook-inverse-accordion-bordered-content() {}
 .hook-inverse-accordion-default-item() {}
 .hook-inverse-accordion-default-item-active() {}
 .hook-inverse-accordion-default-title() {}
