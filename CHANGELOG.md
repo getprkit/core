@@ -12,7 +12,7 @@ PrKit is built on top of [UIkit](https://github.com/uikit/uikit). For changes in
 - Add xxsmall and xsmall gutter to Variables
 - Add animate parameter to Alert close method
 
-### Fix
+### Fixed
 
 - Invoke missing variables hook in Grid
 - Correct breakpoint max calculations
