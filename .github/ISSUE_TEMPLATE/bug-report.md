@@ -20,7 +20,11 @@ Please open an issues only for a bug report or feature request. Make sure no one
 ### UIkit Version
 
 _Check if the issue is reproducible with the latest stable version._
+<<<<<<< HEAD
 3.25.29
+=======
+3.25.31
+>>>>>>> upstream/develop
 
 ### Actual Behavior
 
