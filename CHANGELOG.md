@@ -2,6 +2,37 @@
 
 PrKit is built on top of [UIkit](https://github.com/uikit/uikit). For changes inherited from the upstream project, see the [official UIkit Changelog](https://github.com/uikit/uikit/blob/develop/CHANGELOG.md).
 
+## [1.0.0-beta.2] (2026-11-15)
+
+### Added
+
+- Add TypeScript definitions
+- Add global border-radius to Variables
+- Add margin-xsmall to Variable
+- Add xxsmall and xsmall gutter to Variables
+- Add animate parameter to Alert close method
+
+### Fix
+
+- Invoke missing variables hook in Grid
+- Correct breakpoint max calculations
+- Sync CSS breakpoints with LESS variables
+- Move modal inverse variables to modal variables hook
+
+### Changed
+
+- Restructure Accordion component
+- Restructure Alert component
+- Refine global color palettes
+- Refine inverse global colors
+- Reorganize imports and document dependencies in theme.less
+- Reduce xsmall gutter to 10px
+
+### Removed
+
+- Remove inverse default color variables
+
+
 ## [1.0.0-beta.1] (2026-10-31)
 
 First beta release of PrKit, based on [UIkit](https://github.com/uikit/uikit), with upstream `uikit:develop` merged through October 31, 2026.
