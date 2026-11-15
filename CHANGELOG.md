@@ -69,3 +69,4 @@ First beta release of PrKit, based on [UIkit](https://github.com/uikit/uikit), w
 - **Inverse mode:** Inverse styles and colors have been refined across several components, which may result in visual differences compared to previous versions.
 
 [1.0.0-beta.1]: https://github.com/prfardin/uikit/releases/tag/prkit-v1.0.0-beta.1
+[1.0.0-beta.2]: https://github.com/prfardin/uikit/releases/tag/prkit-v1.0.0-beta.2
