@@ -86,19 +86,19 @@
     --global-secondary-color: var(--global-secondary-color-800);
     --global-secondary-color-soft: var(--global-secondary-color-850);
     --global-secondary-color-softer: var(--global-secondary-color-900);
-    --global-info-color-50: var(--global-primary-color-50);
-    --global-info-color-100: var(--global-primary-color-100);
-    --global-info-color-200: var(--global-primary-color-200);
-    --global-info-color-300: var(--global-primary-color-300);
-    --global-info-color-400: var(--global-primary-color-400);
-    --global-info-color-450: var(--global-primary-color-450);
-    --global-info-color-500: var(--global-primary-color-500);
-    --global-info-color-550: var(--global-primary-color-550);
-    --global-info-color-600: var(--global-primary-color-600);
-    --global-info-color-700: var(--global-primary-color-700);
-    --global-info-color-800: var(--global-primary-color-800);
-    --global-info-color-900: var(--global-primary-color-900);
-    --global-info-color-950: var(--global-primary-color-950);
+    --global-info-color-50: oklch(98.4% 0.007 276.8);
+    --global-info-color-100: oklch(95.5% 0.02 277);
+    --global-info-color-200: oklch(87.1% 0.061 278.2);
+    --global-info-color-300: oklch(80.3% 0.096 279.1);
+    --global-info-color-400: oklch(73.5% 0.132 280.1);
+    --global-info-color-450: oklch(66.7% 0.151 281.1);
+    --global-info-color-500: oklch(60% 0.17 282);
+    --global-info-color-550: oklch(56.4% 0.166 282.7);
+    --global-info-color-600: oklch(52.8% 0.161 283.5);
+    --global-info-color-700: oklch(45.7% 0.146 284.9);
+    --global-info-color-800: oklch(38.5% 0.129 286.4);
+    --global-info-color-900: oklch(31.4% 0.112 287.9);
+    --global-info-color-950: oklch(27.8% 0.101 288.6);
     --global-info-color: var(--global-info-color-500);
     --global-info-color-soft: var(--global-info-color-550);
     --global-info-color-softer: var(--global-info-color-600);
@@ -188,7 +188,7 @@
     /* Used in grid, column, container, align, card, padding */
     --global-gutter: 30px;
     --global-xxsmall-gutter: 5px;
-    --global-xsmall-gutter: 12px;
+    --global-xsmall-gutter: 10px;
     --global-small-gutter: 15px;
     --global-medium-gutter: 40px;
     --global-large-gutter: 70px;
@@ -1134,7 +1134,7 @@
     --alert-border-width: var(--global-border-width);
     --alert-border-color: transparent;
     --alert-border-radius: var(--global-border-radius-default);
-    --alert-icon-gap: var(--global-small-gutter);
+    --alert-gap: var(--global-small-gutter);
     --alert-close-border-radius: var(--global-border-radius-default);
     --alert-close-opacity: 0.2;
     --alert-close-hover-opacity: 0.5;
@@ -1177,6 +1177,8 @@
     --alert-muted-color: var(--global-muted-color-700);
     --alert-primary-background: var(--global-primary-color-100);
     --alert-primary-color: var(--global-primary-color-700);
+    --alert-info-background: var(--global-info-color-100);
+    --alert-info-color: var(--global-info-color-700);
     --alert-success-background: var(--global-success-color-100);
     --alert-success-color: var(--global-success-color-700);
     --alert-warning-background: var(--global-warning-color-100);
@@ -1186,22 +1188,25 @@
     --alert-bordered-border-color-default: var(--global-border);
     --alert-bordered-border-color-muted: var(--global-border);
     --alert-bordered-border-color-primary: var(--global-primary-color-200);
-    --alert-bordered-border-color-danger: var(--global-danger-color-200);
+    --alert-bordered-border-color-info: var(--global-info-color-200);
     --alert-bordered-border-color-success: var(--global-success-color-200);
     --alert-bordered-border-color-warning: var(--global-warning-color-200);
+    --alert-bordered-border-color-danger: var(--global-danger-color-200);
     --alert-icon-box-color: var(--global-default-color);
     --alert-icon-box-background-default: var(--global-muted-color-500);
     --alert-icon-box-background-muted: var(--global-muted-color-500);
     --alert-icon-box-background-primary: var(--global-primary-color);
-    --alert-icon-box-background-danger: var(--global-danger-color);
+    --alert-icon-box-background-info: var(--global-info-color);
     --alert-icon-box-background-success: var(--global-success-color);
     --alert-icon-box-background-warning: var(--global-warning-color);
-    --alert-close-pill-background-default: rgb(from var(--global-muted-color-300) r g b / var(--alert-close-background-opacity));
-    --alert-close-pill-background-muted: rgb(from var(--global-muted-color-300) r g b / var(--alert-close-background-opacity));
-    --alert-close-pill-background-primary: rgb(from var(--global-primary-color-300) r g b / var(--alert-close-background-opacity));
-    --alert-close-pill-background-danger: rgb(from var(--global-danger-color-300) r g b / var(--alert-close-background-opacity));
-    --alert-close-pill-background-success: rgb(from var(--global-success-color-300) r g b / var(--alert-close-background-opacity));
-    --alert-close-pill-background-warning: rgb(from var(--global-warning-color-300) r g b / var(--alert-close-background-opacity));
+    --alert-icon-box-background-danger: var(--global-danger-color);
+    --alert-close-pill-background-default: var(--global-muted-color-300);
+    --alert-close-pill-background-muted: var(--global-muted-color-300);
+    --alert-close-pill-background-primary: var(--global-primary-color-300);
+    --alert-close-pill-background-info: var(--global-info-color-300);
+    --alert-close-pill-background-success: var(--global-success-color-300);
+    --alert-close-pill-background-warning: var(--global-warning-color-300);
+    --alert-close-pill-background-danger: var(--global-danger-color-300);
     --alert-close-pill-solid-background: var(--global-default-color);
     --alert-close-pill-solid-outline-width: var(--global-border-width);
     --alert-close-pill-solid-border-width: 3px;
@@ -1219,6 +1224,8 @@
     --inverse-alert-muted-color: var(--global-muted-color-300);
     --inverse-alert-primary-background: rgb(from var(--global-primary-color-900) r g b / 0.2);
     --inverse-alert-primary-color: var(--global-primary-color-300);
+    --inverse-alert-info-background: rgb(from var(--global-info-color-900) r g b / 0.2);
+    --inverse-alert-info-color: var(--global-info-color-300);
     --inverse-alert-success-background: rgb(from var(--global-success-color-900) r g b / 0.2);
     --inverse-alert-success-color: var(--global-success-color-300);
     --inverse-alert-warning-background: rgb(from var(--global-warning-color-900) r g b / 0.2);
@@ -1228,24 +1235,27 @@
     --inverse-alert-bordered-border-color-default: var(--inverse-global-border);
     --inverse-alert-bordered-border-color-muted: var(--inverse-global-border);
     --inverse-alert-bordered-border-color-primary: var(--global-primary-color-900);
-    --inverse-alert-bordered-border-color-danger: var(--global-danger-color-900);
+    --inverse-alert-bordered-border-color-info: var(--global-info-color-900);
     --inverse-alert-bordered-border-color-success: var(--global-success-color-900);
     --inverse-alert-bordered-border-color-warning: var(--global-warning-color-900);
-    --inverse-alert-close-pill-background-default: rgb(from var(--global-muted-color-500) r g b / var(--inverse-alert-close-background-opacity));
-    --inverse-alert-close-pill-background-muted: rgb(from var(--global-muted-color-500) r g b / var(--inverse-alert-close-background-opacity));
-    --inverse-alert-close-pill-background-primary: rgb(from var(--global-primary-color-700) r g b / var(--inverse-alert-close-background-opacity));
-    --inverse-alert-close-pill-background-danger: rgb(from var(--global-danger-color-700) r g b / var(--inverse-alert-close-background-opacity));
-    --inverse-alert-close-pill-background-success: rgb(from var(--global-success-color-700) r g b / var(--inverse-alert-close-background-opacity));
-    --inverse-alert-close-pill-background-warning: rgb(from var(--global-warning-color-700) r g b / var(--inverse-alert-close-background-opacity));
+    --inverse-alert-bordered-border-color-danger: var(--global-danger-color-900);
+    --inverse-alert-close-pill-background-default: var(--global-muted-color-500);
+    --inverse-alert-close-pill-background-muted: var(--global-muted-color-500);
+    --inverse-alert-close-pill-background-primary: var(--global-primary-color-700);
+    --inverse-alert-close-pill-background-info: var(--global-info-color-700);
+    --inverse-alert-close-pill-background-success: var(--global-success-color-700);
+    --inverse-alert-close-pill-background-warning: var(--global-warning-color-700);
+    --inverse-alert-close-pill-background-danger: var(--global-danger-color-700);
     --inverse-alert-close-pill-solid-background: var(--inverse-global-default-color);
     --inverse-alert-close-pill-solid-border-color: var(--inverse-global-border);
     --inverse-alert-close-pill-solid-hover-border-color: var(--inverse-global-default-color);
     --inverse-alert-icon-box-background-default: var(--global-muted-color-600);
     --inverse-alert-icon-box-background-muted: var(--global-muted-color-600);
     --inverse-alert-icon-box-background-primary: var(--global-primary-color-600);
-    --inverse-alert-icon-box-background-danger: var(--global-danger-color-600);
+    --inverse-alert-icon-box-background-info: var(--global-info-color-600);
     --inverse-alert-icon-box-background-success: var(--global-success-color-600);
     --inverse-alert-icon-box-background-warning: var(--global-warning-color-600);
+    --inverse-alert-icon-box-background-danger: var(--global-danger-color-600);
   }
   /*
      * Placeholder
@@ -1429,22 +1439,21 @@
     --accordion-icon-color: var(--global-color);
     --accordion-disabled-title-color: var(--global-color-muted);
     --accordion-disabled-icon-color: var(--global-color-muted);
-    --accordion-default-item-margin-top: var(--global-margin);
+    --accordion-title-padding-vertical: var(--global-xsmall-gutter);
+    --accordion-title-padding-horizontal: 0;
+    --accordion-content-padding-vertical: var(--global-xsmall-gutter);
+    --accordion-bordered-border-color: var(--global-border);
+    --accordion-bordered-border-width: var(--global-border-width);
+    --accordion-bordered-padding-vertical: var(--accordion-title-padding-vertical);
+    --accordion-bordered-padding-horizontal: var(--global-small-gutter);
     --accordion-default-title-hover-color: var(--global-color);
-    --accordion-default-content-margin-top: var(--global-margin);
-    --accordion-pill-title-line-height: 1;
     --accordion-pill-title-background: var(--global-default-color);
     --accordion-pill-title-hover-background: var(--global-muted-color);
     --accordion-pill-title-border-radius: var(--global-border-radius-default);
-    --accordion-pill-title-padding-vertical: var(--global-xsmall-gutter);
-    --accordion-pill-title-padding-horizontal: var(--global-small-gutter);
-    --accordion-pill-content-margin-top: var(--global-xsmall-gutter);
-    --accordion-pill-content-padding: var(--global-small-gutter);
-    --accordion-line-title-line-height: var(--accordion-title-line-height);
+    --accordion-pill-padding-vertical: var(--accordion-title-padding-vertical);
+    --accordion-pill-padding-horizontal: var(--global-small-gutter);
     --accordion-line-border-color: var(--global-border);
     --accordion-line-border-width: var(--global-border-width);
-    --accordion-line-title-padding-vertical: var(--global-small-gutter);
-    --accordion-line-content-padding: var(--global-small-gutter);
     --accordion-icon-circle-active-color: var(--global-primary-color);
     --accordion-icon-circle-opacity: var(--global-icon-tertiary-color-opacity);
     --accordion-icon-circle-active-opacity: 1;
@@ -1452,6 +1461,7 @@
     --inverse-accordion-icon-color: var(--inverse-global-color);
     --inverse-accordion-disabled-title-color: var(--inverse-global-color-muted);
     --inverse-accordion-disabled-icon-color: var(--inverse-global-color-muted);
+    --inverse-accordion-bordered-border-color: var(--inverse-global-border);
     --inverse-accordion-default-title-hover-color: var(--inverse-global-color);
     --inverse-accordion-pill-title-background: var(--inverse-global-default-color);
     --inverse-accordion-pill-title-hover-background: var(--inverse-global-muted-color);
@@ -5196,14 +5206,11 @@ select.uk-form-width-xsmall {
 /*
  * Icon and close icon
  */
-/* Alert Icon gap from content */
-.uk-alert-icon {
-  margin-inline-end: var(--alert-icon-gap);
-}
 /*
  * 1. If there is an icon or close element show content as grid.
  * 2. Always middle the content and icon/close elements.
  * 3. Set the content to expand width and icon/close to auto width.
+ * 4. Gap of the icon and close with content.
  */
 .uk-alert:has(> .uk-alert-close),
 .uk-alert:has(> .uk-alert-icon) {
@@ -5213,6 +5220,8 @@ select.uk-form-width-xsmall {
   align-items: center;
   /* 3 */
   grid-template-columns: 1fr auto;
+  /* 4 */
+  column-gap: var(--alert-gap);
 }
 /* Alert icon always be at row 1 and column 1 */
 .uk-alert-icon {
@@ -5224,7 +5233,7 @@ select.uk-form-width-xsmall {
 }
 /* If icon exists or icon and close element both exists:
  * 1. Set the content to middle and icon to left/start and close to right/end.
- * 2. Content column always be 2 and row to auto.
+ * 2. Content column always be 2 and set its width to expand and row to auto.
  * 3. Set Close to always be column 3.
  */
 /* 1 */
@@ -5232,8 +5241,9 @@ select.uk-form-width-xsmall {
   grid-template-columns: auto 1fr auto;
 }
 /* 2 */
-.uk-alert:has(> .uk-alert-icon) > *:not(.uk-alert-icon):not(.uk-alert-close) {
-  grid-area: auto / 2;
+.uk-alert:has(> .uk-alert-icon) > :not(.uk-alert-icon):not(.uk-alert-close) ~ :not(.uk-alert-icon):not(.uk-alert-close) {
+  grid-column: 2 / -1;
+  justify-self: start;
 }
 .uk-alert:has(> .uk-alert-close):has(> .uk-alert-icon) > .uk-alert-close {
   grid-area: 1 / 3;
@@ -5247,14 +5257,13 @@ select.uk-form-width-xsmall {
 /* If just Close exists:
  * Set the first column width (contents) to expand and close width to auto.
  */
-.uk-alert:has(> .uk-alert-close):not(:has(> .uk-alert-icon)) > *:not(.uk-alert-close) {
-  grid-area: auto / 1;
+.uk-alert:has(> .uk-alert-close):not(:has(> .uk-alert-icon)) > :not(.uk-alert-close) ~ :not(.uk-alert-close) {
+  grid-column: 1 / -1;
 }
-/* Fix margin not collapsing at first content item in grid */
-.uk-alert-icon:is(:first-child, :nth-child(2)) + * {
-  margin-block: 0;
-}
-/* Miscellaneous */
+/*
+ * Miscellaneous
+ */
+/* Fix alert will not flicker when closing with animation if top component has margin with it */
 .uk-alert-close-transition-fix.uk-alert.uk-togglable-leave + * {
   margin-top: 0;
 }
@@ -5292,6 +5301,17 @@ select.uk-form-width-xsmall {
   --alert-icon-box-background: var(--alert-icon-box-background-primary);
   --alert-close-pill-background: var(--alert-close-pill-background-primary);
   --alert-close-pill-back: var(--alert-primary-background);
+}
+/*
+ * Info
+ */
+.uk-alert-info {
+  --alert-background: var(--alert-info-background);
+  --alert-color: var(--alert-info-color);
+  --alert-bordered-border-color: var(--alert-bordered-border-color-info);
+  --alert-icon-box-background: var(--alert-icon-box-background-info);
+  --alert-close-pill-background: var(--alert-close-pill-background-info);
+  --alert-close-pill-back: var(--alert-info-background);
 }
 /*
  * Success
@@ -5344,6 +5364,9 @@ select.uk-form-width-xsmall {
  * Primary
  */
 /*
+ * Info
+ */
+/*
  * Success
  */
 /*
@@ -5376,10 +5399,13 @@ select.uk-form-width-xsmall {
  * Primary
  */
 /*
- * success
+ * Info
  */
 /*
- * warning
+ * Success
+ */
+/*
+ * Warning
  */
 /*
  * Danger
@@ -5398,6 +5424,7 @@ select.uk-form-width-xsmall {
  * 4. Miscellaneous
  */
 .uk-alert-close {
+  isolation: isolate;
   position: relative;
   box-sizing: border-box;
   /* 1 */
@@ -5415,6 +5442,7 @@ select.uk-form-width-xsmall {
   inset-inline-end: var(--alert-close-inline-end);
   top: var(--alert-close-top);
   /* 4 */
+  font-size: 0.75rem;
   color: rgb(from currentColor r g b / var(--alert-close-opacity));
   border-radius: var(--alert-close-border-radius);
   min-height: var(--alert-close-min-height);
@@ -5424,14 +5452,18 @@ select.uk-form-width-xsmall {
 }
 /*
  * Remove margin from adjacent element
+ * Fix margin not collapsing at first content item in grid
  */
-.uk-alert-close:first-child + * {
-  margin-top: 0;
+.uk-alert-close + *:not(.uk-alert-icon),
+.uk-alert-icon + *:not(.uk-alert-close) {
+  margin-block: 0;
 }
 /*
  * Hover
  */
 .uk-alert-close:hover {
+  /* if close icon use text instead if link*/
+  text-decoration: none;
   color: rgb(from currentColor r g b / var(--alert-close-hover-opacity));
 }
 /*
@@ -5450,16 +5482,16 @@ select.uk-form-width-xsmall {
 /*
  * Position
  */
-.uk-alert-close-end .uk-alert-close {
+.uk-alert-close-end {
   transform: var(--alert-close-end-x);
   margin-inline-end: var(--alert-close-end-margin-inline-end);
 }
-.uk-alert-close-top .uk-alert-close {
+.uk-alert-close-top {
   top: 0;
   transform: var(--alert-close-top-y);
   margin-top: var(--alert-close-top-margin-top);
 }
-.uk-alert-close-corner .uk-alert-close {
+.uk-alert-close-corner {
   top: var(--alert-close-corner-top);
   inset-inline-end: var(--alert-close-corner-inline-end);
   transform: var(--alert-close-end-x) var(--alert-close-top-y);
@@ -5469,16 +5501,16 @@ select.uk-form-width-xsmall {
 /*
  * Position: Icon box
  */
-.uk-alert-close-end.uk-alert-icon-box .uk-alert-close {
+.uk-alert-icon-box .uk-alert-close-end {
   transform: var(--alert-icon-box-close-end-x);
   margin-inline-end: var(--alert-icon-box-close-end-margin-inline-end);
 }
-.uk-alert-close-top.uk-alert-icon-box .uk-alert-close {
+.uk-alert-icon-box .uk-alert-close-top {
   top: 0;
   transform: var(--alert-close-top-y);
   margin-top: var(--alert-icon-box-close-top-margin-top);
 }
-.uk-alert-close-corner.uk-alert-icon-box .uk-alert-close {
+.uk-alert-icon-box .uk-alert-close-corner {
   top: var(--alert-icon-box-close-corner-top);
   inset-inline-end: var(--alert-icon-box-close-corner-inline-end);
   transform: var(--alert-icon-box-close-end-x) var(--alert-close-top-y);
@@ -5488,36 +5520,52 @@ select.uk-form-width-xsmall {
 /*
  * Circle
  */
-.uk-alert-close-circle .uk-alert-close {
+.uk-alert-close-circle {
   border-radius: var(--global-border-radius-circle);
+}
+/*
+ * Icon animation
+ */
+.uk-alert-close-icon-animation > svg {
+  transition: transform 0.2s ease-in-out;
+}
+.uk-alert-close-icon-animation:hover > svg {
+  transform: translate(0, 0) rotate(calc(90deg * var(--uk-dir-sign)));
+}
+.uk-alert-close-icon-animation:is(:focus-visible, :active) > svg {
+  transform: translate(0, 0) rotate(0);
+}
+/* Fix icon svg alignment at the start of any element or text */
+.uk-alert-close > svg {
+  order: -1;
+  z-index: 1;
 }
 /* Close base style
  ======================================================================== */
 /*
  * Base
  */
-:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid) .uk-alert-close::before {
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid)::before {
   content: "";
   position: absolute;
   display: block;
+  z-index: -1;
   inset: 0;
   transition: 0.2s ease-in-out;
-  transition-property: background-color, color;
+  transition-property: background-color, color, opacity;
   border-radius: calc(var(--alert-close-border-radius) - 1px);
+  opacity: 0;
 }
-.uk-alert-close-circle .uk-alert-close::before {
+.uk-alert-close-circle::before {
   border-radius: var(--global-border-radius-circle);
 }
-:is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover) {
-  --alert-close-background-opacity: 0;
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before {
+  opacity: var(--alert-close-background-hover-opacity);
 }
-:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover) {
-  --alert-close-background-opacity: var(--alert-close-background-hover-opacity);
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before {
+  opacity: var(--alert-close-background-active-opacity);
 }
-:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)) {
-  --alert-close-background-opacity: var(--alert-close-background-active-opacity);
-}
-:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid) .uk-alert-close::before {
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid)::before {
   background-color: var(--alert-close-pill-background);
 }
 /*
@@ -5528,6 +5576,9 @@ select.uk-form-width-xsmall {
  */
 /*
  * Primary
+ */
+/*
+ * Info
  */
 /*
  * Success
@@ -5541,8 +5592,11 @@ select.uk-form-width-xsmall {
 /* Close style: pill
 ======================================================================== */
 /* Fix background transparent when close is on the box */
-.uk-alert-close-pill .uk-alert-close {
+.uk-alert-close-pill {
   background-color: var(--alert-close-pill-back);
+}
+.uk-alert-close-pill::before {
+  opacity: var(--alert-close-background-opacity);
 }
 /*
  * Default
@@ -5552,6 +5606,9 @@ select.uk-form-width-xsmall {
  */
 /*
  * Primary
+ */
+/*
+ * Info
  */
 /*
  * Success
@@ -5567,13 +5624,24 @@ select.uk-form-width-xsmall {
 /*
  * Base
  */
-.uk-alert-close-pill-solid .uk-alert-close {
+.uk-alert-close-pill-solid {
   background-color: var(--alert-close-pill-solid-background);
   outline: var(--alert-close-pill-solid-outline-width) solid var(--alert-close-pill-solid-border-color);
   border: var(--alert-close-pill-solid-border-width) solid transparent;
-  color: inherit;
 }
-.uk-alert-close-pill-solid .uk-alert-close:hover::before {
+.uk-alert-close-pill-solid,
+.uk-alert-close-pill-solid:hover,
+.uk-alert-close:is(:focus-visible, :active) {
+  color: currentColor;
+}
+/* Set close to effect alert icon box padding instead of alert padding */
+.uk-alert-icon-box:has(> .uk-alert-icon) .uk-alert-close {
+  margin-inline-end: var(--alert-icon-box-close-margin-inline-end);
+  margin-top: var(--alert-icon-box-close-margin-top);
+  margin-bottom: var(--alert-icon-box-close-margin-bottom);
+  top: var(--alert-icon-box-close-top);
+}
+.uk-alert-close-pill-solid:hover::before {
   border-color: var(--alert-close-pill-solid-hover-border-color);
 }
 /* ========================================================================
@@ -6079,16 +6147,6 @@ select.uk-form-width-xsmall {
 .uk-accordion-content > :last-child {
   margin-bottom: 0;
 }
-/*
- * Disabled
- */
-.uk-accordion-item-disabled .uk-accordion-title {
-  pointer-events: none;
-  color: var(--accordion-disabled-title-color);
-}
-.uk-accordion-item-disabled .uk-accordion-icon {
-  color: var(--accordion-disabled-icon-color);
-}
 /* Style modifier base
  ========================================================================== */
 /*
@@ -6098,6 +6156,7 @@ select.uk-form-width-xsmall {
  * 1. Center content vertically, e.g. an icon
  * 2. Imitate white space gap when using flexbox
  * 3. Reset link
+ * 4. Style
  */
 :is(.uk-accordion-default, .uk-accordion-pill, .uk-accordion-line) .uk-accordion-title {
   /* 1 */
@@ -6109,6 +6168,14 @@ select.uk-form-width-xsmall {
   font-size: var(--accordion-title-font-size);
   line-height: var(--accordion-title-line-height);
   color: var(--accordion-title-color);
+  /* 4 */
+  padding: var(--accordion-title-padding-vertical) var(--accordion-title-padding-horizontal);
+}
+/*
+ * Content
+ */
+:is(.uk-accordion-default, .uk-accordion-pill, .uk-accordion-line) .uk-accordion-content {
+  padding: var(--accordion-content-padding-vertical) 0;
 }
 /*
  * Icon
@@ -6118,14 +6185,50 @@ select.uk-form-width-xsmall {
   margin-inline-start: auto;
   color: var(--accordion-icon-color);
 }
+/*
+ * Disabled
+ */
+.uk-accordion-item-disabled .uk-accordion-title {
+  pointer-events: none;
+  color: var(--accordion-disabled-title-color);
+}
+.uk-accordion-item-disabled .uk-accordion-icon {
+  color: var(--accordion-disabled-icon-color);
+}
+/* Bordered
+ ========================================================================== */
+.uk-accordion-bordered {
+  border: var(--accordion-bordered-border-width) solid var(--accordion-bordered-border-color);
+  border-radius: var(--global-border-radius-default);
+}
+/*
+ * Item
+ */
+.uk-accordion-bordered > * {
+  border-bottom: var(--accordion-bordered-border-width) solid var(--accordion-bordered-border-color);
+}
+.uk-accordion-bordered > :last-child {
+  border-bottom-color: transparent;
+}
+/* Active */
+/*
+ * Title
+ */
+.uk-accordion-bordered .uk-accordion-title {
+  padding: var(--accordion-bordered-padding-vertical) var(--accordion-bordered-padding-horizontal);
+}
+/* Active */
+/*
+ * Content
+ */
+.uk-accordion-bordered .uk-accordion-content {
+  padding: var(--accordion-bordered-padding-vertical) var(--accordion-bordered-padding-horizontal);
+}
 /* Style: default
  ======================================================================== */
 /*
  * Item
  */
-.uk-accordion-default > :nth-child(n+2) {
-  margin-top: var(--accordion-default-item-margin-top);
-}
 /* Active */
 /*
  * Title
@@ -6142,9 +6245,6 @@ select.uk-form-width-xsmall {
 /*
  * Content
  */
-.uk-accordion-default .uk-accordion-content {
-  margin-top: var(--accordion-default-content-margin-top);
-}
 /* Style: pill
  ======================================================================== */
 /*
@@ -6155,10 +6255,20 @@ select.uk-form-width-xsmall {
  * Title
  */
 .uk-accordion-pill .uk-accordion-title {
-  line-height: var(--accordion-pill-title-line-height);
-  padding: var(--accordion-pill-title-padding-vertical) var(--accordion-pill-title-padding-horizontal);
+  padding: var(--accordion-pill-padding-vertical) var(--accordion-pill-padding-horizontal);
   background: var(--accordion-pill-title-background);
   border-radius: var(--accordion-pill-title-border-radius);
+}
+.uk-accordion-pill.uk-accordion-bordered .uk-accordion-title {
+  border-radius: 0;
+}
+.uk-accordion-pill.uk-accordion-bordered > *:first-child .uk-accordion-title {
+  border-start-start-radius: var(--accordion-pill-title-border-radius);
+  border-start-end-radius: var(--accordion-pill-title-border-radius);
+}
+.uk-accordion-pill.uk-accordion-bordered > *:last-child:not(.uk-open) .uk-accordion-title {
+  border-end-start-radius: var(--accordion-pill-title-border-radius);
+  border-end-end-radius: var(--accordion-pill-title-border-radius);
 }
 /* Hover */
 .uk-accordion-pill .uk-accordion-title:hover {
@@ -6173,8 +6283,7 @@ select.uk-form-width-xsmall {
  * Content
  */
 .uk-accordion-pill .uk-accordion-content {
-  margin-top: var(--accordion-pill-content-margin-top);
-  padding: 0 var(--accordion-pill-content-padding) var(--accordion-pill-content-padding);
+  padding: var(--accordion-pill-padding-vertical) var(--accordion-pill-padding-horizontal);
 }
 /* Style: line
  ======================================================================== */
@@ -6182,19 +6291,15 @@ select.uk-form-width-xsmall {
  * Item
  */
 .uk-accordion-line > * {
-  border-bottom: var(--accordion-line-border-width) solid transparent;
+  border-bottom: var(--accordion-line-border-width) solid var(--accordion-line-border-color);
 }
-.uk-accordion-line > *:not(:last-child) {
-  border-bottom-color: var(--accordion-line-border-color);
+.uk-accordion-line > :last-child {
+  border-bottom-color: transparent;
 }
 /* Active */
 /*
  * Title
  */
-.uk-accordion-line .uk-accordion-title {
-  line-height: var(--accordion-line-title-line-height);
-  padding: var(--accordion-line-title-padding-vertical) 0;
-}
 /* Hover */
 /* Active */
 /*
@@ -6203,9 +6308,6 @@ select.uk-form-width-xsmall {
 /*
  * Content
  */
-.uk-accordion-line .uk-accordion-content {
-  padding-bottom: var(--accordion-line-content-padding);
-}
 /* Icon Style modifiers
  ======================================================================== */
 /*
@@ -13169,28 +13271,6 @@ iframe[data-uk-cover] {
 .uk-overlay-primary,
 .uk-offcanvas-bar {
   color: var(--inverse-base-color);
-  /*
-     * Colors
-     */
-  /*
-     * Bordered
-     */
-  /*
-     * Icon box
-     */
-  /*
-     * Close
-     */
-  /* Fix background transparent when close is on the box */
-  /*
-     * Close base Style:
-     */
-  /*
-     * Close Style: Pill
-     */
-  /*
-     * Close Style: Pill solid
-     */
 }
 .uk-light a,
 .uk-light .uk-link,
@@ -15501,6 +15581,87 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
 .uk-offcanvas-bar .uk-marker:hover {
   color: var(--inverse-marker-hover-color);
 }
+.uk-light .uk-alert,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert,
+.uk-card-primary.uk-card-body .uk-alert,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert,
+.uk-card-secondary.uk-card-body .uk-alert,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert,
+.uk-overlay-primary .uk-alert,
+.uk-offcanvas-bar .uk-alert {
+  color: var(--alert-color);
+}
+.uk-light .uk-alert h1,
+.uk-light .uk-alert h2,
+.uk-light .uk-alert h3,
+.uk-light .uk-alert h4,
+.uk-light .uk-alert h5,
+.uk-light .uk-alert h6,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert h1,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert h2,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert h3,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert h4,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert h5,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert h6,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert h1,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert h2,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert h3,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert h4,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert h5,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert h6,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert h1,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert h2,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert h3,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert h4,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert h5,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert h6,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert h1,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert h2,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert h3,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert h4,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert h5,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert h6,
+.uk-card-primary.uk-card-body .uk-alert h1,
+.uk-card-primary.uk-card-body .uk-alert h2,
+.uk-card-primary.uk-card-body .uk-alert h3,
+.uk-card-primary.uk-card-body .uk-alert h4,
+.uk-card-primary.uk-card-body .uk-alert h5,
+.uk-card-primary.uk-card-body .uk-alert h6,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert h1,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert h2,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert h3,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert h4,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert h5,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert h6,
+.uk-card-secondary.uk-card-body .uk-alert h1,
+.uk-card-secondary.uk-card-body .uk-alert h2,
+.uk-card-secondary.uk-card-body .uk-alert h3,
+.uk-card-secondary.uk-card-body .uk-alert h4,
+.uk-card-secondary.uk-card-body .uk-alert h5,
+.uk-card-secondary.uk-card-body .uk-alert h6,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert h1,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert h2,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert h3,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert h4,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert h5,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert h6,
+.uk-overlay-primary .uk-alert h1,
+.uk-overlay-primary .uk-alert h2,
+.uk-overlay-primary .uk-alert h3,
+.uk-overlay-primary .uk-alert h4,
+.uk-overlay-primary .uk-alert h5,
+.uk-overlay-primary .uk-alert h6,
+.uk-offcanvas-bar .uk-alert h1,
+.uk-offcanvas-bar .uk-alert h2,
+.uk-offcanvas-bar .uk-alert h3,
+.uk-offcanvas-bar .uk-alert h4,
+.uk-offcanvas-bar .uk-alert h5,
+.uk-offcanvas-bar .uk-alert h6 {
+  color: inherit;
+}
 .uk-light .uk-alert-default,
 .uk-section-primary:not(.uk-preserve-color) .uk-alert-default,
 .uk-section-secondary:not(.uk-preserve-color) .uk-alert-default,
@@ -15551,6 +15712,23 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
   --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-primary);
   --alert-icon-box-background: var(--inverse-alert-icon-box-background-primary);
   --alert-close-pill-background: var(--inverse-alert-close-pill-background-primary);
+}
+.uk-light .uk-alert-info,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert-info,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert-info,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert-info,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-info,
+.uk-card-primary.uk-card-body .uk-alert-info,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-info,
+.uk-card-secondary.uk-card-body .uk-alert-info,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-info,
+.uk-overlay-primary .uk-alert-info,
+.uk-offcanvas-bar .uk-alert-info {
+  --alert-background: var(--inverse-alert-info-background);
+  --alert-color: var(--inverse-alert-info-color);
+  --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-info);
+  --alert-icon-box-background: var(--inverse-alert-icon-box-background-info);
+  --alert-close-pill-background: var(--inverse-alert-close-pill-background-info);
 }
 .uk-light .uk-alert-success,
 .uk-section-primary:not(.uk-preserve-color) .uk-alert-success,
@@ -15642,82 +15820,82 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
 .uk-offcanvas-bar .uk-alert-close:is(:focus-visible, :active) {
   color: rgb(from currentColor r g b / var(--inverse-alert-close-active-opacity));
 }
-.uk-light .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
-.uk-section-primary:not(.uk-preserve-color) .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
-.uk-section-secondary:not(.uk-preserve-color) .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
-.uk-tile-primary:not(.uk-preserve-color) .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
-.uk-card-primary.uk-card-body .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
-.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
-.uk-card-secondary.uk-card-body .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
-.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
-.uk-overlay-primary .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before,
-.uk-offcanvas-bar .uk-alert:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner).uk-alert-close-pill .uk-alert-close::before {
+.uk-light .uk-alert-close-pill:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner),
+.uk-section-primary:not(.uk-preserve-color) .uk-alert-close-pill:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner),
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert-close-pill:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner),
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert-close-pill:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner),
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-close-pill:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner),
+.uk-card-primary.uk-card-body .uk-alert-close-pill:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner),
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-close-pill:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner),
+.uk-card-secondary.uk-card-body .uk-alert-close-pill:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner),
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-close-pill:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner),
+.uk-overlay-primary .uk-alert-close-pill:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner),
+.uk-offcanvas-bar .uk-alert-close-pill:is(.uk-alert-close-end, .uk-alert-close-top, .uk-alert-close-corner) {
   backdrop-filter: blur(20px);
 }
-.uk-light :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
-.uk-section-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
-.uk-section-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
-.uk-tile-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
-.uk-tile-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
-.uk-card-primary.uk-card-body :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
-.uk-card-primary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
-.uk-card-secondary.uk-card-body :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
-.uk-card-secondary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
-.uk-overlay-primary :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover),
-.uk-offcanvas-bar :is(.uk-alert-close-pill-solid, .uk-alert-close-pill-hover) {
-  --inverse-alert-close-background-opacity: 0;
+.uk-light :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before,
+.uk-section-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before,
+.uk-section-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before,
+.uk-tile-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before,
+.uk-tile-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before,
+.uk-card-primary.uk-card-body :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before,
+.uk-card-primary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before,
+.uk-card-secondary.uk-card-body :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before,
+.uk-card-secondary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before,
+.uk-overlay-primary :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before,
+.uk-offcanvas-bar :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before {
+  opacity: var(--inverse-alert-close-background-hover-opacity);
 }
-.uk-light :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
-.uk-section-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
-.uk-section-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
-.uk-tile-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
-.uk-tile-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
-.uk-card-primary.uk-card-body :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
-.uk-card-primary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
-.uk-card-secondary.uk-card-body :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
-.uk-card-secondary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
-.uk-overlay-primary :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover),
-.uk-offcanvas-bar :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has(> .uk-alert-close:hover) {
-  --inverse-alert-close-background-opacity: var(--inverse-alert-close-background-hover-opacity);
+.uk-light :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before,
+.uk-section-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before,
+.uk-section-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before,
+.uk-tile-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before,
+.uk-tile-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before,
+.uk-card-primary.uk-card-body :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before,
+.uk-card-primary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before,
+.uk-card-secondary.uk-card-body :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before,
+.uk-card-secondary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before,
+.uk-overlay-primary :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before,
+.uk-offcanvas-bar :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before {
+  opacity: var(--inverse-alert-close-background-active-opacity);
 }
-.uk-light :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
-.uk-section-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
-.uk-section-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
-.uk-tile-primary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
-.uk-tile-secondary:not(.uk-preserve-color) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
-.uk-card-primary.uk-card-body :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
-.uk-card-primary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
-.uk-card-secondary.uk-card-body :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
-.uk-card-secondary > :not([class*="uk-card-media"]) :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
-.uk-overlay-primary :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)),
-.uk-offcanvas-bar :is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):has( > .uk-alert-close:is(:focus-visible, :active)) {
-  --inverse-alert-close-background-opacity: var(--inverse-alert-close-background-active-opacity);
-}
-.uk-light .uk-alert-close-pill .uk-alert-close,
-.uk-section-primary:not(.uk-preserve-color) .uk-alert-close-pill .uk-alert-close,
-.uk-section-secondary:not(.uk-preserve-color) .uk-alert-close-pill .uk-alert-close,
-.uk-tile-primary:not(.uk-preserve-color) .uk-alert-close-pill .uk-alert-close,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-close-pill .uk-alert-close,
-.uk-card-primary.uk-card-body .uk-alert-close-pill .uk-alert-close,
-.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-close-pill .uk-alert-close,
-.uk-card-secondary.uk-card-body .uk-alert-close-pill .uk-alert-close,
-.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-close-pill .uk-alert-close,
-.uk-overlay-primary .uk-alert-close-pill .uk-alert-close,
-.uk-offcanvas-bar .uk-alert-close-pill .uk-alert-close {
+.uk-light .uk-alert-close-pill,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert-close-pill,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert-close-pill,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert-close-pill,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-close-pill,
+.uk-card-primary.uk-card-body .uk-alert-close-pill,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-close-pill,
+.uk-card-secondary.uk-card-body .uk-alert-close-pill,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-close-pill,
+.uk-overlay-primary .uk-alert-close-pill,
+.uk-offcanvas-bar .uk-alert-close-pill {
   background-color: transparent;
 }
-.uk-light .uk-alert-close-pill-solid .uk-alert-close,
-.uk-section-primary:not(.uk-preserve-color) .uk-alert-close-pill-solid .uk-alert-close,
-.uk-section-secondary:not(.uk-preserve-color) .uk-alert-close-pill-solid .uk-alert-close,
-.uk-tile-primary:not(.uk-preserve-color) .uk-alert-close-pill-solid .uk-alert-close,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-close-pill-solid .uk-alert-close,
-.uk-card-primary.uk-card-body .uk-alert-close-pill-solid .uk-alert-close,
-.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-close-pill-solid .uk-alert-close,
-.uk-card-secondary.uk-card-body .uk-alert-close-pill-solid .uk-alert-close,
-.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-close-pill-solid .uk-alert-close,
-.uk-overlay-primary .uk-alert-close-pill-solid .uk-alert-close,
-.uk-offcanvas-bar .uk-alert-close-pill-solid .uk-alert-close {
+.uk-light .uk-alert-close-pill::before,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert-close-pill::before,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert-close-pill::before,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert-close-pill::before,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-close-pill::before,
+.uk-card-primary.uk-card-body .uk-alert-close-pill::before,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-close-pill::before,
+.uk-card-secondary.uk-card-body .uk-alert-close-pill::before,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-close-pill::before,
+.uk-overlay-primary .uk-alert-close-pill::before,
+.uk-offcanvas-bar .uk-alert-close-pill::before {
+  opacity: var(--inverse-alert-close-background-opacity);
+}
+.uk-light .uk-alert-close-pill-solid,
+.uk-section-primary:not(.uk-preserve-color) .uk-alert-close-pill-solid,
+.uk-section-secondary:not(.uk-preserve-color) .uk-alert-close-pill-solid,
+.uk-tile-primary:not(.uk-preserve-color) .uk-alert-close-pill-solid,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-alert-close-pill-solid,
+.uk-card-primary.uk-card-body .uk-alert-close-pill-solid,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-alert-close-pill-solid,
+.uk-card-secondary.uk-card-body .uk-alert-close-pill-solid,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-alert-close-pill-solid,
+.uk-overlay-primary .uk-alert-close-pill-solid,
+.uk-offcanvas-bar .uk-alert-close-pill-solid {
   background-color: var(--inverse-alert-close-pill-solid-background);
   outline-color: var(--inverse-alert-close-pill-solid-border-color);
 }
@@ -16031,249 +16209,41 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
 .uk-offcanvas-bar .uk-search-toggle:hover {
   color: var(--inverse-search-toggle-hover-color);
 }
-.uk-light :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-title,
-.uk-section-primary:not(.uk-preserve-color) :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-title,
-.uk-section-secondary:not(.uk-preserve-color) :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-title,
-.uk-tile-primary:not(.uk-preserve-color) :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-title,
-.uk-tile-secondary:not(.uk-preserve-color) :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-title,
-.uk-card-primary.uk-card-body :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-title,
-.uk-card-primary > :not([class*="uk-card-media"]) :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-title,
-.uk-card-secondary.uk-card-body :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-title,
-.uk-card-secondary > :not([class*="uk-card-media"]) :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-title,
-.uk-overlay-primary :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-title,
-.uk-offcanvas-bar :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-title {
-  color: var(--inverse-accordion-title-color);
+.uk-light .uk-accordion,
+.uk-section-primary:not(.uk-preserve-color) .uk-accordion,
+.uk-section-secondary:not(.uk-preserve-color) .uk-accordion,
+.uk-tile-primary:not(.uk-preserve-color) .uk-accordion,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion,
+.uk-card-primary.uk-card-body .uk-accordion,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion,
+.uk-card-secondary.uk-card-body .uk-accordion,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion,
+.uk-overlay-primary .uk-accordion,
+.uk-offcanvas-bar .uk-accordion {
+  --accordion-bordered-border-color: var(--inverse-accordion-bordered-border-color);
+  --accordion-title-color: var(--inverse-accordion-title-color);
+  --accordion-icon-color: var(--inverse-accordion-icon-color);
+  --accordion-disabled-title-color: var(--inverse-accordion-disabled-title-color);
+  --accordion-disabled-icon-color: var(--inverse-accordion-disabled-icon-color);
+  --accordion-default-title-hover-color: var(--inverse-accordion-default-title-hover-color);
+  --accordion-pill-title-background: var(--inverse-accordion-pill-title-background);
+  --accordion-pill-title-hover-background: var(--inverse-accordion-pill-title-hover-background);
+  --accordion-line-border-color: var(--inverse-accordion-line-border-color);
+  --accordion-icon-circle-active-color: var(--inverse-accordion-icon-circle-active-color);
 }
-.uk-light :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-icon,
-.uk-section-primary:not(.uk-preserve-color) :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-icon,
-.uk-section-secondary:not(.uk-preserve-color) :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-icon,
-.uk-tile-primary:not(.uk-preserve-color) :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-icon,
-.uk-tile-secondary:not(.uk-preserve-color) :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-icon,
-.uk-card-primary.uk-card-body :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-icon,
-.uk-card-primary > :not([class*="uk-card-media"]) :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-icon,
-.uk-card-secondary.uk-card-body :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-icon,
-.uk-card-secondary > :not([class*="uk-card-media"]) :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-icon,
-.uk-overlay-primary :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-icon,
-.uk-offcanvas-bar :is(
-        .uk-accordion-default,
-        .uk-accordion-pill,
-        .uk-accordion-line
-    ) .uk-accordion-icon {
-  color: var(--inverse-accordion-icon-color);
-}
-.uk-light .uk-accordion-item-disabled .uk-accordion-title,
-.uk-section-primary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-title,
-.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-title,
-.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-title,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-title,
-.uk-card-primary.uk-card-body .uk-accordion-item-disabled .uk-accordion-title,
-.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-item-disabled .uk-accordion-title,
-.uk-card-secondary.uk-card-body .uk-accordion-item-disabled .uk-accordion-title,
-.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-item-disabled .uk-accordion-title,
-.uk-overlay-primary .uk-accordion-item-disabled .uk-accordion-title,
-.uk-offcanvas-bar .uk-accordion-item-disabled .uk-accordion-title {
-  color: var(--inverse-accordion-disabled-title-color);
-}
-.uk-light .uk-accordion-item-disabled .uk-accordion-icon,
-.uk-section-primary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-icon,
-.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-icon,
-.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-icon,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-item-disabled .uk-accordion-icon,
-.uk-card-primary.uk-card-body .uk-accordion-item-disabled .uk-accordion-icon,
-.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-item-disabled .uk-accordion-icon,
-.uk-card-secondary.uk-card-body .uk-accordion-item-disabled .uk-accordion-icon,
-.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-item-disabled .uk-accordion-icon,
-.uk-overlay-primary .uk-accordion-item-disabled .uk-accordion-icon,
-.uk-offcanvas-bar .uk-accordion-item-disabled .uk-accordion-icon {
-  color: var(--inverse-accordion-disabled-icon-color);
-}
-.uk-light .uk-accordion-default .uk-accordion-title:hover,
-.uk-section-primary:not(.uk-preserve-color) .uk-accordion-default .uk-accordion-title:hover,
-.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-default .uk-accordion-title:hover,
-.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-default .uk-accordion-title:hover,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-default .uk-accordion-title:hover,
-.uk-card-primary.uk-card-body .uk-accordion-default .uk-accordion-title:hover,
-.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-default .uk-accordion-title:hover,
-.uk-card-secondary.uk-card-body .uk-accordion-default .uk-accordion-title:hover,
-.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-default .uk-accordion-title:hover,
-.uk-overlay-primary .uk-accordion-default .uk-accordion-title:hover,
-.uk-offcanvas-bar .uk-accordion-default .uk-accordion-title:hover {
-  color: var(--inverse-accordion-default-title-hover-color);
-}
-.uk-light .uk-accordion-pill .uk-accordion-title,
-.uk-section-primary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title,
-.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title,
-.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title,
-.uk-card-primary.uk-card-body .uk-accordion-pill .uk-accordion-title,
-.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-pill .uk-accordion-title,
-.uk-card-secondary.uk-card-body .uk-accordion-pill .uk-accordion-title,
-.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-pill .uk-accordion-title,
-.uk-overlay-primary .uk-accordion-pill .uk-accordion-title,
-.uk-offcanvas-bar .uk-accordion-pill .uk-accordion-title {
-  background-color: var(--inverse-accordion-pill-title-background);
-}
-.uk-light .uk-accordion-pill .uk-accordion-title:hover,
-.uk-section-primary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title:hover,
-.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title:hover,
-.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title:hover,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-title:hover,
-.uk-card-primary.uk-card-body .uk-accordion-pill .uk-accordion-title:hover,
-.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-pill .uk-accordion-title:hover,
-.uk-card-secondary.uk-card-body .uk-accordion-pill .uk-accordion-title:hover,
-.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-pill .uk-accordion-title:hover,
-.uk-overlay-primary .uk-accordion-pill .uk-accordion-title:hover,
-.uk-offcanvas-bar .uk-accordion-pill .uk-accordion-title:hover {
-  background-color: var(--inverse-accordion-pill-title-hover-background);
-}
-.uk-light .uk-accordion-pill .uk-accordion-icon,
-.uk-section-primary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-icon,
-.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-icon,
-.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-icon,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-pill .uk-accordion-icon,
-.uk-card-primary.uk-card-body .uk-accordion-pill .uk-accordion-icon,
-.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-pill .uk-accordion-icon,
-.uk-card-secondary.uk-card-body .uk-accordion-pill .uk-accordion-icon,
-.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-pill .uk-accordion-icon,
-.uk-overlay-primary .uk-accordion-pill .uk-accordion-icon,
-.uk-offcanvas-bar .uk-accordion-pill .uk-accordion-icon {
-  color: var(--inverse-accordion-pill-icon-color);
-}
-.uk-light .uk-accordion-line > *:not(:last-child),
-.uk-section-primary:not(.uk-preserve-color) .uk-accordion-line > *:not(:last-child),
-.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-line > *:not(:last-child),
-.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-line > *:not(:last-child),
-.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-line > *:not(:last-child),
-.uk-card-primary.uk-card-body .uk-accordion-line > *:not(:last-child),
-.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-line > *:not(:last-child),
-.uk-card-secondary.uk-card-body .uk-accordion-line > *:not(:last-child),
-.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-line > *:not(:last-child),
-.uk-overlay-primary .uk-accordion-line > *:not(:last-child),
-.uk-offcanvas-bar .uk-accordion-line > *:not(:last-child) {
-  border-bottom-color: var(--inverse-accordion-line-border-color);
-}
-.uk-light .uk-accordion-line .uk-accordion-icon,
-.uk-section-primary:not(.uk-preserve-color) .uk-accordion-line .uk-accordion-icon,
-.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-line .uk-accordion-icon,
-.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-line .uk-accordion-icon,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-line .uk-accordion-icon,
-.uk-card-primary.uk-card-body .uk-accordion-line .uk-accordion-icon,
-.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-line .uk-accordion-icon,
-.uk-card-secondary.uk-card-body .uk-accordion-line .uk-accordion-icon,
-.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-line .uk-accordion-icon,
-.uk-overlay-primary .uk-accordion-line .uk-accordion-icon,
-.uk-offcanvas-bar .uk-accordion-line .uk-accordion-icon {
-  color: var(--inverse-accordion-line-icon-color);
-}
-.uk-light [aria-expanded="true"] .uk-accordion-icon svg > .circle,
-.uk-section-primary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon svg > .circle,
-.uk-section-secondary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon svg > .circle,
-.uk-tile-primary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon svg > .circle,
-.uk-tile-secondary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon svg > .circle,
-.uk-card-primary.uk-card-body [aria-expanded="true"] .uk-accordion-icon svg > .circle,
-.uk-card-primary > :not([class*="uk-card-media"]) [aria-expanded="true"] .uk-accordion-icon svg > .circle,
-.uk-card-secondary.uk-card-body [aria-expanded="true"] .uk-accordion-icon svg > .circle,
-.uk-card-secondary > :not([class*="uk-card-media"]) [aria-expanded="true"] .uk-accordion-icon svg > .circle,
-.uk-overlay-primary [aria-expanded="true"] .uk-accordion-icon svg > .circle,
-.uk-offcanvas-bar [aria-expanded="true"] .uk-accordion-icon svg > .circle {
-  color: var(--inverse-accordion-icon-circle-active-color);
-}
-.uk-light [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
-.uk-section-primary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
-.uk-section-secondary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
-.uk-tile-primary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
-.uk-tile-secondary:not(.uk-preserve-color) [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
-.uk-card-primary.uk-card-body [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
-.uk-card-primary > :not([class*="uk-card-media"]) [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
-.uk-card-secondary.uk-card-body [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
-.uk-card-secondary > :not([class*="uk-card-media"]) [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
-.uk-overlay-primary [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]),
-.uk-offcanvas-bar [aria-expanded="true"] .uk-accordion-icon :is(svg[stroke] > .circle, svg > .circle[stroke]) {
-  stroke: var(--inverse-accordion-icon-circle-active-color);
+.uk-light .uk-accordion-bordered,
+.uk-section-primary:not(.uk-preserve-color) .uk-accordion-bordered,
+.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-bordered,
+.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-bordered,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-bordered,
+.uk-card-primary.uk-card-body .uk-accordion-bordered,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-accordion-bordered,
+.uk-card-secondary.uk-card-body .uk-accordion-bordered,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-bordered,
+.uk-overlay-primary .uk-accordion-bordered,
+.uk-offcanvas-bar .uk-accordion-bordered {
+  border: var(--accordion-bordered-border-width) solid var(--accordion-bordered-border-color);
+  border-radius: var(--global-border-radius-default);
 }
 .uk-light .uk-dropbar,
 .uk-section-primary:not(.uk-preserve-color) .uk-dropbar,
@@ -18104,6 +18074,17 @@ a.uk-offcanvas-bar:hover .uk-icon-overlay {
   border-color: var(--inverse-base-pre-border);
   background: var(--inverse-base-pre-background);
 }
+/* Bordered
+ ========================================================================== */
+/*
+ * Item
+ */
+/*
+ * Title
+ */
+/*
+ * Content
+ */
 /* Style: default
  ========================================================================== */
 /*
