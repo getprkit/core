@@ -2,7 +2,7 @@ export type UIkitElement = object | HTMLElement | string | null;
 export type UIkitNodes = NodeList | HTMLCollection | UIkitNode;
 export type UIkitNode = Node;
 
-// fixing boolean types for JavaScript Frameworks like Vue
+// Fix boolean types in JavaScript frameworks like Vue to prevent them from becoming undefined when not explicitly defined as props.
 export type UIkitBoolean = boolean extends infer T ? T : never
 
 // Option types
