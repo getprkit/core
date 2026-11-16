@@ -18,7 +18,7 @@ See the [Changelog](CHANGELOG.md) for details and [breaking changes](CHANGELOG.m
 ## Installation
 
 ```bash
-npm install prkit@next
+npm install @prkit/core@next
 ```
 
 ### Using Prebuilt Files

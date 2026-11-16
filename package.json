@@ -1,5 +1,5 @@
 {
-    "name": "prkit",
+    "name": "@prkit/core",
     "title": "PrKit Core",
     "description": "PrKit is a lightweight and modular front-end framework for developing fast and powerful web interfaces.",
     "version": "1.0.0-beta.2",
