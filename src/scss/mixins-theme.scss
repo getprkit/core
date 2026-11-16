@@ -60,8 +60,7 @@
 @mixin hook-inverse-accordion-line-icon(){}
 @mixin hook-inverse-accordion-line-content(){}
 @mixin hook-accordion-variables() {
-
-    --accordion-title-gap:                           15px;
+--accordion-title-gap:                           15px;
     --accordion-title-font-size:                     var(--global-medium-font-size);
     --accordion-title-line-height:                   1.4;
     --accordion-title-color:                         var(--global-color-emphasis);
@@ -98,9 +97,7 @@
     --accordion-icon-circle-opacity:                 var(--global-icon-tertiary-color-opacity);
     --accordion-icon-circle-active-opacity:          1;
 
-
-
-    --inverse-accordion-title-color:                     var(--inverse-global-color-emphasis);
+--inverse-accordion-title-color:                     var(--inverse-global-color-emphasis);
     --inverse-accordion-icon-color:                      var(--inverse-global-color);
 
     --inverse-accordion-disabled-title-color:            var(--inverse-global-color-muted);
@@ -119,9 +116,7 @@
 
     --inverse-accordion-icon-circle-active-color:        var(--inverse-global-primary-color);
 
-
-
-    // --accordion-title-gap:                           15px;
+// --accordion-title-gap:                           15px;
     // --accordion-title-font-size:                     var(--global-medium-font-size);
     // --accordion-title-line-height:                   1.4;
     // --accordion-title-color:                         var(--global-color-emphasis);
@@ -158,9 +153,7 @@
     // --accordion-icon-circle-opacity:                 var(--global-icon-tertiary-color-opacity);
     // --accordion-icon-circle-active-opacity:          1;
 
-
-
-    // --inverse-accordion-title-color:                     var(--inverse-global-color-emphasis);
+// --inverse-accordion-title-color:                     var(--inverse-global-color-emphasis);
     // --inverse-accordion-icon-color:                      var(--inverse-global-color);
 
     // --inverse-accordion-disabled-title-color:            var(--inverse-global-color-muted);
@@ -178,7 +171,6 @@
     // --inverse-accordion-line-border-color:               var(--inverse-global-border);
 
     // --inverse-accordion-icon-circle-active-color:        var(--inverse-global-primary-color);
-
 }
 @mixin hook-inverse-component-accordion(){
 
@@ -324,67 +316,67 @@
 }
 @mixin hook-alert(){}
 @mixin hook-alert-default() {
-    --alert-bordered-border-color: var(--alert-bordered-border-color-default); 
+--alert-bordered-border-color: var(--alert-bordered-border-color-default);
 
-    --alert-icon-box-background: var(--alert-icon-box-background-default); 
+--alert-icon-box-background: var(--alert-icon-box-background-default);
 
-    --alert-close-pill-background: var(--alert-close-pill-background-default); 
+--alert-close-pill-background: var(--alert-close-pill-background-default);
 
-    --alert-close-pill-back: var(--alert-default-background); 
+--alert-close-pill-back: var(--alert-default-background);
 }
 @mixin hook-alert-muted() {
-    --alert-bordered-border-color: var(--alert-bordered-border-color-muted); 
+--alert-bordered-border-color: var(--alert-bordered-border-color-muted);
 
-    --alert-icon-box-background: var(--alert-icon-box-background-muted); 
+--alert-icon-box-background: var(--alert-icon-box-background-muted);
 
-    --alert-close-pill-background: var(--alert-close-pill-background-muted); 
+--alert-close-pill-background: var(--alert-close-pill-background-muted);
 
-    --alert-close-pill-back: var(--alert-muted-background); 
+--alert-close-pill-back: var(--alert-muted-background);
 }
 @mixin hook-alert-primary() {
-    --alert-bordered-border-color: var(--alert-bordered-border-color-primary); 
+--alert-bordered-border-color: var(--alert-bordered-border-color-primary);
 
-    --alert-icon-box-background: var(--alert-icon-box-background-primary); 
+--alert-icon-box-background: var(--alert-icon-box-background-primary);
 
-    --alert-close-pill-background: var(--alert-close-pill-background-primary); 
+--alert-close-pill-background: var(--alert-close-pill-background-primary);
 
-    --alert-close-pill-back: var(--alert-primary-background); 
+--alert-close-pill-back: var(--alert-primary-background);
 }
 @mixin hook-alert-info() {
-    --alert-bordered-border-color: var(--alert-bordered-border-color-info); 
+--alert-bordered-border-color: var(--alert-bordered-border-color-info);
 
-    --alert-icon-box-background: var(--alert-icon-box-background-info); 
+--alert-icon-box-background: var(--alert-icon-box-background-info);
 
-    --alert-close-pill-background: var(--alert-close-pill-background-info); 
+--alert-close-pill-background: var(--alert-close-pill-background-info);
 
-    --alert-close-pill-back: var(--alert-info-background); 
+--alert-close-pill-back: var(--alert-info-background);
 }
 @mixin hook-alert-success() {
-    --alert-bordered-border-color: var(--alert-bordered-border-color-success); 
+--alert-bordered-border-color: var(--alert-bordered-border-color-success);
 
-    --alert-icon-box-background: var(--alert-icon-box-background-success); 
+--alert-icon-box-background: var(--alert-icon-box-background-success);
 
-    --alert-close-pill-background: var(--alert-close-pill-background-success); 
+--alert-close-pill-background: var(--alert-close-pill-background-success);
 
-    --alert-close-pill-back: var(--alert-success-background); 
+--alert-close-pill-back: var(--alert-success-background);
 }
 @mixin hook-alert-warning() {
-    --alert-bordered-border-color: var(--alert-bordered-border-color-warning); 
+--alert-bordered-border-color: var(--alert-bordered-border-color-warning);
 
-    --alert-icon-box-background: var(--alert-icon-box-background-warning); 
+--alert-icon-box-background: var(--alert-icon-box-background-warning);
 
-    --alert-close-pill-background: var(--alert-close-pill-background-warning); 
+--alert-close-pill-background: var(--alert-close-pill-background-warning);
 
-    --alert-close-pill-back: var(--alert-warning-background); 
+--alert-close-pill-back: var(--alert-warning-background);
 }
 @mixin hook-alert-danger() {
-    --alert-bordered-border-color: var(--alert-bordered-border-color-danger); 
+--alert-bordered-border-color: var(--alert-bordered-border-color-danger);
 
-    --alert-icon-box-background: var(--alert-icon-box-background-danger); 
+--alert-icon-box-background: var(--alert-icon-box-background-danger);
 
-    --alert-close-pill-background: var(--alert-close-pill-background-danger); 
+--alert-close-pill-background: var(--alert-close-pill-background-danger);
 
-    --alert-close-pill-back: var(--alert-danger-background); 
+--alert-close-pill-back: var(--alert-danger-background);
 }
 @mixin hook-alert-icon-box(){}
 @mixin hook-alert-icon-box-icon(){}
@@ -406,8 +398,7 @@
 @mixin hook-inverse-alert-close-hover(){}
 @mixin hook-inverse-alert-close-active(){}
 @mixin hook-alert-variables() {
-
-    --alert-margin-vertical:                            var(--global-margin);
+--alert-margin-vertical:                            var(--global-margin);
     --alert-padding:                                    var(--global-small-gutter);
 
     --alert-border-width:                               var(--global-border-width);
@@ -520,9 +511,7 @@
     --alert-close-pill-solid-border-color:              var(--global-border);
     --alert-close-pill-solid-hover-border-color:        var(--global-default-color);
 
-
-
-    --inverse-alert-close-opacity:                              0.4;
+--inverse-alert-close-opacity:                              0.4;
     --inverse-alert-close-hover-opacity:                        0.7;
     --inverse-alert-close-active-opacity:                       1;
     --inverse-alert-close-background-opacity:                   0.1;
@@ -580,9 +569,7 @@
     --inverse-alert-icon-box-background-warning:                var(--global-warning-color-600);
     --inverse-alert-icon-box-background-danger:                 var(--global-danger-color-600);
 
-
-
-    // --alert-margin-vertical:                            var(--global-margin);
+// --alert-margin-vertical:                            var(--global-margin);
     // --alert-padding:                                    var(--global-small-gutter);
 
     // --alert-border-width:                               var(--global-border-width);
@@ -689,9 +676,7 @@
     // --alert-close-pill-solid-border-color:              var(--global-border);
     // --alert-close-pill-solid-hover-border-color:        var(--global-default-color);
 
-
-
-    // --inverse-alert-close-opacity:                              0.4;
+// --inverse-alert-close-opacity:                              0.4;
     // --inverse-alert-close-hover-opacity:                        0.7;
     // --inverse-alert-close-active-opacity:                       1;
     // --inverse-alert-close-background-opacity:                   0.1;
@@ -742,7 +727,6 @@
     // --inverse-alert-icon-box-background-danger:                 var(--global-danger-color-600);
     // --inverse-alert-icon-box-background-success:                var(--global-success-color-600);
     // --inverse-alert-icon-box-background-warning:                var(--global-warning-color-600);
-
 }
 @mixin hook-inverse-component-alert(){
 
@@ -932,30 +916,25 @@
 @mixin hook-article-adjacent(){}
 @mixin hook-article-title(){}
 @mixin hook-article-meta() {
-
-    a { color: var(--article-meta-link-color); }
+a { color: var(--article-meta-link-color); }
 
     a:hover {
         color: var(--article-meta-link-hover-color);
         text-decoration: none;
     }
-
 }
 @mixin hook-article-misc(){}
 @mixin hook-inverse-article-title(){}
 @mixin hook-inverse-article-meta() {
-
-    a { color: var(--inverse-article-meta-link-color); }
+a { color: var(--inverse-article-meta-link-color); }
 
     a:hover {
         color: var(--inverse-article-meta-link-hover-color);
         text-decoration: none;
     }
-
 }
 @mixin hook-article-variables() {
-
-    --article-margin-top:                            var(--global-large-margin);
+--article-margin-top:                            var(--global-large-margin);
 
     --article-title-font-size-m:                     var(--global-2xlarge-font-size);
     --article-title-font-size:                       calc(var(--article-title-font-size-m) * 0.85);
@@ -965,24 +944,17 @@
     --article-meta-line-height:                      1.4;
     --article-meta-color:                            var(--global-color-muted);
 
+--inverse-article-meta-color:                   var(--inverse-global-color-muted);
 
-
-    --inverse-article-meta-color:                   var(--inverse-global-color-muted);
-
-
-
-    //
+//
     // New
     //
 
     --article-meta-link-color:                       var(--article-meta-color);
     --article-meta-link-hover-color:                 var(--global-color);
 
-
-
-    --inverse-article-meta-link-color:              var(--inverse-article-meta-color);
+--inverse-article-meta-link-color:              var(--inverse-article-meta-color);
     --inverse-article-meta-link-hover-color:        var(--inverse-global-color);
-
 }
 @mixin hook-inverse-component-article(){
 
@@ -998,17 +970,13 @@
 }
 @mixin hook-background-misc(){}
 @mixin hook-background-variables() {
-
-    --background-default-background:                 var(--global-default-color);
+--background-default-background:                 var(--global-default-color);
     --background-muted-background:                   var(--global-muted-color);
     --background-primary-background:                 var(--global-primary-color);
     --background-secondary-background:               var(--global-secondary-color);
 
-
-
-    --inverse-background-default-background:        var(--inverse-global-default-color);
+--inverse-background-default-background:        var(--inverse-global-default-color);
     --inverse-background-muted-background:          var(--inverse-global-muted-color);
-
 }
 @mixin hook-inverse-component-background(){
 
@@ -1022,8 +990,7 @@
 @mixin hook-inverse-badge(){}
 @mixin hook-inverse-badge-hover(){}
 @mixin hook-badge-variables() {
-
-    --badge-size:                                    18px;
+--badge-size:                                    18px;
     --badge-padding-vertical:                        0;
     --badge-padding-horizontal:                      5px;
     --badge-border-radius:                           500px;
@@ -1031,11 +998,8 @@
     --badge-color:                                   var(--global-color-inverse);
     --badge-font-size:                               11px;
 
-
-
-    --inverse-badge-background:                     var(--inverse-global-primary-color);
+--inverse-badge-background:                     var(--inverse-global-primary-color);
     --inverse-badge-color:                          var(--inverse-global-color-emphasis);
-
 }
 @mixin hook-inverse-component-badge(){
 
@@ -1054,7 +1018,7 @@
 @mixin hook-base-link(){}
 @mixin hook-base-link-hover(){}
 @mixin hook-base-code() {
-    padding: var(--base-code-padding-vertical) var(--base-code-padding-horizontal);
+padding: var(--base-code-padding-vertical) var(--base-code-padding-horizontal);
     background: var(--base-code-background);
 }
 @mixin hook-base-heading(){}
@@ -1066,17 +1030,15 @@
 @mixin hook-base-h6(){}
 @mixin hook-base-hr(){}
 @mixin hook-base-blockquote() {
-    color: var(--base-blockquote-color);
+color: var(--base-blockquote-color);
 }
 @mixin hook-base-blockquote-footer() {
-
-    color: var(--base-blockquote-footer-color);
+color: var(--base-blockquote-footer-color);
 
     &::before { content: "— "; }
-
 }
 @mixin hook-base-pre() {
-    padding: var(--base-pre-padding);
+padding: var(--base-pre-padding);
     border: var(--base-pre-border-width) solid var(--base-pre-border);
     border-radius: var(--base-pre-border-radius);
     background: var(--base-pre-background);
@@ -1085,7 +1047,7 @@
 @mixin hook-inverse-base-link(){}
 @mixin hook-inverse-base-link-hover(){}
 @mixin hook-inverse-base-code() {
-    background-color: var(--inverse-global-muted-color);
+background-color: var(--inverse-global-muted-color);
 }
 @mixin hook-inverse-base-heading(){}
 @mixin hook-inverse-base-h1(){}
@@ -1095,16 +1057,15 @@
 @mixin hook-inverse-base-h5(){}
 @mixin hook-inverse-base-h6(){}
 @mixin hook-inverse-base-blockquote() {
-    color: var(--inverse-base-blockquote-color); 
+color: var(--inverse-base-blockquote-color);
 }
 @mixin hook-inverse-base-blockquote-footer() {
-    color: var(--inverse-base-blockquote-footer-color); 
+color: var(--inverse-base-blockquote-footer-color);
 }
 @mixin hook-inverse-base-pre(){}
 @mixin hook-inverse-base-hr(){}
 @mixin hook-base-variables() {
-
-    --base-body-background:                          var(--global-default-color);
+--base-body-background:                          var(--global-default-color);
     --base-body-font-family:                         var(--global-font-family);
     --base-body-font-weight:                         normal;
     --base-body-font-size:                           var(--global-font-size);
@@ -1177,9 +1138,7 @@
     --base-selection-background:                     #39f;
     --base-selection-color:                          var(--global-color-inverse);
 
-
-
-    --inverse-base-color:                           var(--inverse-global-color);
+--inverse-base-color:                           var(--inverse-global-color);
 
     --inverse-base-link-color:                      var(--inverse-global-color-emphasis);
     --inverse-base-link-hover-color:                var(--inverse-global-color-emphasis);
@@ -1193,9 +1152,7 @@
 
     --inverse-base-focus-outline:                   var(--inverse-global-color-emphasis);
 
-
-
-    //
+//
     // New
     //
 
@@ -1213,14 +1170,11 @@
     --base-pre-border:                               var(--global-border);
     --base-pre-border-radius:                        3px;
 
-
-
-    --inverse-base-blockquote-color:                var(--inverse-global-color-emphasis);
+--inverse-base-blockquote-color:                var(--inverse-global-color-emphasis);
     --inverse-base-blockquote-footer-color:         var(--inverse-global-color);
     --inverse-base-pre-background:                  var(--inverse-global-default-color);
     --inverse-base-pre-border:                      var(--inverse-global-border);
     --inverse-base-pre-color:                       var(--inverse-global-color);
-
 }
 @mixin hook-inverse-component-base(){
 
@@ -1356,8 +1310,7 @@
 @mixin hook-inverse-breadcrumb-item-active(){}
 @mixin hook-inverse-breadcrumb-divider(){}
 @mixin hook-breadcrumb-variables() {
-
-    --breadcrumb-item-font-size:                         var(--global-small-font-size);
+--breadcrumb-item-font-size:                         var(--global-small-font-size);
     --breadcrumb-item-color:                             var(--global-color-muted);
     --breadcrumb-item-hover-color:                       var(--global-color);
     --breadcrumb-item-hover-text-decoration:             none;
@@ -1368,13 +1321,10 @@
     --breadcrumb-divider-font-size:                      var(--breadcrumb-item-font-size);
     --breadcrumb-divider-color:                          var(--global-color-muted);
 
-
-
-    --inverse-breadcrumb-item-color:                var(--inverse-global-color-muted);
+--inverse-breadcrumb-item-color:                var(--inverse-global-color-muted);
     --inverse-breadcrumb-item-hover-color:          var(--inverse-global-color);
     --inverse-breadcrumb-item-active-color:         var(--inverse-global-color);
     --inverse-breadcrumb-divider-color:             var(--inverse-global-color-muted);
-
 }
 @mixin hook-inverse-component-breadcrumb(){
 
@@ -1409,44 +1359,43 @@
 
 }
 @mixin hook-button() {
-    text-transform: var(--button-text-transform);
+text-transform: var(--button-text-transform);
     transition: 0.1s ease-in-out;
     transition-property: color, background-color, border-color;
 }
 @mixin hook-button-hover(){}
 @mixin hook-button-active(){}
 @mixin hook-button-default() {
-    border: var(--button-border-width) solid var(--button-default-border); 
+border: var(--button-border-width) solid var(--button-default-border);
 }
 @mixin hook-button-default-hover() {
-    border-color: var(--button-default-hover-border); 
+border-color: var(--button-default-hover-border);
 }
 @mixin hook-button-default-active() {
-    border-color: var(--button-default-active-border); 
+border-color: var(--button-default-active-border);
 }
 @mixin hook-button-primary() {
-    border: var(--button-border-width) solid transparent; 
+border: var(--button-border-width) solid transparent;
 }
 @mixin hook-button-primary-hover(){}
 @mixin hook-button-primary-active(){}
 @mixin hook-button-secondary() {
-    border: var(--button-border-width) solid transparent; 
+border: var(--button-border-width) solid transparent;
 }
 @mixin hook-button-secondary-hover(){}
 @mixin hook-button-secondary-active(){}
 @mixin hook-button-danger() {
-    border: var(--button-border-width) solid transparent; 
+border: var(--button-border-width) solid transparent;
 }
 @mixin hook-button-danger-hover(){}
 @mixin hook-button-danger-active(){}
 @mixin hook-button-disabled() {
-    border-color: var(--button-disabled-border); 
+border-color: var(--button-disabled-border);
 }
 @mixin hook-button-small(){}
 @mixin hook-button-large(){}
 @mixin hook-button-text() {
-
-    position: relative;
+position: relative;
 
     &::before {
         content: "";
@@ -1457,22 +1406,16 @@
         border-bottom: var(--button-text-border-width) solid var(--button-text-border);
         transition: inset-inline-end 0.3s ease-out;
     }
-
 }
 @mixin hook-button-text-hover() {
-
-    &::before { inset-inline-end: 0; }
-
+&::before { inset-inline-end: 0; }
 }
 @mixin hook-button-text-disabled() {
-
-    &::before { display: none; }
-
+&::before { display: none; }
 }
 @mixin hook-button-link(){}
 @mixin hook-button-misc() {
-
-    /* Group
+/* Group
      ========================================================================== */
 
     /*
@@ -1496,16 +1439,15 @@
         position: relative;
         z-index: 1;
     }
-
 }
 @mixin hook-inverse-button-default() {
-    border-color: var(--inverse-global-border); 
+border-color: var(--inverse-global-border);
 }
 @mixin hook-inverse-button-default-hover() {
-    border-color: var(--inverse-global-color); 
+border-color: var(--inverse-global-color);
 }
 @mixin hook-inverse-button-default-active() {
-    border-color: var(--inverse-global-color-emphasis); 
+border-color: var(--inverse-global-color-emphasis);
 }
 @mixin hook-inverse-button-primary(){}
 @mixin hook-inverse-button-primary-hover(){}
@@ -1514,17 +1456,16 @@
 @mixin hook-inverse-button-secondary-hover(){}
 @mixin hook-inverse-button-secondary-active(){}
 @mixin hook-inverse-button-disabled() {
-    border-color: var(--inverse-global-border); 
+border-color: var(--inverse-global-border);
 }
 @mixin hook-inverse-button-text() {
-    &::before { border-bottom-color: var(--inverse-global-color-emphasis); }
+&::before { border-bottom-color: var(--inverse-global-color-emphasis); }
 }
 @mixin hook-inverse-button-text-hover(){}
 @mixin hook-inverse-button-text-disabled(){}
 @mixin hook-inverse-button-link(){}
 @mixin hook-button-variables() {
-
-    --button-line-height:                            var(--global-control-height);
+--button-line-height:                            var(--global-control-height);
     --button-small-line-height:                      var(--global-control-small-height);
     --button-large-line-height:                      var(--global-control-large-height);
 
@@ -1578,9 +1519,7 @@
     --button-link-hover-text-decoration:             none;
     --button-link-disabled-color:                    var(--global-color-muted);
 
-
-
-    --inverse-button-default-background:            var(--inverse-global-default-color);
+--inverse-button-default-background:            var(--inverse-global-default-color);
     --inverse-button-default-color:                 var(--inverse-global-color-emphasis);
     --inverse-button-default-hover-background:      var(--inverse-global-muted-color-soft);
     --inverse-button-default-hover-color:           var(--inverse-global-color-emphasis);
@@ -1593,7 +1532,7 @@
     --inverse-button-primary-hover-color:           var(--inverse-global-color-emphasis);
     --inverse-button-primary-active-background:     var(--inverse-global-primary-color-softer);
     --inverse-button-primary-active-color:          var(--inverse-global-color-emphasis);
-
+    
     --inverse-button-secondary-background:          var(--inverse-global-secondary-color);
     --inverse-button-secondary-color:               var(--inverse-global-color-emphasis);
     --inverse-button-secondary-hover-background:    var(--inverse-global-secondary-color-soft);
@@ -1612,9 +1551,7 @@
     --inverse-button-link-hover-color:              var(--inverse-global-color-muted);
     --inverse-button-link-disabled-color:           var(--inverse-global-color-muted);
 
-
-
-    --button-line-height:                            calc(var(--global-control-height) - (var(--button-border-width) * 2));
+--button-line-height:                            calc(var(--global-control-height) - (var(--button-border-width) * 2));
     --button-small-line-height:                      calc(var(--global-control-small-height) - (var(--button-border-width) * 2));
     --button-large-line-height:                      calc(var(--global-control-large-height) - (var(--button-border-width) * 2));
 
@@ -1646,9 +1583,7 @@
     --button-text-border-width:                      var(--global-border-width);
     --button-text-border:                            currentColor;
 
-
-
-    --inverse-button-default-background:            transparent;
+--inverse-button-default-background:            transparent;
     --inverse-button-default-color:                 var(--inverse-global-color-emphasis);
     --inverse-button-default-hover-background:      transparent;
     --inverse-button-default-hover-color:           var(--inverse-global-color-emphasis);
@@ -1656,7 +1591,6 @@
     --inverse-button-default-active-color:          var(--inverse-global-color-emphasis);
 
     --inverse-button-text-hover-color:              var(--inverse-global-color-emphasis);
-
 }
 @mixin hook-inverse-component-button(){
 
@@ -1776,7 +1710,7 @@
 
 }
 @mixin hook-card() {
-    transition: box-shadow 0.1s ease-in-out; 
+transition: box-shadow 0.1s ease-in-out;
 }
 @mixin hook-card-body(){}
 @mixin hook-card-header(){}
@@ -1790,49 +1724,48 @@
 @mixin hook-card-media-end(){}
 @mixin hook-card-title(){}
 @mixin hook-card-badge() {
-    border-radius: var(--card-badge-border-radius);
+border-radius: var(--card-badge-border-radius);
     text-transform: var(--card-badge-text-transform);
 }
 @mixin hook-card-hover() {
-    box-shadow: var(--card-hover-box-shadow); 
+box-shadow: var(--card-hover-box-shadow);
 }
 @mixin hook-card-default() {
-    box-shadow: var(--card-default-box-shadow); 
+box-shadow: var(--card-default-box-shadow);
 }
 @mixin hook-card-default-title(){}
 @mixin hook-card-default-hover() {
-    box-shadow: var(--card-default-hover-box-shadow); 
+box-shadow: var(--card-default-hover-box-shadow);
 }
 @mixin hook-card-default-header() {
-    border-bottom: var(--card-default-header-border-width) solid var(--card-default-header-border); 
+border-bottom: var(--card-default-header-border-width) solid var(--card-default-header-border);
 }
 @mixin hook-card-default-footer() {
-    border-top: var(--card-default-footer-border-width)  solid var(--card-default-footer-border); 
+border-top: var(--card-default-footer-border-width)  solid var(--card-default-footer-border);
 }
 @mixin hook-card-primary() {
-    box-shadow: var(--card-primary-box-shadow); 
+box-shadow: var(--card-primary-box-shadow);
 }
 @mixin hook-card-primary-title(){}
 @mixin hook-card-primary-hover() {
-    box-shadow: var(--card-primary-hover-box-shadow); 
+box-shadow: var(--card-primary-hover-box-shadow);
 }
 @mixin hook-card-secondary() {
-    box-shadow: var(--card-secondary-box-shadow); 
+box-shadow: var(--card-secondary-box-shadow);
 }
 @mixin hook-card-secondary-title(){}
 @mixin hook-card-secondary-hover() {
-    box-shadow: var(--card-secondary-hover-box-shadow); 
+box-shadow: var(--card-secondary-hover-box-shadow);
 }
 @mixin hook-card-overlay() {
-    box-shadow: var(--card-overlay-box-shadow); 
+box-shadow: var(--card-overlay-box-shadow);
 }
 @mixin hook-card-overlay-title(){}
 @mixin hook-card-overlay-hover() {
-    box-shadow: var(--card-overlay-hover-box-shadow); 
+box-shadow: var(--card-overlay-hover-box-shadow);
 }
 @mixin hook-card-misc() {
-
-    /*
+/*
      * Default
      */
 
@@ -1920,50 +1853,48 @@
         .uk-card-large > .uk-nav-default .uk-nav-sub { padding-inline-start: var(--nav-sublist-deeper-padding-inline-start); }
 
     }
-
 }
 @mixin hook-inverse-card(){}
 @mixin hook-inverse-card-hover() {
-    box-shadow: var(--inverse-card-hover-box-shadow); 
+box-shadow: var(--inverse-card-hover-box-shadow);
 }
 @mixin hook-inverse-card-default() {
-    box-shadow: var(--inverse-card-default-box-shadow); 
+box-shadow: var(--inverse-card-default-box-shadow);
 }
 @mixin hook-inverse-card-default-title(){}
 @mixin hook-inverse-card-default-hover() {
-    box-shadow: var(--inverse-card-default-hover-box-shadow); 
+box-shadow: var(--inverse-card-default-hover-box-shadow);
 }
 @mixin hook-inverse-card-default-header() {
-    border-bottom-color: var(--inverse-card-default-header-border); 
+border-bottom-color: var(--inverse-card-default-header-border);
 }
 @mixin hook-inverse-card-default-footer() {
-    border-top-color: var(--inverse-card-default-footer-border) 
+border-top-color: var(--inverse-card-default-footer-border)
 }
 @mixin hook-inverse-card-primary() {
-    box-shadow: var(--inverse-card-primary-box-shadow); 
+box-shadow: var(--inverse-card-primary-box-shadow);
 }
 @mixin hook-inverse-card-primary-title(){}
 @mixin hook-inverse-card-primary-hover() {
-    box-shadow: var(--inverse-card-primary-hover-box-shadow); 
+box-shadow: var(--inverse-card-primary-hover-box-shadow);
 }
 @mixin hook-inverse-card-secondary() {
-    box-shadow: var(--inverse-card-secondary-box-shadow); 
+box-shadow: var(--inverse-card-secondary-box-shadow);
 }
 @mixin hook-inverse-card-secondary-title(){}
 @mixin hook-inverse-card-secondary-hover() {
-    box-shadow: var(--inverse-card-secondary-hover-box-shadow); 
+box-shadow: var(--inverse-card-secondary-hover-box-shadow);
 }
 @mixin hook-inverse-card-overlay() {
-    box-shadow: var(--inverse-card-overlay-box-shadow); 
+box-shadow: var(--inverse-card-overlay-box-shadow);
 }
 @mixin hook-inverse-card-overlay-title(){}
 @mixin hook-inverse-card-overlay-hover() {
-    box-shadow: var(--inverse-card-overlay-hover-box-shadow); 
+box-shadow: var(--inverse-card-overlay-hover-box-shadow);
 }
 @mixin hook-inverse-card-badge(){}
 @mixin hook-card-variables() {
-
-    --card-body-padding-horizontal:                 var(--global-gutter);
+--card-body-padding-horizontal:                 var(--global-gutter);
     --card-body-padding-vertical:                   var(--global-gutter);
 
     --card-body-padding-horizontal-l:               var(--global-medium-gutter);
@@ -2032,9 +1963,7 @@
     --card-large-footer-padding-horizontal-l:       var(--global-large-gutter);
     --card-large-footer-padding-vertical-l:         math.round(up, calc(var(--global-large-gutter) / 2), 1px);
 
-
-
-    --inverse-card-hover-background:                     var(--inverse-global-color-muted);
+--inverse-card-hover-background:                     var(--inverse-global-color-muted);
 
     --inverse-card-default-background:                   var(--inverse-global-muted-color);
     --inverse-card-default-color:                        var(--inverse-global-color);
@@ -2047,13 +1976,11 @@
     --inverse-card-overlay-color:                        var(--inverse-global-color);
     --inverse-card-overlay-title-color:                  var(--inverse-global-color-emphasis);
     --inverse-card-overlay-hover-background:             rgb(from var(--inverse-card-overlay-background) r g b / string.unquote('calc(alpha + 0.1)'));
-
+    
     --inverse-card-badge-background:                     var(--inverse-global-primary-color);
     --inverse-card-badge-color:                          var(--inverse-global-color-emphasis);
 
-
-
-    --card-hover-background:                        var(--global-default-color);
+--card-hover-background:                        var(--global-default-color);
 
     --card-default-background:                      var(--global-default-color);
     --card-default-hover-background:                var(--card-default-background);
@@ -2089,9 +2016,7 @@
     --card-overlay-box-shadow:                      var(--global-medium-box-shadow);
     --card-overlay-hover-box-shadow:                var(--global-large-box-shadow);
 
-
-
-    --inverse-card-hover-background:                var(--inverse-global-default-color);
+--inverse-card-hover-background:                var(--inverse-global-default-color);
 
     --inverse-card-default-background:              var(--inverse-global-default-color);
     --inverse-card-default-hover-background:        var(--inverse-card-default-background);
@@ -2112,7 +2037,6 @@
 
     --inverse-card-overlay-box-shadow:              var(--inverse-global-medium-box-shadow);
     --inverse-card-overlay-hover-box-shadow:        var(--inverse-global-large-box-shadow);
-
 }
 @mixin hook-inverse-component-card(){
 
@@ -2216,7 +2140,7 @@
 
 }
 @mixin hook-close() {
-    transition: 0.1s ease-in-out;
+transition: 0.1s ease-in-out;
     transition-property: color, opacity;
 }
 @mixin hook-close-hover(){}
@@ -2224,15 +2148,11 @@
 @mixin hook-inverse-close(){}
 @mixin hook-inverse-close-hover(){}
 @mixin hook-close-variables() {
-
-    --close-color:                                   var(--global-color-muted);
+--close-color:                                   var(--global-color-muted);
     --close-hover-color:                             var(--global-color);
 
-
-
-    --inverse-close-color:                           var(--inverse-global-color-muted);
+--inverse-close-color:                           var(--inverse-global-color-muted);
     --inverse-close-hover-color:                     var(--inverse-global-color);
-
 }
 @mixin hook-inverse-component-close(){
 
@@ -2250,17 +2170,13 @@
 @mixin hook-column(){}
 @mixin hook-column-misc(){}
 @mixin hook-column-variables() {
-
-    --column-gutter:                                 var(--global-gutter);
+--column-gutter:                                 var(--global-gutter);
     --column-gutter-l:                               var(--global-medium-gutter);
 
     --column-divider-rule-color:                     var(--global-border);
     --column-divider-rule-width:                     1px;
 
-
-
-    --inverse-column-divider-rule-color:                    var(--inverse-global-border);
-
+--inverse-column-divider-rule-color:                    var(--inverse-global-border);
 }
 @mixin hook-inverse-component-column(){
 
@@ -2277,16 +2193,15 @@
 @mixin hook-comment-list-sub(){}
 @mixin hook-comment-list-sub-adjacent(){}
 @mixin hook-comment-primary() {
-    padding: var(--comment-primary-padding);
+padding: var(--comment-primary-padding);
     background-color: var(--comment-primary-background);
 }
 @mixin hook-comment-misc(){}
 @mixin hook-inverse-comment-primary() {
-    background-color: var(--inverse-comment-primary-background); 
+background-color: var(--inverse-comment-primary-background);
 }
 @mixin hook-comment-variables() {
-
-    --comment-header-margin-bottom:                  var(--global-margin);
+--comment-header-margin-bottom:                  var(--global-margin);
 
     --comment-title-font-size:                       var(--global-medium-font-size);
     --comment-title-line-height:                     1.4;
@@ -2299,19 +2214,14 @@
     --comment-list-padding-inline-start:             30px;
     --comment-list-padding-inline-start-m:           100px;
 
-
-
-    //
+//
     // New
     //
 
     --comment-primary-padding:                       var(--global-gutter);
     --comment-primary-background:                    var(--global-muted-color);
 
-
-
-    --inverse-comment-primary-background:           var(--inverse-global-muted-color);
-
+--inverse-comment-primary-background:           var(--inverse-global-muted-color);
 }
 @mixin hook-container(){}
 @mixin hook-container-misc(){}
@@ -2367,7 +2277,7 @@
 @mixin hook-cover-misc(){}
 @mixin hook-description-list(){}
 @mixin hook-description-list-term() {
-    font-size: var(--description-list-term-font-size);
+font-size: var(--description-list-term-font-size);
     font-weight: var(--description-list-term-font-weight);
     text-transform: var(--description-list-term-text-transform);
 }
@@ -2377,25 +2287,19 @@
 @mixin hook-inverse-description-list-term(){}
 @mixin hook-inverse-description-list-divider-term(){}
 @mixin hook-description-list-variables() {
-
-    --description-list-term-color:                   var(--global-color-emphasis);
+--description-list-term-color:                   var(--global-color-emphasis);
     --description-list-term-margin-top:              var(--global-margin);
 
     --description-list-divider-term-margin-top:      var(--global-margin);
     --description-list-divider-term-border-width:    var(--global-border-width);
     --description-list-divider-term-border:          var(--global-border);
 
-
-
-    --inverse-description-list-term-color:               var(--inverse-global-color-emphasis);
+--inverse-description-list-term-color:               var(--inverse-global-color-emphasis);
     --inverse-description-list-divider-term-border:      var(--inverse-global-border);
 
-
-
-    --description-list-term-font-size:                      var(--global-small-font-size);
+--description-list-term-font-size:                      var(--global-small-font-size);
     --description-list-term-font-weight:                    normal;
     --description-list-term-text-transform:                 uppercase;
-
 }
 @mixin hook-divider(){}
 @mixin hook-divider-icon(){}
@@ -2410,8 +2314,7 @@
 @mixin hook-inverse-divider-small(){}
 @mixin hook-inverse-divider-vertical(){}
 @mixin hook-divider-variables() {
-
-    --divider-margin-vertical:                       var(--global-margin);
+--divider-margin-vertical:                       var(--global-margin);
 
     --divider-icon-width:                            50px;
     --divider-icon-height:                           20px;
@@ -2431,13 +2334,10 @@
     --divider-vertical-border-width:                 var(--global-border-width);
     --divider-vertical-border:                       var(--global-border);
 
-
-
-    --inverse-divider-icon-color:                      var(--inverse-global-border);
+--inverse-divider-icon-color:                      var(--inverse-global-border);
     --inverse-divider-icon-line-border:                var(--inverse-global-border);
     --inverse-divider-small-border:                    var(--inverse-global-border);
     --inverse-divider-vertical-border:                 var(--inverse-global-border);
-
 }
 @mixin hook-inverse-component-divider(){
 
@@ -2466,35 +2366,34 @@
 }
 @mixin hook-dotnav(){}
 @mixin hook-dotnav-item() {
-    border: var(--dotnav-item-border-width) solid var(--dotnav-item-border);
+border: var(--dotnav-item-border-width) solid var(--dotnav-item-border);
     transition: 0.2s ease-in-out;
     transition-property: background-color, border-color;
 }
 @mixin hook-dotnav-item-hover() {
-    border-color: var(--dotnav-item-hover-border); 
+border-color: var(--dotnav-item-hover-border);
 }
 @mixin hook-dotnav-item-onclick() {
-    border-color: var(--dotnav-item-onclick-border); 
+border-color: var(--dotnav-item-onclick-border);
 }
 @mixin hook-dotnav-item-active() {
-    border-color: var(--dotnav-item-active-border); 
+border-color: var(--dotnav-item-active-border);
 }
 @mixin hook-dotnav-misc(){}
 @mixin hook-inverse-dotnav-item() {
-    border-color: rgb(from var(--inverse-global-color) r g b * 1.11111); 
+border-color: rgb(from var(--inverse-global-color) r g b * 1.11111);
 }
 @mixin hook-inverse-dotnav-item-hover() {
-    border-color: transparent; 
+border-color: transparent;
 }
 @mixin hook-inverse-dotnav-item-onclick() {
-    border-color: transparent; 
+border-color: transparent;
 }
 @mixin hook-inverse-dotnav-item-active() {
-    border-color: transparent; 
+border-color: transparent;
 }
 @mixin hook-dotnav-variables() {
-
-    --dotnav-margin-horizontal:                      12px;
+--dotnav-margin-horizontal:                      12px;
     --dotnav-margin-vertical:                        var(--dotnav-margin-horizontal);
 
     --dotnav-item-width:                             10px;
@@ -2506,16 +2405,12 @@
     --dotnav-item-onclick-background:                rgb(from var(--global-color) r g b * 5);
     --dotnav-item-active-background:                 rgb(from var(--global-color) r g b * 1.66667);
 
-
-
-    --inverse-dotnav-item-background:               rgb(from var(--inverse-global-color) r g b * 2);
+--inverse-dotnav-item-background:               rgb(from var(--inverse-global-color) r g b * 2);
     --inverse-dotnav-item-hover-background:         rgb(from var(--inverse-global-color) r g b * 1.11111);
     --inverse-dotnav-item-onclick-background:       rgb(from var(--inverse-global-color) r g b * 2);
     --inverse-dotnav-item-active-background:        rgb(from var(--inverse-global-color) r g b * 1.11111);
 
-
-
-    --dotnav-item-background:                             transparent;
+--dotnav-item-background:                             transparent;
 
     //
     // New
@@ -2528,10 +2423,7 @@
     --dotnav-item-onclick-border:                         transparent;
     --dotnav-item-active-border:                          transparent;
 
-
-
-    --inverse-dotnav-item-background:                     transparent;
-
+--inverse-dotnav-item-background:                     transparent;
 }
 @mixin hook-inverse-component-dotnav(){
 
@@ -2570,40 +2462,39 @@
 }
 @mixin hook-dropbar(){}
 @mixin hook-dropbar-top() {
-    box-shadow: var(--dropbar-top-box-shadow); 
+box-shadow: var(--dropbar-top-box-shadow);
 }
 @mixin hook-dropbar-bottom() {
-    box-shadow: var(--dropbar-bottom-box-shadow); 
+box-shadow: var(--dropbar-bottom-box-shadow);
 }
 @mixin hook-dropbar-left() {
-    box-shadow: var(--dropbar-left-box-shadow); 
+box-shadow: var(--dropbar-left-box-shadow);
 }
 @mixin hook-dropbar-right() {
-    box-shadow: var(--dropbar-right-box-shadow); 
+box-shadow: var(--dropbar-right-box-shadow);
 }
 @mixin hook-dropbar-start() {
-    box-shadow: var(--dropbar-start-box-shadow); 
+box-shadow: var(--dropbar-start-box-shadow);
 }
 @mixin hook-dropbar-end() {
-    box-shadow: var(--dropbar-end-box-shadow); 
+box-shadow: var(--dropbar-end-box-shadow);
 }
 @mixin hook-dropbar-misc(){}
 @mixin hook-inverse-dropbar(){}
 @mixin hook-inverse-dropbar-top() {
-    box-shadow: var(--inverse-dropbar-top-box-shadow); 
+box-shadow: var(--inverse-dropbar-top-box-shadow);
 }
 @mixin hook-inverse-dropbar-bottom() {
-    box-shadow: var(--inverse-dropbar-bottom-box-shadow); 
+box-shadow: var(--inverse-dropbar-bottom-box-shadow);
 }
 @mixin hook-inverse-dropbar-left() {
-    box-shadow: var(--inverse-dropbar-left-box-shadow); 
+box-shadow: var(--inverse-dropbar-left-box-shadow);
 }
 @mixin hook-inverse-dropbar-right() {
-    box-shadow: var(--inverse-dropbar-right-box-shadow); 
+box-shadow: var(--inverse-dropbar-right-box-shadow);
 }
 @mixin hook-dropbar-variables() {
-
-    --dropbar-margin:                                0;
+--dropbar-margin:                                0;
     --dropbar-padding-top:                           15px;
     --dropbar-padding-bottom:                        var(--dropbar-padding-top);
     --dropbar-padding-horizontal:                    15px;
@@ -2617,14 +2508,10 @@
     --dropbar-large-padding-top:                     40px;
     --dropbar-large-padding-bottom:                  var(--dropbar-large-padding-top);
 
-
-
-    --inverse-dropbar-background:                   var(--inverse-global-muted-color);
+--inverse-dropbar-background:                   var(--inverse-global-muted-color);
     --inverse-dropbar-color:                        var(--inverse-global-color);
 
-
-
-    --dropbar-padding-top:                           25px;
+--dropbar-padding-top:                           25px;
     --dropbar-background:                            var(--global-default-color);
 
     //
@@ -2638,15 +2525,12 @@
     --dropbar-start-box-shadow:                      calc(12px * var(--uk-dir-sign)) 0 7px -6px rgba(0, 0, 0, 0.05);
     --dropbar-end-box-shadow:                        calc(-12px * var(--uk-dir-sign)) 0 7px -6px rgba(0, 0, 0, 0.05);
 
-
-
-    --inverse-dropbar-background:                   var(--inverse-global-default-color);
+--inverse-dropbar-background:                   var(--inverse-global-default-color);
 
     --inverse-dropbar-top-box-shadow:               0 12px 7px -6px rgba(0, 0, 0, 0.25);
     --inverse-dropbar-bottom-box-shadow:            0 -12px 7px -6px rgba(0, 0, 0, 0.25);
     --inverse-dropbar-left-box-shadow:              12px 0 7px -6px rgba(0, 0, 0, 0.25);
     --inverse-dropbar-right-box-shadow:             -12px 0 7px -6px rgba(0, 0, 0, 0.25);
-
 }
 @mixin hook-inverse-component-dropbar(){
 
@@ -2674,14 +2558,14 @@
 
 }
 @mixin hook-dropdown() {
-    box-shadow: var(--dropdown-box-shadow); 
+box-shadow: var(--dropdown-box-shadow);
 }
 @mixin hook-dropdown-dropbar() {
-    box-shadow: none; 
+box-shadow: none;
 }
 @mixin hook-dropdown-dropbar-large(){}
 @mixin hook-dropdown-nav() {
-    font-size: var(--dropdown-nav-font-size); 
+font-size: var(--dropdown-nav-font-size);
 }
 @mixin hook-dropdown-nav-item(){}
 @mixin hook-dropdown-nav-item-hover(){}
@@ -2690,15 +2574,14 @@
 @mixin hook-dropdown-nav-divider(){}
 @mixin hook-dropdown-misc(){}
 @mixin hook-inverse-dropdown() {
-    box-shadow: var(--inverse-dropdown-box-shadow); 
+box-shadow: var(--inverse-dropdown-box-shadow);
 }
 @mixin hook-inverse-dropdown-nav-item(){}
 @mixin hook-inverse-dropdown-nav-item-hover(){}
 @mixin hook-inverse-dropdown-nav-header(){}
 @mixin hook-inverse-dropdown-nav-divider(){}
 @mixin hook-dropdown-variables() {
-
-    --dropdown-margin:                               var(--global-small-margin);
+--dropdown-margin:                               var(--global-small-margin);
     --dropdown-viewport-margin:                      15px;
     --dropdown-min-width:                            200px;
     --dropdown-padding:                              15px;
@@ -2728,9 +2611,7 @@
     --dropdown-nav-sublist-item-color:               var(--global-color-muted);
     --dropdown-nav-sublist-item-hover-color:         var(--global-color);
 
-
-
-    --inverse-dropdown-background:                   var(--inverse-global-muted-color);
+--inverse-dropdown-background:                   var(--inverse-global-muted-color);
     --inverse-dropdown-color:                        var(--inverse-global-color);
 
     --inverse-dropdown-nav-item-color:               var(--inverse-global-color-muted);
@@ -2740,28 +2621,23 @@
     --inverse-dropdown-nav-sublist-item-color:       var(--inverse-global-color-muted);
     --inverse-dropdown-nav-sublist-item-hover-color: var(--inverse-global-color);
 
+--dropdown-padding:                              25px;
+  --dropdown-background:                           var(--global-default-color);
 
+  --dropdown-dropbar-padding-top:                  5px;
 
-    --dropdown-padding:                              25px;
-    --dropdown-background:                           var(--global-default-color);
+  --dropdown-nav-subtitle-font-size:               12px;
 
-    --dropdown-dropbar-padding-top:                  5px;
+  //
+  // New
+  //
 
-    --dropdown-nav-subtitle-font-size:               12px;
+  --dropdown-nav-font-size:                        var(--global-small-font-size);
 
-    //
-    // New
-    //
+  --dropdown-box-shadow:                           0 5px 12px rgba(0,0,0,0.15);
 
-    --dropdown-nav-font-size:                        var(--global-small-font-size);
-
-    --dropdown-box-shadow:                           0 5px 12px rgba(0,0,0,0.15);
-
-
-
-    --inverse-dropdown-background:                  var(--inverse-global-default-color);
-    --inverse-dropdown-box-shadow:                  0 5px 12px rgba(0,0,0,0.35);
-
+--inverse-dropdown-background:                  var(--inverse-global-default-color);
+  --inverse-dropdown-box-shadow:                  0 5px 12px rgba(0,0,0,0.35);
 }
 @mixin hook-inverse-component-dropdown(){
 
@@ -2812,21 +2688,20 @@
 @mixin hook-flex-misc(){}
 @mixin hook-form-range(){}
 @mixin hook-form-range-track() {
-    border-radius: var(--form-range-track-border-radius); 
+border-radius: var(--form-range-track-border-radius);
 }
 @mixin hook-form-range-track-focus(){}
 @mixin hook-form-range-thumb() {
-    border: var(--form-range-thumb-border-width) solid var(--form-range-thumb-border); 
+border: var(--form-range-thumb-border-width) solid var(--form-range-thumb-border);
 }
 @mixin hook-form-range-misc(){}
 @mixin hook-inverse-form-range-track(){}
 @mixin hook-inverse-form-range-track-focus(){}
 @mixin hook-inverse-form-range-thumb() {
-    border-color: var(--inverse-form-range-thumb-border); 
+border-color: var(--inverse-form-range-thumb-border);
 }
 @mixin hook-form-range-variables() {
-
-    --form-range-track-height:                       3px;
+--form-range-track-height:                       3px;
     --form-range-track-background:                   var(--global-muted-color-soft);
     --form-range-track-focus-background:             var(--global-muted-color-softer);
 
@@ -2835,31 +2710,24 @@
     --form-range-thumb-border-radius:                500px;
     --form-range-thumb-background:                   var(--global-color);
 
-
-
-    --inverse-form-range-track-background:          var(--inverse-global-muted-color-soft);
+--inverse-form-range-track-background:          var(--inverse-global-muted-color-soft);
     --inverse-form-range-track-focus-background:    var(--inverse-global-muted-color-softer);
 
     --inverse-form-range-thumb-background:          var(--inverse-global-color);
 
+--form-range-thumb-background:                   var(--global-default-color);
 
+  //
+  // New
+  //
 
-    --form-range-thumb-background:                   var(--global-default-color);
+  --form-range-track-border-radius:                500px;
 
-    //
-    // New
-    //
+  --form-range-thumb-border-width:                 var(--global-border-width);
+  --form-range-thumb-border:                       var(--global-muted-color-200);
 
-    --form-range-track-border-radius:                500px;
-
-    --form-range-thumb-border-width:                 var(--global-border-width);
-    --form-range-thumb-border:                       var(--global-muted-color-200);
-
-
-
-    --inverse-form-range-thumb-background:           var(--inverse-global-default-color);
-    --inverse-form-range-thumb-border:               var(--global-muted-color-800);
-
+--inverse-form-range-thumb-background:           var(--inverse-global-default-color);
+  --inverse-form-range-thumb-border:               var(--global-muted-color-800);
 }
 @mixin hook-inverse-component-form-range(){
 
@@ -2900,49 +2768,49 @@
 
 }
 @mixin hook-form() {
-    border: var(--form-border-width) solid var(--form-border);
+border: var(--form-border-width) solid var(--form-border);
     transition: 0.2s ease-in-out;
     transition-property: color, background-color, border;
 }
 @mixin hook-form-single-line(){}
 @mixin hook-form-multi-line(){}
 @mixin hook-form-focus() {
-    border-color: var(--form-focus-border); 
+border-color: var(--form-focus-border);
 }
 @mixin hook-form-disabled() {
-    border-color: var(--form-disabled-border); 
+border-color: var(--form-disabled-border);
 }
 @mixin hook-form-danger() {
-    border-color: var(--form-danger-border); 
+border-color: var(--form-danger-border);
 }
 @mixin hook-form-success() {
-    border-color: var(--form-success-border); 
+border-color: var(--form-success-border);
 }
 @mixin hook-form-blank() {
-    border-color: transparent; 
+border-color: transparent;
 }
 @mixin hook-form-blank-focus() {
-    border-color: var(--form-blank-focus-border);
+border-color: var(--form-blank-focus-border);
     border-style: var(--form-blank-focus-border-style);
 }
 @mixin hook-form-radio() {
-    border: var(--form-radio-border-width) solid var(--form-radio-border);
+border: var(--form-radio-border-width) solid var(--form-radio-border);
     transition: 0.2s ease-in-out;
     transition-property: background-color, border;
 }
 @mixin hook-form-radio-focus() {
-    border-color: var(--form-radio-focus-border); 
+border-color: var(--form-radio-focus-border);
 }
 @mixin hook-form-radio-checked() {
-    border-color: var(--form-radio-checked-border); 
+border-color: var(--form-radio-checked-border);
 }
 @mixin hook-form-radio-checked-focus(){}
 @mixin hook-form-radio-disabled() {
-    border-color: var(--form-radio-disabled-border); 
+border-color: var(--form-radio-disabled-border);
 }
 @mixin hook-form-legend(){}
 @mixin hook-form-label() {
-    color: var(--form-label-color);
+color: var(--form-label-color);
     font-size: var(--form-label-font-size);
 }
 @mixin hook-form-stacked-label(){}
@@ -2950,42 +2818,41 @@
 @mixin hook-form-icon(){}
 @mixin hook-form-misc(){}
 @mixin hook-inverse-form() {
-    border-color: var(--inverse-form-border); 
+border-color: var(--inverse-form-border);
 }
 @mixin hook-inverse-form-focus() {
-    border-color: var(--inverse-form-focus-border); 
+border-color: var(--inverse-form-focus-border);
 }
 @mixin hook-inverse-form-disabled() {
-    border-color: var(--inverse-form-disabled-border); 
+border-color: var(--inverse-form-disabled-border);
 }
 @mixin hook-inverse-form-danger(){}
 @mixin hook-inverse-form-success(){}
 @mixin hook-inverse-form-blank() {
-    border-color: transparent; 
+border-color: transparent;
 }
 @mixin hook-inverse-form-blank-focus() {
-    border-color: var(--inverse-form-blank-focus-border); 
+border-color: var(--inverse-form-blank-focus-border);
 }
 @mixin hook-inverse-form-radio() {
-    border-color: var(--inverse-form-radio-border); 
+border-color: var(--inverse-form-radio-border);
 }
 @mixin hook-inverse-form-radio-focus() {
-    border-color: var(--inverse-form-radio-focus-border); 
+border-color: var(--inverse-form-radio-focus-border);
 }
 @mixin hook-inverse-form-radio-checked() {
-    border-color: var(--inverse-global-primary-color); 
+border-color: var(--inverse-global-primary-color);
 }
 @mixin hook-inverse-form-radio-checked-focus(){}
 @mixin hook-inverse-form-radio-disabled() {
-    border-color: var(--inverse-form-radio-disabled-border); 
+border-color: var(--inverse-form-radio-disabled-border);
 }
 @mixin hook-inverse-form-label() {
-    color: var(--inverse-form-label-color); 
+color: var(--inverse-form-label-color);
 }
 @mixin hook-inverse-form-icon(){}
 @mixin hook-form-variables() {
-
-    --form-height:                                   var(--global-control-height);
+--form-height:                                   var(--global-control-height);
     --form-line-height:                              var(--form-height);
     --form-padding-horizontal:                       10px;
     --form-multi-line-padding-horizontal:            var(--form-padding-horizontal);
@@ -3068,9 +2935,7 @@
     --internal-form-checkbox-image:                   url("../../images/backgrounds/form-checkbox.svg");
     --internal-form-checkbox-indeterminate-image:     url("../../images/backgrounds/form-checkbox-indeterminate.svg");
 
-
-
-    --inverse-form-background:                      var(--inverse-global-muted-color);
+--inverse-form-background:                      var(--inverse-global-muted-color);
     --inverse-form-color:                           var(--inverse-global-color);
     --inverse-form-focus-background:                var(--inverse-global-muted-color-soft);
     --inverse-form-focus-color:                     var(--inverse-global-color);
@@ -3094,16 +2959,14 @@
     --inverse-form-radio-checked-icon-color:        var(--inverse-global-color-emphasis);
 
     --inverse-form-radio-checked-focus-background:  var(--inverse-global-primary-softer);
-
+    
     --inverse-form-radio-disabled-background:       var(--inverse-global-muted-color);
     --inverse-form-radio-disabled-icon-color:       var(--inverse-global-color-muted);
 
     --inverse-form-icon-color:                      var(--inverse-global-color-muted);
     --inverse-form-icon-hover-color:                var(--inverse-global-color);
 
-
-
-    --form-line-height:                              calc(var(--form-height) - (2* var(--form-border-width)));
+--form-line-height:                              calc(var(--form-height) - (2* var(--form-border-width)));
 
     --form-background:                               var(--global-default-color);
     --form-focus-background:                         var(--global-default-color);
@@ -3144,9 +3007,7 @@
     --form-label-color:                              var(--global-color-emphasis);
     --form-label-font-size:                          var(--global-small-font-size);
 
-
-
-    --inverse-form-background:                       var(--inverse-global-default-color);
+--inverse-form-background:                       var(--inverse-global-default-color);
     --inverse-form-focus-background:                 var(--inverse-global-default-color);
 
     --inverse-form-radio-background:                 transparent;
@@ -3166,7 +3027,6 @@
     --inverse-form-radio-disabled-border:            var(--inverse-global-border);
 
     --inverse-form-label-color:                      var(--inverse-global-color-emphasis);
-
 }
 @mixin hook-inverse-component-form(){
 
@@ -3347,8 +3207,7 @@
 @mixin hook-inverse-grid-divider-horizontal(){}
 @mixin hook-inverse-grid-divider-vertical(){}
 @mixin hook-grid-variables() {
-
-    --grid-gutter-horizontal:                        var(--global-gutter);
+--grid-gutter-horizontal:                        var(--global-gutter);
     --grid-gutter-vertical:                          var(--grid-gutter-horizontal);
     --grid-gutter-horizontal-l:                      var(--global-medium-gutter);
     --grid-gutter-vertical-l:                        var(--grid-gutter-horizontal-l);
@@ -3367,8 +3226,7 @@
     --grid-divider-border-width:                     var(--global-border-width);
     --grid-divider-border:                           var(--global-border);
 
-
-    --inverse-grid-divider-border:                  var(--inverse-global-border);
+--inverse-grid-divider-border:                  var(--inverse-global-border);
 }
 @mixin hook-inverse-component-grid(){
 
@@ -3403,8 +3261,7 @@
 @mixin hook-inverse-heading-bullet(){}
 @mixin hook-inverse-heading-line(){}
 @mixin hook-heading-variables() {
-
-    --heading-small-font-size:                       calc(var(--heading-small-font-size-m) * 0.8);         // 38px 0.73
+--heading-small-font-size:                       calc(var(--heading-small-font-size-m) * 0.8);         // 38px 0.73
     --heading-medium-font-size:                      calc(var(--heading-medium-font-size-m) * 0.825);      // 40px 0.714
     --heading-large-font-size:                       calc(var(--heading-large-font-size-m) * 0.85);        // 50px 0.78
     --heading-xlarge-font-size:                      var(--heading-large-font-size-m);                     // 4rem / 64px
@@ -3448,12 +3305,9 @@
     --heading-line-border:                           var(--global-border);
     --heading-line-margin-horizontal:                calc(5px + 0.3em);
 
-
-
-    --inverse-heading-divider-border:                  var(--inverse-global-border);
+--inverse-heading-divider-border:                  var(--inverse-global-border);
     --inverse-heading-bullet-border:                   var(--inverse-global-border);
     --inverse-heading-line-border:                     var(--inverse-global-border);
-
 }
 @mixin hook-inverse-component-heading(){
 
@@ -3511,13 +3365,13 @@
 @mixin hook-icon-link-hover(){}
 @mixin hook-icon-link-active(){}
 @mixin hook-icon-button() {
-    transition: 0.1s ease-in-out;
+transition: 0.1s ease-in-out;
     transition-property: color, background-color;
 }
 @mixin hook-icon-button-hover(){}
 @mixin hook-icon-button-active(){}
 @mixin hook-icon-overlay() {
-    transition: 0.1s ease-in-out;
+transition: 0.1s ease-in-out;
     transition-property: color;
 }
 @mixin hook-icon-overlay-hover(){}
@@ -3531,8 +3385,7 @@
 @mixin hook-inverse-icon-overlay(){}
 @mixin hook-inverse-icon-overlay-hover(){}
 @mixin hook-icon-variables() {
-
-    --icon-image-size:                               20px;
+--icon-image-size:                               20px;
 
     --icon-link-color:                               var(--global-color-muted);
     --icon-link-hover-color:                         var(--global-color);
@@ -3552,9 +3405,7 @@
     --icon-overlay-color:                            rgb(from var(--global-color-emphasis) r g b * 1.66667);
     --icon-overlay-hover-color:                      var(--global-color-emphasis);
 
-
-
-    --inverse-icon-link-color:                      var(--inverse-global-color-muted);
+--inverse-icon-link-color:                      var(--inverse-global-color-muted);
     --inverse-icon-link-hover-color:                var(--inverse-global-color);
     --inverse-icon-link-active-color:               rgb(from var(--inverse-global-color) r g b / string.unquote('calc(alpha + 0.2)'));
     --inverse-icon-button-background:               var(--inverse-global-muted-color);
@@ -3565,10 +3416,9 @@
 
     --inverse-icon-button-active-background:        var(--inverse-global-muted-color-softer);
     --inverse-icon-button-active-color:             var(--inverse-global-color);
-
+    
     --inverse-icon-overlay-color:                   rgb(from var(--inverse-global-color-emphasis) r g b * 1.66667);
     --inverse-icon-overlay-hover-color:             var(--inverse-global-color-emphasis);
-
 }
 @mixin hook-inverse-component-icon(){
 
@@ -3635,7 +3485,7 @@
 }
 @mixin hook-iconnav(){}
 @mixin hook-iconnav-item() {
-    font-size: var(--subnav-item-font-size);
+font-size: var(--subnav-item-font-size);
     transition: 0.1s ease-in-out;
     transition-property: color, background-color;
 }
@@ -3646,8 +3496,7 @@
 @mixin hook-inverse-iconnav-item-hover(){}
 @mixin hook-inverse-iconnav-item-active(){}
 @mixin hook-iconnav-variables() {
-
-    --iconnav-margin-horizontal:                      var(--global-small-margin);
+--iconnav-margin-horizontal:                      var(--global-small-margin);
     --iconnav-margin-vertical:                        var(--iconnav-margin-horizontal);
 
     --iconnav-item-color:                             var(--global-color-muted);
@@ -3656,15 +3505,11 @@
 
     --iconnav-item-active-color:                      var(--global-color);
 
-
-
-    --inverse-iconnav-item-color:               var(--inverse-global-color-muted);
+--inverse-iconnav-item-color:               var(--inverse-global-color-muted);
     --inverse-iconnav-item-hover-color:         var(--inverse-global-color);
     --inverse-iconnav-item-active-color:        var(--inverse-global-color);
 
-
-
-    //
+//
     // New
     //
 
@@ -3688,8 +3533,44 @@
     }
 
 }
+@mixin hook-inverse-component-comment(){}
+@mixin hook-inverse-component-description-list(){}
+@mixin hook-inverse(){}
+@mixin hook-inverse-variables(){
+
+    --inverse-global-color-mode:                     $inverse-global-color-mode;
+
+    /*
+     * Palettes
+     */
+@mixin hook-inverse() {
+    @include hook-inverse-component-accordion();
+    @include hook-inverse-component-alert();
+    @include hook-inverse-component-article();
+    @include hook-inverse-component-background();
+    @include hook-inverse-component-badge();
+    @include hook-inverse-component-base();
+    @include hook-inverse-component-breadcrumb();
+    @include hook-inverse-component-button();
+    @include hook-inverse-component-card();
+    @include hook-inverse-component-close();
+    @include hook-inverse-component-column();
+    @include hook-inverse-component-comment();
+    @include hook-inverse-component-countdown();
+    @include hook-inverse-component-description-list();
+    @include hook-inverse-component-divider();
+    @include hook-inverse-component-dotnav();
+    @include hook-inverse-component-dropbar();
+    @include hook-inverse-component-dropdown();
+    @include hook-inverse-component-form-range();
+    @include hook-inverse-component-form();
+    @include hook-inverse-component-grid();
+    @include hook-inverse-component-heading();
+    @include hook-inverse-component-icon();
+    @include hook-inverse-component-iconnav();
+}
 @mixin hook-label() {
-    border-radius: var(--label-border-radius);
+border-radius: var(--label-border-radius);
     text-transform: var(--label-text-transform);
 }
 @mixin hook-label-success(){}
@@ -3701,8 +3582,7 @@
 @mixin hook-inverse-label-warning(){}
 @mixin hook-inverse-label-danger(){}
 @mixin hook-label-variables() {
-
-    --label-padding-vertical:                        0;
+--label-padding-vertical:                        0;
     --label-padding-horizontal:                      var(--global-small-margin);
     --label-background:                              var(--global-primary-color);
     --label-line-height:                             var(--global-line-height);
@@ -3716,23 +3596,17 @@
     --label-danger-background:                       var(--global-danger-color);
     --label-danger-color:                            var(--global-color-inverse);
 
-
-
-    --inverse-label-background:                     var(--inverse-global-primary-color);
+--inverse-label-background:                     var(--inverse-global-primary-color);
     --inverse-label-color:                          var(--inverse-global-color-emphasis);
 
-
-
-    //
+//
     // New
     //
 
     --label-border-radius:                           2px;
     --label-text-transform:                          uppercase;
 
-
-
-    --inverse-label-success-background:             var(--global-success-color);
+--inverse-label-success-background:             var(--global-success-color);
     --inverse-label-success-color:                  var(--inverse-global-color-emphasis);
 
     --inverse-label-warning-background:             var(--global-warning-color);
@@ -3740,7 +3614,6 @@
 
     --inverse-label-danger-background:              var(--global-danger-color);
     --inverse-label-danger-color:                   var(--inverse-global-color-emphasis);
-
 }
 @mixin hook-inverse-component-label(){
 
@@ -3817,8 +3690,7 @@
 @mixin hook-inverse-link-text-hover(){}
 @mixin hook-inverse-link-heading-hover(){}
 @mixin hook-link-variables() {
-
-    --link-muted-color:                              var(--global-color-muted);
+--link-muted-color:                              var(--global-color-muted);
     --link-muted-hover-color:                        var(--global-color);
 
     --link-text-hover-color:                         var(--global-color-muted);
@@ -3826,15 +3698,12 @@
     --link-heading-hover-color:                      var(--global-primary-color);
     --link-heading-hover-text-decoration:            none;
 
-
-
-    --inverse-link-muted-color:                        var(--inverse-global-color-muted);
+--inverse-link-muted-color:                        var(--inverse-global-color-muted);
     --inverse-link-muted-hover-color:                  var(--inverse-global-color);
-
+    
     --inverse-link-text-hover-color:                   var(--inverse-global-color-muted);
-
+    
     --inverse-link-heading-hover-color:                var(--inverse-global-emphasis-background);
-
 }
 @mixin hook-inverse-component-link(){
 
@@ -3869,26 +3738,21 @@
 @mixin hook-list(){}
 @mixin hook-list-divider(){}
 @mixin hook-list-striped() {
-
-    &:nth-of-type(odd) {
+&:nth-of-type(odd) {
         border-top: var(--list-striped-border-width) solid var(--list-striped-border);
         border-bottom: var(--list-striped-border-width) solid var(--list-striped-border);
     }
-
 }
 @mixin hook-list-misc(){}
 @mixin hook-inverse-list-divider(){}
 @mixin hook-inverse-list-striped() {
-
-    &:nth-of-type(odd) {
+&:nth-of-type(odd) {
         border-top-color: var(--inverse-global-border);
         border-bottom-color: var(--inverse-global-border);
     }
-
 }
 @mixin hook-list-variables() {
-
-    --list-margin-top:                               var(--global-small-margin);
+--list-margin-top:                               var(--global-small-margin);
 
     --list-padding-inline-start:                     30px;
 
@@ -3916,9 +3780,7 @@
 
     --internal-list-bullet-image:                    url("../../images/backgrounds/list-bullet.svg");
 
-
-
-    --inverse-list-muted-color:                        var(--inverse-global-color-muted);
+--inverse-list-muted-color:                        var(--inverse-global-color-muted);
     --inverse-list-emphasis-color:                     var(--inverse-global-color-emphasis);
     --inverse-list-primary-color:                      var(--inverse-global-primary-color);
     --inverse-list-secondary-color:                    var(--inverse-global-primary-color);
@@ -3928,15 +3790,12 @@
 
     --inverse-list-bullet-icon-color:                  var(--inverse-global-color);
 
-
-
-    //
+//
     // New
     //
 
     --list-striped-border-width:                     var(--global-border-width);
     --list-striped-border:                           var(--global-border);
-
 }
 @mixin hook-inverse-component-list(){
 
@@ -3980,27 +3839,23 @@
 
 }
 @mixin hook-marker() {
-    border-radius: 500px;
+border-radius: 500px;
 }
 @mixin hook-marker-hover(){}
 @mixin hook-marker-misc(){}
 @mixin hook-inverse-marker(){}
 @mixin hook-inverse-marker-hover(){}
 @mixin hook-marker-variables() {
-
-    --marker-padding:                                 5px;
+--marker-padding:                                 5px;
     --marker-background:                              var(--global-secondary-color);
     --marker-color:                                   var(--global-color-inverse);
 
     --marker-hover-color:                             var(--global-color-inverse);
 
-
-
-    --inverse-marker-background:                  var(--global-muted-color);
+--inverse-marker-background:                  var(--global-muted-color);
     --inverse-marker-color:                       var(--global-color);
-
+    
     --inverse-marker-hover-color:                 var(--global-color);
-
 }
 @mixin hook-inverse-component-marker(){
 
@@ -4021,10 +3876,10 @@
 @mixin hook-modal-full(){}
 @mixin hook-modal-body(){}
 @mixin hook-modal-header() {
-    border-bottom: var(--modal-header-border-width) solid var(--modal-header-border); 
+border-bottom: var(--modal-header-border-width) solid var(--modal-header-border);
 }
 @mixin hook-modal-footer() {
-    border-top: var(--modal-footer-border-width) solid var(--modal-footer-border); 
+border-top: var(--modal-footer-border-width) solid var(--modal-footer-border);
 }
 @mixin hook-modal-title(){}
 @mixin hook-modal-close(){}
@@ -4034,15 +3889,14 @@
 @mixin hook-modal-close-outside(){}
 @mixin hook-modal-close-outside-hover(){}
 @mixin hook-modal-close-full() {
-    top: 0;
+top: 0;
     inset-inline-end: 0;
     padding: var(--modal-close-full-padding);
     background: var(--modal-close-full-background);
 }
 @mixin hook-modal-close-full-hover(){}
 @mixin hook-modal-misc() {
-
-    /* Tablet landscape and bigger */
+/* Tablet landscape and bigger */
     @media (min-width: $breakpoint-medium) {
 
         .uk-modal-close-full {
@@ -4050,25 +3904,23 @@
         }
 
     }
-
 }
 @mixin hook-inverse-modal(){}
 @mixin hook-inverse-modal-dialog(){}
 @mixin hook-inverse-modal-header() {
-    border-bottom-color: var(--inverse-modal-header-border); 
+border-bottom-color: var(--inverse-modal-header-border);
 }
 @mixin hook-inverse-modal-footer() {
-    border-top-color: var(--inverse-modal-footer-border); 
+border-top-color: var(--inverse-modal-footer-border);
 }
 @mixin hook-inverse-modal-close-outside(){}
 @mixin hook-inverse-modal-close-outside-hover(){}
 @mixin hook-inverse-modal-close-full() {
-    background: var(--inverse-modal-close-full-background); 
+background: var(--inverse-modal-close-full-background);
 }
 @mixin hook-inverse-modal-close-full-hover(){}
 @mixin hook-modal-variables() {
-
-    --modal-z-index:                                 calc(var(--global-z-index) + 10);
+--modal-z-index:                                 calc(var(--global-z-index) + 10);
     --modal-background:                              rgba(0,0,0,0.6);
 
     --modal-padding-horizontal:                      15px;
@@ -4110,9 +3962,7 @@
     --modal-close-outside-color:                     hsl(from var(--global-color-inverse) h s string.unquote('calc(l + 20)'));
     --modal-close-outside-hover-color:               var(--global-color-inverse);
 
-
-
-    --inverse-modal-background:                       rgba(0,0,0,0.7);
+--inverse-modal-background:                       rgba(0,0,0,0.7);
 
     --inverse-modal-dialog-background:                var(--inverse-global-default-color);
 
@@ -4123,9 +3973,7 @@
     --inverse-modal-close-outside-color:              var(--global-color-muted);
     --inverse-modal-close-outside-hover-color:        var(--inverse-global-color-inverse);
 
-
-
-    --modal-header-background:                       var(--modal-dialog-background);
+--modal-header-background:                       var(--modal-dialog-background);
     --modal-footer-background:                       var(--modal-dialog-background);
 
     //
@@ -4143,9 +3991,7 @@
 
     --modal-close-full-padding-m:                   var(--global-margin);
 
-
-
-    --inverse-modal-header-background:              var(--inverse-modal-dialog-background);
+--inverse-modal-header-background:              var(--inverse-modal-dialog-background);
     --inverse-modal-footer-background:              var(--inverse-modal-dialog-background);
 
     --inverse-modal-header-border:                  var(--inverse-global-border);
@@ -4153,7 +3999,6 @@
     --inverse-modal-footer-border:                  var(--inverse-global-border);
 
     --inverse-modal-close-full-background:          var(--inverse-modal-dialog-background);
-
 }
 @mixin hook-inverse-component-modal(){
 
@@ -4224,16 +4069,16 @@
 @mixin hook-nav-primary-header(){}
 @mixin hook-nav-primary-divider(){}
 @mixin hook-nav-secondary() {
-    > :not(.uk-nav-divider) + :not(.uk-nav-header, .uk-nav-divider) {  margin-top: var(--nav-secondary-margin-top); }
+> :not(.uk-nav-divider) + :not(.uk-nav-header, .uk-nav-divider) {  margin-top: var(--nav-secondary-margin-top); }
 }
 @mixin hook-nav-secondary-item() {
-    padding: var(--nav-secondary-item-padding-vertical) var(--nav-secondary-item-padding-horizontal); 
+padding: var(--nav-secondary-item-padding-vertical) var(--nav-secondary-item-padding-horizontal);
 }
 @mixin hook-nav-secondary-item-hover() {
-    background-color: var(--nav-secondary-item-hover-background); 
+background-color: var(--nav-secondary-item-hover-background);
 }
 @mixin hook-nav-secondary-item-active() {
-    background-color: var(--nav-secondary-item-active-background); 
+background-color: var(--nav-secondary-item-active-background);
 }
 @mixin hook-nav-secondary-subtitle(){}
 @mixin hook-nav-secondary-subtitle-hover(){}
@@ -4257,10 +4102,10 @@
 @mixin hook-inverse-nav-primary-divider(){}
 @mixin hook-inverse-nav-secondary-item(){}
 @mixin hook-inverse-nav-secondary-item-hover() {
-    background-color: var(--inverse-nav-background-item-hover-background); 
+background-color: var(--inverse-nav-background-item-hover-background);
 }
 @mixin hook-inverse-nav-secondary-item-active() {
-    background-color: var(--inverse-nav-background-item-active-background); 
+background-color: var(--inverse-nav-background-item-active-background);
 }
 @mixin hook-inverse-nav-secondary-subtitle(){}
 @mixin hook-inverse-nav-secondary-subtitle-hover(){}
@@ -4269,8 +4114,7 @@
 @mixin hook-inverse-nav-secondary-divider(){}
 @mixin hook-inverse-nav-dividers(){}
 @mixin hook-nav-variables() {
-
-    --nav-item-padding-vertical:                     5px;
+--nav-item-padding-vertical:                     5px;
     --nav-item-padding-horizontal:                   0;
 
     --nav-sublist-padding-vertical:                  5px;
@@ -4356,9 +4200,7 @@
     --nav-dividers-border-width:                     var(--global-border-width);
     --nav-dividers-border:                           var(--global-border);
 
-
-
-    --inverse-nav-default-item-color:                    var(--inverse-global-color-muted);
+--inverse-nav-default-item-color:                    var(--inverse-global-color-muted);
     --inverse-nav-default-item-hover-color:              var(--inverse-global-color);
     --inverse-nav-default-item-active-color:             var(--inverse-global-color-emphasis);
     --inverse-nav-default-header-color:                  var(--inverse-global-color-emphasis);
@@ -4390,9 +4232,7 @@
 
     --inverse-nav-dividers-border:                       var(--inverse-global-border);
 
-
-
-    --nav-default-font-size:                         var(--global-small-font-size);
+--nav-default-font-size:                         var(--global-small-font-size);
 
     --nav-default-subtitle-font-size:                12px;
 
@@ -4406,11 +4246,8 @@
     --nav-secondary-item-hover-background:           var(--global-muted-color);
     --nav-secondary-item-active-background:          var(--global-muted-color);
 
-
-
-    --inverse-nav-background-item-hover-background:  var(--inverse-global-muted-color);
+--inverse-nav-background-item-hover-background:  var(--inverse-global-muted-color);
     --inverse-nav-background-item-active-background: var(--inverse-global-muted-color);
-
 }
 @mixin hook-inverse-component-nav(){
 
@@ -4547,7 +4384,7 @@
 @mixin hook-navbar(){}
 @mixin hook-navbar-container(){}
 @mixin hook-navbar-nav-item() {
-    text-transform: var(--navbar-nav-item-text-transform);
+text-transform: var(--navbar-nav-item-text-transform);
     transition: 0.1s ease-in-out;
     transition-property: color, background-color;
 }
@@ -4564,15 +4401,15 @@
 @mixin hook-navbar-transparent(){}
 @mixin hook-navbar-sticky(){}
 @mixin hook-navbar-dropdown() {
-    box-shadow: var(--navbar-dropdown-box-shadow); 
+box-shadow: var(--navbar-dropdown-box-shadow);
 }
 @mixin hook-navbar-dropdown-large(){}
 @mixin hook-navbar-dropdown-dropbar() {
-    box-shadow: none; 
+box-shadow: none;
 }
 @mixin hook-navbar-dropdown-dropbar-large(){}
 @mixin hook-navbar-dropdown-nav() {
-    font-size: var(--navbar-dropdown-nav-font-size); 
+font-size: var(--navbar-dropdown-nav-font-size);
 }
 @mixin hook-navbar-dropdown-nav-item(){}
 @mixin hook-navbar-dropdown-nav-item-hover(){}
@@ -4582,8 +4419,7 @@
 @mixin hook-navbar-dropdown-nav-divider(){}
 @mixin hook-navbar-dropbar(){}
 @mixin hook-navbar-misc() {
-
-    .uk-navbar-container {
+.uk-navbar-container {
         transition: 0.1s ease-in-out;
         transition-property: background-color;
     }
@@ -4610,7 +4446,6 @@
         .uk-navbar-nav { gap: var(--navbar-nav-gap-m); }
 
     }
-
 }
 @mixin hook-inverse-navbar-container(){}
 @mixin hook-inverse-navbar-nav-item(){}
@@ -4621,7 +4456,7 @@
 @mixin hook-inverse-navbar-toggle(){}
 @mixin hook-inverse-navbar-toggle-hover(){}
 @mixin hook-inverse-navbar-dropdown() {
-    box-shadow: var(--inverse-navbar-dropdown-box-shadow); 
+box-shadow: var(--inverse-navbar-dropdown-box-shadow);
 }
 @mixin hook-inverse-navbar-dropdown-nav-item(){}
 @mixin hook-inverse-navbar-dropdown-nav-item-hover(){}
@@ -4629,8 +4464,7 @@
 @mixin hook-inverse-navbar-dropdown-nav-header(){}
 @mixin hook-inverse-navbar-dropdown-nav-divider(){}
 @mixin hook-navbar-variables() {
-
-    --navbar-background:                             var(--global-muted-color);
+--navbar-background:                             var(--global-muted-color);
     --navbar-gap:                                    0px; // Must have a unit because of `calc`
     --navbar-color-mode:                             $navbar-color-mode;
 
@@ -4693,9 +4527,7 @@
     --navbar-dropdown-nav-sublist-item-hover-color:  var(--global-color);
     --navbar-dropdown-nav-sublist-item-active-color: var(--global-color-emphasis);
 
-
-
-    --inverse-navbar-background:                             var(--inverse-global-muted-color);
+--inverse-navbar-background:                             var(--inverse-global-muted-color);
 
     --inverse-navbar-nav-item-color:                         var(--inverse-global-color-muted);
     --inverse-navbar-nav-item-hover-color:                   var(--inverse-global-color);
@@ -4717,9 +4549,7 @@
     --inverse-navbar-dropdown-nav-sublist-item-hover-color:  var(--inverse-global-color);
     --inverse-navbar-dropdown-nav-sublist-item-active-color: var(--inverse-global-color-emphasis);
 
-
-
-    --navbar-gap:                                    15px;
+--navbar-gap:                                    15px;
 
     --navbar-nav-gap:                                15px;
 
@@ -4748,11 +4578,8 @@
 
     --navbar-dropdown-box-shadow:                    0 5px 12px rgba(0,0,0,0.15);
 
-
-
-    --inverse-navbar-dropdown-background:           var(--inverse-global-default-color);
+--inverse-navbar-dropdown-background:           var(--inverse-global-default-color);
     --inverse-navbar-dropdown-box-shadow:           0 5px 12px rgba(0,0,0,0.35);
-
 }
 @mixin hook-inverse-component-navbar(){
 
@@ -4872,8 +4699,7 @@
 @mixin hook-inverse-notification-message-warning(){}
 @mixin hook-inverse-notification-message-danger(){}
 @mixin hook-notification-variables() {
-
-    --notification-position:                               10px;
+--notification-position:                               10px;
     --notification-z-index:                                calc(var(--global-z-index) + 40);
     --notification-width:                                  350px;
 
@@ -4892,13 +4718,10 @@
     --notification-message-warning-color:                  var(--global-warning-color);
     --notification-message-danger-color:                   var(--global-danger-color);
 
-
-
-    --inverse-notification-message-primary-color:      var(--global-primary-color);
+--inverse-notification-message-primary-color:      var(--global-primary-color);
     --inverse-notification-message-success-color:      var(--global-success-color);
     --inverse-notification-message-warning-color:      var(--global-warning-color);
     --inverse-notification-message-danger-color:       var(--global-danger-color);
-
 }
 @mixin hook-inverse-notification(){
 
@@ -4984,8 +4807,7 @@
 @mixin hook-overlay-misc(){}
 @mixin hook-inverse-overlay-default(){}
 @mixin hook-overlay-variables() {
-
-    --overlay-padding-horizontal:                    var(--global-gutter);
+--overlay-padding-horizontal:                    var(--global-gutter);
     --overlay-padding-vertical:                      var(--global-gutter);
 
     --overlay-default-background:                    rgb(from var(--global-default-color) r g b * 1.11111);
@@ -4994,10 +4816,7 @@
     --overlay-primary-background:                    rgb(from var(--global-secondary-color) r g b * 1.11111);
     --overlay-primary-color-mode:                    $overlay-primary-color-mode;
 
-
-
-    --inverse-overlay-default-background:              rgb(from var(--inverse-global-default-color) r g b * 1.11111);
-
+--inverse-overlay-default-background:              rgb(from var(--inverse-global-default-color) r g b * 1.11111);
 }
 @mixin hook-inverse-component-overlay(){
 
@@ -5021,7 +4840,7 @@
 }
 @mixin hook-pagination(){}
 @mixin hook-pagination-item() {
-    transition: color 0.1s ease-in-out; 
+transition: color 0.1s ease-in-out;
 }
 @mixin hook-pagination-item-hover(){}
 @mixin hook-pagination-item-active(){}
@@ -5032,8 +4851,7 @@
 @mixin hook-inverse-pagination-item-active(){}
 @mixin hook-inverse-pagination-item-disabled(){}
 @mixin hook-pagination-variables() {
-
-    --pagination-margin-horizontal:                  0;
+--pagination-margin-horizontal:                  0;
 
     --pagination-item-padding-vertical:              5px;
     --pagination-item-padding-horizontal:            10px;
@@ -5043,13 +4861,10 @@
     --pagination-item-active-color:                  var(--global-color);
     --pagination-item-disabled-color:                var(--global-color-muted);
 
-
-
-    --inverse-pagination-item-color:                var(--inverse-global-color-muted);
+--inverse-pagination-item-color:                var(--inverse-global-color-muted);
     --inverse-pagination-item-hover-color:          var(--inverse-global-color);
     --inverse-pagination-item-active-color:         var(--inverse-global-color);
     --inverse-pagination-item-disabled-color:       var(--inverse-global-color-muted);
-
 }
 @mixin hook-inverse-component-pagination(){
 
@@ -5075,24 +4890,19 @@
 
 }
 @mixin hook-placeholder() {
-    border: var(--placeholder-border-width) dashed var(--placeholder-border); 
+border: var(--placeholder-border-width) dashed var(--placeholder-border);
 }
 @mixin hook-placeholder-misc(){}
 @mixin hook-inverse-placeholder(){}
 @mixin hook-placeholder-variables() {
-
-    --placeholder-margin-vertical:                   var(--global-margin);
+--placeholder-margin-vertical:                   var(--global-margin);
     --placeholder-padding-vertical:                  var(--global-gutter);
     --placeholder-padding-horizontal:                var(--global-gutter);
     --placeholder-background:                        var(--global-muted-color);
 
+--inverse-placeholder-background:                  var(--inverse-global-muted-color);
 
-
-    --inverse-placeholder-background:                  var(--inverse-global-muted-color);
-
-
-
-    --placeholder-background:                        transparent;
+--placeholder-background:                        transparent;
 
     //
     // New
@@ -5100,7 +4910,6 @@
 
     --placeholder-border-width:                      var(--global-border-width);
     --placeholder-border:                            var(--global-border);
-
 }
 @mixin hook-inverse-component-placeholder(){
 
@@ -5121,28 +4930,22 @@
 }
 @mixin hook-print(){}
 @mixin hook-progress() {
-    border-radius: var(--progress-border-radius);
+border-radius: var(--progress-border-radius);
     overflow: hidden;
 }
 @mixin hook-progress-bar(){}
 @mixin hook-progress-misc(){}
 @mixin hook-inverse-progress(){}
 @mixin hook-progress-variables() {
-
-    --progress-height:                               15px;
+--progress-height:                               15px;
     --progress-margin-vertical:                      var(--global-margin);
     --progress-background:                           var(--global-muted-color);
 
     --progress-bar-background:                       var(--global-primary-color);
 
+--inverse-progress-background:                     var(--inverse-global-muted-color);
 
-
-    --inverse-progress-background:                     var(--inverse-global-muted-color);
-
-
-
-    --progress-border-radius:                        500px;
-
+--progress-border-radius:                        500px;
 }
 @mixin hook-inverse-component-progress(){
 
@@ -5156,61 +4959,60 @@
 @mixin hook-search-input(){}
 @mixin hook-search-icon(){}
 @mixin hook-search-default-input() {
-    border: var(--search-default-border-width) solid var(--search-default-border); 
+border: var(--search-default-border-width) solid var(--search-default-border);
 }
 @mixin hook-search-default-input-focus() {
-    border-color: var(--search-default-focus-border); 
+border-color: var(--search-default-focus-border);
 }
 @mixin hook-search-navbar-input() {
-    border: var(--search-navbar-border-width) solid var(--search-navbar-border); 
+border: var(--search-navbar-border-width) solid var(--search-navbar-border);
 }
 @mixin hook-search-navbar-input-focus() {
-    border-color: var(--search-navbar-focus-border); 
+border-color: var(--search-navbar-focus-border);
 }
 @mixin hook-search-medium-input() {
-    border: var(--search-medium-border-width) solid var(--search-medium-border); 
+border: var(--search-medium-border-width) solid var(--search-medium-border);
 }
 @mixin hook-search-medium-input-focus() {
-    border-color: var(--search-medium-focus-border); 
+border-color: var(--search-medium-focus-border);
 }
 @mixin hook-search-large-input() {
-    border: var(--search-large-border-width) solid var(--search-large-border); 
+border: var(--search-large-border-width) solid var(--search-large-border);
 }
 @mixin hook-search-large-input-focus() {
-    border-color: var(--search-large-focus-border); 
+border-color: var(--search-large-focus-border);
 }
 @mixin hook-search-toggle(){}
 @mixin hook-search-toggle-hover(){}
 @mixin hook-search-misc(){}
 @mixin hook-inverse-search-default-input() {
-    border-color: var(--inverse-global-border); 
+border-color: var(--inverse-global-border);
 }
 @mixin hook-inverse-search-default-input-focus() {
-    border-color: var(--inverse-global-color); 
+border-color: var(--inverse-global-color);
 }
 @mixin hook-inverse-search-navbar-input() {
-    border-color: var(--inverse-global-border); 
+border-color: var(--inverse-global-border);
 }
 @mixin hook-inverse-search-navbar-input-focus() {
-    border-color: var(--inverse-global-color); 
+border-color: var(--inverse-global-color);
 }
 @mixin hook-inverse-search-medium-input() {
-    border-color: var(--inverse-global-border); 
+border-color: var(--inverse-global-border);
 }
 @mixin hook-inverse-search-medium-input-focus() {
-    border-color: var(--inverse-global-color); 
+border-color: var(--inverse-global-color);
 }
 @mixin hook-inverse-search-large-input() {
-    border-color: var(--inverse-global-border); 
+border-color: var(--inverse-global-border);
 }
 @mixin hook-inverse-search-large-input-focus() {
-    border-color: var(--inverse-global-color); 
+border-color: var(--inverse-global-color);
 }
 @mixin hook-inverse-search-toggle(){}
 @mixin hook-inverse-search-toggle-hover(){}
 @mixin hook-search-variables() {
-
-    --search-color:                                      var(--global-color);
+--search-color:                                      var(--global-color);
     --search-placeholder-color:                          var(--global-color-muted);
 
     --search-icon-color:                                 var(--global-color-muted);
@@ -5256,9 +5058,7 @@
     --search-toggle-color:                               var(--global-color-muted);
     --search-toggle-hover-color:                         var(--global-color);
 
-
-
-    --inverse-search-color:                         var(--inverse-global-color);
+--inverse-search-color:                         var(--inverse-global-color);
     --inverse-search-placeholder-color:             var(--inverse-global-color-muted);
 
     --inverse-search-icon-color:                    var(--inverse-global-color-muted);
@@ -5278,9 +5078,7 @@
     --inverse-search-toggle-color:                  var(--inverse-global-color-muted);
     --inverse-search-toggle-hover-color:            var(--inverse-global-color);
 
-
-
-    --search-default-background:                         transparent;
+--search-default-background:                         transparent;
 
     --search-navbar-focus-background:                    var(--search-navbar-background);
 
@@ -5308,9 +5106,7 @@
     --search-large-border:                               var(--global-border);
     --search-large-focus-border:                         var(--global-primary-color);
 
-
-
-    --inverse-search-default-background:             transparent;
+--inverse-search-default-background:             transparent;
 
     --inverse-search-navbar-background:              transparent;
     --inverse-search-navbar-focus-background:        var(--inverse-search-navbar-background);
@@ -5318,7 +5114,6 @@
     --inverse-search-medium-background:              transparent;
 
     --inverse-search-large-background:               transparent;
-
 }
 @mixin hook-inverse-component-search(){
 
@@ -5408,8 +5203,7 @@
 @mixin hook-inverse-section-primary(){}
 @mixin hook-inverse-section-secondary(){}
 @mixin hook-section-variables() {
-
-    --section-padding-vertical:                        var(--global-medium-margin);
+--section-padding-vertical:                        var(--global-medium-margin);
     --section-padding-vertical-m:                      var(--global-large-margin);
 
     --section-xsmall-padding-vertical:                 var(--global-margin);
@@ -5434,11 +5228,8 @@
     --section-secondary-background:                    var(--global-secondary-color);
     --section-secondary-color-mode:                    $section-secondary-color-mode;
 
-
-
-    --inverse-section-default-background:              var(--inverse-global-default-color);
+--inverse-section-default-background:              var(--inverse-global-default-color);
     --inverse-section-muted-background:                var(--inverse-global-muted-color);
-
 }
 @mixin hook-inverse-component-section(){
 
@@ -5462,7 +5253,7 @@
 
 }
 @mixin hook-slidenav() {
-    transition: color 0.1s ease-in-out; 
+transition: color 0.1s ease-in-out;
 }
 @mixin hook-slidenav-hover(){}
 @mixin hook-slidenav-active(){}
@@ -5475,8 +5266,7 @@
 @mixin hook-inverse-slidenav-hover(){}
 @mixin hook-inverse-slidenav-active(){}
 @mixin hook-slidenav-variables() {
-
-    --slidenav-padding-vertical:                     5px;
+--slidenav-padding-vertical:                     5px;
     --slidenav-padding-horizontal:                   10px;
 
     --slidenav-color:                                rgb(from var(--global-color) r g b * 2);
@@ -5486,12 +5276,9 @@
     --slidenav-large-padding-vertical:               10px;
     --slidenav-large-padding-horizontal:             var(--slidenav-large-padding-vertical);
 
-
-
-    --inverse-slidenav-color:                       rgb(from var(--inverse-global-color) r g b * 1.42857);
+--inverse-slidenav-color:                       rgb(from var(--inverse-global-color) r g b * 1.42857);
     --inverse-slidenav-hover-color:                 rgb(from var(--inverse-global-color) r g b * 1.05263);
     --inverse-slidenav-active-color:                rgb(from var(--inverse-global-color) r g b * 1.42857);
-
 }
 @mixin hook-inverse-component-slidenav(){
 
@@ -5559,7 +5346,7 @@
 }
 @mixin hook-subnav(){}
 @mixin hook-subnav-item() {
-    font-size: var(--subnav-item-font-size);
+font-size: var(--subnav-item-font-size);
     text-transform: var(--subnav-item-text-transform);
     transition: 0.1s ease-in-out;
     transition-property: color, background-color;
@@ -5583,8 +5370,7 @@
 @mixin hook-inverse-subnav-pill-item-active(){}
 @mixin hook-inverse-subnav-item-disabled(){}
 @mixin hook-subnav-variables() {
-
-    --subnav-margin-horizontal:                      20px;
+--subnav-margin-horizontal:                      20px;
 
     --subnav-item-color:                             var(--global-color-muted);
     --subnav-item-hover-color:                       var(--global-color);
@@ -5610,9 +5396,7 @@
 
     --subnav-item-disabled-color:                    var(--global-color-muted);
 
-
-
-    --inverse-subnav-item-color:                    var(--inverse-global-color-muted);
+--inverse-subnav-item-color:                    var(--inverse-global-color-muted);
     --inverse-subnav-item-hover-color:              var(--inverse-global-color);
     --inverse-subnav-item-active-color:             var(--inverse-global-color-emphasis);
 
@@ -5626,18 +5410,15 @@
     --inverse-subnav-pill-item-onclick-color:       var(--inverse-subnav-pill-item-hover-color);
     --inverse-subnav-pill-item-active-background:   var(--inverse-global-primary-color);
     --inverse-subnav-pill-item-active-color:        var(--inverse-global-color-emphasis);
-
+    
     --inverse-subnav-item-disabled-color:           var(--inverse-global-color-muted);
 
-
-
-    //
+//
     // New
     //
 
     --subnav-item-font-size:                         var(--global-small-font-size);
     --subnav-item-text-transform:                    uppercase;
-
 }
 @mixin hook-inverse-component-subnav(){
 
@@ -5707,8 +5488,7 @@
 @mixin hook-switcher(){}
 @mixin hook-switcher-misc(){}
 @mixin hook-tab() {
-
-    position: relative;
+position: relative;
 
     &::before {
         content: "";
@@ -5718,34 +5498,30 @@
         inset-inline-end: 0;
         border-bottom: var(--tab-border-width) solid var(--tab-border);
     }
-
 }
 @mixin hook-tab-item() {
-    border-bottom: var(--tab-item-border-width) solid transparent;
+border-bottom: var(--tab-item-border-width) solid transparent;
     font-size: var(--tab-item-font-size);
     text-transform: var(--tab-item-text-transform);
     transition: color 0.1s ease-in-out;
 }
 @mixin hook-tab-item-hover(){}
 @mixin hook-tab-item-active() {
-    border-color: var(--tab-item-active-border); 
+border-color: var(--tab-item-active-border);
 }
 @mixin hook-tab-item-disabled(){}
 @mixin hook-tab-bottom() {
-
-    &::before {
+&::before {
         top: 0;
         bottom: auto;
     }
-
 }
 @mixin hook-tab-bottom-item() {
-    border-top: var(--tab-item-border-width) solid transparent;
+border-top: var(--tab-item-border-width) solid transparent;
     border-bottom: none;
 }
 @mixin hook-tab-left() {
-
-    &::before {
+&::before {
         top: 0;
         bottom: 0;
         left: auto;
@@ -5753,11 +5529,9 @@
         border-left: var(--tab-border-width) solid var(--tab-border);
         border-bottom: none;
     }
-
 }
 @mixin hook-tab-right() {
-
-    &::before {
+&::before {
         top: 0;
         bottom: 0;
         left: 0;
@@ -5765,65 +5539,55 @@
         border-left: var(--tab-border-width) solid var(--tab-border);
         border-bottom: none;
     }
-
 }
 @mixin hook-tab-start() {
-
-    &::before {
+&::before {
         top: 0;
         bottom: 0;
         inset-inline-end: 0;
         border-inline-start: var(--tab-border-width) solid var(--tab-border);
         border-bottom: none;
     }
-
 }
 @mixin hook-tab-end() {
-
-    &::before {
+&::before {
         top: 0;
         bottom: 0;
         inset-inline-start: 0;
         border-inline-start: var(--tab-border-width) solid var(--tab-border);
         border-bottom: none;
     }
-
 }
 @mixin hook-tab-left-item() {
-    border-right: var(--tab-item-border-width) solid transparent;
+border-right: var(--tab-item-border-width) solid transparent;
     border-bottom: none;
 }
 @mixin hook-tab-right-item() {
-    border-left: var(--tab-item-border-width) solid transparent;
+border-left: var(--tab-item-border-width) solid transparent;
     border-bottom: none;
 }
 @mixin hook-tab-start-item() {
-    border-inline-end: var(--tab-item-border-width) solid transparent;
+border-inline-end: var(--tab-item-border-width) solid transparent;
     border-bottom: none;
 }
 @mixin hook-tab-end-item() {
-    border-inline-start: var(--tab-item-border-width) solid transparent;
+border-inline-start: var(--tab-item-border-width) solid transparent;
     border-bottom: none;
 }
 @mixin hook-tab-misc() {
-
-    .uk-tab .uk-dropdown { margin-inline-start: calc(var(--tab-margin-horizontal) + var(--tab-item-padding-horizontal)); }
-
+.uk-tab .uk-dropdown { margin-inline-start: calc(var(--tab-margin-horizontal) + var(--tab-item-padding-horizontal)); }
 }
 @mixin hook-inverse-tab() {
-
-    &::before { border-color: var(--inverse-tab-border); }
-
+&::before { border-color: var(--inverse-tab-border); }
 }
 @mixin hook-inverse-tab-item(){}
 @mixin hook-inverse-tab-item-hover(){}
 @mixin hook-inverse-tab-item-active() {
-    border-color: var(--inverse-global-primary-color); 
+border-color: var(--inverse-global-primary-color);
 }
 @mixin hook-inverse-tab-item-disabled(){}
 @mixin hook-tab-variables() {
-
-    --tab-margin-horizontal:                  20px;
+--tab-margin-horizontal:                  20px;
 
     --tab-item-padding-horizontal:            10px;
     --tab-item-padding-vertical:              5px;
@@ -5833,16 +5597,12 @@
     --tab-item-active-color:                  var(--global-color-emphasis);
     --tab-item-disabled-color:                var(--global-color-muted);
 
-
-
-    --inverse-tab-item-color:                       var(--inverse-global-color-muted);
+--inverse-tab-item-color:                       var(--inverse-global-color-muted);
     --inverse-tab-item-hover-color:                 var(--inverse-global-color);
     --inverse-tab-item-active-color:                var(--inverse-global-color-emphasis);
     --inverse-tab-item-disabled-color:              var(--inverse-global-color-muted);
 
-
-
-    //
+//
     // New
     //
 
@@ -5855,10 +5615,7 @@
 
     --tab-item-active-border:                        var(--global-primary-color);
 
-
-
-    --inverse-tab-border:                        var(--inverse-global-border);
-
+--inverse-tab-border:                        var(--inverse-global-border);
 }
 @mixin hook-inverse-component-tab(){
 
@@ -5889,14 +5646,14 @@
 }
 @mixin hook-table(){}
 @mixin hook-table-header-cell() {
-    text-transform: uppercase; 
+text-transform: uppercase;
 }
 @mixin hook-table-cell(){}
 @mixin hook-table-footer(){}
 @mixin hook-table-caption(){}
 @mixin hook-table-divider(){}
 @mixin hook-table-striped() {
-    border-top: var(--table-striped-border-width) solid var(--table-striped-border);
+border-top: var(--table-striped-border-width) solid var(--table-striped-border);
     border-bottom: var(--table-striped-border-width) solid var(--table-striped-border);
 }
 @mixin hook-table-hover(){}
@@ -5904,25 +5661,22 @@
 @mixin hook-table-small(){}
 @mixin hook-table-large(){}
 @mixin hook-table-misc() {
-
-    .uk-table tbody tr { transition: background-color 0.1s linear; }
+.uk-table tbody tr { transition: background-color 0.1s linear; }
 
     .uk-table-striped > tr:nth-of-type(even):last-child,
     .uk-table-striped tbody tr:nth-of-type(even):last-child { border-bottom: var(--table-striped-border-width) solid var(--table-striped-border); }
-
 }
 @mixin hook-inverse-table-header-cell(){}
 @mixin hook-inverse-table-caption(){}
 @mixin hook-inverse-table-row-active(){}
 @mixin hook-inverse-table-divider(){}
 @mixin hook-inverse-table-striped() {
-    border-top-color: var(--inverse-global-border);
+border-top-color: var(--inverse-global-border);
     border-bottom-color: var(--inverse-global-border);
 }
 @mixin hook-inverse-table-hover(){}
 @mixin hook-table-variables() {
-
-    --table-margin-vertical:                         var(--global-margin);
+--table-margin-vertical:                         var(--global-margin);
 
     --table-cell-padding-vertical:                   16px;
     --table-cell-padding-horizontal:                 12px;
@@ -5953,18 +5707,14 @@
 
     --table-expand-min-width:                        150px;
 
-
-
-    --inverse-table-header-cell-color:                       var(--inverse-global-color);
+--inverse-table-header-cell-color:                       var(--inverse-global-color);
     --inverse-table-caption-color:                           var(--inverse-global-color-muted);
     --inverse-table-row-active-background:                   var(--inverse-global-muted-color-soft);
     --inverse-table-divider-border:                          var(--inverse-global-border);
     --inverse-table-striped-row-background:                  var(--inverse-global-muted-color);
     --inverse-table-hover-row-background:                    var(--inverse-table-row-active-background);
 
-
-
-    --table-header-cell-font-size:                   var(--global-small-font-size);
+--table-header-cell-font-size:                   var(--global-small-font-size);
     --table-header-cell-font-weight:                 normal;
     --table-header-cell-color:                       var(--global-color-muted);
 
@@ -5975,14 +5725,10 @@
     --table-striped-border-width:                    var(--global-border-width);
     --table-striped-border:                          var(--global-border);
 
-
-
-    --inverse-table-header-cell-color:               var(--inverse-global-color-muted);
-
+--inverse-table-header-cell-color:               var(--inverse-global-color-muted);
 }
 @mixin hook-inverse-component-table() {
-
-    .uk-table th {
+.uk-table th {
         color: var(--inverse-table-header-cell-color);
         @if(meta.mixin-exists(hook-inverse-table-header-cell)) {@include hook-inverse-table-header-cell();}
     }
@@ -6017,36 +5763,32 @@
         @if(meta.mixin-exists(hook-inverse-table-hover)) {@include hook-inverse-table-hover();}
     }
 
-
-    .uk-table-striped > tr:nth-of-type(even):last-child,
+.uk-table-striped > tr:nth-of-type(even):last-child,
     .uk-table-striped tbody tr:nth-of-type(even):last-child { border-bottom-color: var(--inverse-global-border); }
 }
 @mixin hook-text-lead(){}
 @mixin hook-text-meta() {
-
-    > a { color: var(--text-meta-link-color); }
+> a { color: var(--text-meta-link-color); }
 
     > a:hover {
         color: var(--text-meta-link-hover-color);
         text-decoration: none;
     }
-
 }
 @mixin hook-text-small(){}
 @mixin hook-text-large(){}
 @mixin hook-text-background() {
-    background-image: var(--internal-text-background-color-gradient); 
+background-image: var(--internal-text-background-color-gradient);
 }
 @mixin hook-text-misc(){}
 @mixin hook-inverse-text-lead(){}
 @mixin hook-inverse-text-meta() {
-    > a { color: var(--inverse-text-meta-link-color); }
+> a { color: var(--inverse-text-meta-link-color); }
 
     > a:hover { color: var(--inverse-text-meta-link-hover-color); }
 }
 @mixin hook-text-variables() {
-
-    --text-lead-font-size:                           var(--global-large-font-size);
+--text-lead-font-size:                           var(--global-large-font-size);
     --text-lead-line-height:                         1.5;
     --text-lead-color:                               var(--global-color-emphasis);
 
@@ -6072,18 +5814,14 @@
 
     --text-stroke-text-stroke:                       calc(1.4px + 0.002em);
 
-
-
-    --inverse-text-lead-color:                      var(--inverse-global-color-emphasis);
+--inverse-text-lead-color:                      var(--inverse-global-color-emphasis);
     --inverse-text-meta-color:                      var(--inverse-global-color-muted);
     --inverse-text-muted-color:                     var(--inverse-global-color-muted);
     --inverse-text-emphasis-color:                  var(--inverse-global-color-emphasis);
     --inverse-text-primary-color:                   var(--inverse-global-primary-color);
     --inverse-text-secondary-color:                 var(--inverse-global-color-emphasis);
 
-
-
-    //
+//
     // New
     //
 
@@ -6092,11 +5830,8 @@
 
     --internal-text-background-color-gradient:         linear-gradient(calc(90deg * var(--uk-dir-sign)), var(--text-background-color) 0%, hsl(from var(--text-background-color) calc(h + 40) s l) 100%);
 
-
-
-    --inverse-text-meta-link-color:                  var(--inverse-text-meta-color);
+--inverse-text-meta-link-color:                  var(--inverse-text-meta-color);
     --inverse-text-meta-link-hover-color:            var(--inverse-global-color);
-
 }
 @mixin hook-inverse-component-text(){
 
@@ -6118,8 +5853,7 @@
 }
 @mixin hook-thumbnav(){}
 @mixin hook-thumbnav-item() {
-
-    position: relative;
+position: relative;
 
     &::after {
         content: "";
@@ -6131,28 +5865,24 @@
         background-image: var(--thumbnav-item-gradient);
         transition: opacity 0.1s ease-in-out;
     }
-
 }
 @mixin hook-thumbnav-item-hover() {
-    &::after { opacity: var(--thumbnav-item-hover-opacity); }
+&::after { opacity: var(--thumbnav-item-hover-opacity); }
 }
 @mixin hook-thumbnav-item-active() {
-    &::after { opacity: var(--thumbnav-item-active-opacity); }
+&::after { opacity: var(--thumbnav-item-active-opacity); }
 }
 @mixin hook-thumbnav-misc(){}
 @mixin hook-inverse-thumbnav-item() {
-    &::after { background-image: var(--inverse-thumbnav-item-gradient); }
+&::after { background-image: var(--inverse-thumbnav-item-gradient); }
 }
 @mixin hook-inverse-thumbnav-item-hover(){}
 @mixin hook-inverse-thumbnav-item-active(){}
 @mixin hook-thumbnav-variables() {
-
-    --thumbnav-margin-horizontal:                    15px;
+--thumbnav-margin-horizontal:                    15px;
     --thumbnav-margin-vertical:                      var(--thumbnav-margin-horizontal);
 
-
-
-    //
+//
     // New
     //
 
@@ -6160,10 +5890,7 @@
     --thumbnav-item-hover-opacity:                   0;
     --thumbnav-item-active-opacity:                  0;
 
-
-
-    --inverse-thumbnav-item-gradient:                linear-gradient(calc(180deg * var(--uk-dir-sign)), rgba(0,0,0,0), rgba(0,0,0,0.4));
-
+--inverse-thumbnav-item-gradient:                linear-gradient(calc(180deg * var(--uk-dir-sign)), rgba(0,0,0,0), rgba(0,0,0,0.4));
 }
 @mixin hook-inverse-component-thumbnav(){
 
@@ -6292,8 +6019,7 @@
 @mixin hook-tooltip-misc(){}
 @mixin hook-inverse-tooltip(){}
 @mixin hook-tooltip-variables() {
-
-    --tooltip-z-index:                               calc(var(--global-z-index) + 30);
+--tooltip-z-index:                               calc(var(--global-z-index) + 30);
     --tooltip-margin:                                10px;
     --tooltip-max-width:                             200px;
     --tooltip-padding-vertical:                      3px;
@@ -6303,10 +6029,7 @@
     --tooltip-color:                                 var(--global-color-inverse);
     --tooltip-font-size:                             12px;
 
-
-
-    --inverse-tooltip-background:                        #333;
-
+--inverse-tooltip-background:                        #333;
 }
 @mixin hook-inverse-component-tooltip(){
 
@@ -6317,7 +6040,7 @@
 
 }
 @mixin hook-totop() {
-    transition: color 0.1s ease-in-out; 
+transition: color 0.1s ease-in-out;
 }
 @mixin hook-totop-hover(){}
 @mixin hook-totop-active(){}
@@ -6326,20 +6049,16 @@
 @mixin hook-inverse-totop-hover(){}
 @mixin hook-inverse-totop-active(){}
 @mixin hook-totop-variables() {
-
-    --totop-padding:                                 5px;
+--totop-padding:                                 5px;
     --totop-color:                                   var(--global-color-muted);
 
     --totop-hover-color:                             var(--global-color);
 
     --totop-active-color:                            var(--global-color-emphasis);
 
-
-
-    --inverse-totop-color:                       var(--inverse-global-color-muted);
+--inverse-totop-color:                       var(--inverse-global-color-muted);
     --inverse-totop-hover-color:                 var(--inverse-global-color);
     --inverse-totop-active-color:                var(--inverse-global-color-emphasis);
-
 }
 @mixin hook-inverse-component-totop(){
 
@@ -6375,7 +6094,7 @@
 @mixin hook-panel-scrollable(){}
 @mixin hook-box-shadow-bottom(){}
 @mixin hook-dropcap() {
-    // Prevent line wrap
+// Prevent line wrap
     margin-bottom: -2px;
 }
 @mixin hook-logo(){}
@@ -6386,8 +6105,7 @@
 @mixin hook-inverse-logo(){}
 @mixin hook-inverse-logo-hover(){}
 @mixin hook-utility-variables() {
-
-    --panel-scrollable-height:                       170px;
+--panel-scrollable-height:                       170px;
     --panel-scrollable-padding:                      10px;
     --panel-scrollable-border-width:                 var(--global-border-width);
     --panel-scrollable-border:                       var(--global-border);
@@ -6415,15 +6133,12 @@
 
     --dragover-box-shadow:                           0 0 20px rgba(100,100,100,0.3);
 
-
-
-    --box-shadow-bottom-background:                 #000;
+--box-shadow-bottom-background:                 #000;
 
     --inverse-logo-color:                           var(--inverse-global-color-emphasis);
     --inverse-logo-hover-color:                     var(--inverse-global-color-emphasis);
-
+    
     --inverse-dragover-box-shadow:                  0 0 20px rgba(0,0,0,0.4);
-
 }
 @mixin hook-inverse-component-utility(){
 
@@ -6463,8 +6178,7 @@
     .uk-dragover { box-shadow: var(--inverse-dragover-box-shadow); }
 }
 @mixin hook-global-variables() {
-
-    // Global variables
+// Global variables
     // ========================================================================
 
     //
@@ -6494,75 +6208,13 @@
     //
     // Z-index
     //
-
 }
 @mixin hook-width-variables() {
-
-    --width-small-width:                             150px;
+--width-small-width:                             150px;
     --width-medium-width:                            300px;
     --width-large-width:                             450px;
     --width-xlarge-width:                            600px;
     --width-2xlarge-width:                           750px;
-
-}
-@mixin hook-inverse-variables() {
-
-        --inverse-global-color-mode:                     $inverse-global-color-mode;
-
-        /*
-         * Palettes
-         */
-    @mixin hook-inverse() {
-        @include hook-inverse-component-accordion();
-        @include hook-inverse-component-alert();
-        @include hook-inverse-component-article();
-        @include hook-inverse-component-background();
-        @include hook-inverse-component-badge();
-        @include hook-inverse-component-base();
-        @include hook-inverse-component-breadcrumb();
-        @include hook-inverse-component-button();
-        @include hook-inverse-component-card();
-        @include hook-inverse-component-close();
-        @include hook-inverse-component-column();
-        @include hook-inverse-component-comment();
-        @include hook-inverse-component-countdown();
-        @include hook-inverse-component-description-list();
-        @include hook-inverse-component-divider();
-        @include hook-inverse-component-dotnav();
-        @include hook-inverse-component-dropbar();
-        @include hook-inverse-component-dropdown();
-        @include hook-inverse-component-form-range();
-        @include hook-inverse-component-form();
-        @include hook-inverse-component-grid();
-        @include hook-inverse-component-heading();
-        @include hook-inverse-component-icon();
-        @include hook-inverse-component-iconnav();
-        @include hook-inverse-component-label();
-        @include hook-inverse-component-leader();
-        @include hook-inverse-component-link();
-        @include hook-inverse-component-list();
-        @include hook-inverse-component-marker();
-        @include hook-inverse-component-modal();
-        @include hook-inverse-component-nav();
-        @include hook-inverse-component-navbar();
-        @include hook-inverse-component-notification();
-        @include hook-inverse-component-offcanvas();
-        @include hook-inverse-component-overlay();
-        @include hook-inverse-component-pagination();
-        @include hook-inverse-component-placeholder();
-        @include hook-inverse-component-progress();
-        @include hook-inverse-component-search();
-        @include hook-inverse-component-section();
-        @include hook-inverse-component-slidenav();
-        @include hook-inverse-component-subnav();
-        @include hook-inverse-component-tab();
-        @include hook-inverse-component-table();
-        @include hook-inverse-component-text();
-        @include hook-inverse-component-thumbnav();
-        @include hook-inverse-component-tile();
-        @include hook-inverse-component-tooltip();
-        @include hook-inverse-component-totop();
-        @include hook-inverse-component-utility();
 }
 @mixin hook-variables(){}
 @mixin hook-slideshow-variables(){}
@@ -6580,6 +6232,3 @@
     background-color: var(--inverse-label-danger-background);
     color: var(--inverse-label-danger-color);
 }
-@mixin hook-inverse-component-comment(){}
-@mixin hook-inverse-component-description-list(){}
-@mixin hook-inverse(){}

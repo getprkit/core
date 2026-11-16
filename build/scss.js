@@ -206,17 +206,11 @@ function resolveDependencies(allVariables, currentKey, dependencies = new Set())
     return dependencies;
 }
 
-/*
- * Extract all the mixins from a given file with its data.
- * @return an updated data where the mixins have been removed.
- */
 function getMixinsFromFile(file, source) {
     /* Step 1: get all includes and insert them, so that at least empty mixins exist. */
     for (const [, include] of source.matchAll(/@include ([a-z0-9-]+)/g)) {
         if (include.startsWith('hook-')) {
-            if (!(include in themeMixins)) {
-                themeMixins[include] = `@mixin ${include}(){}`;
-            }
+            themeMixins[include] ??= `@mixin ${include}(){}`;
             continue;
         }
 
@@ -231,7 +225,7 @@ function getMixinsFromFile(file, source) {
     const mixinPattern =
         /@mixin ([\w-]*)\s*\(.*\)\s*{(\n\s+[\w\W]+?(?=\n})\n| [^\n]+)}/g;
 
-    /* Step 2: extract mixins and merge all hooks into mixins-theme. */
+    /* Step 2: extract mixins and merge hooks into mixins-theme. */
     for (const [match, mixin] of source.matchAll(mixinPattern)) {
         if (mixin.startsWith('hook-')) {
             themeMixins[mixin] = mergeHookMixin(themeMixins[mixin], match, mixin);
@@ -245,50 +239,38 @@ function getMixinsFromFile(file, source) {
         }
     }
 
-    /* Step 3: remove the mixins from the file, so users can overwrite them in their custom code. */
+    /* Step 3: remove the mixins from the file. */
     return source.replace(mixinPattern, '');
 }
 
-/*
- * Merge repeated hook definitions into a single Sass mixin.
- */
+/* Merge repeated hook definitions into one mixin. */
 function mergeHookMixin(existing, incoming, name) {
     if (!existing) {
         return incoming;
     }
 
-    const getSignature = (mixin) => mixin.slice(0, mixin.indexOf('{')).trim();
+    function getParts(mixin) {
+        const open = mixin.indexOf('{');
+        const close = mixin.lastIndexOf('}');
 
-    const signature = getSignature(existing);
-
-    if (signature !== getSignature(incoming)) {
-        throw new Error(`Cannot merge hook "${name}": definitions have different signatures.`);
+        return {
+            signature: mixin.slice(0, open).trim(),
+            body: mixin.slice(open + 1, close).trim(),
+        };
     }
 
-    const getBody = (mixin) => {
-        const body = mixin
-            .slice(mixin.indexOf('{') + 1, mixin.lastIndexOf('}'))
-            .replace(/^\n|\n$/g, '');
+    const current = getParts(existing);
+    const next = getParts(incoming);
 
-        if (!body.trim()) {
-            return '';
-        }
+    if (current.signature.replace(/\s+/g, '') !== next.signature.replace(/\s+/g, '')) {
+        throw new Error(`Cannot merge ${name}: incompatible mixin signatures.`);
+    }
 
-        const lines = body.split('\n');
-        const indentation = Math.min(
-            ...lines.filter((line) => line.trim()).map((line) => line.match(/^[\t ]*/)[0].length),
-        );
+    const body = [current.body, next.body].filter(Boolean).join('\n\n');
 
-        return lines
-            .map((line) => (line.trim() ? `    ${line.slice(indentation)}` : ''))
-            .join('\n');
-    };
-
-    const bodies = [getBody(existing), getBody(incoming)].filter(Boolean);
-
-    return bodies.length
-        ? `${signature} {\n${bodies.join('\n\n')}\n}`
-        : `${signature} {}`;
+    return body
+        ? `${current.signature} {\n${body}\n}`
+        : `${current.signature} {}`;
 }
 
 /*
