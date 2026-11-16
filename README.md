@@ -1,8 +1,8 @@
-# PRKit
+# PrKit
 
-PRKit is a fork of [UIkit](https://github.com/uikit/uikit) 3.25.28, introducing modern CSS features, an enhanced color system and improved theming.
+PrKit is a lightweight and modular front-end framework for developing fast and powerful web interfaces.
 
-> **Status:** Beta (`1.0.0-beta.1`). APIs, styles and CSS variables may still change.
+> **Status:** Beta. APIs, styles and CSS variables may still change.
 
 ## What's Different from UIkit
 
@@ -41,7 +41,7 @@ Requires modern browsers supporting:
 
 ## Migrating from UIkit
 
-PRKit introduces several changes that may require updates to existing UIkit customizations.
+PrKit introduces several changes that may require updates to existing UIkit customizations.
 
 Before upgrading, review the [Breaking Changes](CHANGELOG.md#breaking-changes), particularly:
 
@@ -61,7 +61,7 @@ pnpm compile-less   # Build CSS only
 
 ## Versioning
 
-PRKit follows its own [Semantic Versioning](https://semver.org/), independently of UIkit.
+PrKit follows its own [Semantic Versioning](https://semver.org/), independently of UIkit.
 
 Each release is based on a specific UIkit version, documented in the Changelog.
 
@@ -69,4 +69,4 @@ Each release is based on a specific UIkit version, documented in the Changelog.
 
 Released under the [MIT License](LICENSE.md).
 
-PRKit is a fork of UIkit, originally developed by YOOtheme GmbH.
+PrKit is a fork of UIkit, originally developed by YOOtheme GmbH.

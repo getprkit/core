@@ -29,13 +29,6 @@
 
 
 
-
-
-
-
-
-
-
 /* ========================================================================
    Component: List
  ========================================================================== */
@@ -43,6 +36,7 @@
 .uk-list {
     padding: 0;
     list-style: none;
+    @if(meta.mixin-exists(hook-list)) {@include hook-list();}
 }
 
 /*
@@ -62,7 +56,7 @@
  */
 
 .uk-list > :nth-child(n+2),
-.uk-list > * > ul { margin-top: $list-margin-top; }
+.uk-list > * > ul { margin-top: var(--list-margin-top); }
 
 
 /* Marker modifiers
@@ -72,7 +66,7 @@
 .uk-list-circle,
 .uk-list-square,
 .uk-list-decimal,
-.uk-list-hyphen { padding-left: $list-padding-left; }
+.uk-list-hyphen { padding-inline-start: var(--list-padding-inline-start); }
 
 .uk-list-disc { list-style-type: disc; }
 .uk-list-circle { list-style-type: circle; }
@@ -84,10 +78,10 @@
  * Color modifiers
  */
 
-.uk-list-muted > ::marker { color: $list-muted-color !important; }
-.uk-list-emphasis > ::marker { color: $list-emphasis-color !important; }
-.uk-list-primary > ::marker { color: $list-primary-color !important; }
-.uk-list-secondary > ::marker { color: $list-secondary-color !important; }
+.uk-list-muted > ::marker { color: var(--list-muted-color) !important; }
+.uk-list-emphasis > ::marker { color: var(--list-emphasis-color) !important; }
+.uk-list-primary > ::marker { color: var(--list-primary-color) !important; }
+.uk-list-secondary > ::marker { color: var(--list-secondary-color) !important; }
 
 
 /* Image bullet modifier
@@ -95,17 +89,18 @@
 
 .uk-list-bullet > * {
     position: relative;
-    padding-left: $list-padding-left;
+    padding-inline-start: var(--list-padding-inline-start);
 }
 
 .uk-list-bullet > ::before {
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
-    width: $list-padding-left;
-    height: $global-line-height * 1em;
-    @include svg-fill($internal-list-bullet-image, "#000", $list-bullet-icon-color);
+    inset-inline-start: 0;
+    width: var(--list-padding-inline-start);
+    height: calc(var(--global-line-height) * 1em);
+    // @include svg-fill($internal-list-bullet-image, "#000", $list-bullet-icon-color);
+    background-image: var(--internal-list-bullet-image);
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
@@ -119,9 +114,9 @@
  */
 
 .uk-list-divider > :nth-child(n+2) {
-    margin-top: $list-divider-margin-top;
-    padding-top: $list-divider-margin-top;
-    border-top: $list-divider-border-width solid $list-divider-border;
+    margin-top: var(--list-divider-margin-top);
+    padding-top: var(--list-divider-margin-top);
+    border-top: var(--list-divider-border-width) solid var(--list-divider-border);
     @if(meta.mixin-exists(hook-list-divider)) {@include hook-list-divider();}
 }
 
@@ -130,11 +125,11 @@
  */
 
 .uk-list-striped > * {
-    padding: $list-striped-padding-vertical $list-striped-padding-horizontal;
+    padding: var(--list-striped-padding-vertical) var(--list-striped-padding-horizontal);
     @if(meta.mixin-exists(hook-list-striped)) {@include hook-list-striped();}
 }
 
-.uk-list-striped > :nth-of-type(odd) { background: $list-striped-background; }
+.uk-list-striped > :nth-of-type(odd) { background: var(--list-striped-background); }
 
 .uk-list-striped > :nth-child(n+2) { margin-top: 0; }
 
@@ -143,7 +138,7 @@
  ========================================================================== */
 
 .uk-list-large > :nth-child(n+2),
-.uk-list-large > * > ul { margin-top: $list-large-margin-top; }
+.uk-list-large > * > ul { margin-top: var(--list-large-margin-top); }
 
 .uk-list-collapse > :nth-child(n+2),
 .uk-list-collapse > * > ul { margin-top: 0; }
@@ -153,8 +148,8 @@
  */
 
 .uk-list-large.uk-list-divider > :nth-child(n+2) {
-    margin-top: $list-large-divider-margin-top;
-    padding-top: $list-large-divider-margin-top;
+    margin-top: var(--list-large-divider-margin-top);
+    padding-top: var(--list-large-divider-margin-top);
 }
 
 .uk-list-collapse.uk-list-divider > :nth-child(n+2) {
@@ -166,7 +161,7 @@
  * Striped
  */
 
-.uk-list-large.uk-list-striped > * { padding: $list-large-striped-padding-vertical $list-large-striped-padding-horizontal; }
+.uk-list-large.uk-list-striped > * { padding: var(--list-large-striped-padding-vertical) var(--list-large-striped-padding-horizontal); }
 
 .uk-list-collapse.uk-list-striped > * {
     padding-top: 0;
@@ -182,6 +177,8 @@
 
 @if(meta.mixin-exists(hook-list-misc)) {@include hook-list-misc();}
 
+// @mixin hook-list-variables(){}
+// @mixin hook-list(){}
 // @mixin hook-list-divider(){}
 // @mixin hook-list-striped(){}
 // @mixin hook-list-misc(){}
@@ -189,7 +186,6 @@
 
 // Inverse
 // ========================================================================
-
 
 
 

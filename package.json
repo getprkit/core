@@ -1,8 +1,8 @@
 {
     "name": "@prkit/core",
     "title": "PrKit Core",
-    "description": "A fork of UIkit with native CSS variables, color palettes and improved inverse mode",
-    "version": "1.0.0-beta.1",
+    "description": "PrKit is a lightweight and modular front-end framework for developing fast and powerful web interfaces.",
+    "version": "1.0.0-beta.2",
     "main": "dist/js/uikit.js",
     "style": "dist/css/uikit.css",
     "sideEffects": [

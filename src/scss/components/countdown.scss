@@ -17,6 +17,7 @@
 
 
 
+
 /* ========================================================================
    Component: Countdown
  ========================================================================== */
@@ -55,8 +56,8 @@
  ========================================================================== */
 
 .uk-countdown-separator {
-    font-size: $countdown-separator-font-size;
-    line-height: $countdown-separator-line-height;
+    font-size: var(--countdown-separator-font-size);
+    line-height: var(--countdown-separator-line-height);
     @if(meta.mixin-exists(hook-countdown-separator)) {@include hook-countdown-separator();}
 }
 
@@ -74,6 +75,7 @@
 
 @if(meta.mixin-exists(hook-countdown-misc)) {@include hook-countdown-misc();}
 
+// @mixin hook-countdown-variables(){}
 // @mixin hook-countdown(){}
 // @mixin hook-countdown-item(){}
 // @mixin hook-countdown-number(){}

@@ -17,9 +17,6 @@
 
 
 
-
-
-
 /* ========================================================================
    Component: Divider
  ========================================================================== */
@@ -33,11 +30,12 @@
     /* 1 */
     border: none;
     /* 2 */
-    margin-bottom: $divider-margin-vertical;
+    margin-bottom: var(--divider-margin-vertical);
+    @if(meta.mixin-exists(hook-divider)) {@include hook-divider();}
 }
 
 /* Add margin if adjacent element */
-* + [class*="uk-divider"] { margin-top: $divider-margin-vertical; }
+* + [class*="uk-divider"] { margin-top: var(--divider-margin-vertical); }
 
 
 /* Icon
@@ -45,8 +43,9 @@
 
 .uk-divider-icon {
     position: relative;
-    height: $divider-icon-height;
-    @include svg-fill($internal-divider-icon-image, "#000", $divider-icon-color);
+    height: var(--divider-icon-height);
+    // @include svg-fill($internal-divider-icon-image, "#000", $divider-icon-color);
+    background-image: var(--internal-divider-icon-image);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     @if(meta.mixin-exists(hook-divider-icon)) {@include hook-divider-icon();}
@@ -56,22 +55,22 @@
 .uk-divider-icon::after {
     content: "";
     position: absolute;
-    top: $divider-icon-line-top;
-    max-width: string.unquote('calc(50% - (#{$divider-icon-width} / 2))');
-    border-bottom: $divider-icon-line-border-width solid $divider-icon-line-border;
+    top: var(--divider-icon-line-top);
+    max-width: string.unquote('calc(50% - (var(--divider-icon-width) / 2))');
+    border-bottom: var(--divider-icon-line-border-width) solid var(--divider-icon-line-border);
     @if(meta.mixin-exists(hook-divider-icon-line)) {@include hook-divider-icon-line();}
 }
 
 .uk-divider-icon::before {
-    right: string.unquote('calc(50% + (#{$divider-icon-width} / 2))');
-    width: $divider-icon-line-width;
-    @if(meta.mixin-exists(hook-divider-icon-line-left)) {@include hook-divider-icon-line-left();}
+    inset-inline-end: string.unquote('calc(50% + (var(--divider-icon-width) / 2))');
+    width: var(--divider-icon-line-width);
+    @if(meta.mixin-exists(hook-divider-icon-line-start)) {@include hook-divider-icon-line-start();}
 }
 
 .uk-divider-icon::after {
-    left: string.unquote('calc(50% + (#{$divider-icon-width} / 2))');
-    width: $divider-icon-line-width;
-    @if(meta.mixin-exists(hook-divider-icon-line-right)) {@include hook-divider-icon-line-right();}
+    inset-inline-start: string.unquote('calc(50% + (var(--divider-icon-width) / 2))');
+    width: var(--divider-icon-line-width);
+    @if(meta.mixin-exists(hook-divider-icon-line-end)) {@include hook-divider-icon-line-end();}
 }
 
 
@@ -90,9 +89,9 @@
 .uk-divider-small::after {
     content: "";
     display: inline-block;
-    width: $divider-small-width;
+    width: var(--divider-small-width);
     max-width: 100%;
-    border-top: $divider-small-border-width solid $divider-small-border;
+    border-top: var(--divider-small-border-width) solid var(--divider-small-border);
     vertical-align: top;
     @if(meta.mixin-exists(hook-divider-small)) {@include hook-divider-small();}
 }
@@ -103,10 +102,10 @@
 
 .uk-divider-vertical {
     width: max-content;
-    height: $divider-vertical-height;
-    margin-left: auto;
-    margin-right: auto;
-    border-left: $divider-vertical-border-width solid $divider-vertical-border;
+    height: var(--divider-vertical-height);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    border-inline-start: var(--divider-vertical-border-width) solid var(--divider-vertical-border);
     @if(meta.mixin-exists(hook-divider-vertical)) {@include hook-divider-vertical();}
 }
 
@@ -116,10 +115,12 @@
 
 @if(meta.mixin-exists(hook-divider-misc)) {@include hook-divider-misc();}
 
+// @mixin hook-divider-variables(){}
+// @mixin hook-divider(){}
 // @mixin hook-divider-icon(){}
 // @mixin hook-divider-icon-line(){}
-// @mixin hook-divider-icon-line-left(){}
-// @mixin hook-divider-icon-line-right(){}
+// @mixin hook-divider-icon-line-start(){}
+// @mixin hook-divider-icon-line-end(){}
 // @mixin hook-divider-small(){}
 // @mixin hook-divider-vertical(){}
 // @mixin hook-divider-misc(){}
@@ -127,6 +128,7 @@
 
 // Inverse
 // ========================================================================
+
 
 
 

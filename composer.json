@@ -1,7 +1,7 @@
 {
     "name": "getprkit/core",
     "type": "library",
-    "description": "PRKit, a fork of UIkit with native CSS variables, color palettes and improved inverse mode",
+    "description": "PrKit is a lightweight and modular front-end framework for developing fast and powerful web interfaces.",
     "keywords": [],
     "homepage": "https://github.com/getprkit/core",
     "authors": [],

@@ -13,19 +13,20 @@
 
 
 
+
 /* ========================================================================
    Component: Placeholder
  ========================================================================== */
 
 .uk-placeholder {
-    margin-bottom: $placeholder-margin-vertical;
-    padding: $placeholder-padding-vertical $placeholder-padding-horizontal;
-    background: $placeholder-background;
+    margin-bottom: var(--placeholder-margin-vertical);
+    padding: var(--placeholder-padding-vertical) var(--placeholder-padding-horizontal);
+    background: var(--placeholder-background);
     @if(meta.mixin-exists(hook-placeholder)) {@include hook-placeholder();}
 }
 
 /* Add margin if adjacent element */
-* + .uk-placeholder { margin-top: $placeholder-margin-vertical; }
+* + .uk-placeholder { margin-top: var(--placeholder-margin-vertical); }
 
 /*
  * Remove margin from the last-child
@@ -39,5 +40,16 @@
 
 @if(meta.mixin-exists(hook-placeholder-misc)) {@include hook-placeholder-misc();}
 
+// @mixin hook-placeholder-variables(){}
 // @mixin hook-placeholder(){}
 // @mixin hook-placeholder-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+
+
+
+
+// @mixin hook-inverse-placeholder(){}

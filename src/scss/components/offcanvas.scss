@@ -25,9 +25,7 @@
 // Variables
 // ========================================================================
 
-
-
-
+$offcanvas-bar-color-mode:                       light !default; // FIXME: need to change inverse process
 
 
 
@@ -48,8 +46,9 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 0;
-    z-index: $offcanvas-z-index;
+    inset-inline-start: 0;
+    z-index: var(--offcanvas-z-index);
+    @if(meta.mixin-exists(hook-offcanvas)) {@include hook-offcanvas();}
 }
 
 /*
@@ -57,8 +56,8 @@
  */
 
 .uk-offcanvas-flip .uk-offcanvas {
-    right: 0;
-    left: auto;
+    inset-inline-start: auto;
+    inset-inline-end: 0;
 }
 
 
@@ -72,17 +71,17 @@
  */
 
 .uk-offcanvas-bar {
-    --uk-inverse: #{$offcanvas-bar-color-mode};
+    --uk-inverse: var(--offcanvas-bar-color-mode);
     /* 1 */
     position: absolute;
     top: 0;
     bottom: 0;
-    left: (-$offcanvas-bar-width);
+    inset-inline-start: calc(var(--offcanvas-bar-width) * -1);
     /* 2 */
     box-sizing: border-box;
-    width: $offcanvas-bar-width;
-    padding: $offcanvas-bar-padding-vertical $offcanvas-bar-padding-horizontal;
-    background: $offcanvas-bar-background;
+    width: var(--offcanvas-bar-width);
+    padding: var(--offcanvas-bar-padding-vertical) var(--offcanvas-bar-padding-horizontal);
+    background: var(--offcanvas-bar-background);
     /* 3 */
     overflow-y: auto;
     @if(meta.mixin-exists(hook-offcanvas-bar)) {@include hook-offcanvas-bar();}
@@ -92,9 +91,9 @@
 @media (min-width: $breakpoint-small) {
 
     .uk-offcanvas-bar {
-        left: (-$offcanvas-bar-width-s);
-        width: $offcanvas-bar-width-s;
-        padding: $offcanvas-bar-padding-vertical-s $offcanvas-bar-padding-horizontal-s;
+        inset-inline-start: calc(var(--offcanvas-bar-width-s) * -1);
+        width: var(--offcanvas-bar-width-s);
+        padding: var(--offcanvas-bar-padding-vertical-s) var(--offcanvas-bar-padding-horizontal-s);
     }
 
 }
@@ -105,14 +104,14 @@
 
 /* Flip modifier */
 .uk-offcanvas-flip .uk-offcanvas-bar {
-    left: auto;
-    right: (-$offcanvas-bar-width);
+    inset-inline-start: auto;
+    inset-inline-end: calc(var(--offcanvas-bar-width) * -1);
 }
 
 /* Tablet landscape and bigger */
 @media (min-width: $breakpoint-small) {
 
-    .uk-offcanvas-flip .uk-offcanvas-bar { right: (-$offcanvas-bar-width-s); }
+    .uk-offcanvas-flip .uk-offcanvas-bar { inset-inline-end: calc(var(--offcanvas-bar-width-s) * -1); }
 
 }
 
@@ -120,18 +119,18 @@
  * Open
  */
 
-.uk-open > .uk-offcanvas-bar { left: 0; }
+.uk-open > .uk-offcanvas-bar { inset-inline-start: 0; }
 .uk-offcanvas-flip .uk-open > .uk-offcanvas-bar {
-    left: auto;
-    right: 0;
+    inset-inline-start: auto;
+    inset-inline-end: 0;
 }
 
 /*
  * Slide Animation (Used in slide and push mode)
  */
 
-.uk-offcanvas-bar-animation { transition: left 0.3s ease-out; }
-.uk-offcanvas-flip .uk-offcanvas-bar-animation { transition-property: right; }
+.uk-offcanvas-bar-animation { transition: inset-inline-start 0.3s ease-out; }
+.uk-offcanvas-flip .uk-offcanvas-bar-animation { transition-property: inset-inline-end; }
 
 /*
  * Reveal Animation
@@ -146,7 +145,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    inset-inline-start: 0;
     /* 2 */
     width: 0;
     overflow: hidden;
@@ -156,21 +155,21 @@
 
 .uk-offcanvas-reveal .uk-offcanvas-bar {
     /* 4 */
-    left: 0;
+    inset-inline-start: 0;
 }
 
 .uk-offcanvas-flip .uk-offcanvas-reveal .uk-offcanvas-bar {
     /* 4 */
-    left: auto;
-    right: 0;
+    inset-inline-start: auto;
+    inset-inline-end: 0;
 }
 
-.uk-open > .uk-offcanvas-reveal { width: $offcanvas-bar-width; }
+.uk-open > .uk-offcanvas-reveal { width: var(--offcanvas-bar-width); }
 
 /* Tablet landscape and bigger */
 @media (min-width: $breakpoint-small) {
 
-    .uk-open > .uk-offcanvas-reveal { width: $offcanvas-bar-width-s; }
+    .uk-open > .uk-offcanvas-reveal { width: var(--offcanvas-bar-width-s); }
 
 }
 
@@ -179,8 +178,8 @@
  */
 
 .uk-offcanvas-flip .uk-offcanvas-reveal {
-    right: 0;
-    left: auto;
+    inset-inline-start: auto;
+    inset-inline-end: 0;
 }
 
 
@@ -190,10 +189,10 @@
 
 .uk-offcanvas-close {
     position: absolute;
-    z-index: $offcanvas-z-index;
-    top: $offcanvas-close-position;
-    right: $offcanvas-close-position;
-    padding: $offcanvas-close-padding;
+    z-index: var(--offcanvas-z-index);
+    top: var(--offcanvas-close-position);
+    inset-inline-end: var(--offcanvas-close-position);
+    padding: var(--offcanvas-close-padding);
     @if(meta.mixin-exists(hook-offcanvas-close)) {@include hook-offcanvas-close();}
 }
 
@@ -201,8 +200,8 @@
 @media (min-width: $breakpoint-small) {
 
     .uk-offcanvas-close {
-        top: $offcanvas-close-position-s;
-        right: $offcanvas-close-position-s;
+        top: var(--offcanvas-close-position-s);
+        inset-inline-end: var(--offcanvas-close-position-s);
     }
 
 }
@@ -241,9 +240,9 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
-    right: 0;
-    background: $offcanvas-overlay-background;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    background: var(--offcanvas-overlay-background);
     /* 2 */
     opacity: 0;
     transition: opacity 0.15s linear;
@@ -275,15 +274,15 @@
 
 /*
  * Prepare slide-out animation (Used in reveal and push mode)
- * Using `position: left` instead of `transform` because position `fixed` elements like sticky navbars
+ * Using `position: left/start` instead of `transform` because position `fixed` elements like sticky navbars
  * lose their fixed state and behaves like `absolute` within a transformed container
  * 1. Provide a fixed width and prevent shrinking
  */
 
 .uk-offcanvas-container {
     position: relative;
-    left: 0;
-    transition: left 0.3s ease-out;
+    inset-inline-start: 0;
+    transition: inset-inline-start 0.3s ease-out;
     /* 1 */
     box-sizing: border-box;
     width: 100%;
@@ -293,16 +292,16 @@
  * Activate slide-out animation
  */
 
-:not(.uk-offcanvas-flip).uk-offcanvas-container-animation { left: $offcanvas-bar-width; }
+:not(.uk-offcanvas-flip).uk-offcanvas-container-animation { inset-inline-start: var(--offcanvas-bar-width); }
 
-.uk-offcanvas-flip.uk-offcanvas-container-animation { left: (-$offcanvas-bar-width); }
+.uk-offcanvas-flip.uk-offcanvas-container-animation { inset-inline-start: calc(var(--offcanvas-bar-width) * -1); }
 
 /* Tablet landscape and bigger */
 @media (min-width: $breakpoint-small) {
 
-    :not(.uk-offcanvas-flip).uk-offcanvas-container-animation { left: $offcanvas-bar-width-s; }
+    :not(.uk-offcanvas-flip).uk-offcanvas-container-animation { inset-inline-start: var(--offcanvas-bar-width-s); }
 
-    .uk-offcanvas-flip.uk-offcanvas-container-animation { left: (-$offcanvas-bar-width-s); }
+    .uk-offcanvas-flip.uk-offcanvas-container-animation { inset-inline-start: calc(var(--offcanvas-bar-width-s) * -1); }
 
 }
 
@@ -312,7 +311,19 @@
 
 @if(meta.mixin-exists(hook-offcanvas-misc)) {@include hook-offcanvas-misc();}
 
+// @mixin hook-offcanvas-variables(){}
+// @mixin hook-offcanvas(){}
 // @mixin hook-offcanvas-bar(){}
 // @mixin hook-offcanvas-close(){}
 // @mixin hook-offcanvas-overlay(){}
 // @mixin hook-offcanvas-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+
+
+
+
+// @mixin hook-inverse-offcanvas-overlay(){}

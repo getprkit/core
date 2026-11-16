@@ -18,6 +18,7 @@
 
 
 
+
 /* ========================================================================
    Component: Slider
  ========================================================================== */
@@ -55,10 +56,10 @@
  */
 
 .uk-slider-container-offset {
-    margin-left: $slider-container-margin-left;
-    margin-right: $slider-container-margin-right;
-    padding-left: (-$slider-container-margin-left);
-    padding-right: (-$slider-container-margin-right);
+    margin-inline-start: var(--slider-container-margin-inline-start);
+    margin-inline-end: var(--slider-container-margin-inline-end);
+    padding-inline-start: calc(var(--slider-container-margin-inline-start) * -1);
+    padding-inline-end: calc(var(--slider-container-margin-inline-end) * -1);
 }
 
 /* Items
@@ -121,5 +122,6 @@
 
 @if(meta.mixin-exists(hook-slider-misc)) {@include hook-slider-misc();}
 
+// @mixin hook-slider-variables(){}
 // @mixin hook-slider(){}
 // @mixin hook-slider-misc(){}

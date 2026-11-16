@@ -20,17 +20,21 @@
    Component: Description list
  ========================================================================== */
 
+ .uk-description-list {
+    @if(meta.mixin-exists(hook-description-list)) {@include hook-description-list();}
+ }
+
 /*
  * Term
  */
 
 .uk-description-list > dt {
-    color: $description-list-term-color;
+    color: var(--description-list-term-color);
     @if(meta.mixin-exists(hook-description-list-term)) {@include hook-description-list-term();}
 }
 
 .uk-description-list > dt:nth-child(n+2) {
-    margin-top: $description-list-term-margin-top;
+    margin-top: var(--description-list-term-margin-top);
 }
 
 /*
@@ -50,9 +54,9 @@
  */
 
 .uk-description-list-divider > dt:nth-child(n+2) {
-    margin-top: $description-list-divider-term-margin-top;
-    padding-top: $description-list-divider-term-margin-top;
-    border-top: $description-list-divider-term-border-width solid $description-list-divider-term-border;
+    margin-top: var(--description-list-divider-term-margin-top);
+    padding-top: var(--description-list-divider-term-margin-top);
+    border-top: var(--description-list-divider-term-border-width) solid var(--description-list-divider-term-border);
     @if(meta.mixin-exists(hook-description-list-divider-term)) {@include hook-description-list-divider-term();}
 }
 
@@ -62,7 +66,32 @@
 
 @if(meta.mixin-exists(hook-description-list-misc)) {@include hook-description-list-misc();}
 
+// @mixin hook-description-list-variables(){}
+// @mixin hook-description-list(){}
 // @mixin hook-description-list-term(){}
 // @mixin hook-description-list-description(){}
 // @mixin hook-description-list-divider-term(){}
 // @mixin hook-description-list-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+
+
+.hook-inverse-component-description-list {
+
+    .uk-description-list > dt {
+        color: var(--inverse-description-list-term-color);
+        @if(meta.mixin-exists(hook-inverse-description-list-term)) {@include hook-inverse-description-list-term();}
+    }
+
+    .uk-description-list-divider > dt:nth-child(n+2) {
+        border-top-color: var(--inverse-description-list-divider-term-border);
+        @if(meta.mixin-exists(hook-inverse-description-list-divider-term)) {@include hook-inverse-description-list-divider-term();}
+    }
+
+}
+
+// @mixin hook-inverse-description-list-term(){}
+// @mixin hook-inverse-description-list-divider-term(){}

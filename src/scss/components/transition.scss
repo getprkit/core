@@ -12,6 +12,8 @@
 //                  `uk-transition-slide-bottom-*`
 //                  `uk-transition-slide-left-*`
 //                  `uk-transition-slide-right-*`
+//                  `uk-transition-slide-start-*`
+//                  `uk-transition-slide-end-*`
 //                  `uk-transition-opaque`
 //                  `uk-transition-slow`
 //                  `uk-transition-disable`
@@ -26,8 +28,6 @@
 
 // Variables
 // ========================================================================
-
-
 
 
 
@@ -63,7 +63,7 @@
     transform: translate(var(--uk-position-translate-x), var(--uk-position-translate-y))
                translate(var(--uk-translate-x), var(--uk-translate-y))
                scale(var(--uk-scale-x), var(--uk-scale-y));
-    transition: $transition-duration ease-out;
+    transition: var(--transition-duration) ease-out;
     transition-property: opacity, transform, filter;
     opacity: 0;
 }
@@ -90,8 +90,8 @@
     --uk-scale-y: 1;
 }
 .uk-transition-scale-down {
-    --uk-scale-x: #{$transition-scale};
-    --uk-scale-y: #{$transition-scale};
+    --uk-scale-x: var(--transition-scale);
+    --uk-scale-y: var(--transition-scale);
 }
 
 /* Show */
@@ -99,8 +99,8 @@
 .uk-transition-toggle:focus .uk-transition-scale-up,
 .uk-transition-toggle:focus-within .uk-transition-scale-up,
 .uk-transition-active.uk-active .uk-transition-scale-up {
-    --uk-scale-x: #{$transition-scale};
-    --uk-scale-y: #{$transition-scale};
+    --uk-scale-x: var(--transition-scale);
+    --uk-scale-y: var(--transition-scale);
     opacity: 1;
 }
 
@@ -121,16 +121,22 @@
 .uk-transition-slide-bottom { --uk-translate-y: 100%; }
 .uk-transition-slide-left { --uk-translate-x: -100%; }
 .uk-transition-slide-right { --uk-translate-x: 100%; }
+.uk-transition-slide-start { --uk-translate-x: calc(-100% * var(--uk-dir-sign)); }
+.uk-transition-slide-end { --uk-translate-x: calc(100% * var(--uk-dir-sign)); }
 
-.uk-transition-slide-top-small { --uk-translate-y: calc(-1 * #{$transition-slide-small-translate}); }
-.uk-transition-slide-bottom-small { --uk-translate-y: #{$transition-slide-small-translate}; }
-.uk-transition-slide-left-small { --uk-translate-x: calc(-1 * #{$transition-slide-small-translate}); }
-.uk-transition-slide-right-small { --uk-translate-x: #{$transition-slide-small-translate}; }
+.uk-transition-slide-top-small { --uk-translate-y: calc(-1 * var(--transition-slide-small-translate)); }
+.uk-transition-slide-bottom-small { --uk-translate-y: var(--transition-slide-small-translate); }
+.uk-transition-slide-left-small { --uk-translate-x: calc(-1 * var(--transition-slide-small-translate)); }
+.uk-transition-slide-right-small { --uk-translate-x: var(--transition-slide-small-translate); }
+.uk-transition-slide-start-small { --uk-translate-x: calc((-1 * var(--transition-slide-small-translate)) * var(--uk-dir-sign)); }
+.uk-transition-slide-end-small { --uk-translate-x: calc(var(--transition-slide-small-translate) * var(--uk-dir-sign)); }
 
-.uk-transition-slide-top-medium { --uk-translate-y: calc(-1 * #{$transition-slide-medium-translate}); }
-.uk-transition-slide-bottom-medium { --uk-translate-y: #{$transition-slide-medium-translate}; }
-.uk-transition-slide-left-medium { --uk-translate-x: calc(-1 * #{$transition-slide-medium-translate}); }
-.uk-transition-slide-right-medium { --uk-translate-x: #{$transition-slide-medium-translate}; }
+.uk-transition-slide-top-medium { --uk-translate-y: calc(-1 * var(--transition-slide-medium-translate)); }
+.uk-transition-slide-bottom-medium { --uk-translate-y: var(--transition-slide-medium-translate); }
+.uk-transition-slide-left-medium { --uk-translate-x: calc(-1 * var(--transition-slide-medium-translate)); }
+.uk-transition-slide-right-medium { --uk-translate-x: var(--transition-slide-medium-translate); }
+.uk-transition-slide-start-medium { --uk-translate-x: calc((-1 * var(--transition-slide-medium-translate)) * var(--uk-dir-sign)); }
+.uk-transition-slide-end-medium { --uk-translate-x: calc(var(--transition-slide-medium-translate) * var(--uk-dir-sign)); }
 
 /* Show */
 .uk-transition-toggle:hover [class*="uk-transition-slide"],
@@ -152,7 +158,7 @@
 /* Duration modifier
  ========================================================================== */
 
-.uk-transition-slow { transition-duration: $transition-slow-duration; }
+.uk-transition-slow { transition-duration: var(--transition-slow-duration); }
 
 /* Disable modifier
  ========================================================================== */
@@ -166,4 +172,5 @@
 
 @if(meta.mixin-exists(hook-transition-misc)) {@include hook-transition-misc();}
 
+// @mixin hook-transition-variables(){}
 // @mixin hook-transition-misc(){}

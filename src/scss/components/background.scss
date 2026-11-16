@@ -13,6 +13,7 @@
 
 
 
+
 /* ========================================================================
    Component: Background
  ========================================================================== */
@@ -21,10 +22,10 @@
 /* Color
  ========================================================================== */
 
-.uk-background-default { background-color: $background-default-background; }
-.uk-background-muted { background-color: $background-muted-background; }
-.uk-background-primary { background-color: $background-primary-background; }
-.uk-background-secondary { background-color: $background-secondary-background; }
+.uk-background-default { background-color: var(--background-default-background); }
+.uk-background-muted { background-color: var(--background-muted-background); }
+.uk-background-primary { background-color: var(--background-primary-background); }
+.uk-background-secondary { background-color: var(--background-secondary-background); }
 
 
 /* Size
@@ -50,12 +51,18 @@
 .uk-background-top-left { background-position: 0 0; }
 .uk-background-top-center { background-position: 50% 0; }
 .uk-background-top-right { background-position: 100% 0; }
+.uk-background-top-start { background-position: var(--uk-dir-start) 0; }
+.uk-background-top-end { background-position: var(--uk-dir-end) 0; }
 .uk-background-center-left { background-position: 0 50%; }
 .uk-background-center-center { background-position: 50% 50%; }
 .uk-background-center-right { background-position: 100% 50%; }
+.uk-background-center-start { background-position: var(--uk-dir-start) 50%; }
+.uk-background-center-end { background-position: var(--uk-dir-end) 50%; }
 .uk-background-bottom-left { background-position: 0 100%; }
 .uk-background-bottom-center { background-position: 50% 100%; }
 .uk-background-bottom-right { background-position: 100% 100%; }
+.uk-background-bottom-start { background-position: var(--uk-dir-start) 100%; }
+.uk-background-bottom-end { background-position: var(--uk-dir-end) 100%; }
 
 
 /* Repeat
@@ -135,4 +142,13 @@
 
 @if(meta.mixin-exists(hook-background-misc)) {@include hook-background-misc();}
 
+// @mixin hook-background-variables(){}
 // @mixin hook-background-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+
+
+

@@ -20,9 +20,6 @@
 
 
 
-
-
-
 /* ========================================================================
    Component: Subnav
  ========================================================================== */
@@ -41,7 +38,7 @@
     /* 2 */
     align-items: center;
     /* 3 */
-    margin-left: (-$subnav-margin-horizontal);
+    margin-inline-start: calc(var(--subnav-margin-horizontal) * -1);
     /* 4 */
     padding: 0;
     list-style: none;
@@ -58,7 +55,7 @@
     /* 1 */
     flex: none;
     /* 2 */
-    padding-left: $subnav-margin-horizontal;
+    padding-inline-start: var(--subnav-margin-horizontal);
     /* 3 */
     position: relative;
 }
@@ -82,20 +79,20 @@
     /* 2 */
     column-gap: 0.25em;
     /* 3 */
-    color: $subnav-item-color;
+    color: var(--subnav-item-color);
     @if(meta.mixin-exists(hook-subnav-item)) {@include hook-subnav-item();}
 }
 
 /* Hover */
 .uk-subnav > * > a:hover {
-    color: $subnav-item-hover-color;
-    text-decoration: $subnav-item-hover-text-decoration;
+    color: var(--subnav-item-hover-color);
+    text-decoration: var(--subnav-item-hover-text-decoration);
     @if(meta.mixin-exists(hook-subnav-item-hover)) {@include hook-subnav-item-hover();}
 }
 
 /* Active */
 .uk-subnav > .uk-active > a {
-    color: $subnav-item-active-color;
+    color: var(--subnav-item-active-color);
     @if(meta.mixin-exists(hook-subnav-item-active)) {@include hook-subnav-item-active();}
 }
 
@@ -107,7 +104,7 @@
  * Set gutter
  */
 
-.uk-subnav-divider { margin-left: -(($subnav-divider-margin-horizontal * 2) + $subnav-divider-border-width); }
+.uk-subnav-divider { margin-inline-start: calc(((var(--subnav-divider-margin-horizontal) * 2) + var(--subnav-divider-border-width)) * -1); }
 
 /*
  * Align items and divider vertically
@@ -125,15 +122,15 @@
 
 .uk-subnav-divider > ::before {
     content: "";
-    height: $subnav-divider-border-height;
-    margin-left: ($subnav-divider-margin-horizontal - $subnav-margin-horizontal);
-    margin-right: $subnav-divider-margin-horizontal;
-    border-left: $subnav-divider-border-width solid transparent;
+    height: var(--subnav-divider-border-height);
+    margin-inline-start: calc(var(--subnav-divider-margin-horizontal) - var(--subnav-margin-horizontal));
+    margin-inline-end: var(--subnav-divider-margin-horizontal);
+    border-inline-start: var(--subnav-divider-border-width) solid transparent;
 }
 
 /* 1 */
 .uk-subnav-divider > :nth-child(n+2):not(.uk-first-column)::before {
-    border-left-color: $subnav-divider-border;
+    border-inline-start-color: var(--subnav-divider-border);
     @if(meta.mixin-exists(hook-subnav-divider)) {@include hook-subnav-divider();}
 }
 
@@ -145,34 +142,34 @@
  * Gutter
  */
 
-.uk-subnav-pill { margin-left: (-$subnav-pill-margin-horizontal); }
-.uk-subnav-pill > * { padding-left: $subnav-pill-margin-horizontal; }
+.uk-subnav-pill { margin-inline-start: calc(var(--subnav-pill-margin-horizontal) - 1); }
+.uk-subnav-pill > * { padding-inline-start: var(--subnav-pill-margin-horizontal); }
 
 .uk-subnav-pill > * > :first-child {
-    padding: $subnav-pill-item-padding-vertical $subnav-pill-item-padding-horizontal;
-    background: $subnav-pill-item-background;
-    color: $subnav-pill-item-color;
+    padding: var(--subnav-pill-item-padding-vertical) var(--subnav-pill-item-padding-horizontal);
+    background: var(--subnav-pill-item-background);
+    color: var(--subnav-pill-item-color);
     @if(meta.mixin-exists(hook-subnav-pill-item)) {@include hook-subnav-pill-item();}
 }
 
 /* Hover */
 .uk-subnav-pill > * > a:hover {
-    background-color: $subnav-pill-item-hover-background;
-    color: $subnav-pill-item-hover-color;
+    background-color: var(--subnav-pill-item-hover-background);
+    color: var(--subnav-pill-item-hover-color);
     @if(meta.mixin-exists(hook-subnav-pill-item-hover)) {@include hook-subnav-pill-item-hover();}
 }
 
 /* OnClick */
 .uk-subnav-pill > * > a:active {
-    background-color: $subnav-pill-item-onclick-background;
-    color: $subnav-pill-item-onclick-color;
+    background-color: var(--subnav-pill-item-onclick-background);
+    color: var(--subnav-pill-item-onclick-color);
     @if(meta.mixin-exists(hook-subnav-pill-item-onclick)) {@include hook-subnav-pill-item-onclick();}
 }
 
 /* Active */
 .uk-subnav-pill > .uk-active > a {
-    background-color: $subnav-pill-item-active-background;
-    color: $subnav-pill-item-active-color;
+    background-color: var(--subnav-pill-item-active-background);
+    color: var(--subnav-pill-item-active-color);
     @if(meta.mixin-exists(hook-subnav-pill-item-active)) {@include hook-subnav-pill-item-active();}
 }
 
@@ -182,7 +179,7 @@
  ========================================================================== */
 
 .uk-subnav > .uk-disabled > :first-child {
-    color: $subnav-item-disabled-color;
+    color: var(--subnav-item-disabled-color);
     @if(meta.mixin-exists(hook-subnav-item-disabled)) {@include hook-subnav-item-disabled();}
 }
 
@@ -192,6 +189,7 @@
 
 @if(meta.mixin-exists(hook-subnav-misc)) {@include hook-subnav-misc();}
 
+// @mixin hook-subnav-variables(){}
 // @mixin hook-subnav(){}
 // @mixin hook-subnav-item(){}
 // @mixin hook-subnav-item-hover(){}
@@ -207,6 +205,7 @@
 
 // Inverse
 // ========================================================================
+
 
 
 

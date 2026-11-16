@@ -38,12 +38,13 @@
     display: none;
     /* 2 */
     position: absolute;
-    z-index: $drop-z-index;
-    --uk-position-offset: #{$drop-margin};
-    --uk-position-viewport-offset: #{$drop-viewport-margin};
+    z-index: var(--drop-z-index);
+    --uk-position-offset: var(--drop-margin);
+    --uk-position-viewport-offset: var(--drop-viewport-margin);
     /* 3 */
     box-sizing: border-box;
-    width: $drop-width;
+    width: var(--drop-width);
+    @if(meta.mixin-exists(hook-drop)) {@include hook-drop();}
 }
 
 /* Show */
@@ -60,11 +61,11 @@
  ========================================================================== */
 
 .uk-drop-parent-icon {
-    margin-left: $drop-parent-icon-margin-left;
+    margin-inline-start: var(--drop-parent-icon-margin-inline-start);
     transition: transform 0.3s ease-out;
 }
 
-[aria-expanded="true"] > .uk-drop-parent-icon { transform: rotateX(180deg); }
+[aria-expanded="true"] > .uk-drop-parent-icon { transform: rotateX(calc(180deg * var(--uk-dir-sign))); }
 
 
 // Hooks
@@ -72,4 +73,6 @@
 
 @if(meta.mixin-exists(hook-drop-misc)) {@include hook-drop-misc();}
 
+// @mixin hook-drop-variables(){}
+// @mixin hook-drop(){}
 // @mixin hook-drop-misc(){}

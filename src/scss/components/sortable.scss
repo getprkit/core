@@ -22,7 +22,6 @@
 
 
 
-
 /* ========================================================================
    Component: Sortable
  ========================================================================== */
@@ -44,7 +43,7 @@
 
 .uk-sortable-drag {
     position: fixed !important;
-    z-index: $sortable-dragged-z-index !important;
+    z-index: var(--sortable-dragged-z-index) !important;
     pointer-events: none;
     @if(meta.mixin-exists(hook-sortable-drag)) {@include hook-sortable-drag();}
 }
@@ -54,7 +53,7 @@
  ========================================================================== */
 
 .uk-sortable-placeholder {
-    opacity: $sortable-placeholder-opacity;
+    opacity: var(--sortable-placeholder-opacity);
     pointer-events: none;
     @if(meta.mixin-exists(hook-sortable-placeholder)) {@include hook-sortable-placeholder();}
 }
@@ -64,7 +63,7 @@
  ========================================================================== */
 
 .uk-sortable-empty {
-    min-height: $sortable-empty-height;
+    min-height: var(--sortable-empty-height);
     @if(meta.mixin-exists(hook-sortable-empty)) {@include hook-sortable-empty();}
 }
 
@@ -82,6 +81,7 @@
 
 @if(meta.mixin-exists(hook-sortable-misc)) {@include hook-sortable-misc();}
 
+// @mixin hook-sortable-variables(){}
 // @mixin hook-sortable(){}
 // @mixin hook-sortable-drag(){}
 // @mixin hook-sortable-placeholder(){}

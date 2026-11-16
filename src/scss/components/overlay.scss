@@ -16,6 +16,9 @@
 // Variables
 // ========================================================================
 
+$overlay-default-color-mode:                     dark !default; // FIXME: need to change inverse process
+
+$overlay-primary-color-mode:                     light !default; // FIXME: need to change inverse process
 
 
 
@@ -25,7 +28,7 @@
  ========================================================================== */
 
 .uk-overlay {
-    padding: $overlay-padding-vertical $overlay-padding-horizontal;
+    padding: var(--overlay-padding-vertical) var(--overlay-padding-horizontal);
     @if(meta.mixin-exists(hook-overlay)) {@include hook-overlay();}
 }
 
@@ -52,8 +55,8 @@
  */
 
 .uk-overlay-default {
-    --uk-inverse: #{$overlay-default-color-mode};
-    background: $overlay-default-background;
+    --uk-inverse: var(--overlay-default-color-mode);
+    background: var(--overlay-default-background);
     @if(meta.mixin-exists(hook-overlay-default)) {@include hook-overlay-default();}
 }
 
@@ -67,7 +70,7 @@
 
 .uk-overlay-primary {
     --uk-inverse: #{$overlay-primary-color-mode};
-    background: $overlay-primary-background;
+    background: var(--overlay-primary-background);
     @if(meta.mixin-exists(hook-overlay-primary)) {@include hook-overlay-primary();}
 }
 
@@ -81,8 +84,19 @@
 
 @if(meta.mixin-exists(hook-overlay-misc)) {@include hook-overlay-misc();}
 
+// @mixin hook-overlay-variables(){}
 // @mixin hook-overlay(){}
 // @mixin hook-overlay-icon(){}
 // @mixin hook-overlay-default(){}
 // @mixin hook-overlay-primary(){}
 // @mixin hook-overlay-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+
+
+
+
+// @mixin hook-inverse-overlay-default(){}

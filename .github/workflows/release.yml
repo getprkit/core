@@ -146,24 +146,24 @@ jobs:
             npm publish --tag "$tag"
           fi
 
-  notify-site:
-    needs: release
-    if: needs.release.outputs.tag != ''
-    runs-on: ubuntu-slim
-    permissions: {}
-    env:
-      GH_TOKEN: ${{ secrets.UIKIT_SITE_TOKEN }}
-      RELEASE_TAG: ${{ needs.release.outputs.tag }}
-    steps:
-      - name: Notify site of published release
-        run: |
-          jq -n --arg tag "$RELEASE_TAG" --arg repo "$GITHUB_REPOSITORY" \
-            '{event_type: "uikit-release", client_payload: {
-              version: ($tag | ltrimstr("v")),
-              tag: $tag,
-              prerelease: ($tag | contains("-")),
-              release_url: ("https://github.com/" + $repo + "/releases/tag/" + $tag)
-            }}' | gh api --method POST repos/uikit/uikit-site/dispatches --input -
+  # notify-site:
+  #   needs: release
+  #   if: needs.release.outputs.tag != ''
+  #   runs-on: ubuntu-slim
+  #   permissions: {}
+  #   env:
+  #     GH_TOKEN: ${{ secrets.UIKIT_SITE_TOKEN }}
+  #     RELEASE_TAG: ${{ needs.release.outputs.tag }}
+  #   steps:
+  #     - name: Notify site of published release
+  #       run: |
+  #         jq -n --arg tag "$RELEASE_TAG" --arg repo "$GITHUB_REPOSITORY" \
+  #           '{event_type: "uikit-release", client_payload: {
+  #             version: ($tag | ltrimstr("v")),
+  #             tag: $tag,
+  #             prerelease: ($tag | contains("-")),
+  #             release_url: ("https://github.com/" + $repo + "/releases/tag/" + $tag)
+  #           }}' | gh api --method POST repos/uikit/uikit-site/dispatches --input -
 
   sync-develop:
     needs: release

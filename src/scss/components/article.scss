@@ -17,7 +17,6 @@
 
 
 
-
 /* ========================================================================
    Component: Article
  ========================================================================== */
@@ -38,7 +37,7 @@
  ========================================================================== */
 
 .uk-article + .uk-article {
-    margin-top: $article-margin-top;
+    margin-top: var(--article-margin-top);
     @if(meta.mixin-exists(hook-article-adjacent)) {@include hook-article-adjacent();}
 }
 
@@ -47,15 +46,15 @@
  ========================================================================== */
 
 .uk-article-title {
-    font-size: $article-title-font-size;
-    line-height: $article-title-line-height;
+    font-size: var(--article-title-font-size);
+    line-height: var(--article-title-line-height);
     @if(meta.mixin-exists(hook-article-title)) {@include hook-article-title();}
 }
 
 /* Tablet landscape and bigger */
 @media (min-width: $breakpoint-medium) {
 
-    .uk-article-title { font-size: $article-title-font-size-m; }
+    .uk-article-title { font-size: var(--article-title-font-size-m); }
 
 }
 
@@ -64,9 +63,9 @@
  ========================================================================== */
 
 .uk-article-meta {
-    font-size: $article-meta-font-size;
-    line-height: $article-meta-line-height;
-    color: $article-meta-color;
+    font-size: var(--article-meta-font-size);
+    line-height: var(--article-meta-line-height);
+    color: var(--article-meta-color);
     @if(meta.mixin-exists(hook-article-meta)) {@include hook-article-meta();}
 }
 
@@ -76,6 +75,7 @@
 
 @if(meta.mixin-exists(hook-article-misc)) {@include hook-article-misc();}
 
+// @mixin hook-article-variables(){};
 // @mixin hook-article(){}
 // @mixin hook-article-adjacent(){}
 // @mixin hook-article-title(){}
@@ -85,6 +85,7 @@
 
 // Inverse
 // ========================================================================
+
 
 
 

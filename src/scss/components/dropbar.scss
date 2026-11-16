@@ -10,12 +10,16 @@
 //                  `uk-dropbar-bottom`
 //                  `uk-dropbar-left`
 //                  `uk-dropbar-right`
+//                  `uk-dropbar-start`
+//                  `uk-dropbar-end`
 //
 // ========================================================================
 
 
 // Variables
 // ========================================================================
+
+$dropbar-color-mode:                             dark !default; // FIXME: need to change inverse process
 
 
 
@@ -31,16 +35,16 @@
  */
 
 .uk-dropbar {
-    --uk-position-offset: #{$dropbar-margin};
+    --uk-position-offset: var(--dropbar-margin);
     --uk-position-shift-offset: 0;
     --uk-position-viewport-offset: 0;
-    --uk-inverse: #{$dropbar-color-mode};
+    --uk-inverse: var(--dropbar-color-mode);
     /* 1 */
     width: auto;
     /* 2 */
-    padding: $dropbar-padding-top $dropbar-padding-horizontal $dropbar-padding-bottom $dropbar-padding-horizontal;
-    background: $dropbar-background;
-    color: $dropbar-color;
+    padding: var(--dropbar-padding-top) var(--dropbar-padding-horizontal) var(--dropbar-padding-bottom) var(--dropbar-padding-horizontal);
+    background: var(--dropbar-background);
+    color: var(--dropbar-color);
     @if(meta.mixin-exists(hook-dropbar)) {@include hook-dropbar();}
 }
 
@@ -54,8 +58,8 @@
 @media (min-width: $breakpoint-small) {
 
     .uk-dropbar {
-        padding-left: $dropbar-padding-horizontal-s;
-        padding-right: $dropbar-padding-horizontal-s;
+        padding-inline-start: var(--dropbar-padding-horizontal-s);
+        padding-inline-end: var(--dropbar-padding-horizontal-s);
     }
 
 }
@@ -64,8 +68,8 @@
 @media (min-width: $breakpoint-medium) {
 
     .uk-dropbar {
-        padding-left: $dropbar-padding-horizontal-m;
-        padding-right: $dropbar-padding-horizontal-m;
+        padding-inline-start: var(--dropbar-padding-horizontal-m);
+        padding-inline-end: var(--dropbar-padding-horizontal-m);
     }
 
 }
@@ -76,7 +80,7 @@
 
 @if ($dropbar-color-mode != $inverse-global-color-mode) {
 .uk-dropbar :focus-visible {
-    outline-color: $dropbar-focus-outline !important;
+    outline-color: var(--dropbar-focus-outline) !important;
 }
 }
 
@@ -85,8 +89,8 @@
  ========================================================================== */
 
 .uk-dropbar-large {
-    padding-top: $dropbar-large-padding-top;
-    padding-bottom: $dropbar-large-padding-bottom;
+    padding-top: var(--dropbar-large-padding-top);
+    padding-bottom: var(--dropbar-large-padding-bottom);
 }
 
 
@@ -109,15 +113,40 @@
     @if(meta.mixin-exists(hook-dropbar-right)) {@include hook-dropbar-right();}
 }
 
+.uk-dropbar-start {
+    @if(meta.mixin-exists(hook-dropbar-start)) {@include hook-dropbar-start();}
+}
+
+.uk-dropbar-end {
+    @if(meta.mixin-exists(hook-dropbar-end)) {@include hook-dropbar-end();}
+}
+
 
 // Hooks
 // ========================================================================
 
 @if(meta.mixin-exists(hook-dropbar-misc)) {@include hook-dropbar-misc();}
 
+// @mixin hook-dropbar-variables(){}
 // @mixin hook-dropbar(){}
 // @mixin hook-dropbar-top(){}
 // @mixin hook-dropbar-bottom(){}
 // @mixin hook-dropbar-left(){}
 // @mixin hook-dropbar-right(){}
+// @mixin hook-dropbar-start(){}
+// @mixin hook-dropbar-end(){}
 // @mixin hook-dropbar-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+
+
+
+
+// @mixin hook-inverse-dropbar(){}
+// @mixin hook-inverse-dropbar-top(){}
+// @mixin hook-inverse-dropbar-bottom(){}
+// @mixin hook-inverse-dropbar-left(){}
+// @mixin hook-inverse-dropbar-right(){}

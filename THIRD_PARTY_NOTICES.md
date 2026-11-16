@@ -1,6 +1,6 @@
 # Third-Party Notices
 
-PRKit includes code derived from the following projects. Their original
+PrKit includes code derived from the following projects. Their original
 copyright notices and license terms are reproduced below.
 
 ---

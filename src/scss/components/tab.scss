@@ -8,6 +8,8 @@
 // Modifiers:       `uk-tab-bottom`
 //                  `uk-tab-left`
 //                  `uk-tab-right`
+//                  `uk-tab-start`
+//                  `uk-tab-end`
 //
 // States:          `uk-active`
 //                  `uk-disabled`
@@ -36,7 +38,7 @@
     /* 1 */
     flex-wrap: wrap;
     /* 2 */
-    margin-left: (-$tab-margin-horizontal);
+    margin-inline-start: calc(var(--tab-margin-horizontal) * -1);
     /* 3 */
     padding: 0;
     list-style: none;
@@ -53,7 +55,7 @@
     /* 1 */
     flex: none;
     /* 2 */
-    padding-left: $tab-margin-horizontal;
+    padding-inline-start: var(--tab-margin-horizontal);
     /* 3 */
     position: relative;
 }
@@ -79,27 +81,27 @@
     /* 3 */
     justify-content: center;
     /* 4 */
-    padding: $tab-item-padding-vertical $tab-item-padding-horizontal;
-    color: $tab-item-color;
+    padding: var(--tab-item-padding-vertical) var(--tab-item-padding-horizontal);
+    color: var(--tab-item-color);
     @if(meta.mixin-exists(hook-tab-item)) {@include hook-tab-item();}
 }
 
 /* Hover */
 .uk-tab > * > a:hover {
-    color: $tab-item-hover-color;
-    text-decoration: $tab-item-hover-text-decoration;
+    color: var(--tab-item-hover-color);
+    text-decoration: var(--tab-item-hover-text-decoration);
     @if(meta.mixin-exists(hook-tab-item-hover)) {@include hook-tab-item-hover();}
 }
 
 /* Active */
 .uk-tab > .uk-active > a {
-    color: $tab-item-active-color;
+    color: var(--tab-item-active-color);
     @if(meta.mixin-exists(hook-tab-item-active)) {@include hook-tab-item-active();}
 }
 
 /* Disabled */
 .uk-tab > .uk-disabled > a {
-    color: $tab-item-disabled-color;
+    color: var(--tab-item-disabled-color);
     @if(meta.mixin-exists(hook-tab-item-disabled)) {@include hook-tab-item-disabled();}
 }
 
@@ -125,15 +127,19 @@
  */
 
 .uk-tab-left,
-.uk-tab-right {
+.uk-tab-right,
+.uk-tab-start,
+.uk-tab-end {
     flex-direction: column;
     /* 1 */
-    margin-left: 0;
+    margin-inline-start: 0;
 }
 
 /* 1 */
 .uk-tab-left > *,
-.uk-tab-right > * { padding-left: 0; }
+.uk-tab-right > *,
+.uk-tab-start > *,
+.uk-tab-end > * { padding-inline-start: 0; }
 
 .uk-tab-left {
     @if(meta.mixin-exists(hook-tab-left)) {@include hook-tab-left();}
@@ -141,6 +147,14 @@
 
 .uk-tab-right {
     @if(meta.mixin-exists(hook-tab-right)) {@include hook-tab-right();}
+}
+
+.uk-tab-start {
+    @if(meta.mixin-exists(hook-tab-start)) {@include hook-tab-start();}
+}
+
+.uk-tab-end {
+    @if(meta.mixin-exists(hook-tab-end)) {@include hook-tab-end();}
 }
 
 .uk-tab-left > * > a {
@@ -153,12 +167,23 @@
     @if(meta.mixin-exists(hook-tab-right-item)) {@include hook-tab-right-item();}
 }
 
+.uk-tab-start > * > a {
+    justify-content: start;
+    @if(meta.mixin-exists(hook-tab-start-item)) {@include hook-tab-start-item();}
+}
+
+.uk-tab-end > * > a {
+    justify-content: start;
+    @if(meta.mixin-exists(hook-tab-end-item)) {@include hook-tab-end-item();}
+}
+
 
 // Hooks
 // ========================================================================
 
 @if(meta.mixin-exists(hook-tab-misc)) {@include hook-tab-misc();}
 
+// @mixin hook-tab-variables(){}
 // @mixin hook-tab(){}
 // @mixin hook-tab-item(){}
 // @mixin hook-tab-item-hover(){}
@@ -169,12 +194,17 @@
 // @mixin hook-tab-left(){}
 // @mixin hook-tab-left-item(){}
 // @mixin hook-tab-right(){}
+// @mixin hook-tab-start(){}
+// @mixin hook-tab-end(){}
 // @mixin hook-tab-right-item(){}
+// @mixin hook-tab-start-item(){}
+// @mixin hook-tab-end-item(){}
 // @mixin hook-tab-misc(){}
 
 
 // Inverse
 // ========================================================================
+
 
 
 

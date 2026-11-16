@@ -7,24 +7,20 @@ assignees: ''
 
 <!--
 
-👋 Hi, thank you for using UIKit!
+👋 Hi, thank you for using PrKit!
 
 Please open an issues only for a bug report or feature request. Make sure no one else has already opened a similar issue. If you need help or have questions about UIkit, there are few places to start:
 
-- Search our public documentation: https://getuikit.com/docs
-- Ask the community in the Discord chat: https://discord.gg/NEt4Pv7
-- Look for an answer on Stack Overflow: https://stackoverflow.com/questions/ask?tags=getuikit
+- Search our public documentation: https://getprkit.com/docs
+- Ask the community in the Discord chat: https://discord.gg
+- Look for an answer on Stack Overflow: https://stackoverflow.com
 
 -->
 
-### UIkit Version
+### PrKit Version
 
 _Check if the issue is reproducible with the latest stable version._
-<<<<<<< HEAD
-3.25.29
-=======
-3.25.31
->>>>>>> upstream/develop
+1.0.0-beta.2
 
 ### Actual Behavior
 

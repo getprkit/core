@@ -57,6 +57,8 @@ for (const file of (await glob('src/less/**/*.less'))
     }
 }
 function convertLessToSass(source) {
+    source = source.replace(/\r\n?/g, '\n');
+    
     source = rewriteImportsAndVariables(source);
     source = rewriteMathAndEscapes(source);
     source = rewriteMixinsAndHooks(source);
@@ -211,6 +213,13 @@ function resolveDependencies(allVariables, currentKey, dependencies = new Set())
 function getMixinsFromFile(file, source) {
     /* Step 1: get all includes and insert them, so that at least empty mixins exist. */
     for (const [, include] of source.matchAll(/@include ([a-z0-9-]+)/g)) {
+        if (include.startsWith('hook-')) {
+            if (!(include in themeMixins)) {
+                themeMixins[include] = `@mixin ${include}(){}`;
+            }
+            continue;
+        }
+
         if (!(include in themeMixins)) {
             themeMixins[include] = `@mixin ${include}(){}`;
         }
@@ -219,18 +228,67 @@ function getMixinsFromFile(file, source) {
         }
     }
 
-    /* Step 2: get all mixins */
-    for (const [match, mixin] of source.matchAll(
-        /@mixin ([\w-]*)\s*\(.*\)\s*{(\n\s+[\w\W]+?(?=\n})\n| [^\n]+)}/g,
-    )) {
+    const mixinPattern =
+        /@mixin ([\w-]*)\s*\(.*\)\s*{(\n\s+[\w\W]+?(?=\n})\n| [^\n]+)}/g;
+
+    /* Step 2: extract mixins and merge all hooks into mixins-theme. */
+    for (const [match, mixin] of source.matchAll(mixinPattern)) {
+        if (mixin.startsWith('hook-')) {
+            themeMixins[mixin] = mergeHookMixin(themeMixins[mixin], match, mixin);
+            continue;
+        }
+
         themeMixins[mixin] = match;
+
         if (!file.includes('theme/')) {
             coreMixins[mixin] = match;
         }
     }
 
-    /* Step 3: remove the mixins from the file, so that users can overwrite them in their custom code. */
-    return source.replace(/@mixin ([\w-]*)\s*\((.*)\)\s*{(\n(\s+[\w\W]+?)(?=\n})\n| [^\n]+)}/g, '');
+    /* Step 3: remove the mixins from the file, so users can overwrite them in their custom code. */
+    return source.replace(mixinPattern, '');
+}
+
+/*
+ * Merge repeated hook definitions into a single Sass mixin.
+ */
+function mergeHookMixin(existing, incoming, name) {
+    if (!existing) {
+        return incoming;
+    }
+
+    const getSignature = (mixin) => mixin.slice(0, mixin.indexOf('{')).trim();
+
+    const signature = getSignature(existing);
+
+    if (signature !== getSignature(incoming)) {
+        throw new Error(`Cannot merge hook "${name}": definitions have different signatures.`);
+    }
+
+    const getBody = (mixin) => {
+        const body = mixin
+            .slice(mixin.indexOf('{') + 1, mixin.lastIndexOf('}'))
+            .replace(/^\n|\n$/g, '');
+
+        if (!body.trim()) {
+            return '';
+        }
+
+        const lines = body.split('\n');
+        const indentation = Math.min(
+            ...lines.filter((line) => line.trim()).map((line) => line.match(/^[\t ]*/)[0].length),
+        );
+
+        return lines
+            .map((line) => (line.trim() ? `    ${line.slice(indentation)}` : ''))
+            .join('\n');
+    };
+
+    const bodies = [getBody(existing), getBody(incoming)].filter(Boolean);
+
+    return bodies.length
+        ? `${signature} {\n${bodies.join('\n\n')}\n}`
+        : `${signature} {}`;
 }
 
 /*

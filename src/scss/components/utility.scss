@@ -37,12 +37,6 @@
 
 
 
-
-
-
-
-
-
 /* ========================================================================
    Component: Utility
  ========================================================================== */
@@ -69,9 +63,9 @@
  */
 
 .uk-panel-scrollable {
-    height: $panel-scrollable-height;
-    padding: $panel-scrollable-padding;
-    border: $panel-scrollable-border-width solid $panel-scrollable-border;
+    height: var(--panel-scrollable-height);
+    padding: var(--panel-scrollable-padding);
+    border: var(--panel-scrollable-border-width) solid var(--panel-scrollable-border);
     overflow: auto;
     resize: both;
     @if(meta.mixin-exists(hook-panel-scrollable)) {@include hook-panel-scrollable();}
@@ -110,6 +104,8 @@
 
 .uk-float-left { float: left; }
 .uk-float-right { float: right; }
+.uk-float-start { float: inline-start; }
+.uk-float-end { float: inline-end; }
 
 /* 1 */
 [class*="uk-float-"] { max-width: 100%; }
@@ -148,7 +144,7 @@
 
 .uk-overflow-fade-horizontal {
     overflow-x: auto;
-    --uk-overflow-fade-direction: right;
+    --uk-overflow-fade-direction: var(--uk-dir-side-end);
 }
 
 .uk-overflow-fade-vertical {
@@ -162,8 +158,8 @@
     mask-image: linear-gradient(
         to var(--uk-overflow-fade-direction),
         rgba(0,0,0,var(--uk-overflow-fade-start-opacity)),
-        #000 $overflow-fade-size,
-        #000 string.unquote('calc(100% - #{$overflow-fade-size})'),
+        #000 var(--overflow-fade-size),
+        #000 string.unquote('calc(100% - var(--overflow-fade-size))'),
         rgba(0,0,0,var(--uk-overflow-fade-end-opacity))
     );
     /* 2 */
@@ -305,12 +301,18 @@
 .uk-object-top-left { object-position: 0 0; }
 .uk-object-top-center { object-position: 50% 0; }
 .uk-object-top-right { object-position: 100% 0; }
+.uk-object-top-start { object-position: var(--uk-dir-start) 0; }
+.uk-object-top-end { object-position: var(--uk-dir-end) 0; }
 .uk-object-center-left { object-position: 0 50%; }
 .uk-object-center-center { object-position: 50% 50%; }
 .uk-object-center-right { object-position: 100% 50%; }
+.uk-object-center-start { object-position: var(--uk-dir-start) 50%; }
+.uk-object-center-end { object-position: var(--uk-dir-end) 50%; }
 .uk-object-bottom-left { object-position: 0 100%; }
 .uk-object-bottom-center { object-position: 50% 100%; }
 .uk-object-bottom-right { object-position: 100% 100%; }
+.uk-object-bottom-start { object-position: var(--uk-dir-start) 100%; }
+.uk-object-bottom-end { object-position: var(--uk-dir-end) 100%; }
 
 
 /* Border
@@ -318,7 +320,7 @@
 
 .uk-border-circle { border-radius: 50%; }
 .uk-border-pill { border-radius: 500px; }
-.uk-border-rounded { border-radius: $border-rounded-border-radius; }
+.uk-border-rounded { border-radius: var(--border-rounded-border-radius); }
 
 /*
  * Fix `overflow: hidden` to be ignored with border-radius and CSS transforms in Webkit
@@ -330,21 +332,21 @@
 /* Box-shadow
  ========================================================================== */
 
-.uk-box-shadow-small { box-shadow: $global-small-box-shadow; }
-.uk-box-shadow-medium { box-shadow: $global-medium-box-shadow; }
-.uk-box-shadow-large { box-shadow: $global-large-box-shadow; }
-.uk-box-shadow-xlarge { box-shadow: $global-xlarge-box-shadow; }
+.uk-box-shadow-small { box-shadow: var(--global-small-box-shadow); }
+.uk-box-shadow-medium { box-shadow: var(--global-medium-box-shadow); }
+.uk-box-shadow-large { box-shadow: var(--global-large-box-shadow); }
+.uk-box-shadow-xlarge { box-shadow: var(--global-xlarge-box-shadow); }
 
 /*
  * Hover
  */
 
-[class*="uk-box-shadow-hover"] { transition: box-shadow $box-shadow-duration ease-in-out; }
+[class*="uk-box-shadow-hover"] { transition: box-shadow var(--box-shadow-duration) ease-in-out; }
 
-.uk-box-shadow-hover-small:hover { box-shadow: $global-small-box-shadow; }
-.uk-box-shadow-hover-medium:hover { box-shadow: $global-medium-box-shadow; }
-.uk-box-shadow-hover-large:hover { box-shadow: $global-large-box-shadow; }
-.uk-box-shadow-hover-xlarge:hover { box-shadow: $global-xlarge-box-shadow; }
+.uk-box-shadow-hover-small:hover { box-shadow: var(--global-small-box-shadow); }
+.uk-box-shadow-hover-medium:hover { box-shadow: var(--global-medium-box-shadow); }
+.uk-box-shadow-hover-large:hover { box-shadow: var(--global-large-box-shadow); }
+.uk-box-shadow-hover-xlarge:hover { box-shadow: var(--global-xlarge-box-shadow); }
 
 
 /* Box-shadow bottom
@@ -370,15 +372,15 @@
         content: "";
         /* 1 */
         position: absolute;
-        bottom: $box-shadow-bottom-bottom;
-        left: 0;
-        right: 0;
+        bottom: var(--box-shadow-bottom-bottom);
+        inset-inline-start: 0;
+        inset-inline-end: 0;
         z-index: -1;
         /* 2 */
-        height: $box-shadow-bottom-height;
-        border-radius: $box-shadow-bottom-border-radius;
-        background: $box-shadow-bottom-background;
-        filter: blur($box-shadow-bottom-blur);
+        height: var(--box-shadow-bottom-height);
+        border-radius: var(--box-shadow-bottom-border-radius);
+        background: var(--box-shadow-bottom-background);
+        filter: blur(var(--box-shadow-bottom-blur));
         /* 3 */
         will-change: filter;
         @if(meta.mixin-exists(hook-box-shadow-bottom)) {@include hook-box-shadow-bottom();}
@@ -401,10 +403,10 @@
 /* 1 */
 .uk-dropcap > p:first-of-type::first-letter {
     display: block;
-    margin-right: $dropcap-margin-right;
-    float: left;
-    font-size: $dropcap-font-size;
-    line-height: $dropcap-line-height;
+    margin-inline-end: var(--dropcap-margin-inline-end);
+    float: inline-start;
+    font-size: var(--dropcap-font-size);
+    line-height: var(--dropcap-line-height);
     @if(meta.mixin-exists(hook-dropcap)) {@include hook-dropcap();}
 }
 
@@ -428,9 +430,9 @@
 
 .uk-logo {
     /* 1 */
-    font-size: $logo-font-size;
-    font-family: $logo-font-family;
-    color: $logo-color;
+    font-size: var(--logo-font-size);
+    font-family: var(--logo-font-family);
+    color: var(--logo-color);
     /* 2 */
     text-decoration: none;
     @if(meta.mixin-exists(hook-logo)) {@include hook-logo();}
@@ -444,7 +446,7 @@
 
 /* Hover */
 .uk-logo:hover {
-    color: $logo-hover-color;
+    color: var(--logo-hover-color);
     /* 1 */
     text-decoration: none;
     @if(meta.mixin-exists(hook-logo-hover)) {@include hook-logo-hover();}
@@ -484,7 +486,7 @@
  * Create a box-shadow when dragging a file over the upload area
  */
 
-.uk-dragover { box-shadow: $dragover-box-shadow; }
+.uk-dragover { box-shadow: var(--dragover-box-shadow); }
 
 
 /* Blend modes
@@ -510,7 +512,7 @@
 /* Transform
 ========================================================================== */
 
-.uk-transform-center { transform: translate(-50%, -50%); }
+.uk-transform-center { transform: translate(calc(-50% * var(--uk-dir-sign)), -50%); }
 
 
 /* Transform Origin
@@ -519,11 +521,17 @@
 .uk-transform-origin-top-left { transform-origin: 0 0; }
 .uk-transform-origin-top-center { transform-origin: 50% 0; }
 .uk-transform-origin-top-right { transform-origin: 100% 0; }
+.uk-transform-origin-top-start { transform-origin: var(--uk-dir-start) 0; }
+.uk-transform-origin-top-end { transform-origin: var(--uk-dir-end) 0; }
 .uk-transform-origin-center-left { transform-origin: 0 50%; }
 .uk-transform-origin-center-right { transform-origin: 100% 50%; }
+.uk-transform-origin-center-start { transform-origin: var(--uk-dir-start) 50%; }
+.uk-transform-origin-center-end { transform-origin: var(--uk-dir-end) 50%; }
 .uk-transform-origin-bottom-left { transform-origin: 0 100%; }
 .uk-transform-origin-bottom-center { transform-origin: 50% 100%; }
 .uk-transform-origin-bottom-right { transform-origin: 100% 100%; }
+.uk-transform-origin-bottom-start { transform-origin: var(--uk-dir-start) 100%; }
+.uk-transform-origin-bottom-end { transform-origin: var(--uk-dir-end) 100%; }
 
 
 // Hooks
@@ -531,6 +539,7 @@
 
 @if(meta.mixin-exists(hook-utility-misc)) {@include hook-utility-misc();}
 
+// @mixin hook-utility-variables(){}
 // @mixin hook-panel-scrollable(){}
 // @mixin hook-box-shadow-bottom(){}
 // @mixin hook-dropcap(){}
@@ -545,6 +554,8 @@
 
 
 
+
+// @mixin hook-inverse-box-shadow-bottom(){}
 // @mixin hook-inverse-dropcap(){}
 // @mixin hook-inverse-logo(){}
 // @mixin hook-inverse-logo-hover(){}

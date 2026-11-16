@@ -22,12 +22,15 @@
    Component: Column
  ========================================================================== */
 
-[class*="uk-column-"] { column-gap: $column-gutter; }
+[class*="uk-column-"] {
+    column-gap: var(--column-gutter);
+    @if(meta.mixin-exists(hook-column)) {@include hook-column();}
+}
 
 /* Desktop and bigger */
 @media (min-width: $breakpoint-large) {
 
-    [class*="uk-column-"] { column-gap: $column-gutter-l; }
+    [class*="uk-column-"] { column-gap: var(--column-gutter-l); }
 
 }
 
@@ -46,16 +49,16 @@
  */
 
 .uk-column-divider {
-    column-rule: $column-divider-rule-width solid $column-divider-rule-color;
+    column-rule: var(--column-divider-rule-width) solid var(--column-divider-rule-color);
     /* 1 */
-    column-gap: ($column-gutter * 2);
+    column-gap: calc(var(--column-gutter) * 2);
 }
 
 /* Desktop and bigger */
 @media (min-width: $breakpoint-large) {
 
     .uk-column-divider {
-        column-gap: ($column-gutter-l * 2);
+        column-gap: calc(var(--column-gutter-l) * 2);
     }
 
 }
@@ -126,11 +129,14 @@
 
 @if(meta.mixin-exists(hook-column-misc)) {@include hook-column-misc();}
 
+// @mixin hook-column-variables(){}
+// @mixin hook-column(){}
 // @mixin hook-column-misc(){}
 
 
 // Inverse
 // ========================================================================
+
 
 
 

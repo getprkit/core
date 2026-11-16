@@ -28,18 +28,10 @@
 // Variables
 // ========================================================================
 
-
-
-
-
-
-
-
-
-
-
-
-
+$card-default-color-mode:                       dark !default; // FIXME: need to change inverse process
+$card-primary-color-mode:                       light !default; // FIXME: need to change inverse process
+$card-secondary-color-mode:                     light !default; // FIXME: need to change inverse process
+$card-overlay-color-mode:                       dark !default; // FIXME: need to change inverse process
 
 
 
@@ -60,30 +52,30 @@
 
 .uk-card-body {
     display: flow-root;
-    padding: $card-body-padding-vertical $card-body-padding-horizontal;
+    padding: var(--card-body-padding-vertical) var(--card-body-padding-horizontal);
     @if(meta.mixin-exists(hook-card-body)) {@include hook-card-body();}
 }
 
 .uk-card-header {
     display: flow-root;
-    padding: $card-header-padding-vertical $card-header-padding-horizontal;
+    padding: var(--card-header-padding-vertical) var(--card-header-padding-horizontal);
     @if(meta.mixin-exists(hook-card-header)) {@include hook-card-header();}
 }
 
 .uk-card-footer {
     display: flow-root;
-    padding: $card-footer-padding-vertical $card-footer-padding-horizontal;
+    padding: var(--card-footer-padding-vertical) var(--card-footer-padding-horizontal);
     @if(meta.mixin-exists(hook-card-footer)) {@include hook-card-footer();}
 }
 
 /* Desktop and bigger */
 @media (min-width: $breakpoint-large) {
 
-    .uk-card-body { padding: $card-body-padding-vertical-l $card-body-padding-horizontal-l; }
+    .uk-card-body { padding: var(--card-body-padding-vertical-l) var(--card-body-padding-horizontal-l); }
 
-    .uk-card-header { padding: $card-header-padding-vertical-l $card-header-padding-horizontal-l; }
+    .uk-card-header { padding: var(--card-header-padding-vertical-l) var(--card-header-padding-horizontal-l); }
 
-    .uk-card-footer { padding: $card-footer-padding-vertical-l $card-footer-padding-horizontal-l; }
+    .uk-card-footer { padding: var(--card-footer-padding-vertical-l) var(--card-footer-padding-horizontal-l); }
 
 }
 
@@ -110,7 +102,9 @@
 
 .uk-card-media-top,
 .uk-grid-stack > .uk-card-media-left,
-.uk-grid-stack > .uk-card-media-right {
+.uk-grid-stack > .uk-card-media-right,
+.uk-grid-stack > .uk-card-media-start,
+.uk-grid-stack > .uk-card-media-end {
     @if(meta.mixin-exists(hook-card-media-top)) {@include hook-card-media-top();}
 }
 
@@ -126,13 +120,21 @@
     @if(meta.mixin-exists(hook-card-media-right)) {@include hook-card-media-right();}
 }
 
+:not(.uk-grid-stack) > .uk-card-media-start {
+    @if(meta.mixin-exists(hook-card-media-start)) {@include hook-card-media-start();}
+}
+
+:not(.uk-grid-stack) > .uk-card-media-end {
+    @if(meta.mixin-exists(hook-card-media-end)) {@include hook-card-media-end();}
+}
+
 
 /* Title
  ========================================================================== */
 
 .uk-card-title {
-    font-size: $card-title-font-size;
-    line-height: $card-title-line-height;
+    font-size: var(--card-title-font-size);
+    line-height: var(--card-title-line-height);
     @if(meta.mixin-exists(hook-card-title)) {@include hook-card-title();}
 }
 
@@ -150,16 +152,16 @@
 .uk-card-badge {
     /* 1 */
     position: absolute;
-    top: $card-badge-top;
-    right: $card-badge-right;
+    top: var(--card-badge-top);
+    inset-inline-end: var(--card-badge-inline-end);
     z-index: 1;
     /* 2 */
-    height: $card-badge-height;
-    padding: 0 $card-badge-padding-horizontal;
+    height: var(--card-badge-height);
+    padding: 0 var(--card-badge-padding-horizontal);
     /* 3 */
-    background: $card-badge-background;
-    color: $card-badge-color;
-    font-size: $card-badge-font-size;
+    background: var(--card-badge-background);
+    color: var(--card-badge-color);
+    font-size: var(--card-badge-font-size);
     /* 4 */
     display: flex;
     justify-content: center;
@@ -179,7 +181,7 @@
  ========================================================================== */
 
 .uk-card-hover:not(.uk-card-default, .uk-card-primary, .uk-card-secondary, .uk-card-overlay):hover {
-    background-color: $card-hover-background;
+    background-color: var(--card-hover-background);
     @if(meta.mixin-exists(hook-card-hover)) {@include hook-card-hover();}
 }
 
@@ -193,19 +195,19 @@
  */
 
 .uk-card-default {
-    --uk-inverse: #{$card-default-color-mode};
-    background-color: $card-default-background;
-    color: $card-default-color;
+    --uk-inverse: var(--card-default-color-mode);
+    background-color: var(--card-default-background);
+    color: var(--card-default-color);
     @if(meta.mixin-exists(hook-card-default)) {@include hook-card-default();}
 }
 
 .uk-card-default .uk-card-title {
-    color: $card-default-title-color;
+    color: var(--card-default-title-color);
     @if(meta.mixin-exists(hook-card-default-title)) {@include hook-card-default-title();}
 }
 
 .uk-card-default.uk-card-hover:hover {
-    background-color: $card-default-hover-background;
+    background-color: var(--card-default-hover-background);
     @if(meta.mixin-exists(hook-card-default-hover)) {@include hook-card-default-hover();}
 }
 
@@ -228,19 +230,19 @@
  */
 
 .uk-card-primary {
-    --uk-inverse: #{$card-primary-color-mode};
-    background-color: $card-primary-background;
-    color: $card-primary-color;
+    --uk-inverse: var(--card-primary-color-mode);
+    background-color: var(--card-primary-background);
+    color: var(--card-primary-color);
     @if(meta.mixin-exists(hook-card-primary)) {@include hook-card-primary();}
 }
 
 .uk-card-primary .uk-card-title {
-    color: $card-primary-title-color;
+    color: var(--card-primary-title-color);
     @if(meta.mixin-exists(hook-card-primary-title)) {@include hook-card-primary-title();}
 }
 
 .uk-card-primary.uk-card-hover:hover {
-    background-color: $card-primary-hover-background;
+    background-color: var(--card-primary-hover-background);
     @if(meta.mixin-exists(hook-card-primary-hover)) {@include hook-card-primary-hover();}
 }
 
@@ -255,19 +257,19 @@
  */
 
 .uk-card-secondary {
-    --uk-inverse: #{$card-secondary-color-mode};
-    background-color: $card-secondary-background;
-    color: $card-secondary-color;
+    --uk-inverse: var(--card-secondary-color-mode);
+    background-color: var(--card-secondary-background);
+    color: var(--card-secondary-color);
     @if(meta.mixin-exists(hook-card-secondary)) {@include hook-card-secondary();}
 }
 
 .uk-card-secondary .uk-card-title {
-    color: $card-secondary-title-color;
+    color: var(--card-secondary-title-color);
     @if(meta.mixin-exists(hook-card-secondary-title)) {@include hook-card-secondary-title();}
 }
 
 .uk-card-secondary.uk-card-hover:hover {
-    background-color: $card-secondary-hover-background;
+    background-color: var(--card-secondary-hover-background);
     @if(meta.mixin-exists(hook-card-secondary-hover)) {@include hook-card-secondary-hover();}
 }
 
@@ -283,19 +285,19 @@
  */
 
 .uk-card-overlay {
-    --uk-inverse: #{$card-overlay-color-mode};
-    background-color: $card-overlay-background;
-    color: $card-overlay-color;
+    --uk-inverse: var(--card-overlay-color-mode);
+    background-color: var(--card-overlay-background);
+    color: var(--card-overlay-color);
     @if(meta.mixin-exists(hook-card-overlay)) {@include hook-card-overlay();}
 }
 
 .uk-card-overlay .uk-card-title {
-    color: $card-overlay-title-color;
+    color: var(--card-overlay-title-color);
     @if(meta.mixin-exists(hook-card-overlay-title)) {@include hook-card-overlay-title();}
 }
 
 .uk-card-overlay.uk-card-hover:hover {
-    background-color: $card-overlay-hover-background;
+    background-color: var(--card-overlay-hover-background);
     @if(meta.mixin-exists(hook-card-overlay-hover)) {@include hook-card-overlay-hover();}
 }
 
@@ -315,10 +317,10 @@
  */
 
 .uk-card-small.uk-card-body,
-.uk-card-small .uk-card-body { padding: $card-small-body-padding-vertical $card-small-body-padding-horizontal; }
+.uk-card-small .uk-card-body { padding: var(--card-small-body-padding-vertical) var(--card-small-body-padding-horizontal); }
 
-.uk-card-small .uk-card-header { padding: $card-small-header-padding-vertical $card-small-header-padding-horizontal; }
-.uk-card-small .uk-card-footer { padding: $card-small-footer-padding-vertical $card-small-footer-padding-horizontal; }
+.uk-card-small .uk-card-header { padding: var(--card-small-header-padding-vertical) var(--card-small-header-padding-horizontal); }
+.uk-card-small .uk-card-footer { padding: var(--card-small-footer-padding-vertical) var(--card-small-footer-padding-horizontal); }
 
 /*
  * Large
@@ -328,10 +330,10 @@
 @media (min-width: $breakpoint-large) {
 
     .uk-card-large.uk-card-body,
-    .uk-card-large .uk-card-body { padding: $card-large-body-padding-vertical-l $card-large-body-padding-horizontal-l; }
+    .uk-card-large .uk-card-body { padding: var(--card-large-body-padding-vertical-l) var(--card-large-body-padding-horizontal-l); }
 
-    .uk-card-large .uk-card-header { padding: $card-large-header-padding-vertical-l $card-large-header-padding-horizontal-l; }
-    .uk-card-large .uk-card-footer { padding: $card-large-footer-padding-vertical-l $card-large-footer-padding-horizontal-l; }
+    .uk-card-large .uk-card-header { padding: var(--card-large-header-padding-vertical-l) var(--card-large-header-padding-horizontal-l); }
+    .uk-card-large .uk-card-footer { padding: var(--card-large-footer-padding-vertical-l) var(--card-large-footer-padding-horizontal-l); }
 
 }
 
@@ -341,6 +343,7 @@
 
 @if(meta.mixin-exists(hook-card-misc)) {@include hook-card-misc();}
 
+// @mixin hook-card-variables(){}
 // @mixin hook-card(){}
 // @mixin hook-card-body(){}
 // @mixin hook-card-header(){}
@@ -350,6 +353,8 @@
 // @mixin hook-card-media-bottom(){}
 // @mixin hook-card-media-left(){}
 // @mixin hook-card-media-right(){}
+// @mixin hook-card-media-start(){}
+// @mixin hook-card-media-end(){}
 // @mixin hook-card-title(){}
 // @mixin hook-card-badge(){}
 // @mixin hook-card-hover(){}
@@ -376,4 +381,21 @@
 
 
 
+
+// @mixin hook-inverse-card(){};
+// @mixin hook-inverse-card-hover(){}
+// @mixin hook-inverse-card-default(){}
+// @mixin hook-inverse-card-default-title(){}
+// @mixin hook-inverse-card-default-hover(){}
+// @mixin hook-inverse-card-default-header(){}
+// @mixin hook-inverse-card-default-footer(){}
+// @mixin hook-inverse-card-primary(){}
+// @mixin hook-inverse-card-primary-title(){}
+// @mixin hook-inverse-card-primary-hover(){}
+// @mixin hook-inverse-card-secondary(){}
+// @mixin hook-inverse-card-secondary-title(){}
+// @mixin hook-inverse-card-secondary-hover(){}
+// @mixin hook-inverse-card-overlay(){}
+// @mixin hook-inverse-card-overlay-title(){}
+// @mixin hook-inverse-card-overlay-hover(){}
 // @mixin hook-inverse-card-badge(){}
