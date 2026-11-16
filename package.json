@@ -15,7 +15,6 @@
         "compile": "pnpm compile-less && pnpm compile-js",
         "compile-js": "node build/build",
         "compile-less": "pnpm icons && node build/less",
-        "compile-rtl": "pnpm compile-less rtl",
         "icons": "node build/icons",
         "prefix": "node build/prefix",
         "scope": "node build/scope",
@@ -51,7 +50,6 @@
         "prettier-plugin-organize-imports": "^4.3.0",
         "rollup": "^4.67.4",
         "rollup-plugin-esbuild": "^6.2.1",
-        "rtlcss": "^4.3.0",
         "semver": "^7.8.6",
         "strip-css-comments": "^5.0.0",
         "svgo": "^4.1.0"

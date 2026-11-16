@@ -35,7 +35,6 @@ if (args.prepare) {
 }
 
 await $$`pnpm compile`;
-await $$`pnpm compile-rtl`;
 await $$`pnpm build-scss`;
 
 if (args.build) {
@@ -108,7 +107,7 @@ async function createPackage(version) {
 
     archive.pipe(output);
 
-    for await (const file of fs.glob('dist/{js,css}/uikit?(-icons|-rtl)?(.min).{js,css}')) {
+    for await (const file of fs.glob('dist/{js,css}/uikit?(-icons)?(.min).{js,css}')) {
         archive.file(file, { name: file.slice(5) });
     }
 
