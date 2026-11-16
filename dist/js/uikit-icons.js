@@ -1,4 +1,4 @@
-/*! PRkit 1.0.0-beta.2 | https://github.com/getprkit/core | Based on UIkit by YOOtheme | MIT License */
+/*! PRkit 1.0.0-beta.3 | https://github.com/getprkit/core | Based on UIkit by YOOtheme | MIT License */
 
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
