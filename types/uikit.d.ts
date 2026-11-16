@@ -329,6 +329,8 @@ export interface UIkitIconOptions {
     icon?: string;
     /** The icon size ratio. */
     ratio?: number | string;
+    /** The stroke-width ratio if exist on svg or svg elements. */
+    strokeRatio?: number | string;
 }
 
 export interface UIkitIconElement extends UIkitElementBase {
