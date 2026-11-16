@@ -1,3 +1,3 @@
-import UIkit from "./types/uikit";
+export * from './types/uikit';
 
-export = UIkit;
+export { default } from './types/uikit';
