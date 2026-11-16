@@ -1,5 +1,23 @@
 # Changelog
 
+## WIP
+
+### Fixed
+
+- Fix title to Fixed title in docs
+- Fix merge conflict in docs
+- Fix SCSS compilation
+- Fix uk-stroke to respect logical properties
+- Fix uk-spinner-dash to respect logical properties
+
+### Changed
+
+- Update release workflow
+
+### Removed
+
+- Remove rtl build process
+
 ## [1.0.0-beta.2] (2026-11-15)
 
 ### Added
