@@ -117,7 +117,7 @@ export interface UIkitAlertOptions {
 
 export interface UIkitAlertElement extends UIkitElementBase {
     /** Closes and removes the Alert. */
-    close(animated: boolean): void;
+    close(animated?: boolean): void;
 }
 
 export type Alert = UIkitFunction<UIkitAlertOptions, UIkitAlertElement, boolean | string>;
@@ -1175,7 +1175,6 @@ export namespace UIkit {
     export function use(plugin: Plugin): typeof UIkit;
 
     // Core
-
     export const accordion: Accordion;
     export const alert: Alert;
     export const cover: Cover;
@@ -1219,5 +1218,61 @@ export namespace UIkit {
     export const tooltip: Tooltip;
     export const upload: Upload;
 }
+
+export const util: typeof UIkit.util;
+export const component: typeof UIkit.component;
+export const data: typeof UIkit.data;
+export const prefix: typeof UIkit.prefix;
+export const options: typeof UIkit.options;
+export const version: typeof UIkit.version;
+export const mixin: typeof UIkit.mixin;
+export const extend: typeof UIkit.extend;
+export const update: typeof UIkit.update;
+
+export const use: typeof UIkit.use;
+
+// Core
+export const accordion: typeof UIkit.accordion;
+export const alert: typeof UIkit.alert;
+export const cover: typeof UIkit.cover;
+export const drop: typeof UIkit.drop;
+export const dropdown: typeof UIkit.dropdown;
+export const dropnav: typeof UIkit.dropnav;
+export const formCustom: typeof UIkit.formCustom;
+export const grid: typeof UIkit.grid;
+export const heightMatch: typeof UIkit.heightMatch;
+export const heightPlaceholder: typeof UIkit.heightPlaceholder;
+export const heightViewport: typeof UIkit.heightViewport;
+export const icon: typeof UIkit.icon;
+export const img: typeof UIkit.img;
+export const inverse: typeof UIkit.inverse;
+export const leader: typeof UIkit.leader;
+export const margin: typeof UIkit.margin;
+export const modal: typeof UIkit.modal;
+export const nav: typeof UIkit.nav;
+export const navbar: typeof UIkit.navbar;
+export const offcanvas: typeof UIkit.offcanvas;
+export const scroll: typeof UIkit.scroll;
+export const scrollspy: typeof UIkit.scrollspy;
+export const scrollspyNav: typeof UIkit.scrollspyNav;
+export const sticky: typeof UIkit.sticky;
+export const svg: typeof UIkit.svg;
+export const switcher: typeof UIkit.switcher;
+export const tab: typeof UIkit.tab;
+export const toggle: typeof UIkit.toggle;
+export const video: typeof UIkit.video;
+
+// Components
+export const countdown: typeof UIkit.countdown;
+export const filter: typeof UIkit.filter;
+export const lightbox: typeof UIkit.lightbox;
+export const lightboxPanel: typeof UIkit.lightboxPanel;
+export const notification: typeof UIkit.notification;
+export const parallax: typeof UIkit.parallax;
+export const slider: typeof UIkit.slider;
+export const slideshow: typeof UIkit.slideshow;
+export const sortable: typeof UIkit.sortable;
+export const tooltip: typeof UIkit.tooltip;
+export const upload: typeof UIkit.upload;
 
 export default UIkit;
