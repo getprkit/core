@@ -17,15 +17,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 /* ========================================================================
    Component: Base
  ========================================================================== */
@@ -38,15 +29,15 @@
 
 html {
     /* 1 */
-    font-family: $base-body-font-family;
-    font-size: $base-body-font-size;
-    font-weight: $base-body-font-weight;
-    line-height: $base-body-line-height;
+    font-family: var(--base-body-font-family);
+    font-size: var(--base-body-font-size);
+    font-weight: var(--base-body-font-weight);
+    line-height: var(--base-body-line-height);
     /* 2 */
     -webkit-text-size-adjust: 100%;
     /* 3 */
-    background: $base-body-background;
-    color: $base-body-color;
+    background: var(--base-body-background);
+    color: var(--base-body-color);
     @if(meta.mixin-exists(hook-base-body)) {@include hook-base-body();}
 }
 
@@ -66,8 +57,8 @@ body { margin: 0; }
 
 a,
 .uk-link {
-    color: $base-link-color;
-    text-decoration: $base-link-text-decoration;
+    color: var(--base-link-color);
+    text-decoration: var(--base-link-text-decoration);
     cursor: pointer;
     @if(meta.mixin-exists(hook-base-link)) {@include hook-base-link();}
 }
@@ -75,8 +66,8 @@ a,
 a:hover,
 .uk-link:hover,
 .uk-link-toggle:hover .uk-link {
-    color: $base-link-hover-color;
-    text-decoration: $base-link-hover-text-decoration;
+    color: var(--base-link-hover-color);
+    text-decoration: var(--base-link-hover-text-decoration);
     @if(meta.mixin-exists(hook-base-link-hover)) {@include hook-base-link-hover();}
 }
 
@@ -103,7 +94,7 @@ abbr[title] { text-decoration: underline dotted; }
  */
 
 b,
-strong { font-weight: $base-strong-font-weight; }
+strong { font-weight: var(--base-strong-font-weight); }
 
 /*
  * 1. Consolas has a better baseline in running text compared to `Courier`
@@ -115,11 +106,11 @@ strong { font-weight: $base-strong-font-weight; }
 :not(pre) > kbd,
 :not(pre) > samp {
     /* 1 */
-    font-family: $base-code-font-family;
+    font-family: var(--base-code-font-family);
     /* 2 */
-    font-size: $base-code-font-size;
+    font-size: var(--base-code-font-size);
     /* 3 */
-    color: $base-code-color;
+    color: var(--base-code-color);
     white-space: nowrap;
     @if(meta.mixin-exists(hook-base-code)) {@include hook-base-code();}
 }
@@ -128,15 +119,15 @@ strong { font-weight: $base-strong-font-weight; }
  * Emphasize
  */
 
-em { color: $base-em-color; }
+em { color: var(--base-em-color); }
 
 /*
  * Insert
  */
 
 ins {
-    background: $base-ins-background;
-    color: $base-ins-color;
+    background: var(--base-ins-background);
+    color: var(--base-ins-color);
     text-decoration: none;
 }
 
@@ -145,21 +136,21 @@ ins {
  */
 
 mark {
-    background: $base-mark-background;
-    color: $base-mark-color;
+    background: var(--base-mark-background);
+    color: var(--base-mark-color);
 }
 
 /*
  * Quote
  */
 
-q { font-style: $base-quote-font-style; }
+q { font-style: var(--base-quote-font-style); }
 
 /*
  * Add the correct font size in all browsers.
  */
 
-small { font-size: $base-small-font-size; }
+small { font-size: var(--base-small-font-size); }
 
 /*
  * Prevents `sub` and `sup` affecting `line-height` in all browsers.
@@ -251,7 +242,7 @@ dl,
 pre,
 address,
 fieldset,
-figure { margin: 0 0 $base-margin-vertical 0; }
+figure { margin: 0 0 var(--base-margin-vertical) 0; }
 
 /* Add margin if adjacent element */
 * + p,
@@ -261,7 +252,7 @@ figure { margin: 0 0 $base-margin-vertical 0; }
 * + pre,
 * + address,
 * + fieldset,
-* + figure { margin-top: $base-margin-vertical; }
+* + figure { margin-top: var(--base-margin-vertical); }
 
 
 /* Headings
@@ -279,11 +270,11 @@ h6, .uk-h6,
 .uk-heading-xlarge,
 .uk-heading-2xlarge,
 .uk-heading-3xlarge {
-    margin: 0 0 $base-margin-vertical 0;
-    font-family: $base-heading-font-family;
-    font-weight: $base-heading-font-weight;
-    color: $base-heading-color;
-    text-transform: $base-heading-text-transform;
+    margin: 0 0 var(--base-margin-vertical) 0;
+    font-family: var(--base-heading-font-family);
+    font-weight: var(--base-heading-font-weight);
+    color: var(--base-heading-color);
+    text-transform: var(--base-heading-text-transform);
     @if(meta.mixin-exists(hook-base-heading)) {@include hook-base-heading();}
 }
 
@@ -299,53 +290,53 @@ h6, .uk-h6,
 * + .uk-heading-large,
 * + .uk-heading-xlarge,
 * + .uk-heading-2xlarge,
-* + .uk-heading-3xlarge { margin-top: $base-heading-margin-top; }
+* + .uk-heading-3xlarge { margin-top: var(--base-heading-margin-top); }
 
 /*
  * Sizes
  */
 
 h1, .uk-h1 {
-    font-size: $base-h1-font-size;
-    line-height: $base-h1-line-height;
+    font-size: var(--base-h1-font-size);
+    line-height: var(--base-h1-line-height);
     @if(meta.mixin-exists(hook-base-h1)) {@include hook-base-h1();}
 }
 
 h2, .uk-h2 {
-    font-size: $base-h2-font-size;
-    line-height: $base-h2-line-height;
+    font-size: var(--base-h2-font-size);
+    line-height: var(--base-h2-line-height);
     @if(meta.mixin-exists(hook-base-h2)) {@include hook-base-h2();}
 }
 
 h3, .uk-h3 {
-    font-size: $base-h3-font-size;
-    line-height: $base-h3-line-height;
+    font-size: var(--base-h3-font-size);
+    line-height: var(--base-h3-line-height);
     @if(meta.mixin-exists(hook-base-h3)) {@include hook-base-h3();}
 }
 
 h4, .uk-h4 {
-    font-size: $base-h4-font-size;
-    line-height: $base-h4-line-height;
+    font-size: var(--base-h4-font-size);
+    line-height: var(--base-h4-line-height);
     @if(meta.mixin-exists(hook-base-h4)) {@include hook-base-h4();}
 }
 
 h5, .uk-h5 {
-    font-size: $base-h5-font-size;
-    line-height: $base-h5-line-height;
+    font-size: var(--base-h5-font-size);
+    line-height: var(--base-h5-line-height);
     @if(meta.mixin-exists(hook-base-h5)) {@include hook-base-h5();}
 }
 
 h6, .uk-h6 {
-    font-size: $base-h6-font-size;
-    line-height: $base-h6-line-height;
+    font-size: var(--base-h6-font-size);
+    line-height: var(--base-h6-line-height);
     @if(meta.mixin-exists(hook-base-h6)) {@include hook-base-h6();}
 }
 
 /* Tablet landscape and bigger */
 @media (min-width: $breakpoint-medium) {
 
-    h1, .uk-h1 { font-size: $base-h1-font-size-m; }
-    h2, .uk-h2 { font-size: $base-h2-font-size-m; }
+    h1, .uk-h1 { font-size: var(--base-h1-font-size-m); }
+    h2, .uk-h2 { font-size: var(--base-h2-font-size-m); }
 
 }
 
@@ -354,7 +345,7 @@ h6, .uk-h6 {
  ========================================================================== */
 
 ul,
-ol { padding-left: $base-list-padding-left; }
+ol { padding-inline-start: var(--base-list-padding-inline-start); }
 
 /*
  * Reset margin for nested lists
@@ -370,7 +361,7 @@ ol > li > ul { margin: 0; }
  ========================================================================== */
 
 dt { font-weight: bold; }
-dd { margin-left: 0; }
+dd { margin-inline-start: 0; }
 
 
 /* Horizontal rules
@@ -388,15 +379,15 @@ hr, .uk-hr {
     /* 2 */
     text-align: inherit;
     /* 3 */
-    margin: 0 0 $base-hr-margin-vertical 0;
+    margin: 0 0 var(--base-hr-margin-vertical) 0;
     border: 0;
-    border-top: $base-hr-border-width solid $base-hr-border;
+    border-top: var(--base-hr-border-width) solid var(--base-hr-border);
     @if(meta.mixin-exists(hook-base-hr)) {@include hook-base-hr();}
 }
 
 /* Add margin if adjacent element */
 * + hr,
-* + .uk-hr { margin-top: $base-hr-margin-vertical; }
+* + .uk-hr { margin-top: var(--base-hr-margin-vertical); }
 
 
 /* Address
@@ -409,15 +400,15 @@ address { font-style: normal; }
  ========================================================================== */
 
 blockquote {
-    margin: 0 0 $base-blockquote-margin-vertical 0;
-    font-size: $base-blockquote-font-size;
-    line-height: $base-blockquote-line-height;
-    font-style: $base-blockquote-font-style;
+    margin: 0 0 var(--base-blockquote-margin-vertical) 0;
+    font-size: var(--base-blockquote-font-size);
+    line-height: var(--base-blockquote-line-height);
+    font-style: var(--base-blockquote-font-style);
     @if(meta.mixin-exists(hook-base-blockquote)) {@include hook-base-blockquote();}
 }
 
 /* Add margin if adjacent element */
-* + blockquote { margin-top: $base-blockquote-margin-vertical; }
+* + blockquote { margin-top: var(--base-blockquote-margin-vertical); }
 
 /*
  * Content
@@ -426,9 +417,9 @@ blockquote {
 blockquote p:last-of-type { margin-bottom: 0; }
 
 blockquote footer {
-    margin-top: $base-blockquote-footer-margin-top;
-    font-size: $base-blockquote-footer-font-size;
-    line-height: $base-blockquote-footer-line-height;
+    margin-top: var(--base-blockquote-footer-margin-top);
+    font-size: var(--base-blockquote-footer-font-size);
+    line-height: var(--base-blockquote-footer-line-height);
     @if(meta.mixin-exists(hook-base-blockquote-footer)) {@include hook-base-blockquote-footer();}
 }
 
@@ -441,15 +432,15 @@ blockquote footer {
  */
 
 pre {
-    font: $base-pre-font-size string.unquote("/") $base-pre-line-height $base-pre-font-family;
-    color: $base-pre-color;
+    font: var(--base-pre-font-size) string.unquote("/") var(--base-pre-line-height) var(--base-pre-font-family);
+    color: var(--base-pre-color);
     tab-size: 4;
     /* 1 */
     overflow: auto;
     @if(meta.mixin-exists(hook-base-pre)) {@include hook-base-pre();}
 }
 
-pre code { font-family: $base-pre-font-family; }
+pre code { font-family: var(--base-pre-font-family); }
 
 
 /* Focus
@@ -457,15 +448,15 @@ pre code { font-family: $base-pre-font-family; }
 
 :focus { outline: none; }
 
-:focus-visible { outline: $base-focus-outline-width $base-focus-outline-style $base-focus-outline; }
+:focus-visible { outline: var(--base-focus-outline-width) var(--base-focus-outline-style) var(--base-focus-outline); }
 
 
 /* Selection pseudo-element
  ========================================================================== */
 
 ::selection {
-    background: $base-selection-background;
-    color: $base-selection-color;
+    background: var(--base-selection-background);
+    color: var(--base-selection-color);
     text-shadow: none;
 }
 
@@ -482,6 +473,20 @@ pre code { font-family: $base-pre-font-family; }
     --uk-breakpoint-m: #{$breakpoint-medium};
     --uk-breakpoint-l: #{$breakpoint-large};
     --uk-breakpoint-xl: #{$breakpoint-xlarge};
+    
+    --uk-dir-sign: 1;
+    --uk-dir-start: 0%;
+    --uk-dir-end: 100%;
+    --uk-dir-side-start: left;
+    --uk-dir-side-end: right;
+}
+
+[dir="rtl"] {
+    --uk-dir-sign: -1;
+    --uk-dir-start: 100%;
+    --uk-dir-end: 0;
+    --uk-dir-side-start: right;
+    --uk-dir-side-end: left;
 }
 
 // Hooks
@@ -489,6 +494,7 @@ pre code { font-family: $base-pre-font-family; }
 
 @if(meta.mixin-exists(hook-base-misc)) {@include hook-base-misc();}
 
+// @mixin hook-base-variables(){}
 // @mixin hook-base-body(){}
 // @mixin hook-base-link(){}
 // @mixin hook-base-link-hover(){}
@@ -513,6 +519,7 @@ pre code { font-family: $base-pre-font-family; }
 
 
 
+
 // @mixin hook-inverse-base-link(){}
 // @mixin hook-inverse-base-link-hover(){}
 // @mixin hook-inverse-base-code(){}
@@ -525,4 +532,5 @@ pre code { font-family: $base-pre-font-family; }
 // @mixin hook-inverse-base-h6(){}
 // @mixin hook-inverse-base-blockquote(){}
 // @mixin hook-inverse-base-blockquote-footer(){}
+// @mixin hook-inverse-base-pre(){}
 // @mixin hook-inverse-base-hr(){}

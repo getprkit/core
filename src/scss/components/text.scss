@@ -14,11 +14,6 @@
 
 
 
-
-
-
-
-
 /* ========================================================================
    Component: Text
  ========================================================================== */
@@ -28,16 +23,16 @@
  ========================================================================== */
 
 .uk-text-lead {
-    font-size: $text-lead-font-size;
-    line-height: $text-lead-line-height;
-    color: $text-lead-color;
+    font-size: var(--text-lead-font-size);
+    line-height: var(--text-lead-line-height);
+    color: var(--text-lead-color);
     @if(meta.mixin-exists(hook-text-lead)) {@include hook-text-lead();}
 }
 
 .uk-text-meta {
-    font-size: $text-meta-font-size;
-    line-height: $text-meta-line-height;
-    color: $text-meta-color;
+    font-size: var(--text-meta-font-size);
+    line-height: var(--text-meta-line-height);
+    color: var(--text-meta-color);
     @if(meta.mixin-exists(hook-text-meta)) {@include hook-text-meta();}
 }
 
@@ -46,20 +41,20 @@
  ========================================================================== */
 
 .uk-text-small {
-    font-size: $text-small-font-size;
-    line-height: $text-small-line-height;
+    font-size: var(--text-small-font-size);
+    line-height: var(--text-small-line-height);
     @if(meta.mixin-exists(hook-text-small)) {@include hook-text-small();}
 }
 
 .uk-text-large {
-    font-size: $text-large-font-size;
-    line-height: $text-large-line-height;
+    font-size: var(--text-large-font-size);
+    line-height: var(--text-large-line-height);
     @if(meta.mixin-exists(hook-text-large)) {@include hook-text-large();}
 }
 
 .uk-text-default {
-    font-size: $global-font-size;
-    line-height: $global-line-height;
+    font-size: var(--global-font-size);
+    line-height: var(--global-line-height);
 }
 
 
@@ -97,13 +92,13 @@
 /* Color modifiers
  ========================================================================== */
 
-.uk-text-muted { color: $text-muted-color !important; }
-.uk-text-emphasis { color: $text-emphasis-color !important; }
-.uk-text-primary { color: $text-primary-color !important; }
-.uk-text-secondary { color: $text-secondary-color !important; }
-.uk-text-success { color: $text-success-color !important; }
-.uk-text-warning { color: $text-warning-color !important; }
-.uk-text-danger { color: $text-danger-color !important; }
+.uk-text-muted { color: var(--text-muted-color) !important; }
+.uk-text-emphasis { color: var(--text-emphasis-color) !important; }
+.uk-text-primary { color: var(--text-primary-color) !important; }
+.uk-text-secondary { color: var(--text-secondary-color) !important; }
+.uk-text-success { color: var(--text-success-color) !important; }
+.uk-text-warning { color: var(--text-warning-color) !important; }
+.uk-text-danger { color: var(--text-danger-color) !important; }
 
 
 /* Background modifier
@@ -124,7 +119,7 @@
     /* 3 */
     display: inline-block;
     /* 4 */
-    background-color: $text-background-color;
+    background-color: var(--text-background-color);
     @if(meta.mixin-exists(hook-text-background)) {@include hook-text-background();}
 }
 
@@ -134,6 +129,8 @@
 
 .uk-text-left { text-align: left !important; }
 .uk-text-right { text-align: right !important; }
+.uk-text-start { text-align: start !important; }
+.uk-text-end { text-align: end !important; }
 .uk-text-center { text-align: center !important; }
 .uk-text-justify { text-align: justify !important; }
 
@@ -142,6 +139,8 @@
 
     .uk-text-left\@s { text-align: left !important; }
     .uk-text-right\@s { text-align: right !important; }
+    .uk-text-start\@s { text-align: start !important; }
+    .uk-text-end\@s { text-align: end !important; }
     .uk-text-center\@s { text-align: center !important; }
 
 }
@@ -151,6 +150,8 @@
 
     .uk-text-left\@m { text-align: left !important; }
     .uk-text-right\@m { text-align: right !important; }
+    .uk-text-start\@m { text-align: start !important; }
+    .uk-text-end\@m { text-align: end !important; }
     .uk-text-center\@m { text-align: center !important; }
 
 }
@@ -160,6 +161,8 @@
 
     .uk-text-left\@l { text-align: left !important; }
     .uk-text-right\@l { text-align: right !important; }
+    .uk-text-start\@l { text-align: start !important; }
+    .uk-text-end\@l { text-align: end !important; }
     .uk-text-center\@l { text-align: center !important; }
 
 }
@@ -169,6 +172,8 @@
 
     .uk-text-left\@xl { text-align: left !important; }
     .uk-text-right\@xl { text-align: right !important; }
+    .uk-text-start\@xl { text-align: start !important; }
+    .uk-text-end\@xl { text-align: end !important; }
     .uk-text-center\@xl { text-align: center !important; }
 
 }
@@ -228,7 +233,7 @@ td.uk-text-truncate { max-width: 0; }
  ========================================================================== */
 
 .uk-text-stroke {
-    -webkit-text-stroke: $text-stroke-text-stroke;
+    -webkit-text-stroke: var(--text-stroke-text-stroke);
     -webkit-text-fill-color: transparent;
 }
 
@@ -238,6 +243,7 @@ td.uk-text-truncate { max-width: 0; }
 
 @if(meta.mixin-exists(hook-text-misc)) {@include hook-text-misc();}
 
+// @mixin hook-text-variables(){}
 // @mixin hook-text-lead(){}
 // @mixin hook-text-meta(){}
 // @mixin hook-text-small(){}
@@ -248,6 +254,7 @@ td.uk-text-truncate { max-width: 0; }
 
 // Inverse
 // ========================================================================
+
 
 
 

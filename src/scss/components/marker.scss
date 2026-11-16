@@ -23,15 +23,15 @@
  */
 
 .uk-marker {
-    padding: $marker-padding;
-    background: $marker-background;
-    color: $marker-color;
+    padding: var(--marker-padding);
+    background: var(--marker-background);
+    color: var(--marker-color);
     @if(meta.mixin-exists(hook-marker)) {@include hook-marker();}
 }
 
 /* Hover */
 .uk-marker:hover {
-    color: $marker-hover-color;
+    color: var(--marker-hover-color);
     @if(meta.mixin-exists(hook-marker-hover)) {@include hook-marker-hover();}
 }
 
@@ -41,6 +41,7 @@
 
 @if(meta.mixin-exists(hook-marker-misc)) {@include hook-marker-misc();}
 
+// @mixin hook-marker-variables(){}
 // @mixin hook-marker(){}
 // @mixin hook-marker-hover(){}
 // @mixin hook-marker-misc(){}
@@ -48,6 +49,7 @@
 
 // Inverse
 // ========================================================================
+
 
 
 

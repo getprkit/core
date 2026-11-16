@@ -12,7 +12,7 @@ import { optimize } from 'svgo';
 
 const limit = pLimit(Number(process.env.cpus || 2));
 
-export const banner = `/*! UIkit ${await getVersion()} | https://www.getuikit.com | (c) 2014 - ${new Date().getFullYear()} YOOtheme | MIT License */\n`;
+export const banner = `/*! PRkit ${await getVersion()} | https://github.com/getprkit/core | Based on UIkit by YOOtheme | MIT License */\n`;
 
 const argv = minimist(process.argv.slice(2));
 

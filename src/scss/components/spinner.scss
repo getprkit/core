@@ -1,5 +1,4 @@
 @use "sass:meta";
-@use "sass:math";
 
 // Name:            Spinner
 // Description:     Component to create a loading spinner
@@ -12,7 +11,7 @@
 // Variables
 // ========================================================================
 
-$spinner-radius:                                 math.floor((($spinner-size - $spinner-stroke-width) * 0.5)) !default; // Minus stroke width to prevent overflow clipping
+
 
 
 /* ========================================================================
@@ -31,11 +30,11 @@ $spinner-radius:                                 math.floor((($spinner-size - $s
 /* SVG
  ========================================================================== */
 
-.uk-spinner > * { animation: uk-spinner-rotate $spinner-duration linear infinite; }
+.uk-spinner > * { animation: uk-spinner-rotate var(--spinner-duration) linear infinite; }
 
 @keyframes uk-spinner-rotate {
     0% { transform: rotate(0deg); }
-    100% { transform: rotate(270deg); }
+    100% { transform: rotate(calc(270deg * var(--uk-dir-sign))); }
 }
 
 /*
@@ -43,23 +42,23 @@ $spinner-radius:                                 math.floor((($spinner-size - $s
  */
 
 .uk-spinner > * > * {
-    stroke-dasharray: $spinner-circumference;
+    stroke-dasharray: var(--spinner-circumference);
     stroke-dashoffset: 0;
     transform-origin: center;
-    animation: uk-spinner-dash $spinner-duration ease-in-out infinite;
-    stroke-width: $spinner-stroke-width;
+    animation: uk-spinner-dash var(--spinner-duration) ease-in-out infinite;
+    stroke-width: var(--spinner-stroke-width);
     stroke-linecap: round;
 }
 
 @keyframes uk-spinner-dash {
-    0% { stroke-dashoffset: $spinner-circumference; }
+    0% { stroke-dashoffset: calc(var(--spinner-circumference) * var(--uk-dir-sign)); }
     50% {
-        stroke-dashoffset: ($spinner-circumference * 0.25);
-        transform: rotate(135deg);
+        stroke-dashoffset: calc((var(--spinner-circumference) * 0.25) * var(--uk-dir-sign));
+        transform: rotate(calc(135deg * var(--uk-dir-sign)));
     }
     100% {
-        stroke-dashoffset: $spinner-circumference;
-        transform: rotate(450deg);
+        stroke-dashoffset: calc(var(--spinner-circumference) * var(--uk-dir-sign));
+        transform: rotate(calc(450deg * var(--uk-dir-sign)));
     }
 }
 
@@ -69,5 +68,6 @@ $spinner-radius:                                 math.floor((($spinner-size - $s
 
 @if(meta.mixin-exists(hook-spinner-misc)) {@include hook-spinner-misc();}
 
+// @mixin hook-spinner-variables(){}
 // @mixin hook-spinner(){}
 // @mixin hook-spinner-misc(){}

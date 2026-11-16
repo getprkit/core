@@ -1,4 +1,4 @@
-/*! UIkit 1.0.0-beta.1 | https://www.getuikit.com | (c) 2014 - 2026 YOOtheme | MIT License */
+/*! PRkit 1.0.0-beta.3 | https://github.com/getprkit/core | Based on UIkit by YOOtheme | MIT License */
 
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -3421,7 +3421,7 @@
       return Math.atan2(Math.abs(pos2.y - pos1.y), Math.abs(pos2.x - pos1.x)) * 180 / Math.PI;
     }
 
-    var VERSION = '1.0.0-beta.1';
+    var VERSION = '1.0.0-beta.3';
 
     function initWatches(instance) {
       instance._watches = [];
@@ -7175,9 +7175,9 @@
         this._style = pick(this.$el.style, ["width", "height"]);
       },
       beforeDisconnect() {
-        this.hide(false, false);
-      },
-      disconnected() {
+        if (!this.$el.isConnected || this.isActive()) {
+          this.hide(false, false);
+        }
         css(this.$el, this._style);
       },
       events: [

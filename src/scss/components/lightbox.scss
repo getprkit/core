@@ -24,8 +24,7 @@
 // Variables
 // ========================================================================
 
-
-
+$lightbox-color-mode:                            light !default; // FIXME: need to change inverse process
 
 
 
@@ -45,18 +44,18 @@
  */
 
 .uk-lightbox {
-    --uk-inverse: #{$lightbox-color-mode};
+    --uk-inverse: var(--lightbox-color-mode);
     /* 1 */
     display: none;
     /* 2 */
     position: fixed;
     top: 0;
-    right: 0;
+    inset-inline-end: 0;
     bottom: 0;
-    left: 0;
-    z-index: $lightbox-z-index;
+    inset-inline-start: 0;
+    z-index: var(--lightbox-z-index);
     /* 5 */
-    background: $lightbox-background;
+    background: var(--lightbox-background);
     /* 6 */
     opacity: 0;
     transition: opacity 0.15s linear;
@@ -81,7 +80,7 @@
  * Focus
  */
 
-.uk-lightbox :focus-visible { outline-color: $lightbox-focus-outline; }
+.uk-lightbox :focus-visible { outline-color: var(--lightbox-focus-outline); }
 
 
 /* Page
@@ -119,9 +118,9 @@
     /* 1 */
     position: absolute;
     top: 0;
-    right: 0;
+    inset-inline-end: 0;
     bottom: 0;
-    left: 0;
+    inset-inline-start: 0;
     /* 2 */
     display: none;
     justify-content: center;
@@ -140,8 +139,8 @@
 
 /* 4 */
 .uk-lightbox-items-fit > * > * {
-    max-width: $lightbox-item-max-width;
-    max-height: $lightbox-item-max-height;
+    max-width: var(--lightbox-item-max-width);
+    max-height: var(--lightbox-item-max-height);
 }
 
 .uk-lightbox-items-fit > * > :not(iframe) { object-fit: contain; }
@@ -154,8 +153,8 @@
 /* Navs
  ========================================================================== */
 
-.uk-lightbox-thumbnav-vertical :where(img, video) { max-width: $lightbox-thumbnav-vertical-width; }
-.uk-lightbox-thumbnav:not(.uk-lightbox-thumbnav-vertical) :where(img, video) { max-height: $lightbox-thumbnav-height; }
+.uk-lightbox-thumbnav-vertical :where(img, video) { max-width: var(--lightbox-thumbnav-vertical-width); }
+.uk-lightbox-thumbnav:not(.uk-lightbox-thumbnav-vertical) :where(img, video) { max-height: var(--lightbox-thumbnav-height); }
 
 .uk-lightbox-thumbnav:empty,
 .uk-lightbox-dotnav:empty { display: none; }
@@ -167,13 +166,13 @@
 .uk-lightbox-caption:empty { display: none; }
 
 .uk-lightbox-caption {
-    padding: $lightbox-caption-padding-vertical $lightbox-caption-padding-horizontal;
-    background: $lightbox-caption-background;
-    color: $lightbox-caption-color;
+    padding: var(--lightbox-caption-padding-vertical) var(--lightbox-caption-padding-horizontal);
+    background: var(--lightbox-caption-background);
+    color: var(--lightbox-caption-color);
     @if(meta.mixin-exists(hook-lightbox-caption)) {@include hook-lightbox-caption();}
 }
 
-.uk-lightbox-caption > * { color: $lightbox-caption-color; }
+.uk-lightbox-caption > * { color: var(--lightbox-caption-color); }
 
 
 /* Counter
@@ -196,6 +195,7 @@
 
 @if(meta.mixin-exists(hook-lightbox-misc)) {@include hook-lightbox-misc();}
 
+// @mixin hook-lightbox-variables(){}
 // @mixin hook-lightbox(){}
 // @mixin hook-lightbox-item(){}
 // @mixin hook-lightbox-caption(){}

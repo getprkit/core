@@ -1,6 +1,22 @@
 # Changelog
 
-PrKit is built on top of [UIkit](https://github.com/uikit/uikit). For changes inherited from the upstream project, see the [official UIkit Changelog](https://github.com/uikit/uikit/blob/develop/CHANGELOG.md).
+## [1.0.0-beta.3] (2026-11-16)
+
+### Fixed
+
+- Fix title to Fixed title in docs
+- Fix merge conflict in docs
+- Fix SCSS compilation
+- Fix uk-stroke to respect logical properties
+- Fix uk-spinner-dash to respect logical properties
+
+### Changed
+
+- Update release workflow
+
+### Removed
+
+- Remove rtl build process
 
 ## [1.0.0-beta.2] (2026-11-15)
 
@@ -12,7 +28,7 @@ PrKit is built on top of [UIkit](https://github.com/uikit/uikit). For changes in
 - Add xxsmall and xsmall gutter to Variables
 - Add animate parameter to Alert close method
 
-### Fix
+### Fixed
 
 - Invoke missing variables hook in Grid
 - Correct breakpoint max calculations
@@ -32,10 +48,9 @@ PrKit is built on top of [UIkit](https://github.com/uikit/uikit). For changes in
 
 - Remove inverse default color variables
 
-
 ## [1.0.0-beta.1] (2026-10-31)
 
-First beta release of PrKit, based on [UIkit](https://github.com/uikit/uikit), with upstream `uikit:develop` merged through October 31, 2026.
+First beta release of PrKit, based on the [UIkit](https://github.com/uikit/uikit) codebase as of 2026-10-31.
 
 ### Added
 
@@ -68,5 +83,5 @@ First beta release of PrKit, based on [UIkit](https://github.com/uikit/uikit), w
 - **CSS cascade layers:** All CSS custom properties are now declared inside `@layer variables`.
 - **Inverse mode:** Inverse styles and colors have been refined across several components, which may result in visual differences compared to previous versions.
 
-[1.0.0-beta.1]: https://github.com/prfardin/uikit/releases/tag/prkit-v1.0.0-beta.1
-[1.0.0-beta.2]: https://github.com/prfardin/uikit/releases/tag/prkit-v1.0.0-beta.2
+[1.0.0-beta.1]: https://github.com/getprkit/core/releases/tag/prkit-v1.0.0-beta.1
+[1.0.0-beta.2]: https://github.com/getprkit/core/releases/tag/prkit-v1.0.0-beta.2

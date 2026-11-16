@@ -21,10 +21,6 @@
 
 
 
-
-
-
-
 /* ========================================================================
    Component: Icon
  ========================================================================== */
@@ -63,9 +59,10 @@
     /* 8 */
     display: inline-block;
     /* 9 */
-    fill: currentcolor;
+    fill: var(--icon-primary-color);
     /* 10 */
     line-height: 0;
+    @if(meta.mixin-exists(hook-icon)) {@include hook-icon();}
 }
 
 /* Required for `button`. */
@@ -76,8 +73,10 @@ button.uk-icon:not(:disabled) { cursor: pointer; }
  * Set the fill and stroke color of all SVG elements to the current text color
  */
 
-.uk-icon:not(.uk-preserve) [fill*="#"]:not(.uk-preserve) { fill: currentcolor; }
-.uk-icon:not(.uk-preserve) [stroke*="#"]:not(.uk-preserve) { stroke: currentcolor; }
+.uk-icon:not(.uk-preserve) [fill*="#"]:not(.uk-preserve),
+.uk-icon:not(.uk-preserve) [fill*="currentColor"]:not(.uk-preserve) { fill: var(--icon-primary-color); }
+.uk-icon:not(.uk-preserve) [stroke*="#"]:not(.uk-preserve),
+.uk-icon:not(.uk-preserve) [stroke*="currentColor"]:not(.uk-preserve) { stroke: var(--icon-primary-color); }
 
 /*
  * Fix Firefox blurry SVG rendering: https://bugzilla.mozilla.org/show_bug.cgi?id=1046835
@@ -96,8 +95,8 @@ button.uk-icon:not(:disabled) { cursor: pointer; }
  */
 
 .uk-icon-image {
-    width: $icon-image-size;
-    height: $icon-image-size;
+    width: var(--icon-image-size);
+    height: var(--icon-image-size);
     /* 1 */
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -118,21 +117,21 @@ button.uk-icon:not(:disabled) { cursor: pointer; }
  */
 
 .uk-icon-link {
-    color: $icon-link-color;
+    color: var(--icon-link-color);
     /* 1 */
     text-decoration: none !important;
     @if(meta.mixin-exists(hook-icon-link)) {@include hook-icon-link();}
 }
 
 .uk-icon-link:hover {
-    color: $icon-link-hover-color;
+    color: var(--icon-link-hover-color);
     @if(meta.mixin-exists(hook-icon-link-hover)) {@include hook-icon-link-hover();}
 }
 
 /* OnClick + Active */
 .uk-icon-link:active,
 .uk-active > .uk-icon-link {
-    color: $icon-link-active-color;
+    color: var(--icon-link-active-color);
     @if(meta.mixin-exists(hook-icon-link-active)) {@include hook-icon-link-active();}
 }
 
@@ -143,11 +142,11 @@ button.uk-icon:not(:disabled) { cursor: pointer; }
 
 .uk-icon-button {
     box-sizing: border-box;
-    width: $icon-button-size;
-    height: $icon-button-size;
-    border-radius: $icon-button-border-radius;
-    background: $icon-button-background;
-    color: $icon-button-color;
+    width: var(--icon-button-size);
+    height: var(--icon-button-size);
+    border-radius: var(--icon-button-border-radius);
+    background: var(--icon-button-background);
+    color: var(--icon-button-color);
     vertical-align: middle;
     /* 1 */
     display: inline-flex;
@@ -158,16 +157,16 @@ button.uk-icon:not(:disabled) { cursor: pointer; }
 
 /* Hover */
 .uk-icon-button:hover {
-    background-color: $icon-button-hover-background;
-    color: $icon-button-hover-color;
+    background-color: var(--icon-button-hover-background);
+    color: var(--icon-button-hover-color);
     @if(meta.mixin-exists(hook-icon-button-hover)) {@include hook-icon-button-hover();}
 }
 
 /* OnClick + Active */
 .uk-icon-button:active,
 .uk-active > .uk-icon-button {
-    background-color: $icon-button-active-background;
-    color: $icon-button-active-color;
+    background-color: var(--icon-button-active-background);
+    color: var(--icon-button-active-color);
     @if(meta.mixin-exists(hook-icon-button-active)) {@include hook-icon-button-active();}
 }
 
@@ -177,13 +176,13 @@ button.uk-icon:not(:disabled) { cursor: pointer; }
 
 .uk-icon-overlay,
 a .uk-icon-overlay {
-    color: $icon-overlay-color;
+    color: var(--icon-overlay-color);
     @if(meta.mixin-exists(hook-icon-overlay)) {@include hook-icon-overlay();}
 }
 
 .uk-icon-overlay:hover,
 a:hover .uk-icon-overlay {
-    color: $icon-overlay-hover-color;
+    color: var(--icon-overlay-hover-color);
     @if(meta.mixin-exists(hook-icon-overlay-hover)) {@include hook-icon-overlay-hover();}
 }
 
@@ -193,6 +192,8 @@ a:hover .uk-icon-overlay {
 
 @if(meta.mixin-exists(hook-icon-misc)) {@include hook-icon-misc();}
 
+// @mixin hook-icon-variables(){}
+// @mixin hook-icon(){}
 // @mixin hook-icon-link(){}
 // @mixin hook-icon-link-hover(){}
 // @mixin hook-icon-link-active(){}
@@ -206,6 +207,7 @@ a:hover .uk-icon-overlay {
 
 // Inverse
 // ========================================================================
+
 
 
 

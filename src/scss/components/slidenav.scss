@@ -20,7 +20,6 @@
 
 
 
-
 /* ========================================================================
    Component: Slidenav
  ========================================================================== */
@@ -30,20 +29,20 @@
  */
 
 .uk-slidenav {
-    padding: $slidenav-padding-vertical $slidenav-padding-horizontal;
-    color: $slidenav-color;
+    padding: var(--slidenav-padding-vertical) var(--slidenav-padding-horizontal);
+    color: var(--slidenav-color);
     @if(meta.mixin-exists(hook-slidenav)) {@include hook-slidenav();}
 }
 
 /* Hover */
 .uk-slidenav:hover {
-    color: $slidenav-hover-color;
+    color: var(--slidenav-hover-color);
     @if(meta.mixin-exists(hook-slidenav-hover)) {@include hook-slidenav-hover();}
 }
 
 /* OnClick */
 .uk-slidenav:active {
-    color: $slidenav-active-color;
+    color: var(--slidenav-active-color);
     @if(meta.mixin-exists(hook-slidenav-active)) {@include hook-slidenav-active();}
 }
 
@@ -72,7 +71,7 @@
  ========================================================================== */
 
 .uk-slidenav-large {
-    padding: $slidenav-large-padding-vertical $slidenav-large-padding-horizontal;
+    padding: var(--slidenav-large-padding-vertical) var(--slidenav-large-padding-horizontal);
     @if(meta.mixin-exists(hook-slidenav-large)) {@include hook-slidenav-large();}
 }
 
@@ -91,6 +90,7 @@
 
 @if(meta.mixin-exists(hook-slidenav-misc)) {@include hook-slidenav-misc();}
 
+// @mixin hook-slidenav-variables(){}
 // @mixin hook-slidenav(){}
 // @mixin hook-slidenav-hover(){}
 // @mixin hook-slidenav-active(){}
@@ -103,6 +103,7 @@
 
 // Inverse
 // ========================================================================
+
 
 
 

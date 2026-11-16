@@ -24,11 +24,11 @@
 
 .uk-label {
     display: inline-block;
-    padding: $label-padding-vertical $label-padding-horizontal;
-    background: $label-background;
-    line-height: $label-line-height;
-    font-size: $label-font-size;
-    color: $label-color;
+    padding: var(--label-padding-vertical) var(--label-padding-horizontal);
+    background: var(--label-background);
+    line-height: var(--label-line-height);
+    font-size: var(--label-font-size);
+    color: var(--label-color);
     vertical-align: middle;
     white-space: nowrap;
     @if(meta.mixin-exists(hook-label)) {@include hook-label();}
@@ -43,8 +43,8 @@
  */
 
 .uk-label-success {
-    background-color: $label-success-background;
-    color: $label-success-color;
+    background-color: var(--label-success-background);
+    color: var(--label-success-color);
     @if(meta.mixin-exists(hook-label-success)) {@include hook-label-success();}
 }
 
@@ -53,8 +53,8 @@
  */
 
 .uk-label-warning {
-    background-color: $label-warning-background;
-    color: $label-warning-color;
+    background-color: var(--label-warning-background);
+    color: var(--label-warning-color);
     @if(meta.mixin-exists(hook-label-warning)) {@include hook-label-warning();}
 }
 
@@ -63,8 +63,8 @@
  */
 
 .uk-label-danger {
-    background-color: $label-danger-background;
-    color: $label-danger-color;
+    background-color: var(--label-danger-background);
+    color: var(--label-danger-color);
     @if(meta.mixin-exists(hook-label-danger)) {@include hook-label-danger();}
 }
 
@@ -74,6 +74,7 @@
 
 @if(meta.mixin-exists(hook-label-misc)) {@include hook-label-misc();}
 
+// @mixin hook-label-variables(){}
 // @mixin hook-label(){}
 // @mixin hook-label-success(){}
 // @mixin hook-label-warning(){}
@@ -87,4 +88,8 @@
 
 
 
+
 // @mixin hook-inverse-label(){}
+// @mixin hook-inverse-label-success(){}
+// @mixin hook-inverse-label-warning(){}
+// @mixin hook-inverse-label-danger(){}

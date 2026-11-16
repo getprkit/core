@@ -18,7 +18,6 @@
 
 
 
-
 /* ========================================================================
    Component: Dotnav
  ========================================================================== */
@@ -38,7 +37,7 @@
     padding: 0;
     list-style: none;
     /* 3 */
-    margin-left: (-$dotnav-margin-horizontal);
+    margin-inline-start: calc(var(--dotnav-margin-horizontal) * -1);
     @if(meta.mixin-exists(hook-dotnav)) {@include hook-dotnav();}
 }
 
@@ -51,7 +50,7 @@
     /* 1 */
     flex: none;
     /* 2 */
-    padding-left: $dotnav-margin-horizontal;
+    padding-inline-start: var(--dotnav-margin-horizontal);
 }
 
 
@@ -66,10 +65,10 @@
 .uk-dotnav > * > * {
     display: block;
     box-sizing: border-box;
-    width: $dotnav-item-width;
-    height: $dotnav-item-height;
-    border-radius: $dotnav-item-border-radius;
-    background: $dotnav-item-background;
+    width: var(--dotnav-item-width);
+    height: var(--dotnav-item-height);
+    border-radius: var(--dotnav-item-border-radius);
+    background: var(--dotnav-item-background);
     /* 1 */
     text-indent: 100%;
     overflow: hidden;
@@ -79,19 +78,19 @@
 
 /* Hover */
 .uk-dotnav > * > :hover {
-    background-color: $dotnav-item-hover-background;
+    background-color: var(--dotnav-item-hover-background);
     @if(meta.mixin-exists(hook-dotnav-item-hover)) {@include hook-dotnav-item-hover();}
 }
 
 /* OnClick */
 .uk-dotnav > * > :active {
-    background-color: $dotnav-item-onclick-background;
+    background-color: var(--dotnav-item-onclick-background);
     @if(meta.mixin-exists(hook-dotnav-item-onclick)) {@include hook-dotnav-item-onclick();}
 }
 
 /* Active */
 .uk-dotnav > .uk-active > * {
-    background-color: $dotnav-item-active-background;
+    background-color: var(--dotnav-item-active-background);
     @if(meta.mixin-exists(hook-dotnav-item-active)) {@include hook-dotnav-item-active();}
 }
 
@@ -108,14 +107,14 @@
     /* 1 */
     flex-direction: column;
     /* 2 */
-    margin-left: 0;
-    margin-top: (-$dotnav-margin-vertical);
+    margin-inline-start: 0;
+    margin-top: calc(var(--dotnav-margin-vertical) * -1);
 }
 
 /* 2 */
 .uk-dotnav-vertical > * {
-    padding-left: 0;
-    padding-top: $dotnav-margin-vertical;
+    padding-inline-start: 0;
+    padding-top: var(--dotnav-margin-vertical);
 }
 
 
@@ -124,6 +123,7 @@
 
 @if(meta.mixin-exists(hook-dotnav-misc)) {@include hook-dotnav-misc();}
 
+// @mixin hook-dotnav-variables(){}
 // @mixin hook-dotnav(){}
 // @mixin hook-dotnav-item(){}
 // @mixin hook-dotnav-item-hover(){}
@@ -134,6 +134,7 @@
 
 // Inverse
 // ========================================================================
+
 
 
 

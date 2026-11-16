@@ -13,6 +13,7 @@
 
 
 
+
 /* ========================================================================
    Component: Height
  ========================================================================== */
@@ -39,13 +40,13 @@
  * Useful for `overflow: auto`
  */
 
-.uk-height-small { height: $height-small-height; }
-.uk-height-medium { height: $height-medium-height; }
-.uk-height-large { height: $height-large-height; }
+.uk-height-small { height: var(--height-small-height); }
+.uk-height-medium { height: var(--height-medium-height); }
+.uk-height-large { height: var(--height-large-height); }
 
-.uk-height-max-small { max-height: $height-small-height; }
-.uk-height-max-medium { max-height: $height-medium-height; }
-.uk-height-max-large { max-height: $height-large-height; }
+.uk-height-max-small { max-height: var(--height-small-height); }
+.uk-height-max-medium { max-height: var(--height-medium-height); }
+.uk-height-max-large { max-height: var(--height-large-height); }
 
 
 // Hooks
@@ -53,4 +54,5 @@
 
 @if(meta.mixin-exists(hook-height-misc)) {@include hook-height-misc();}
 
+// @mixin hook-height-variables(){}
 // @mixin hook-height-misc(){}

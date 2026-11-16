@@ -38,7 +38,7 @@
     /* 2 */
     align-items: center;
     /* 3 */
-    margin-left: (-$pagination-margin-horizontal);
+    margin-inline-start: calc(var(--pagination-margin-horizontal) * -1);
     /* 4 */
     padding: 0;
     list-style: none;
@@ -55,7 +55,7 @@
     /* 1 */
     flex: none;
     /* 2 */
-    padding-left: $pagination-margin-horizontal;
+    padding-inline-start: var(--pagination-margin-horizontal);
     /* 3 */
     position: relative;
 }
@@ -77,27 +77,27 @@
     /* 2 */
     column-gap: 0.25em;
     /* 3 */
-    padding: $pagination-item-padding-vertical $pagination-item-padding-horizontal;
-    color: $pagination-item-color;
+    padding: var(--pagination-item-padding-vertical) var(--pagination-item-padding-horizontal);
+    color: var(--pagination-item-color);
     @if(meta.mixin-exists(hook-pagination-item)) {@include hook-pagination-item();}
 }
 
 /* Hover */
 .uk-pagination > * > :hover {
-    color: $pagination-item-hover-color;
-    text-decoration: $pagination-item-hover-text-decoration;
+    color: var(--pagination-item-hover-color);
+    text-decoration: var(--pagination-item-hover-text-decoration);
     @if(meta.mixin-exists(hook-pagination-item-hover)) {@include hook-pagination-item-hover();}
 }
 
 /* Active */
 .uk-pagination > .uk-active > * {
-    color: $pagination-item-active-color;
+    color: var(--pagination-item-active-color);
     @if(meta.mixin-exists(hook-pagination-item-active)) {@include hook-pagination-item-active();}
 }
 
 /* Disabled */
 .uk-pagination > .uk-disabled > * {
-    color: $pagination-item-disabled-color;
+    color: var(--pagination-item-disabled-color);
     @if(meta.mixin-exists(hook-pagination-item-disabled)) {@include hook-pagination-item-disabled();}
 }
 
@@ -107,6 +107,7 @@
 
 @if(meta.mixin-exists(hook-pagination-misc)) {@include hook-pagination-misc();}
 
+// @mixin hook-pagination-variables(){}
 // @mixin hook-pagination(){}
 // @mixin hook-pagination-item(){}
 // @mixin hook-pagination-item-hover(){}
@@ -117,6 +118,7 @@
 
 // Inverse
 // ========================================================================
+
 
 
 

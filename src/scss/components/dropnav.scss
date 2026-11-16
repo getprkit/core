@@ -15,6 +15,7 @@
 
 
 
+
 /* ========================================================================
    Component: Dropnav
  ========================================================================== */
@@ -27,12 +28,13 @@
 .uk-dropnav-dropbar {
     /* 1 */
     position: absolute;
-    z-index: $dropnav-dropbar-z-index;
+    z-index: var(--dropnav-dropbar-z-index);
     /* 2 */
     padding: 0;
     /* 3 */
-    left: 0;
-    right: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    @if(meta.mixin-exists(hook-dropnav)) {@include hook-dropnav();}
 }
 
 
@@ -41,4 +43,6 @@
 
 @if(meta.mixin-exists(hook-dropnav-misc)) {@include hook-dropnav-misc();}
 
+// @mixin hook-dropnav-variables(){};
+// @mixin hook-dropnav(){};
 // @mixin hook-dropnav-misc(){}

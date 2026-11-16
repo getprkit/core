@@ -15,5 +15,4 @@ await $$`pnpm version ${version}-dev.${hash} --no-git-tag-version`;
 
 // create dist files
 await $$`pnpm compile`;
-await $$`pnpm compile-rtl`;
 await $$`pnpm build-scss`;

@@ -16,17 +16,16 @@
 
 
 
-
 /* ========================================================================
    Component: Padding
  ========================================================================== */
 
-.uk-padding { padding: $padding-padding; }
+.uk-padding { padding: var(--padding-padding); }
 
 /* Desktop and bigger */
 @media (min-width: $breakpoint-large) {
 
-    .uk-padding { padding: $padding-padding-l; }
+    .uk-padding { padding: var(--padding-padding-l); }
 
 }
 
@@ -34,18 +33,18 @@
 /* Small
  ========================================================================== */
 
-.uk-padding-small { padding: $padding-small-padding; }
+.uk-padding-small { padding: var(--padding-small-padding); }
 
 
 /* Large
  ========================================================================== */
 
-.uk-padding-large { padding: $padding-large-padding; }
+.uk-padding-large { padding: var(--padding-large-padding); }
 
 /* Desktop and bigger */
 @media (min-width: $breakpoint-large) {
 
-    .uk-padding-large { padding: $padding-large-padding-l; }
+    .uk-padding-large { padding: var(--padding-large-padding-l); }
 
 }
 
@@ -58,6 +57,8 @@
 .uk-padding-remove-bottom { padding-bottom: 0 !important; }
 .uk-padding-remove-left { padding-left: 0 !important; }
 .uk-padding-remove-right { padding-right: 0 !important; }
+.uk-padding-remove-start { padding-inline-start: 0 !important; }
+.uk-padding-remove-end { padding-inline-end: 0 !important; }
 
 .uk-padding-remove-vertical {
     padding-top: 0 !important;
@@ -65,8 +66,8 @@
 }
 
 .uk-padding-remove-horizontal {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-inline-start: 0 !important;
+    padding-inline-end: 0 !important;
 }
 
 
@@ -75,4 +76,5 @@
 
 @if(meta.mixin-exists(hook-padding-misc)) {@include hook-padding-misc();}
 
+// @mixin hook-padding-variables(){}
 // @mixin hook-padding-misc(){}

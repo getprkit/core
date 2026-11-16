@@ -24,15 +24,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 /* ========================================================================
    Component: Search
  ========================================================================== */
@@ -53,6 +44,7 @@
     max-width: 100%;
     /* 4 */
     margin: 0;
+    @if(meta.mixin-exists(hook-search)) {@include hook-search();}
 }
 
 
@@ -98,14 +90,14 @@
     width: 100%;
     /* 9 */
     border: none;
-    color: $search-color;
+    color: var(--search-color);
     @if(meta.mixin-exists(hook-search-input)) {@include hook-search-input();}
 }
 
 .uk-search-input:focus { outline: none; }
 
 /* Placeholder */
-.uk-search-input::placeholder { color: $search-placeholder-color; }
+.uk-search-input::placeholder { color: var(--search-placeholder-color); }
 
 
 /* Icon (Adopts `uk-icon`)
@@ -123,13 +115,13 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    inset-inline-start: 0;
     /* 2 */
     display: inline-flex;
     justify-content: center;
     align-items: center;
     /* 3 */
-    color: $search-icon-color;
+    color: var(--search-icon-color);
     @if(meta.mixin-exists(hook-search-icon)) {@include hook-search-icon();}
 }
 
@@ -137,7 +129,7 @@
  * Required for `a`.
  */
 
-.uk-search .uk-search-icon:hover { color: $search-icon-color; }
+.uk-search .uk-search-icon:hover { color: var(--search-icon-color); }
 
 /*
  * Make `input` element clickable through icon, e.g. if it's a `span`
@@ -150,31 +142,31 @@
  */
 
 .uk-search .uk-search-icon-flip {
-    right: 0;
-    left: auto;
+    inset-inline-end: 0;
+    inset-inline-start: auto;
 }
 
 
 /* Default modifier
  ========================================================================== */
 
-.uk-search-default { width: $search-default-width; }
+.uk-search-default { width: var(--search-default-width); }
 
 /*
  * Input
  */
 
 .uk-search-default .uk-search-input {
-    height: $search-default-height;
-    padding-left: $search-default-padding-horizontal;
-    padding-right: $search-default-padding-horizontal;
-    background: $search-default-background;
+    height: var(--search-default-height);
+    padding-inline-start: var(--search-default-padding-horizontal);
+    padding-inline-end: var(--search-default-padding-horizontal);
+    background: var(--search-default-background);
     @if(meta.mixin-exists(hook-search-default-input)) {@include hook-search-default-input();}
 }
 
 /* Focus */
 .uk-search-default .uk-search-input:focus {
-    background-color: $search-default-focus-background;
+    background-color: var(--search-default-focus-background);
     @if(meta.mixin-exists(hook-search-default-input-focus)) {@include hook-search-default-input-focus();}
 }
 
@@ -183,34 +175,34 @@
  */
 
 .uk-search-default .uk-search-icon {
-    padding-left: $search-default-padding-horizontal;
-    padding-right: $search-default-padding-horizontal;
+    padding-inline-start: var(--search-default-padding-horizontal);
+    padding-inline-end: var(--search-default-padding-horizontal);
 }
 
-.uk-search-default:has(.uk-search-icon:not(.uk-search-icon-flip)) .uk-search-input { padding-left: ($search-default-icon-width + $search-default-padding-horizontal + $search-default-icon-padding); }
-.uk-search-default:has(.uk-search-icon-flip) .uk-search-input { padding-right: ($search-default-icon-width + $search-default-padding-horizontal + $search-default-icon-padding); }
+.uk-search-default:has(.uk-search-icon:not(.uk-search-icon-flip)) .uk-search-input { padding-inline-start: calc(var(--search-default-icon-width) + var(--search-default-padding-horizontal) + var(--search-default-icon-padding)); }
+.uk-search-default:has(.uk-search-icon-flip) .uk-search-input { padding-inline-end: calc(var(--search-default-icon-width) + var(--search-default-padding-horizontal) + var(--search-default-icon-padding)); }
 
 
 /* Navbar modifier
  ========================================================================== */
 
-.uk-search-navbar { width: $search-navbar-width; }
+.uk-search-navbar { width: var(--search-navbar-width); }
 
 /*
  * Input
  */
 
 .uk-search-navbar .uk-search-input {
-    height: $search-navbar-height;
-    padding-left: $search-navbar-padding-horizontal;
-    padding-right: $search-navbar-padding-horizontal;
-    background: $search-navbar-background;
+    height: var(--search-navbar-height);
+    padding-inline-start: var(--search-navbar-padding-horizontal);
+    padding-inline-end: var(--search-navbar-padding-horizontal);
+    background: var(--search-navbar-background);
     @if(meta.mixin-exists(hook-search-navbar-input)) {@include hook-search-navbar-input();}
 }
 
 /* Focus */
 .uk-search-navbar .uk-search-input:focus {
-    background-color: $search-navbar-focus-background;
+    background-color: var(--search-navbar-focus-background);
     @if(meta.mixin-exists(hook-search-navbar-input-focus)) {@include hook-search-navbar-input-focus();}
 }
 
@@ -219,35 +211,35 @@
  */
 
 .uk-search-navbar .uk-search-icon {
-    padding-left: $search-navbar-padding-horizontal;
-    padding-right: $search-navbar-padding-horizontal;
+    padding-inline-start: var(--search-navbar-padding-horizontal);
+    padding-inline-end: var(--search-navbar-padding-horizontal);
 }
 
-.uk-search-navbar:has(.uk-search-icon:not(.uk-search-icon-flip)) .uk-search-input { padding-left: ($search-navbar-icon-width + $search-navbar-padding-horizontal + $search-navbar-icon-padding); }
-.uk-search-navbar:has(.uk-search-icon-flip) .uk-search-input { padding-right: ($search-navbar-icon-width + $search-navbar-padding-horizontal + $search-navbar-icon-padding); }
+.uk-search-navbar:has(.uk-search-icon:not(.uk-search-icon-flip)) .uk-search-input { padding-inline-start: calc(var(--search-navbar-icon-width) + var(--search-navbar-padding-horizontal) + var(--search-navbar-icon-padding)); }
+.uk-search-navbar:has(.uk-search-icon-flip) .uk-search-input { padding-inline-end: calc(var(--search-navbar-icon-width) + var(--search-navbar-padding-horizontal) + var(--search-navbar-icon-padding)); }
 
 
 /* Medium modifier
  ========================================================================== */
 
-.uk-search-medium { width: $search-medium-width; }
+.uk-search-medium { width: var(--search-medium-width); }
 
 /*
  * Input
  */
 
 .uk-search-medium .uk-search-input {
-    height: $search-medium-height;
-    padding-left: $search-medium-padding-horizontal;
-    padding-right: $search-medium-padding-horizontal;
-    background: $search-medium-background;
-    font-size: $search-medium-font-size;
+    height: var(--search-medium-height);
+    padding-inline-start: var(--search-medium-padding-horizontal);
+    padding-inline-end: var(--search-medium-padding-horizontal);
+    background: var(--search-medium-background);
+    font-size: var(--search-medium-font-size);
     @if(meta.mixin-exists(hook-search-medium-input)) {@include hook-search-medium-input();}
 }
 
 /* Focus */
 .uk-search-medium .uk-search-input:focus {
-    background-color: $search-medium-focus-background;
+    background-color: var(--search-medium-focus-background);
     @if(meta.mixin-exists(hook-search-medium-input-focus)) {@include hook-search-medium-input-focus();}
 }
 
@@ -256,35 +248,35 @@
  */
 
 .uk-search-medium .uk-search-icon {
-    padding-left: $search-medium-padding-horizontal;
-    padding-right: $search-medium-padding-horizontal;
+    padding-inline-start: var(--search-medium-padding-horizontal);
+    padding-inline-end: var(--search-medium-padding-horizontal);
 }
 
-.uk-search-medium:has(.uk-search-icon:not(.uk-search-icon-flip)) .uk-search-input { padding-left: ($search-medium-icon-width + $search-medium-padding-horizontal + $search-medium-icon-padding); }
-.uk-search-medium:has(.uk-search-icon-flip) .uk-search-input { padding-right: ($search-medium-icon-width + $search-medium-padding-horizontal + $search-medium-icon-padding); }
+.uk-search-medium:has(.uk-search-icon:not(.uk-search-icon-flip)) .uk-search-input { padding-inline-start: calc(var(--search-medium-icon-width) + var(--search-medium-padding-horizontal) + var(--search-medium-icon-padding)); }
+.uk-search-medium:has(.uk-search-icon-flip) .uk-search-input { padding-inline-end: calc(var(--search-medium-icon-width) + var(--search-medium-padding-horizontal) + var(--search-medium-icon-padding)); }
 
 
 /* Large modifier
  ========================================================================== */
 
-.uk-search-large { width: $search-large-width; }
+.uk-search-large { width: var(--search-large-width); }
 
 /*
  * Input
  */
 
 .uk-search-large .uk-search-input {
-    height: $search-large-height;
-    padding-left: $search-large-padding-horizontal;
-    padding-right: $search-large-padding-horizontal;
-    background: $search-large-background;
-    font-size: $search-large-font-size;
+    height: var(--search-large-height);
+    padding-inline-start: var(--search-large-padding-horizontal);
+    padding-inline-end: var(--search-large-padding-horizontal);
+    background: var(--search-large-background);
+    font-size: var(--search-large-font-size);
     @if(meta.mixin-exists(hook-search-large-input)) {@include hook-search-large-input();}
 }
 
 /* Focus */
 .uk-search-large .uk-search-input:focus {
-    background-color: $search-medium-focus-background;
+    background-color: var(--search-medium-focus-background);
     @if(meta.mixin-exists(hook-search-large-input-focus)) {@include hook-search-large-input-focus();}
 }
 
@@ -293,25 +285,25 @@
  */
 
 .uk-search-large .uk-search-icon {
-    padding-left: $search-large-padding-horizontal;
-    padding-right: $search-large-padding-horizontal;
+    padding-inline-start: var(--search-large-padding-horizontal);
+    padding-inline-end: var(--search-large-padding-horizontal);
 }
 
-.uk-search-large:has(.uk-search-icon:not(.uk-search-icon-flip)) .uk-search-input { padding-left: ($search-large-icon-width + $search-large-padding-horizontal + $search-large-icon-padding); }
-.uk-search-large:has(.uk-search-icon-flip) .uk-search-input { padding-right: ($search-large-icon-width + $search-large-padding-horizontal + $search-large-icon-padding); }
+.uk-search-large:has(.uk-search-icon:not(.uk-search-icon-flip)) .uk-search-input { padding-inline-start: calc(var(--search-large-icon-width) + var(--search-large-padding-horizontal) + var(--search-large-icon-padding)); }
+.uk-search-large:has(.uk-search-icon-flip) .uk-search-input { padding-inline-end: calc(var(--search-large-icon-width) + var(--search-large-padding-horizontal) + var(--search-large-icon-padding)); }
 
 
 /* Toggle
  ========================================================================== */
 
 .uk-search-toggle {
-    color: $search-toggle-color;
+    color: var(--search-toggle-color);
     @if(meta.mixin-exists(hook-search-toggle)) {@include hook-search-toggle();}
 }
 
 /* Hover */
 .uk-search-toggle:hover {
-    color: $search-toggle-hover-color;
+    color: var(--search-toggle-hover-color);
     @if(meta.mixin-exists(hook-search-toggle-hover)) {@include hook-search-toggle-hover();}
 }
 
@@ -321,6 +313,8 @@
 
 @if(meta.mixin-exists(hook-search-misc)) {@include hook-search-misc();}
 
+// @mixin hook-search-variables(){}
+// @mixin hook-search(){}
 // @mixin hook-search-input(){}
 // @mixin hook-search-icon(){}
 // @mixin hook-search-default-input(){}
@@ -340,11 +334,6 @@
 
 // Inverse
 // ========================================================================
-
-
-
-
-
 
 
 

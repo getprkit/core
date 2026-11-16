@@ -7,7 +7,10 @@
 //
 // Adopted:         `uk-alert-close`
 //
-// Modifiers:       `uk-alert-primary`
+// Modifiers:       `uk-alert-default`
+//                  `uk-alert-muted`
+//                  `uk-alert-primary`
+//                  `uk-alert-info`
 //                  `uk-alert-success`
 //                  `uk-alert-warning`
 //                  `uk-alert-danger`
@@ -21,25 +24,27 @@
 
 
 
-
-
-
-
 /* ========================================================================
    Component: Alert
  ========================================================================== */
 
+/*
+ * Base
+ */
+
 .uk-alert {
     position: relative;
-    margin-bottom: $alert-margin-vertical;
-    padding: $alert-padding $alert-padding-right $alert-padding $alert-padding;
-    background: $alert-background;
-    color: $alert-color;
+    margin-bottom: var(--alert-margin-vertical);
+    padding: var(--alert-padding);
+    border: var(--alert-border-width) solid var(--alert-border-color);
+    border-radius: var(--alert-border-radius);
+    color: var(--alert-color);
+    background-color: var(--alert-background);
     @if(meta.mixin-exists(hook-alert)) {@include hook-alert();}
 }
 
 /* Add margin if adjacent element */
-* + .uk-alert { margin-top: $alert-margin-vertical; }
+* + .uk-alert { margin-top: var(--alert-margin-vertical); }
 
 /*
  * Remove margin from the last-child
@@ -48,43 +53,131 @@
 .uk-alert > :last-child { margin-bottom: 0; }
 
 
-/* Close
- * Adopts `uk-close`
- ========================================================================== */
+/*
+ * Content
+ */
 
-.uk-alert-close {
-    position: absolute;
-    top: $alert-close-top;
-    right: $alert-close-right;
-    @if(meta.mixin-exists(hook-alert-close)) {@include hook-alert-close();}
+.uk-alert h1,
+.uk-alert h2,
+.uk-alert h3,
+.uk-alert h4,
+.uk-alert h5,
+.uk-alert h6 { color: inherit; }
+
+.uk-alert a:not([class]) {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.uk-alert a:not([class]):hover {
+    color: inherit;
+    text-decoration: underline;
 }
 
 /*
- * Remove margin from adjacent element
+ * Icon and close icon
  */
-
-.uk-alert-close:first-child + * { margin-top: 0; }
 
 /*
- * Hover
+ * 1. If there is an icon or close element show content as grid.
+ * 2. Always middle the content and icon/close elements.
+ * 3. Set the content to expand width and icon/close to auto width.
+ * 4. Gap of the icon and close with content.
  */
-
-.uk-alert-close:hover {
-    @if(meta.mixin-exists(hook-alert-close-hover)) {@include hook-alert-close-hover();}
+.uk-alert:has(> .uk-alert-close),
+.uk-alert:has(> .uk-alert-icon) {
+    /* 1 */
+    display: grid;
+    /* 2 */
+    align-items: center;
+    /* 3 */
+    grid-template-columns: 1fr auto;
+    /* 4 */
+    column-gap: var(--alert-gap);
 }
 
+/* Alert icon always be at row 1 and column 1 */
+.uk-alert-icon { grid-area: 1 / 1; }
 
-/* Style modifiers
+/** Close always be at row 1 and column 2. */
+.uk-alert-close { grid-area: 1 / 2; }
+
+/* If icon exists or icon and close element both exists:
+ * 1. Set the content to middle and icon to left/start and close to right/end.
+ * 2. Content column always be 2 and set its width to expand and row to auto.
+ * 3. Set Close to always be column 3.
+ */
+
+/* 1 */
+.uk-alert:has(> .uk-alert-close):has(> .uk-alert-icon) { grid-template-columns: auto 1fr auto; }
+
+/* 2 */
+.uk-alert:has(> .uk-alert-icon) > :not(.uk-alert-icon):not(.uk-alert-close) ~ :not(.uk-alert-icon):not(.uk-alert-close) {
+    grid-column: 2 / -1;
+    justify-self: start;
+}
+
+.uk-alert:has(> .uk-alert-close):has(> .uk-alert-icon) > .uk-alert-close { grid-area: 1 / 3; }
+
+/* If just alert icon exists:
+ * Set the first column width (icon) to auto and content width to expand.
+ */
+.uk-alert:has(> .uk-alert-icon) { grid-template-columns: auto 1fr; }
+
+/* If just Close exists:
+ * Set the first column width (contents) to expand and close width to auto.
+ */
+.uk-alert:has(> .uk-alert-close):not(:has(> .uk-alert-icon)) > :not(.uk-alert-close) ~ :not(.uk-alert-close) { grid-column: 1 / -1; }
+
+/*
+ * Miscellaneous
+ */
+
+/* Fix alert will not flicker when closing with animation if top component has margin with it */
+.uk-alert-close-transition-fix.uk-alert.uk-togglable-leave + * { margin-top: 0; }
+
+
+/* Colors
  ========================================================================== */
+
+/*
+ * Default
+ */
+
+.uk-alert-default {
+    --alert-background: var(--alert-default-background);
+    --alert-color: var(--alert-default-color);
+    @if(meta.mixin-exists(hook-alert-default)) {@include hook-alert-default();}
+}
+
+/*
+ * Muted
+ */
+
+.uk-alert-muted {
+    --alert-background: var(--alert-muted-background);
+    --alert-color: var(--alert-muted-color);
+    @if(meta.mixin-exists(hook-alert-muted)) {@include hook-alert-muted();}
+}
 
 /*
  * Primary
  */
 
 .uk-alert-primary {
-    background: $alert-primary-background;
-    color: $alert-primary-color;
+    --alert-background: var(--alert-primary-background);
+    --alert-color: var(--alert-primary-color);
     @if(meta.mixin-exists(hook-alert-primary)) {@include hook-alert-primary();}
+}
+
+/*
+ * Info
+ */
+
+.uk-alert-info {
+    --alert-background: var(--alert-info-background);
+    --alert-color: var(--alert-info-color);
+    @if(meta.mixin-exists(hook-alert-info)) {@include hook-alert-info();}
 }
 
 /*
@@ -92,8 +185,8 @@
  */
 
 .uk-alert-success {
-    background: $alert-success-background;
-    color: $alert-success-color;
+    --alert-background: var(--alert-success-background);
+    --alert-color: var(--alert-success-color);
     @if(meta.mixin-exists(hook-alert-success)) {@include hook-alert-success();}
 }
 
@@ -102,8 +195,8 @@
  */
 
 .uk-alert-warning {
-    background: $alert-warning-background;
-    color: $alert-warning-color;
+    --alert-background: var(--alert-warning-background);
+    --alert-color: var(--alert-warning-color);
     @if(meta.mixin-exists(hook-alert-warning)) {@include hook-alert-warning();}
 }
 
@@ -112,10 +205,426 @@
  */
 
 .uk-alert-danger {
-    background: $alert-danger-background;
-    color: $alert-danger-color;
+    --alert-background: var(--alert-danger-background);
+    --alert-color: var(--alert-danger-color);
     @if(meta.mixin-exists(hook-alert-danger)) {@include hook-alert-danger();}
 }
+
+
+/* Style: Bordered
+ ======================================================================== */
+
+/*
+ * Base
+ */
+
+.uk-alert-bordered { border-color: var(--alert-bordered-border-color); }
+
+/*
+ * Default
+ */
+
+
+
+/*
+ * Muted
+ */
+
+
+
+/*
+ * Primary
+ */
+
+
+
+/*
+ * Info
+ */
+
+
+
+/*
+ * Success
+ */
+
+
+
+/*
+ * Warning
+ */
+
+
+
+/*
+ * Danger
+ */
+
+
+
+
+/* Icon Box
+ ======================================================================== */
+
+/*
+ * Base
+ */
+
+.uk-alert-icon-box:has(> .uk-alert-icon) {
+    padding: var(--alert-icon-box-padding);
+    @if(meta.mixin-exists(hook-alert-icon-box)) {@include hook-alert-icon-box();}
+}
+
+.uk-alert-icon-box .uk-alert-icon {
+    padding: var(--alert-icon-box-icon-padding);
+    color: var(--alert-icon-box-color);
+    border-radius: var(--alert-icon-box-border-radius);
+    background-color: var(--alert-icon-box-background);
+    @if(meta.mixin-exists(hook-alert-icon-box-icon)) {@include hook-alert-icon-box-icon();}
+}
+
+/*
+ * Default
+ */
+
+
+
+/*
+ * Muted
+ */
+
+
+
+/*
+ * Primary
+ */
+
+
+
+/*
+ * Info
+ */
+
+
+
+/*
+ * Success
+ */
+
+
+
+/*
+ * Warning
+ */
+
+
+
+/*
+ * Danger
+ */
+
+
+
+
+/* Close
+ * Adopts `uk-close`
+ ========================================================================== */
+
+/*
+ * Base
+ */
+
+/*
+ * 1. Center close icon
+ * 2. Stay at corner if first row grow.
+ * 3. Decrease height with margin to reduce close icon height effect in
+ *    alert and fix the position, also alert padding will effect on it.
+ * 4. Miscellaneous
+ */
+
+.uk-alert-close {
+    isolation: isolate;
+    position: relative;
+    box-sizing: border-box;
+    /* 1 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 2 */
+    align-self: baseline;
+    justify-self: end;
+    order: 9999;
+    /* 3 */
+    padding: var(--alert-close-padding);
+    margin-inline-end: var(--alert-close-margin-inline-end);
+    margin-top: var(--alert-close-margin-top);
+    inset-inline-end: var(--alert-close-inline-end);
+    top: var(--alert-close-top);
+    /* 4 */
+    font-size: 0.75rem;
+    color: rgb(from currentColor r g b / var(--alert-close-opacity));
+    border-radius: var(--alert-close-border-radius);
+    min-height: var(--alert-close-min-height);
+    min-width: var(--alert-close-min-width);
+    transition: 0.2s ease-in-out;
+    transition-property: background-color, color;
+    @if(meta.mixin-exists(hook-alert-close)) {@include hook-alert-close();}
+}
+
+/*
+ * Remove margin from adjacent element
+ * Fix margin not collapsing at first content item in grid
+ */
+
+.uk-alert-close + *:not(.uk-alert-icon),
+.uk-alert-icon + *:not(.uk-alert-close) { margin-block: 0; }
+
+/*
+ * Hover
+ */
+
+.uk-alert-close:hover {
+    /* if close icon use text instead if link*/
+    text-decoration: none;
+    color: rgb(from currentColor r g b / var(--alert-close-hover-opacity));
+    @if(meta.mixin-exists(hook-alert-close-hover)) {@include hook-alert-close-hover();}
+}
+
+/*
+ * Focus/Active
+ */
+
+.uk-alert-close:is(:focus-visible, :active) {
+    color: rgb(from currentColor r g b / var(--alert-close-active-opacity));
+    @if(meta.mixin-exists(hook-alert-close-active)) {@include hook-alert-close-active();}
+}
+
+/* Set close to effect alert icon box padding instead of alert padding */
+.uk-alert-icon-box:has(> .uk-alert-icon) .uk-alert-close {
+    margin-inline-end: var(--alert-icon-box-close-margin-inline-end);
+    margin-top: var(--alert-icon-box-close-margin-top);
+    margin-bottom: var(--alert-icon-box-close-margin-bottom);
+    top: var(--alert-icon-box-close-top);
+}
+
+/*
+ * Position
+ */
+
+.uk-alert-close-end {
+    transform: var(--alert-close-end-x);
+    margin-inline-end: var(--alert-close-end-margin-inline-end);
+}
+
+.uk-alert-close-top {
+    top: 0;
+    transform: var(--alert-close-top-y);
+    margin-top: var(--alert-close-top-margin-top);
+}
+
+.uk-alert-close-corner {
+    top: var(--alert-close-corner-top);
+    inset-inline-end: var(--alert-close-corner-inline-end);
+    transform: var(--alert-close-end-x) var(--alert-close-top-y);
+    margin-inline-end: var(--alert-close-end-margin-inline-end);
+    margin-top: var(--alert-close-top-margin-top);
+}
+
+/*
+ * Position: Icon box
+ */
+
+.uk-alert-icon-box .uk-alert-close-end {
+    transform: var(--alert-icon-box-close-end-x);
+    margin-inline-end: var(--alert-icon-box-close-end-margin-inline-end);
+}
+
+.uk-alert-icon-box .uk-alert-close-top {
+    top: 0;
+    transform: var(--alert-close-top-y);
+    margin-top: var(--alert-icon-box-close-top-margin-top);
+}
+
+.uk-alert-icon-box .uk-alert-close-corner {
+    top: var(--alert-icon-box-close-corner-top);
+    inset-inline-end: var(--alert-icon-box-close-corner-inline-end);
+    transform: var(--alert-icon-box-close-end-x) var(--alert-close-top-y);
+    margin-inline-end: var(--alert-icon-box-close-end-margin-inline-end);
+    margin-top: var(--alert-icon-box-close-top-margin-top);
+}
+
+/*
+ * Circle
+ */
+
+.uk-alert-close-circle { border-radius: var(--global-border-radius-circle); }
+
+/*
+ * Icon animation
+ */
+
+.uk-alert-close-icon-animation > svg { transition: transform 0.2s ease-in-out; }
+
+.uk-alert-close-icon-animation:hover > svg { transform: translate(0, 0) rotate(calc(90deg * var(--uk-dir-sign))); }
+
+.uk-alert-close-icon-animation:is(:focus-visible, :active) > svg { transform: translate(0, 0) rotate(0); }
+
+/* Fix icon svg alignment at the start of any element or text */
+.uk-alert-close > svg {
+    order: -1;
+    z-index: 1;
+}
+
+
+/* Close base style
+ ======================================================================== */
+
+/*
+ * Base
+ */
+
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid)::before {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: -1;
+    inset: 0;
+    transition: 0.2s ease-in-out;
+    transition-property: background-color, color, opacity;
+    border-radius: calc(var(--alert-close-border-radius) - 1px);
+    opacity: 0;
+    @if(meta.mixin-exists(hook-alert-close-pill)) {@include hook-alert-close-pill();}
+}
+
+.uk-alert-close-circle::before { border-radius: var(--global-border-radius-circle); }
+
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):hover::before { opacity: var(--alert-close-background-hover-opacity); }
+
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid):is(:focus-visible, :active)::before { opacity: var(--alert-close-background-active-opacity); }
+
+:is(.uk-alert-close-pill, .uk-alert-close-pill-hover, .uk-alert-close-pill-solid)::before { background-color: var(--alert-close-pill-background); }
+
+/*
+ * Default
+ */
+
+
+
+/*
+ * Muted
+ */
+
+
+
+/*
+ * Primary
+ */
+
+
+
+/*
+ * Info
+ */
+
+
+
+/*
+ * Success
+ */
+
+
+
+/*
+ * Warning
+ */
+
+
+
+/*
+ * Danger
+ */
+
+
+
+
+/* Close style: pill
+======================================================================== */
+
+/* Fix background transparent when close is on the box */
+.uk-alert-close-pill { background-color: var(--alert-close-pill-back); }
+
+.uk-alert-close-pill::before { opacity: var(--alert-close-background-opacity); }
+
+/*
+ * Default
+ */
+
+
+
+/*
+ * Muted
+ */
+
+
+
+/*
+ * Primary
+ */
+
+
+
+/*
+ * Info
+ */
+
+
+
+/*
+ * Success
+ */
+
+
+
+/*
+ * Warning
+ */
+
+
+
+/*
+ * Danger
+ */
+
+
+
+
+/* Close style: pill-solid
+======================================================================== */
+
+/*
+ * Base
+ */
+
+.uk-alert-close-pill-solid {
+    background-color: var(--alert-close-pill-solid-background);
+    outline: var(--alert-close-pill-solid-outline-width) solid var(--alert-close-pill-solid-border-color);
+    border: var(--alert-close-pill-solid-border-width) solid transparent;
+    @if(meta.mixin-exists(hook-alert-close-pill-solid)) {@include hook-alert-close-pill-solid();}
+}
+
+.uk-alert-close-pill-solid,
+.uk-alert-close-pill-solid:hover,
+.uk-alert-close:is(:focus-visible, :active) { color: currentColor; }
+
+/* Set close to effect alert icon box padding instead of alert padding */
+.uk-alert-icon-box:has(> .uk-alert-icon) .uk-alert-close {
+    margin-inline-end: var(--alert-icon-box-close-margin-inline-end);
+    margin-top: var(--alert-icon-box-close-margin-top);
+    margin-bottom: var(--alert-icon-box-close-margin-bottom);
+    top: var(--alert-icon-box-close-top);
+}
+
+.uk-alert-close-pill-solid:hover::before { border-color: var(--alert-close-pill-solid-hover-border-color); }
 
 
 // Hooks
@@ -123,11 +632,40 @@
 
 @if(meta.mixin-exists(hook-alert-misc)) {@include hook-alert-misc();}
 
+// @mixin hook-alert-variables(){}
 // @mixin hook-alert(){}
-// @mixin hook-alert-close(){}
-// @mixin hook-alert-close-hover(){}
+// @mixin hook-alert-default(){}
+// @mixin hook-alert-muted(){}
 // @mixin hook-alert-primary(){}
+// @mixin hook-alert-info(){}
 // @mixin hook-alert-success(){}
 // @mixin hook-alert-warning(){}
 // @mixin hook-alert-danger(){}
+// @mixin hook-alert-icon-box(){}
+// @mixin hook-alert-icon-box-icon(){}
+// @mixin hook-alert-close(){}
+// @mixin hook-alert-close-hover(){}
+// @mixin hook-alert-close-active(){}
+// @mixin hook-alert-close-pill(){}
+// @mixin hook-alert-close-pill-solid(){}
 // @mixin hook-alert-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+
+
+
+
+// @mixin hook-inverse-alert-default(){}
+// @mixin hook-inverse-alert-muted(){}
+// @mixin hook-inverse-alert-primary(){}
+// @mixin hook-inverse-alert-info(){}
+// @mixin hook-inverse-alert-success(){}
+// @mixin hook-inverse-alert-warning(){}
+// @mixin hook-inverse-alert-danger(){}
+// @mixin hook-inverse-alert-icon-box-icon(){}
+// @mixin hook-inverse-alert-close(){}
+// @mixin hook-inverse-alert-close-hover(){}
+// @mixin hook-inverse-alert-close-active(){}

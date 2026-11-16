@@ -35,13 +35,12 @@ if (args.prepare) {
 }
 
 await $$`pnpm compile`;
-await $$`pnpm compile-rtl`;
 await $$`pnpm build-scss`;
 
 if (args.build) {
     const notes = releaseNotes(await read('CHANGELOG.md'), version);
     const asset = await createPackage(version);
-    const notesFile = `${process.env.RUNNER_TEMP}/uikit-${version}-notes.md`;
+    const notesFile = `${process.env.RUNNER_TEMP}/prkit-${version}-notes.md`;
     await fs.writeFile(notesFile, notes);
     await fs.appendFile(
         process.env.GITHUB_OUTPUT,
@@ -60,22 +59,24 @@ function validateVersion(version, previous) {
     return version;
 }
 
-function versionFormat(version) {
+/* function versionFormat(version) {
     return [semver.coerce(version).version].concat(semver.prerelease(version) || []).join(' ');
-}
+} UIkit old version format */
 
 function releaseChangelog(changelog, version, date) {
     if (!/^## WIP\s*$/m.test(changelog)) {
         throw new Error('CHANGELOG.md must contain a WIP section before preparing a release.');
     }
-    const result = changelog.replace(/^## WIP[^\S\n]*$/m, `## ${versionFormat(version)} (${date})`);
+    // const result = changelog.replace(/^## WIP[^\S\n]*$/m, `## ${versionFormat(version)} (${date})`); // UIkit old release changelog
+    const result = changelog.replace(/^## WIP[^\S\n]*$/m, `## [${version}] (${date})`);
     releaseNotes(result, version);
     return result;
 }
 
 function releaseNotes(changelog, version) {
     const sections = changelog.split(/^## /m);
-    const section = sections.find((section) => section.startsWith(`${versionFormat(version)} (`));
+    // const section = sections.find((section) => section.startsWith(`${versionFormat(version)} (`));  // UIkit old release notes
+    const section = sections.find((section) => section.startsWith(`[${version}] (`));
     const notes = section?.slice(section.indexOf('\n') + 1).trim();
     if (!notes) {
         throw new Error(`No changelog notes found for ${version}.`);
@@ -95,7 +96,7 @@ async function raiseVersion(version, prevVersion) {
 }
 
 async function createPackage(version) {
-    const dest = `dist/uikit-${version}.zip`;
+    const dest = `dist/prkit-${version}.zip`;
     const archive = new ZipArchive({ zlib: { level: 9 } });
 
     const output = createWriteStream(dest);
@@ -106,7 +107,7 @@ async function createPackage(version) {
 
     archive.pipe(output);
 
-    for await (const file of fs.glob('dist/{js,css}/uikit?(-icons|-rtl)?(.min).{js,css}')) {
+    for await (const file of fs.glob('dist/{js,css}/uikit?(-icons)?(.min).{js,css}')) {
         archive.file(file, { name: file.slice(5) });
     }
 
@@ -117,9 +118,10 @@ async function createPackage(version) {
 }
 
 function dateFormat() {
-    return new Intl.DateTimeFormat('en-US', {
+    /* return new Intl.DateTimeFormat('en-US', {
         month: 'long',
         day: 'numeric',
         year: 'numeric',
-    }).format(new Date());
+    }).format(new Date()); // UIkit old date format */
+    return new Date().toISOString().slice(0, 10);
 }

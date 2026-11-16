@@ -13,6 +13,7 @@
 
 
 
+
 /* ========================================================================
    Component: Close
  ========================================================================== */
@@ -22,13 +23,13 @@
  */
 
 .uk-close {
-    color: $close-color;
+    color: var(--close-color);
     @if(meta.mixin-exists(hook-close)) {@include hook-close();}
 }
 
 /* Hover */
 .uk-close:hover {
-    color: $close-hover-color;
+    color: var(--close-hover-color);
     @if(meta.mixin-exists(hook-close-hover)) {@include hook-close-hover();}
 }
 
@@ -38,6 +39,7 @@
 
 @if(meta.mixin-exists(hook-close-misc)) {@include hook-close-misc();}
 
+// @mixin hook-close-variables(){}
 // @mixin hook-close(){}
 // @mixin hook-close-hover(){}
 // @mixin hook-close-misc(){}
@@ -45,6 +47,7 @@
 
 // Inverse
 // ========================================================================
+
 
 
 
