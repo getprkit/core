@@ -3688,42 +3688,6 @@
     }
 
 }
-@mixin hook-inverse-component-comment(){}
-@mixin hook-inverse-component-description-list(){}
-@mixin hook-inverse(){}
-@mixin hook-inverse-variables(){
-
-    --inverse-global-color-mode:                     $inverse-global-color-mode;
-
-    /*
-     * Palettes
-     */
-@mixin hook-inverse() {
-    @include hook-inverse-component-accordion();
-    @include hook-inverse-component-alert();
-    @include hook-inverse-component-article();
-    @include hook-inverse-component-background();
-    @include hook-inverse-component-badge();
-    @include hook-inverse-component-base();
-    @include hook-inverse-component-breadcrumb();
-    @include hook-inverse-component-button();
-    @include hook-inverse-component-card();
-    @include hook-inverse-component-close();
-    @include hook-inverse-component-column();
-    @include hook-inverse-component-comment();
-    @include hook-inverse-component-countdown();
-    @include hook-inverse-component-description-list();
-    @include hook-inverse-component-divider();
-    @include hook-inverse-component-dotnav();
-    @include hook-inverse-component-dropbar();
-    @include hook-inverse-component-dropdown();
-    @include hook-inverse-component-form-range();
-    @include hook-inverse-component-form();
-    @include hook-inverse-component-grid();
-    @include hook-inverse-component-heading();
-    @include hook-inverse-component-icon();
-    @include hook-inverse-component-iconnav();
-}
 @mixin hook-label() {
     border-radius: var(--label-border-radius);
     text-transform: var(--label-text-transform);
@@ -6541,6 +6505,65 @@
     --width-2xlarge-width:                           750px;
 
 }
+@mixin hook-inverse-variables() {
+
+        --inverse-global-color-mode:                     $inverse-global-color-mode;
+
+        /*
+         * Palettes
+         */
+    @mixin hook-inverse() {
+        @include hook-inverse-component-accordion();
+        @include hook-inverse-component-alert();
+        @include hook-inverse-component-article();
+        @include hook-inverse-component-background();
+        @include hook-inverse-component-badge();
+        @include hook-inverse-component-base();
+        @include hook-inverse-component-breadcrumb();
+        @include hook-inverse-component-button();
+        @include hook-inverse-component-card();
+        @include hook-inverse-component-close();
+        @include hook-inverse-component-column();
+        @include hook-inverse-component-comment();
+        @include hook-inverse-component-countdown();
+        @include hook-inverse-component-description-list();
+        @include hook-inverse-component-divider();
+        @include hook-inverse-component-dotnav();
+        @include hook-inverse-component-dropbar();
+        @include hook-inverse-component-dropdown();
+        @include hook-inverse-component-form-range();
+        @include hook-inverse-component-form();
+        @include hook-inverse-component-grid();
+        @include hook-inverse-component-heading();
+        @include hook-inverse-component-icon();
+        @include hook-inverse-component-iconnav();
+        @include hook-inverse-component-label();
+        @include hook-inverse-component-leader();
+        @include hook-inverse-component-link();
+        @include hook-inverse-component-list();
+        @include hook-inverse-component-marker();
+        @include hook-inverse-component-modal();
+        @include hook-inverse-component-nav();
+        @include hook-inverse-component-navbar();
+        @include hook-inverse-component-notification();
+        @include hook-inverse-component-offcanvas();
+        @include hook-inverse-component-overlay();
+        @include hook-inverse-component-pagination();
+        @include hook-inverse-component-placeholder();
+        @include hook-inverse-component-progress();
+        @include hook-inverse-component-search();
+        @include hook-inverse-component-section();
+        @include hook-inverse-component-slidenav();
+        @include hook-inverse-component-subnav();
+        @include hook-inverse-component-tab();
+        @include hook-inverse-component-table();
+        @include hook-inverse-component-text();
+        @include hook-inverse-component-thumbnav();
+        @include hook-inverse-component-tile();
+        @include hook-inverse-component-tooltip();
+        @include hook-inverse-component-totop();
+        @include hook-inverse-component-utility();
+}
 @mixin hook-variables(){}
 @mixin hook-slideshow-variables(){}
 @mixin hook-visibility-misc(){}
@@ -6557,3 +6580,6 @@
     background-color: var(--inverse-label-danger-background);
     color: var(--inverse-label-danger-color);
 }
+@mixin hook-inverse-component-comment(){}
+@mixin hook-inverse-component-description-list(){}
+@mixin hook-inverse(){}
