@@ -4,11 +4,11 @@ Thanks for your interest in contributing to PrKit! Contributions, bug reports, a
 
 ## Getting Started
 
-PrKit is a fork of [UIkit](https://github.com/uikit/uikit). Before contributing, please review the existing code and check whether the issue or feature is already being addressed.
+Before contributing, please review the existing code and check whether the issue or feature is already being addressed.
 
 ## Reporting Issues
 
-If you find a bug or have a feature request, please open an issue in the [PrKit issue tracker](https://github.com/prfardin/uikit/issues).
+If you find a bug or have a feature request, please open an issue in the [PrKit issue tracker](https://github.com/getprkit/core/issues).
 
 When reporting a bug, include:
 - Your browser and environment.
@@ -23,8 +23,6 @@ When reporting a bug, include:
 3. Keep changes focused and consistent with the existing codebase.
 4. Test your changes before submitting.
 5. Open a pull request targeting the `prkit` branch.
-
-For changes that are also applicable to upstream UIkit, consider submitting a separate pull request to the [official UIkit repository](https://github.com/uikit/uikit).
 
 ## Commit Message Convention
 
@@ -55,7 +53,7 @@ Supported types:
 
 ## Versioning
 
-PrKit follows [Semantic Versioning (SemVer)](https://semver.org/), independently of UIkit.
+PrKit follows [Semantic Versioning (SemVer)](https://semver.org/).
 
 Each release documents the corresponding upstream UIkit version.
 
