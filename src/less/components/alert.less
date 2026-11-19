@@ -5,7 +5,8 @@
 //
 // Adopted:         `uk-alert-close`
 //
-// Modifiers:       `uk-alert-default`
+// Modifiers:       `uk-alert-bordered`
+//                  `uk-alert-default`
 //                  `uk-alert-muted`
 //                  `uk-alert-primary`
 //                  `uk-alert-info`
@@ -25,7 +26,6 @@
     --alert-padding:                                    var(--global-small-gutter);
 
     --alert-border-width:                               var(--global-border-width);
-    --alert-border-color:                               transparent;
     --alert-border-radius:                              var(--global-border-radius-default);
 
     --alert-gap:                                        var(--global-small-gutter);
@@ -149,7 +149,6 @@
     position: relative;
     margin-bottom: var(--alert-margin-vertical);
     padding: var(--alert-padding);
-    border: var(--alert-border-width) solid var(--alert-border-color);
     border-radius: var(--alert-border-radius);
     color: var(--alert-color);
     background-color: var(--alert-background);
@@ -165,7 +164,6 @@
 
 .uk-alert > :last-child { margin-bottom: 0; }
 
-
 /*
  * Content
  */
@@ -175,16 +173,21 @@
 .uk-alert h3,
 .uk-alert h4,
 .uk-alert h5,
-.uk-alert h6 { color: inherit; }
+.uk-alert h6 {
+    color: inherit;
+    .hook-alert-heading();
+}
 
 .uk-alert a:not([class]) {
     color: inherit;
     text-decoration: underline;
+    .hook-alert-link();
 }
 
 .uk-alert a:not([class]):hover {
     color: inherit;
     text-decoration: underline;
+    .hook-alert-link-hover();
 }
 
 /*
@@ -331,7 +334,10 @@
  * Base
  */
 
-.uk-alert-bordered { border-color: var(--alert-bordered-border-color); }
+.uk-alert-bordered {
+    border: var(--alert-border-width) solid var(--alert-bordered-border-color);
+    .hook-alert-bordered();
+}
 
 /*
  * Default
@@ -497,9 +503,9 @@
  */
 
 .uk-alert-close:hover {
-    /* if close icon use text instead if link*/
-    text-decoration: none;
     color: rgb(from currentColor r g b / var(--alert-close-hover-opacity));
+    /* If close icon use text instead if link */
+    text-decoration: none;
     .hook-alert-close-hover();
 }
 
@@ -512,7 +518,7 @@
     .hook-alert-close-active();
 }
 
-/* Set close to effect alert icon box padding instead of alert padding */
+/* Set close to effect alert icon-box padding instead of alert padding */
 .uk-alert-icon-box:has(> .uk-alert-icon) .uk-alert-close {
     margin-inline-end: var(--alert-icon-box-close-margin-inline-end);
     margin-top: var(--alert-icon-box-close-margin-top);
@@ -582,7 +588,7 @@
 
 .uk-alert-close-icon-animation:is(:focus-visible, :active) > svg { transform: translate(0, 0) rotate(0); }
 
-/* Fix icon svg alignment at the start of any element or text */
+/* Set icon svg alignment at the start of any element or text */
 .uk-alert-close > svg {
     order: -1;
     z-index: 1;
@@ -602,10 +608,10 @@
     display: block;
     z-index: -1;
     inset: 0;
+    opacity: 0;
+    border-radius: calc(var(--alert-close-border-radius) - 1px);
     transition: var(--global-duration) var(--global-ease-in-out);
     transition-property: background-color, color, opacity;
-    border-radius: calc(var(--alert-close-border-radius) - 1px);
-    opacity: 0;
     .hook-alert-close-pill();
 }
 
@@ -729,14 +735,6 @@
 .uk-alert-close-pill-solid:hover,
 .uk-alert-close:is(:focus-visible, :active) { color: currentColor; }
 
-/* Set close to effect alert icon box padding instead of alert padding */
-.uk-alert-icon-box:has(> .uk-alert-icon) .uk-alert-close {
-    margin-inline-end: var(--alert-icon-box-close-margin-inline-end);
-    margin-top: var(--alert-icon-box-close-margin-top);
-    margin-bottom: var(--alert-icon-box-close-margin-bottom);
-    top: var(--alert-icon-box-close-top);
-}
-
 .uk-alert-close-pill-solid:hover::before { border-color: var(--alert-close-pill-solid-hover-border-color); }
 
 
@@ -747,6 +745,9 @@
 
 .hook-alert-variables() {}
 .hook-alert() {}
+.hook-alert-heading() {}
+.hook-alert-link() {}
+.hook-alert-link-hover() {}
 .hook-alert-default() {}
 .hook-alert-muted() {}
 .hook-alert-primary() {}
@@ -754,6 +755,7 @@
 .hook-alert-success() {}
 .hook-alert-warning() {}
 .hook-alert-danger() {}
+.hook-alert-bordered() {}
 .hook-alert-icon-box() {}
 .hook-alert-icon-box-icon() {}
 .hook-alert-close() {}
@@ -831,14 +833,32 @@
 
 .hook-inverse() {
 
-    .uk-alert { color: var(--alert-color); }
+    .uk-alert {
+        color: var(--alert-color);
+        .hook-inverse-alert();
+    }
+
+    //
+    // Content
+    //
 
     .uk-alert h1,
     .uk-alert h2,
     .uk-alert h3,
     .uk-alert h4,
     .uk-alert h5,
-    .uk-alert h6 { color: inherit; }
+    .uk-alert h6 {
+        color: inherit;
+        .hook-inverse-alert-heading();
+    }
+
+    .uk-alert a:not([class]) {
+        .hook-inverse-alert-link();
+    }
+
+    .uk-alert a:not([class]):hover {
+        .hook-inverse-alert-link-hover();
+    }
 
     //
     // Colors
@@ -889,6 +909,10 @@
     //
     // Bordered
     //
+
+    .uk-alert-bordered {
+        .hook-inverse-alert-bordered();
+    }
 
     .hook-inverse-alert-default() { --alert-bordered-border-color: var(--inverse-alert-bordered-border-color-default); }
 
@@ -971,7 +995,7 @@
     .hook-inverse-alert-danger() { --alert-close-pill-background: var(--inverse-alert-close-pill-background-danger); }
 
     //
-    // Close Style: Pill
+    // Close Style: pill
     //
 
     .uk-alert-close-pill { background-color: transparent; }
@@ -979,7 +1003,7 @@
     .uk-alert-close-pill::before { opacity: var(--inverse-alert-close-background-opacity); }
 
     //
-    // Close Style: Pill solid
+    // Close Style: pill-solid
     //
 
     .uk-alert-close-pill-solid {
@@ -991,6 +1015,10 @@
 
 }
 
+.hook-inverse-alert() {}
+.hook-inverse-alert-heading() {}
+.hook-inverse-alert-link() {}
+.hook-inverse-alert-link-hover() {}
 .hook-inverse-alert-default() {}
 .hook-inverse-alert-muted() {}
 .hook-inverse-alert-primary() {}
@@ -998,6 +1026,7 @@
 .hook-inverse-alert-success() {}
 .hook-inverse-alert-warning() {}
 .hook-inverse-alert-danger() {}
+.hook-inverse-alert-bordered() {}
 .hook-inverse-alert-icon-box-icon() {}
 .hook-inverse-alert-close() {}
 .hook-inverse-alert-close-hover() {}
