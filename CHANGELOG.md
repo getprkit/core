@@ -1,5 +1,22 @@
 # Changelog
 
+## WIP
+
+### Added
+
+Add missing hooks add missing inverse colors for alert
+
+### Changed
+
+- Use global motion tokens for transition and easing
+
+### Fix
+
+- Merge hook mixins and normalize line ending in scss build  
+- Fix types support default ESM imports
+- Fix types unify UIkit namespace exports
+- Fix types add icon stroke-ratio type to icon options
+
 ## [1.0.0-beta.3] (2026-11-16)
 
 ### Fixed
